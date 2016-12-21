@@ -1,0 +1,1032 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+	/*background-color: rgba(244,240,240,1);  #F4F0F0; ---背景底色*/
+	/*background-color: rgba(239,174,162,1);  #EFAEA2; ---重點粉紅色*/
+	/*background-color: rgba(145,186,177,1);  #91BAB1; ---粉綠色*/
+
+	
+
+	/*margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;*/
+
+	/*-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;*/
+
+
+/*---區塊基本設定---*/
+.product_logo, .productclass_intro, .product_item, .productclass_secondnav{
+	position: relative;
+
+	margin: auto;
+	left: 0;
+	right: 0;
+
+}
+
+
+
+/*----------三大分類LOGO區----------*/
+.product_logo{
+	width: 95%;
+	height: 90px;
+	padding: 25px;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+/*logo的外框*/
+.product_logo div{
+	position: relative;
+	width: 16%;
+	height: 100%;
+
+	float: right;
+	margin: 0 1% 0 0 ;
+
+	transition: 0s;
+	z-index: 5;
+}
+.product_logo div.this_productclass{
+	position: absolute;
+	float: left;
+	top: 15px;
+
+	width: 30%;
+	height: 150%;
+
+	transition: 1s;	
+}
+
+
+/*logo前圖*/
+.product_logo div img{
+	width: 100%;
+	opacity: 1;
+}
+/*logo後圖*/
+.product_logo div img.productclass_logo{
+	position: absolute;
+	width: 100%;
+	top: 0;
+	opacity: 0;
+}
+
+
+/*hover木板圖出現*/
+.product_logo div:hover img.productclass_logo{
+	opacity: 1;
+}
+
+/*當前頁面的logo放大，黑白的透明度調掉*/
+.product_logo div.this_productclass img{
+	opacity: 0;
+}
+.product_logo div.this_productclass img.productclass_logo{
+	opacity: 1;
+}
+
+
+
+
+
+/*----------各分類介紹板----------*/
+.productclass_intro{
+	width: 96%;
+	height: 350px;
+	padding: 100px 5% 0 30%;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+}
+
+
+/*紙張*/
+.productclass_intro img{
+	width: 100%;
+	height: 100%;
+
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+
+.productclass_intro_content{
+	position: relative;
+	height: 70%;
+	width: 100%;
+
+	overflow: hidden; /*讓文字不要跑出去*/
+}
+
+.productclass_intro_content p{
+	color:#999;
+	font-size: 22px;
+	line-height: 36px;
+	letter-spacing: 1px;
+
+	font-family: 'IM Fell English SC', 正黑體;
+}
+
+.productclass_intro_content p + p{
+	padding-top: 12px;
+	letter-spacing: 0px;
+	font-size: 18px;
+	line-height: 26px;
+}
+
+
+
+
+
+/*----------分類下的第二選單icons----------*/
+.productclass_secondnav{
+	width: 90%;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+
+
+
+/*--------------------*/
+/*wood icons*/
+
+.productclass_secondnav div.woodicon{
+	text-align: center;
+}
+
+.productclass_secondnav div.woodicon div{
+	position: relative;
+	display: inline-block;
+	width: 80px;
+	height: 80px;
+	margin: 0 12px;
+
+	cursor: pointer;
+
+	border: 1px solid #ccc;
+	border-radius: 50%;
+}
+.productclass_secondnav div.woodicon div img{
+	/*置中*/
+	position: absolute;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	width: 66px;
+	height: 66px;
+}
+
+
+.productclass_secondnav div.woodicon div:after{
+	position: absolute;
+	left: 0;
+	right: 0;
+
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+
+	font-size: 16px;
+	line-height: 80px;
+	text-align: center;
+
+	color: rgba(102,102,102,0);
+	background-color: rgba(255,255,255,0);
+	transition:0.5s; 
+}
+.wood01_cherry:after{
+	content: "櫻桃木";
+}
+.wood02_oak:after{
+	content: "白橡木";
+}
+.wood03_maple:after{
+	content: "楓木";
+}
+.wood04_rose:after{
+	content: "花梨木";
+}
+.wood05_walnut:after{
+	content: "胡桃木";
+}
+/*
+櫻桃木(Cherry wood)
+白橡木(oak wood)
+楓木(maple wood)
+花梨木(Rose wood)
+胡桃木(walnut wood)
+*/
+
+.productclass_secondnav div.woodicon div:hover:after{
+	background-color: rgba(255,255,255,0.5);
+	color: rgba(102,102,102,1);
+}
+
+.productclass_secondnav div.woodicon div.this_woodicon{
+	background-color: #91BAB1;
+}
+.productclass_secondnav div.woodicon div.this_woodicon:after{
+	background-color: rgba(145,186,177,0.8);
+	color: #fff;
+	font-size: 18px;
+}
+
+
+/*經典木頭名稱title*/
+.this_woodname{
+	position: relative;
+	height: 100px;
+	width: 100%;
+	padding: 35px 0 0; 
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.this_woodname div{
+	text-align: center;
+	
+	font-size: 60px;
+	color: #aaa;
+	font-family: 'IM Fell English SC', serif;
+}
+
+
+
+
+
+/*--------------------*/
+/*animal icons*/
+
+/*包住icons的兩排*/
+.productclass_secondnav div.animalicon{
+	width: 100%;
+	text-align: center;
+}
+
+
+.productclass_secondnav div.animalicon div{
+	position: relative;
+	display: inline-block;
+
+	width: 50px;
+	height: 50px;
+	margin: 2%; 
+
+	border-radius: 50%;
+	border: 1px solid #ccc;
+
+	transition: 0.5s;
+	background-size: 400px 100px;
+
+	transform: scale(1.5);
+	z-index: 5;
+
+	cursor: pointer;
+}
+
+/*hover用after暗幕蓋住*/
+.productclass_secondnav div.animalicon div:after{
+	font-size: 12px;
+	color: rgba(255,255,255,0); /*一開始字就在，顏色先關掉，hover才不會是糊掉*/
+	line-height: 50px;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background: rgba(102,102,102,0);
+
+	transition: 0.5s;
+}
+.productclass_secondnav div.animalicon div:hover:after{
+	background: rgba(102,102,102,0.8);
+	color: rgba(255,255,255,1);
+}
+
+
+
+/*每個icons的sprite位置*/
+.animalicon01_owl{
+	background: url(../images/product/animal_icons.svg) no-repeat 0 0;
+}
+.productclass_secondnav div div.animalicon01_owl:after{
+	content: "貓頭鷹";
+}
+
+.animalicon02_fox{
+	background: url(../images/product/animal_icons.svg) no-repeat -50px 0;
+}
+.productclass_secondnav div div.animalicon02_fox:after{
+	content: "狐狸";
+}
+
+.animalicon03_rabbit{
+	background: url(../images/product/animal_icons.svg) no-repeat -100px 0;
+}
+.productclass_secondnav div div.animalicon03_rabbit:after{
+	content: "兔子";
+}
+
+.animalicon04_lion{
+	background: url(../images/product/animal_icons.svg) no-repeat -150px 0;
+}
+.productclass_secondnav div div.animalicon04_lion:after{
+	content: "獅子";
+}
+
+.animalicon05_deer{
+	background: url(../images/product/animal_icons.svg) no-repeat -200px 0;
+}
+.productclass_secondnav div div.animalicon05_deer:after{
+	content: "鹿";
+}
+
+.animalicon06_eagle{
+	background: url(../images/product/animal_icons.svg) no-repeat -250px 0;
+}
+.productclass_secondnav div div.animalicon06_eagle:after{
+	content: "老鷹";
+}
+
+.animalicon07_cat{
+	background: url(../images/product/animal_icons.svg) no-repeat -300px 0;
+}
+.productclass_secondnav div div.animalicon07_cat:after{
+	content: "貓咪";
+}
+
+.animalicon08_bird{
+	background: url(../images/product/animal_icons.svg) no-repeat -350px 0;
+}
+.productclass_secondnav div div.animalicon08_bird:after{
+	content: "鳥兒";
+}
+
+.animalicon09_wolf{
+	background: url(../images/product/animal_icons.svg) no-repeat 0 -50px;
+}
+.productclass_secondnav div div.animalicon09_wolf:after{
+	content: "狼";
+}
+
+.animalicon10_monkey{
+	background: url(../images/product/animal_icons.svg) no-repeat -50px -50px;
+}
+.productclass_secondnav div div.animalicon10_monkey:after{
+	content: "猴子";
+}
+
+.animalicon11_bee{
+	background: url(../images/product/animal_icons.svg) no-repeat -100px -50px;
+}
+.productclass_secondnav div div.animalicon11_bee:after{
+	content: "蜜蜂";
+}
+
+.animalicon12_squirrel{
+	background: url(../images/product/animal_icons.svg) no-repeat -150px -50px;
+}
+.productclass_secondnav div div.animalicon12_squirrel:after{
+	content: "松鼠";
+}
+
+.animalicon13_dog{
+	background: url(../images/product/animal_icons.svg) no-repeat -200px -50px;
+}
+.productclass_secondnav div div.animalicon13_dog:after{
+	content: "狗";
+}
+
+.animalicon14_porcupine{
+	background: url(../images/product/animal_icons.svg) no-repeat -250px -50px;
+}
+.productclass_secondnav div div.animalicon14_porcupine:after{
+	content: "刺蝟";
+}
+
+.animalicon15_parrot{
+	background: url(../images/product/animal_icons.svg) no-repeat -300px -50px;
+}
+.productclass_secondnav div div.animalicon15_parrot:after{
+	content: "鸚鵡";
+}
+
+.animalicon16_elephant{
+	background: url(../images/product/animal_icons.svg) no-repeat -350px -50px;
+}
+.productclass_secondnav div div.animalicon16_elephant:after{
+	content: "象";
+}
+
+
+
+/*---click該動物後---*/
+
+/*按鈕變色*/
+.productclass_secondnav div.animalicon div.this_animalicon:after{
+	background: #91BAB1; 
+	color: rgba(255,255,255,1);
+}
+
+/*下面大圖*/
+.this_animalicon_large div{
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	right: 60px;
+	top: 10px;
+
+	transition: 0.5s;
+	background-size: 400px 100px;
+	transform: scale(5);
+
+	-webkit-clip-path: circle(24px at center); /*遮色片*/
+}
+
+
+/*動物名稱title*/
+.this_animalname{
+	position: relative;
+	height: 100px;
+	width: 100%;
+	padding: 50px 175px 0 0; 
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.this_animalname div{
+	text-align: right;
+	
+	font-size: 60px;
+	color: #aaa;
+	font-family: 'IM Fell English SC', serif;
+}
+
+
+
+
+
+/*--------------------*/
+/*motto icons*/
+.productclass_secondnav div.mottoicon{
+	text-align: center;
+}
+
+.productclass_secondnav div.mottoicon div{
+	position: relative;
+	display: inline-block;
+	width: 200px;
+	height: 100px;
+	margin: 0 2%;
+
+	background-size: 400px 100px;
+	background-image: url(../images/product/motto_icons.svg);
+	background-position: -200px 0 ;
+
+	font-size: 22px;
+	line-height: 100px;
+	text-align: center;
+	color: #555;
+
+	cursor: pointer;
+}
+
+.productclass_secondnav div.mottoicon div:hover{
+	background-position: 0px 0;
+	opacity: 0.8;
+}
+
+.productclass_secondnav div.mottoicon div.this_mottoicon{
+	background-position: 0px 0;
+	color:#fff;
+}
+.productclass_secondnav div.mottoicon div.this_mottoicon{
+	opacity: 1;
+}
+
+/*格言名稱title*/
+.this_mottoname{
+	position: relative;
+	height: 100px;
+	width: 100%;
+	padding: 35px 0 0; 
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.this_mottoname div{
+	text-align: center;
+	
+	font-size: 60px;
+	color: #aaa;
+	font-family: 'IM Fell English SC', serif;
+}
+
+
+
+
+
+/*----------篩選過後的產品陳列區----------*/
+.product_item{
+	position: relative;
+	width: 90%;
+}
+
+/*最上面的那條分隔線*/
+.product_item:before{
+	content: "";
+	position: absolute;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 100px;
+
+	width: 95%;
+	height: 1px;
+	background-color: #ccc;
+}
+
+
+
+/*----------產品項目陳列區----------*/
+
+/*---多項產品版型---*/
+
+/*開好整區的上下間隙*/
+.product_item_filter{
+	padding: 40px 0 30px; 
+	text-align: center;
+}
+
+
+/*一個產品的版*/
+.product_item_filter .one_product{
+	display: inline-block;
+	background-color: #fff;
+	width: 300px;
+	height: 350px;
+
+	box-shadow: 0 0 15px 0 #aaa;
+
+	margin: 2% 1%; 
+	overflow: hidden;
+}
+
+
+
+/*產品照固定220*300*/
+.product_item_filter .one_product .one_product_img{
+	height: 220px;
+	background-size:cover;
+	background-position:50% 50%;
+}
+
+
+
+/*產品簡介固定高130*/
+.product_item_filter .one_product .one_product_info{
+	position: relative;
+	width: 100%;
+	height: 130px;
+
+	text-align: left;
+	padding:10px 20px 0; 
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+/*產品簡介各行設定*/
+.product_item_filter .one_product .one_product_info .product_name{
+	font-size: 20px;
+	line-height: 38px;
+	color: #333;
+}
+.product_item_filter .one_product .one_product_info .product_motto{
+	font-size: 18px;
+	line-height: 26px;
+	color: #555;
+}
+.product_item_filter .one_product .one_product_info .product_price{
+	position: absolute;
+	bottom: 15px;
+	font-size: 26px;
+	color: rgba(219,77,77,0.75); /*#EFAEA2;*/
+
+	letter-spacing: 1px;
+}
+
+
+/*加到購物車和最愛清單的按鈕*/
+.add_to_cart, .add_to_love{
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+	width: 50px;
+	height: 50px;
+
+
+	background: url(../images/product/buy_icon.svg) no-repeat;
+	background-size: 200px 50px;
+	background-position: -100px 0;
+}
+.add_to_love{
+	right: 45px;
+	background-position: 0 0;
+}
+.add_to_cart:hover{
+	background-position: -150px 0;
+}
+.add_to_love:hover{
+	background-position: -50px 0;
+}
+
+
+
+/*---單項產品版型（經典原木素殼）---*/
+
+.product_item_filter .one_wood_product{
+	display: inline-block; /*為了置中*/
+	width: 95%;
+	height: 500px;
+	font-size: 0; /*讓子層inline並排無空隙*/
+}
+
+.product_item_filter .one_wood_product .one_product_img{
+	display: inline-block;
+	vertical-align: top;
+	width: 50%;
+	height: 100%;
+
+	background-size:contain;
+	background-position:50% 50%;
+	background-repeat: no-repeat;
+
+}
+
+.product_item_filter .one_wood_product .one_product_info{
+	position: relative;
+	display: inline-block;
+	width: 50%;	
+	height: 100%;
+	text-align: left;
+	vertical-align: top;
+}
+
+.product_item_filter .one_wood_product .one_product_info .product_name{
+	line-height: 60px;
+	font-size: 24px;
+	color: #555;
+	letter-spacing: 1px;
+}
+
+.product_item_filter .one_wood_product .one_product_info .product_motto{
+	padding: 12px 2% 0 0;
+	line-height: 48px;
+	font-size: 18px;
+	color: #888;
+
+	text-align: justify;
+}
+
+.product_item_filter .one_wood_product .one_product_info .product_price{
+	position: absolute;
+	bottom: 15px;
+	font-size: 26px;
+	color: rgba(219,77,77,0.75);
+
+	letter-spacing: 1px;
+}
+
+
+
+
+
+/*____________________________________________________________________________*/
+
+/*==========平板版本==========*/
+
+@media screen and (max-width: 1080px) {/*IPAD尺寸*/
+
+	/*logo的外框*/
+	.product_logo div{
+		width: 20%;
+		margin: 0;
+	}
+
+
+
+	/*---各分類介紹板---*/
+	.productclass_intro{
+		padding: 125px 5% 0;
+		text-align: center;
+	}
+
+
+
+	/*animal icons*/
+	.productclass_secondnav div.animalicon div{
+		transform: scale(1.2);
+		margin: 1%; 
+	}
+
+
+	/*下面大圖*/
+	.this_animalicon_large div{
+		transform: scale(3.5);
+		top: 30px;
+	}
+
+
+	/*動物名稱title*/
+	.this_animalname{
+		padding: 65px 135px 0 0; 
+	}
+	.this_animalname div{
+		font-size: 40px;
+	}
+
+
+
+	/*motto icons*/
+	.productclass_secondnav div.mottoicon div{
+		margin: 0;
+	}
+
+	/*格言和經典木頭名稱title*/
+	.this_mottoname, .this_woodname{
+		padding: 55px 0 0; 
+	}
+	.this_mottoname div,.this_woodname div{
+		font-size: 50px;
+	}
+
+
+
+	/*---單項產品版型（經典原木素殼）---*/
+
+	.product_item_filter .one_wood_product{
+		height: 450px;
+		width: 95%;
+	}
+
+	.product_item_filter .one_wood_product .one_product_info .product_name{
+		line-height: 48px;
+		font-size: 22px;
+	}
+
+	.product_item_filter .one_wood_product .one_product_info .product_motto{
+		padding-top: 6px;
+		line-height: 36px;
+		font-size: 17px;
+	}
+
+
+
+}
+
+/*____________________________________________________________________________*/
+
+/*==========手機版本==========*/
+
+@media screen and (max-width: 760px) {
+
+	.product_logo{
+		height: 30px;
+		padding: 0;
+	}
+
+	/*logo的外框*/
+	.product_logo div{
+		width: 25%;
+	}
+	.product_logo div.this_productclass{
+		top: 0;
+		width: 40%;
+	}
+
+
+
+/*---各分類介紹板---*/
+	.productclass_intro{
+		padding: 25% 5% 0 ;
+	}
+
+	.productclass_intro_content{
+		height: 90%;
+		width: 100%;
+	}
+
+	/*介紹區的標題*/
+	.productclass_intro_content p{
+		font-size: 18px;
+		line-height: 28px;
+		font-weight: bold;
+
+		text-align: right; /*手機版本靠右*/
+	}
+
+	.productclass_intro_content p + p{
+		font-size: 16px;
+		line-height: 22px;
+	}
+
+
+
+	/*控制icons四個一排*/
+	.productclass_secondnav div.animalicon{
+		margin: auto;
+		left: 0;
+		right: 0;
+		width: 300px;
+	}
+
+
+/*animal icons*/
+	.productclass_secondnav div.animalicon div{
+		transform: scale(1);
+		margin: 2%; 
+	}
+
+
+	/*下面大圖*/
+	.this_animalicon_large div{
+		transform: scale(3.5);
+		right: 40px;
+	}
+
+
+	/*動物名稱title*/
+	.this_animalname{
+		padding: 65px 135px 0 0; 
+	}
+	.this_animalname div{
+		font-size: 36px;
+	}
+	.this_animalname div span{
+		display: block; /*手機版強制換行*/
+		font-size: 24px;
+	}
+	
+
+
+/*wood icons*/
+	.productclass_secondnav div.woodicon{
+		position: absolute;
+		z-index: 5;
+
+		margin: auto;
+		left: 0;
+		right: 0;
+	}
+
+	.productclass_secondnav div.woodicon div{
+		width: 50px;
+		height: 50px;
+		margin: 0 0.5%;
+	}
+
+	.productclass_secondnav div.woodicon div img{
+		width: 40px;
+		height: 40px;
+	}
+
+	.productclass_secondnav div.woodicon div:after{
+		width: 50px;
+		height: 50px;
+
+		font-size: 12px;
+		line-height: 50px;
+	}
+
+	.productclass_secondnav div.woodicon div.this_woodicon:after{
+		font-size: 13px;
+	}
+
+
+
+
+
+/*motto icons*/
+	.productclass_secondnav div.mottoicon{
+		position: absolute;
+		z-index: 5;
+
+		width: 120%; /*為了讓按鈕都塞在同一行*/
+
+		margin: auto;
+		left: -10%;
+		right: 0;
+	}
+
+	.productclass_secondnav div.mottoicon div{
+
+		width: 100px;
+		height: 50px;
+		margin: 0;
+
+		background-size: 200px 50px;
+		background-position: -100px 0 ;
+
+		font-size: 14px;
+		line-height: 50px;
+	}
+
+	/*格言和經典木頭名稱title*/
+	.this_mottoname, .this_woodname{
+		padding: 65px 0 0; 
+	}
+	.this_mottoname div, .this_woodname div{
+		font-size: 36px;
+	}
+	.this_mottoname div span, .this_woodname div span{
+		display: block; /*手機版強制換行*/
+		font-size: 24px;
+	}
+
+
+
+/*產品項目陳列區*/
+	/*開好整區的上下間隙*/
+	.product_item_filter{
+		padding: 30px 0 10px; 
+	}
+
+
+	/*多項產品的版*/
+	.product_item_filter .one_product{
+		width: 100%;
+		max-width: 300px;
+		margin: 5% 1%; 
+	}
+
+
+
+/*---單項產品版型（經典原木素殼）---*/
+
+	.product_item_filter .one_wood_product{
+		width: 90%;
+		height: auto;
+	}
+
+	.product_item_filter .one_wood_product .one_product_img{
+		height: 220px;
+		width: 100%;
+	}
+
+	.product_item_filter .one_wood_product .one_product_info{
+		width: 90%;	
+		height: auto;
+		padding-bottom: 70px; /*給購物車和價錢欄位的區間*/
+	}
+
+	.product_item_filter .one_wood_product .one_product_info .product_name{
+		line-height: 60px;
+		font-size: 18px;
+		padding-top: 12px;
+		text-align: center;
+	}
+
+	.product_item_filter .one_wood_product .one_product_info .product_motto{
+		padding: 12px 2% 0 0;
+		line-height: 32px;
+		font-size: 14px;
+		padding-top: 0px;
+	}
+
+	.product_item_filter .one_wood_product .one_product_info .add_to_cart{
+		right: 0;
+	}
+
+
+
+}
+
+

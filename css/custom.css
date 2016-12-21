@@ -1,0 +1,1358 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+@import url(reset.css);
+@import url(US_main.css);
+/*slide03所需的字型*/
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Slabo+27px|Ubuntu|Nova+Mono');
+@import url(http://fonts.googleapis.com/earlyaccess/cwtexyen.css);
+
+
+
+	/*background-color: rgba(244,240,240,1);  #F4F0F0; ---背景底色*/
+	/*background-color: rgba(239,174,162,1);  #EFAEA2; ---重點粉紅色*/
+
+	
+	
+
+	/*margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;*/
+
+	/*-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;*/
+
+*{
+	font-family: sans-serif, 微軟正黑體;
+}
+
+
+
+
+/*____________________________________________________________________________*/
+
+div.custom{
+	display: block;
+	position: relative;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 70%;
+	min-height: 590px;
+
+	/*background-color: #fa0;*/
+}
+
+/*換頁按鈕控制區----------------------------------------------*/
+div.controller{
+	display:inline-block;
+	position: absolute;
+	width: 60px;
+	min-height: 590px;
+	top: 0;
+	font-size: 0;
+	text-align: center; /*讓子層a置中對齊*/
+}
+div.controller-L{
+	left:-60px;
+}
+div.controller-R{
+	right:-60px;
+}
+
+/*按鈕設定*/
+.controller a{
+	width: 60px;
+	height: 60px;
+	display: block;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+}
+/*按鈕icon*/
+.controller i{
+	font-size: 60px;
+	color: rgb(204,204,204);
+	transition: .5s;
+}
+
+/*hover按鈕*/
+.controller-L a.con_prev:hover{
+	left: -10px;
+}
+.controller-R a.con_next:hover{
+	right: -10px;
+}
+.controller-L a.con_prev:hover i, .controller-R a.con_next:hover i{
+	color: #FFBAB1;
+}
+/*最後一個步驟要加入購物車時換icon*/
+.controller-R a.con_next img, .controller-R a.con_next:hover img{
+	width: 100%;
+}
+
+/*進度ＢＡＲ------------------------------------------------*/
+div.cus_navbar{
+	display: inline-block;
+	position: relative;
+	width: 100%;
+	height: 100px;
+
+	/*background-color: #aff;*/
+}
+.cus_navbar ul{
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	font-size: 0;
+}
+.cus_navbar ul li.cus_light{
+	position: relative;
+	display: inline-block;
+	width: 20%;
+	height: 100%;
+}
+
+/*圖示及文字的共同設定*/
+.cus_navbar ul li div{
+	position: relative;
+	display: inline-block;
+	width: 50%;
+}
+
+/*小樹圖示區塊*/
+.cus_navbar ul li .light_image{
+	height: 70%;
+	/*svg要設定原始整張圖的大小，因為洞用百分比，所以它也要用百分比*/
+	background-image:url(../images/custom/light_img.svg);
+	background-size: 100% 200%;
+	/*y軸設100%就會換綠色*/
+	background-position:0% 0%;
+	top: 15%;	/*上面留空間，做假置中*/
+	left: 0;
+}
+
+
+/*文字區塊*/
+.cus_navbar ul li .light_text{
+	height: 100%;
+	text-align: center;
+	vertical-align: top; 
+}
+.cus_navbar ul li .light_text p{
+	color: #91BAB1;
+	font-size: 23px;
+	letter-spacing: 5px;
+	line-height: 100px;		/*垂直置中，設與高度相同*/
+	display: inline-block;
+	position: relative;
+}
+
+/*進度線-全長*/
+.cus_navbar ul:after , .cus_navbar li:after{
+	content: '';
+	height: 5px;
+	width: 100%;
+	display: block;
+	position: absolute;
+	top: 90px;
+	background-color: #eee;
+	transition: 2s ease-out;
+}
+
+/*進度線-目前位置*/
+/*加class:on來顯示粉色線*/
+.cus_navbar li.on:after{
+	background-color: #FFBAB1;
+	z-index: 10;
+}
+
+/*幻燈片----------------------------------------------------------------------------
+-------------------------------------------------------
+-------------------------------------------------------
+-------------------------------------------------------
+-----------------*/
+/*底板區==================================*/
+div.cus_slideshow{
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 440px;		/*最多可調整到490px*/
+	/*隱藏多餘slide*/
+	overflow: hidden; 
+}
+/*底板捲軸*/
+.cus_slideshow ul{
+	position: relative;
+	width: 500%;	
+	height: 100%;
+	font-size: 0;	/*消除inline-block的空隙*/
+	left: 0%;	/*移動時以每單位left:-100%來下*/
+}
+
+/*幻燈片li底板設定*/
+.cus_slideshow ul li{
+	width: 20%;
+	height: auto;
+	position: relative;
+	top: 0;
+	left: 0;
+	display: inline-block;
+	font-size: 0;
+
+	/*background-color: #b03;*/
+}
+
+/*左側圖片底板*/
+.cus_slideshow ul li div.case_img{
+	position: relative;
+	display: inline-block;
+	width: 45%;
+	height: 418px;
+	margin: 22px 0 0 0;
+	vertical-align: top;	/*讓它不要掉下去*/
+
+	/*background-color: #fa0;*/
+}
+.cus_slideshow ul li .case_img img{
+	width: 64%;		/*抓原圖比例去算的*/
+	height: 100%;
+	position: relative;
+	display: inline-block;
+	
+	margin: 0 18%;
+}
+/*右側操作區底板*/
+.cus_slideshow ul li .step{
+	position: relative;
+	top: 0;
+	left: 0;
+	display: inline-block;
+	font-size: 0;
+	width: 55%;
+	height: 418px;
+	margin: 22px 0 0 0;
+	color: #333;
+	vertical-align: top;	/*讓它不要掉下去*/
+
+	/*background-color: #5a0;*/
+}
+/*Make your case底板*/
+.cus_slideshow ul li .step .title{
+	width: 100%;
+	height: 50px;
+
+	/*background-color: #ccc;*/
+}
+/*Make your case文字*/
+.cus_slideshow ul li .step .title p{
+	color: #aaa;
+	font-size: 30px; /*22*/
+	line-height: 50px;
+	text-align: center;
+	font-family: 'IM Fell English SC', serif;
+	/*font-weight: bold;*/
+	letter-spacing: 1px;
+	word-spacing: 2px;
+}
+
+/*標題文字-共同設定*/
+.cus_slideshow ul li .step  p{
+	font-size: 18px;
+	letter-spacing: 1px;
+	line-height: 30px;
+	font-weight: bold;
+
+	/*background-color: #ccc;*/
+}
+
+/*加價購底板*/
+.cus_slideshow ul li .step .add_to_buy{
+	position: absolute;
+	text-align: right;
+	width: 50%;
+	height: 30px;
+	top: 0;
+	right: 0;
+
+	/*background-color: #ccc;*/
+}
+.cus_slideshow ul li .step .add_to_buy img{
+	width: 13px;
+	height: 13px;
+}
+.cus_slideshow ul li .step .add_to_buy p{
+	display: inline-block;
+	font-size: 10px;
+	color: #DB4D4D;
+	margin-left: 0.5%;
+}
+/*價格底板*/
+.cus_slideshow ul li .step .price{
+	width: 78%;
+	height: 50px;
+	padding: 0px 0 0 12%;
+	margin-right: 10%;
+	position: relative;
+
+	/*background-color: #00a;*/
+}
+/*價格*/
+.cus_slideshow ul li .step .price p{
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+}
+.cus_slideshow ul li .step .price p+p{
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: #DB4D4D;
+	font-size: 30px;
+	font-weight:bold; 
+}
+/*儲存按鈕底板*/
+.cus_slideshow ul li .step .save{
+	width: 78%;
+	height: 40px;
+	margin: 0px 10% 0 12%;
+	position: relative;
+	
+	/*background-color: #ccc;*/
+}
+/*確認儲存按鈕*/
+.cus_slideshow ul li .step .save a{
+	width: 120px;
+	height:35px;
+	border-radius: 20px ;
+	border-width: 0;
+	display: inline-block;
+	background-color: #FBB03B;
+	color: #fff;
+	letter-spacing: 1px;
+	font-size: 16px;
+	line-height: 35px;
+	text-decoration: none;
+	text-align: center;
+}
+.cus_slideshow ul li .step .save a+a{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+	
+/*幻燈片01-右側面板--------------------------------------------------------
+------------------------------------------------------------------
+------------------------------------------------------------------
+------------------------------------------------------------------
+----------------------------------*/
+
+/*微調MAKE CASE 底板*/
+.cus_slideshow ul li.slide02 .step .title{
+	height: 70px;	/*預設50px*/
+}
+
+/*每個div高度*/
+.cus_slideshow ul li .step .case_brand{
+	width: 88%;
+	height: 110px;
+	padding: 10px 0 0 12%;
+
+	/*background-color: #0af;*/
+}
+.cus_slideshow ul li .step .case_wood{
+	width: 88%;
+	height: 130px;
+	padding: 0px 0 0 12%;/*
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;*/
+
+	/*background-color: #a5a;*/
+}
+/*微調價格底板*/
+.cus_slideshow ul li .step .price{
+	width: 78%;
+	height: 55px;
+}
+/*步驟一:儲存的底板*/
+.cus_slideshow ul li.slide01 .step .save{
+	width: 78%;
+	height: 40px;
+	margin: 0px 10% 0 12%;
+	text-align: center;
+
+	/*background-color: #85a;*/
+}
+
+/*提醒文字：只展示I6*/
+.cus_slideshow ul li .step .case_brand p+p{
+	font-size: 10px;
+	color:  #FFBAB1;
+	font-weight: normal;
+}
+/*手機型號-下拉選單*/
+.cus_slideshow ul li .step .case_brand select{
+	width: 90%;
+	height: 40px;
+	border: 1px solid #eee;
+	background-color: #fff;
+}
+.cus_slideshow ul li .step .case_brand select:focus{
+	border: 1px solid #fff;
+	background-color: #eee;
+}
+
+/*木頭材質*/
+.cus_slideshow ul li .step .case_wood a.wooden{
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	margin: 10px 2% 0 0 ; 
+}
+.cus_slideshow ul li .step .case_wood a.wooden img{
+	width: 100%;
+	height: 100%;
+}
+
+/*確認儲存按鈕*/
+.cus_slideshow ul li.slide01 .step .save .ok_buy{
+	width: 120px;
+	height:35px;
+	border-radius: 20px ;
+	border-width: 0;
+	display: inline-block;
+	background-color: #FBB03B;
+	color: #fff;
+	letter-spacing: 1px;
+	font-size: 16px;
+	text-decoration: none;
+	line-height: 35px;
+}
+/*幻燈片02-右側面板--------------------------------------------------------
+------------------------------------------------------------------
+------------------------------------------------------------------
+------------------------------------------------------------------
+----------------------------------*/
+
+/*調整手機殼圖片位置*/
+/*改成絕對定位*/
+.cus_slideshow ul li.slide02 .case_img img{
+	width: 64%;		/*抓原圖比例去算的*/
+	height: 100%;
+	position: absolute;
+	display: inline-block;
+	top: 0;
+	left: 0;
+	/*background-color: #fa0;*/
+}
+
+/*置入動物圖片（ＣＡＮＶＡＳ）*/
+.cus_slideshow ul li div.case_img .insert_img{
+	width: 50%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	padding: 0 29% 0 21%;	/*控制左右邊界的位置*/
+	display: inline-block;
+}
+
+
+/*選擇動物------------待圖好了以後再來調整*/
+.cus_slideshow ul li .step .case_animal{
+	width: 78%;
+	height: 260px;
+	margin: 0px 10% 0 12%;
+	position: relative;
+
+	/*background-color: #a5a;*/
+}
+.cus_slideshow ul li .step .case_animal a.animal{
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	border: 1px solid #ccc;
+	margin: 10px 2% 0 0 ; 
+	text-align: center;
+	vertical-align: middle;
+}
+.cus_slideshow ul li .step .case_animal a.animal img{
+	width: 100%;
+	height: 100%;
+
+}
+/*幻燈片03-右側面板--------------------------------------------------------
+------------------------------------------------------------------
+------------------------------------------------------------------
+------------------------------------------------------------------
+----------------------------------*/
+/*座右銘底板*/
+.cus_slideshow ul li .step .motto{
+	width: 78%;
+	height: 70px;
+	padding: 0px 0 0 12%;
+	margin-right: 10%;
+	position: relative;
+
+	/*background-color: #a3a;*/
+}
+
+/*功能選項列*/
+.cus_slideshow ul li .step .motto .control_bar{
+	width: 100%;
+	height: 40px;
+	font-size: 0;
+	position: relative;
+
+	/*background-color: #aaa;*/
+}
+/*add text 功能底板*/
+.cus_slideshow ul li .step .motto .control_bar .add_text{
+	width: 45%;
+	height:100%;
+	display: inline-block;
+	text-align: left;
+
+	/*background-color: #fa0;*/
+}
+
+/*清除功能底板*/
+.cus_slideshow ul li .step .motto .control_bar .clear{
+	width: 55%;
+	height:100%;
+	display: inline-block;
+	text-align: right;
+
+	/*background-color: #950;*/
+}
+/*icon設定*/
+.cus_slideshow ul li .step .motto .control_bar  a{
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	margin-right: 2px;
+	text-align: center;
+	position: relative;
+	top: 7px;
+}
+.cus_slideshow ul li .step .motto .control_bar  i{
+	font-size: 25px;
+	color: #83AEA2;/*
+	padding-top: 7px; *//*讓icon和文字對齊*/
+}
+/*功能文字*/
+.cus_slideshow ul li .step .motto .control_bar p{
+	font-size: 13px;
+	display: inline-block;
+	line-height: 40px;
+	font-weight: normal;
+	vertical-align: top;
+	color: #333;
+}
+
+
+/*控制文字的底板*/
+.cus_slideshow ul li .step .con_text{
+	width: 78%;
+	height: 187px;	/*H加margin上 要202px*/
+	margin:2px 10% 13px 12%;
+	position: relative;
+
+	/*background-color: #a0a;*/
+}
+/*新增文字的那一欄*/
+.cus_slideshow ul li .step .con_text ul{
+	width: 100%;
+	height: 40px;
+	font-size: 0;
+	position: relative;
+	top: 0;
+	left: 0;
+
+	/*background-color: #ddd;*/
+}
+
+/*非目前點擊的欄位*/
+.cus_slideshow ul li .step .con_text  ul li.tab{
+	width: 20%;
+	height: 100%;
+	display: inline-block;
+	font-size: 16px;
+	text-align: center;
+	line-height: 40px;
+	color: #333;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border-left: 2px solid #E6E6E6;
+	border-top: 2px solid #E6E6E6;
+}
+.cus_slideshow ul li .step .con_text ul li.tab:last-child{
+	border-right: 2px solid #E6E6E6;
+}
+
+/*目前點擊的欄位*/
+.cus_slideshow ul li .step .con_text ul li.tab.edit{
+	background-color: #E6E6E6;	
+	border-bottom-width: 0px; 
+}
+
+/*去除超連結*/
+.cus_slideshow ul li .step .con_text  ul li a{
+	width: 100%;
+	height: 100%;
+	display:inline-block;
+	text-decoration: none;
+	color: #333;
+	font-size: 13px;
+}
+
+
+
+/*控制文字選項的版兒*/
+.cus_slideshow ul li .step .con_text .text_table{
+	width: 100%;
+	height: 147px;
+	position: absolute;	
+	top: 40;
+	left: 0;
+	background-color: #E6E6E6;
+}
+/*目前被點擊的面板*/
+.cus_slideshow ul li .step .con_text .text_table.edit{
+	z-index: 2; /*現在點擊的移到上面*/
+}
+
+/*文字選項的底板*/
+.cus_slideshow ul li .step .con_text .text_table .text_word{
+	width: 100%;
+	height: 45px;
+	text-align: center;
+
+	/*background-color: #fa0;*/
+}
+.cus_slideshow ul li .step .con_text .text_table .text_font{
+	width: 100%;
+	height: 45px;
+	text-align: center;
+
+	/*background-color: #aa0;*/
+}
+.cus_slideshow ul li .step .con_text .text_table .size_bar{
+	width: 90%;
+	height: 57px;
+	display: inline-block;
+	position: relative;
+	padding-left: 10%;
+
+	/*background-color: #0aa;*/
+}
+/*text_word輸入文字的外觀*/
+.cus_slideshow ul li .step .con_text .text_table .text_word input{
+	width: 80%;
+	height: 25px;
+	margin-top: 15px;	/*最多25*/
+	border-width: 0px;	/*取消預設值*/
+	border-radius: 4px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding-left: 8px;
+}
+/*text_font選擇字型的外觀*/
+.cus_slideshow ul li .step .con_text .text_table .text_font select{
+	width: 80%;
+	height: 25px;
+	border-width: 0px;
+	background-color: #fff;
+	border-radius: 0px;
+	margin-top: 12px;	/*最多25*/
+	color: #999;
+}
+
+/*==============range slider=====================*/
+
+/*size底板*/
+.cus_slideshow ul li .step .con_text .text_table .size_bar div.size{
+	width: 15%;
+	height: 100%;
+    display: inline-block;
+	vertical-align: top;
+
+	/*background-color: #0aa;*/
+}
+.cus_slideshow ul li .step .con_text .text_table .size_bar div.size input{
+    width: 100%;
+    height: 25px;   /*共有47px可用*/
+    margin-top: 5px;
+    background-color: #fff;	
+	border-radius: 4px;
+    text-align: center;
+    color: #999;
+	border-width: 0px;	
+	border-radius: 4px;
+}
+/*滑軌底板*/
+.cus_slideshow ul li .step .con_text .text_table .size_bar div.range-slider{
+	width: 69%;
+	margin: 0 12% 0 4%;
+    display: inline-block; 
+	/*background-color: #fa0;*/
+}
+/*滑軌*/
+input[type="range"]{
+	position: relative;
+    width: 100%;
+    height: 30px;
+    -webkit-appearance: none;    /*把預設樣式關掉，才能設自己的樣式*/
+  	overflow:hidden;     /* 限定範圍 */
+    outline : none;      /* 避免點選會有藍線或虛線 */
+	background:transparent;
+}
+/*小圓點*/
+input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance: none; /*把預設樣式關掉，才能設自己的樣式*/
+  position: relative;    /* 設為相對位置，為了前後區塊的絕對位置而設定 */
+  top: -4px;
+  width:10px;
+  height:20px;
+  background:#888;
+  border-radius:10%;
+  cursor: pointer;
+}
+/*畫長度*/
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 12px;
+  position: relative;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.8);
+  /*border-radius: 5px;*/
+  border: 0.2px solid #eee;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+/*點擊滑軌時改變顏色*/
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #C7DDD8;
+}
+
+
+/*。。。。小圓點-其他瀏覽器。。。。。*/
+
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb {
+  -webkit-appearance: none; /*把預設樣式關掉，才能設自己的樣式*/
+  position: relative;    /* 設為相對位置，為了前後區塊的絕對位置而設定 */
+  top: -4px;
+  width:10px;
+  height:20px;
+  background:#888;
+  border-radius:10%;
+  cursor: pointer;
+}
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb {
+  -webkit-appearance: none; /*把預設樣式關掉，才能設自己的樣式*/
+  position: relative;    /* 設為相對位置，為了前後區塊的絕對位置而設定 */
+  top: -4px;
+  width:10px;
+  height:20px;
+  background:#888;
+  border-radius:10%;
+  cursor: pointer;
+}
+
+/*。。。。畫長度-其他瀏覽器。。。。。*/
+
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 12px;
+  position: relative;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.8);
+  /*border-radius: 5px;*/
+  border: 0.2px solid #eee;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+/*點擊滑軌時改變顏色*/
+input[type=range]:focus::-moz-range-track {
+  background: #C7DDD8;
+}
+
+/* All the same stuff for IE */
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 12px;
+  position: relative;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.8);
+  /*border-radius: 5px;*/
+  border: 0.2px solid #eee;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+/*點擊滑軌時改變顏色*/
+input[type=range]:focus::-ms-track {
+  background: #C7DDD8;
+}
+
+
+/*===============test*/
+
+.cus_slideshow ul li.slide03 .case_img .test{
+	width: 50%;
+	height: 100px;
+	position: absolute;
+	top: 40px;
+	left: 70px;
+	/*border: 2px solid #900;*/
+}
+
+.cus_slideshow ul li.slide03 .case_img .test textarea{
+	width: 100%;
+	background: none;
+	color: #111;
+	font-size: 20px;
+}
+
+
+
+
+/*＝＝＝＝＝＝＝＝＝＝顏色測試區＝＝＝＝＝＝＝＝＝＝＝*/
+/*
+.cus_slideshow ul li .step .con_text #tab-2{
+	background-color: #fa0;
+}
+.cus_slideshow ul li .step .con_text #tab-3{
+	background-color: #2a0;
+}
+.cus_slideshow ul li .step .con_text #tab-4{
+	background-color: #5aa;
+}
+.cus_slideshow ul li .step .con_text #tab-5{
+	background-color: #04a;
+}*/
+
+/*＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+
+
+/*幻燈片04-右側面板--------------------------------------------------------
+------------------------------------------------------------------
+------------------------------------------------------------------
+------------------------------------------------------------------
+----------------------------------*/
+
+/*左側卡片圖大小設定*/
+.cus_slideshow ul li.slide04 .case_img img{
+	width: 90%;		
+	height: 100%;
+	position: relative;
+	display: inline-block;
+	margin: 0 5%;
+}
+
+/*給誰的底板*/
+.cus_slideshow ul li .step .to_who{
+	width: 78%;
+	height: 70px;
+	margin: 0px 10% 0 12%;
+	position: relative;
+
+	/*background-color: #a3a;*/
+}
+/*給誰的框框*/
+.cus_slideshow ul li .step .to_who input{
+	width: 100%;
+	height: 30px;
+	margin-top:5px; 
+	border: 1px solid #eee;
+}
+/*想說的話底板*/
+.cus_slideshow ul li .step .msg{
+	width: 78%;
+	height: 197px;
+	margin: 5px 10% 0 12%;	/*H加padding上 要202px*/
+	position: relative;
+
+	/*background-color: #a0a;*/
+}
+/*想說的話的框框*/
+.cus_slideshow ul li .step .msg textarea{
+	width: 100%;
+	height: 130px;
+	margin-top: 5px;
+	border: 1px solid #eee;
+	resize: none;	/*把右下角可拉伸的小東西除掉*/
+}
+/*標題文字*/
+.cus_slideshow ul li .step .msg label{
+	font-size: 18px;
+	letter-spacing: 1px;
+	line-height: 30px;
+	font-weight: bold;
+}
+/*提醒文字：上限100字*/
+.cus_slideshow ul li .step .msg span{
+	font-size: 10px;
+	color:  #FFBAB1;
+	font-weight: normal;
+}
+
+
+/*幻燈片05-右側面板--------------------------------------------------------
+------------------------------------------------------------------
+------------------------------------------------------------------
+------------------------------------------------------------------
+----------------------------------*/
+
+/*調整左側圖片比例*/
+.cus_slideshow ul li.slide05 .case_img img{
+	width: 75.7%;		/*抓原圖比例去算的*/
+	height: 63.6%;
+	position: relative;
+	display: inline-block;
+	
+	margin: 50px 12%;
+}
+
+/*挑選外盒底板*/
+.cus_slideshow ul li .step .box{
+	width: 78%;
+	height: 267px;
+	margin: 0px 10% 0 12%;
+	position: relative;
+	font-size: 0;
+
+	/*background-color: #a3a;*/
+}
+/*挖盒子的洞*/
+.cus_slideshow ul li .step .box a.box_img, 
+.cus_slideshow ul li .step .box a.box_img2{
+	width: 47%;
+	height: 220px;
+	display: inline-block;
+	margin: 5px 0 5px 0;
+
+	/*background-color: #0aa;*/
+}
+.cus_slideshow ul li .step .box a.box_img{
+	background-image:url(../images/custom/g01.png); 
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+.cus_slideshow ul li .step .box a.box_img2{
+	margin-left: 6%;
+	background-image:url(../images/custom/g02.png); 
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+.cus_slideshow ul li .step .box a img{
+	width: 100%;
+	height: 100%;
+}
+
+/*確認儲存按鈕*/
+.cus_slideshow ul li .step .save button{
+	width: 120px;
+	height:35px;
+	border-radius: 20px ;
+	border-width: 0;
+	display: inline-block;
+	background-color: #FBB03B;
+	color: #fff;
+	letter-spacing: 1px;
+	font-size: 16px;
+	line-height: 35px;
+	cursor: pointer;
+}
+.cus_slideshow ul li .step .save button+button{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+
+
+
+
+/*==========平板版本==========*/
+
+@media screen and (max-width: 1080px) {/*IPAD尺寸*/
+
+/*進度ＢＡＲ------------------------------------------------*/
+div.cus_navbar{	
+	height: 80px;
+	padding-top: 15px;
+
+	/*background-color: #fa0;*/
+}
+/*修改文字大小*/
+.cus_navbar ul li .light_text p{
+	font-size: 17px;
+	letter-spacing: 3px;
+	line-height: 80px;		/*垂直置中，設與高度相同*/
+}
+
+/*進度線-全長*/
+.cus_navbar ul:after , .cus_navbar li:after{
+	top: 75px;
+}
+/*幻燈片----------------------------------------------------------------*/
+/*底板區=======================================*/
+
+/*Make your case底板*/
+/*Make your case文字*/
+.cus_slideshow ul li .step .title p{
+	font-size: 18px;
+	line-height: 40px;
+}
+/*標題文字-共同設定*/
+.cus_slideshow ul li .step  p{
+	font-size: 16px;
+}
+/*加價購底板*/
+
+.cus_slideshow ul li .step .add_to_buy img{
+	width: 11px;
+	height: 11px;
+}
+.cus_slideshow ul li .step .add_to_buy p{
+	font-size: 9px;
+}
+
+/*儲存按鈕底板*/
+/*確認儲存按鈕*/
+.cus_slideshow ul li .step .save a, .cus_slideshow ul li .step .save button{
+	width: 100px;
+	height:28px;
+	font-size: 14px;
+	line-height: 28px;
+}
+	
+/*-------------幻燈片01-----------------*/
+
+/*木頭材質*/
+.cus_slideshow ul li .step .case_wood a.wooden{
+	width: 40px;
+	height: 40px;
+}
+/*價格*/
+.cus_slideshow ul li .step .price p+p{
+	font-size: 27px;
+}
+
+/*確認儲存按鈕*/
+.cus_slideshow ul li.slide01 .step .save button.ok_save{
+	width: 110px;
+	height:30px;
+	font-size: 16px;
+	line-height: 30px;
+}
+
+/*-------------幻燈片02------------*/
+
+
+
+
+
+
+
+
+/*-------------幻燈片03------------*/
+
+/*icon設定*/
+.cus_slideshow ul li .step .motto .control_bar  a{
+	width: 20px;
+	height: 20px;
+	margin-right: 2px;
+	top: 9px;
+}
+.cus_slideshow ul li .step .motto .control_bar  i{
+	font-size: 20px;
+}
+
+/*功能文字*/
+.cus_slideshow ul li .step .motto .control_bar p{
+	font-size: 11px;
+}
+
+/*非目前點擊的欄位*/
+.cus_slideshow ul li .step .con_text .new_text .text{
+	font-size: 13px;
+}
+
+/*text_size輸入文字的外觀*/
+.cus_slideshow ul li .step .con_text .text_table .text_size label{
+	font-size: 12px;
+}
+.cus_slideshow ul li .step .con_text .text_table .text_size input{
+	margin-left:3%; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+}
+
+/*____________________________________________________________________________*/
+
+/*==========手機版本==========*/
+
+@media screen and (max-width: 768px) {
+
+/*左右按鈕控制區----------------------------------------------*/
+div.controller{
+	width: 40px;
+	/*min-height: 590px;*/
+}
+div.controller-L{
+	left:-40px;
+}
+div.controller-R{
+	right:-40px;
+}
+/*按鈕設定*/
+.controller a{
+	width: 20px;
+	height: 20px;
+	position: relative;
+	top: 40px;
+}
+/*按鈕icon*/
+.controller i{
+	font-size: 20px;
+	color: #FFBAB1;	/*直接粉紅色*/
+}
+
+/*進度ＢＡＲ------------------------------------------------*/
+div.cus_navbar{	
+	height: 55px;
+}
+/*圖示及文字的共同設定*/
+.cus_navbar ul li div{
+	width: 100%;	/*讓樹和文字各自一行*/
+}
+/*文字底板*/
+.cus_navbar ul li div.light_text{
+	height: 30px;
+	padding-left: 6%;
+}
+/*文字區塊*/
+.cus_navbar ul li .light_text p{
+	font-size: 10px;
+	line-height: 60px;		/*撐開和樹之間的距離*/
+}
+/*進度線-全長*/
+.cus_navbar ul:after , .cus_navbar li:after{
+	top: 50px;
+}
+/*幻燈片----------------------------------------------------------------*/
+/*底板區=======================================*/
+/*把頁面長度拉長*/
+div.custom{
+	min-height: 980px;
+}
+div.cus_slideshow{
+	height: 880px;		/*最多可調整到490px*/
+	/*隱藏多餘slide*/
+	overflow: hidden; 
+}
+/*左側圖片底板*/
+.cus_slideshow ul li div.case_img{
+	width: 100%;	
+	height: 400px;	/*高和margin加起來要440*/
+	margin: 40px 0 0 0;
+}
+.cus_slideshow ul li .case_img img{
+	width: 64%;		/*抓原圖比例去算的*/
+	height: 100%;
+	position: relative;
+	display: block;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+/*右側操作區底板*/
+.cus_slideshow ul li .step{
+	width: 100%;
+	height: 430px;
+	margin: 10px 0 0 0;	/*底板與手機殼圖的距離*/
+
+	/*background-color: #ccc;*/
+}
+
+/*Make your case底板*/
+/*Make your case文字*/
+.cus_slideshow ul li .step .title p{
+	font-size: 13px;
+	line-height: 70px;  /*文字和手機殼的距離*/
+}
+/*標題文字-共同設定*/
+.cus_slideshow ul li .step  p{
+	font-size: 12px;
+	line-height: 30px;
+}
+/*加價購底板*/
+
+.cus_slideshow ul li .step .add_to_buy img{
+	width: 10px;
+	height: 10px;
+}
+.cus_slideshow ul li .step .add_to_buy p{
+	font-size: 8px;	
+	letter-spacing: 0px;
+	line-height: 30px;
+}
+/*價格底板*/
+.cus_slideshow ul li .step .price{
+	width: 78%;
+	height: 58px;
+	padding: 0px 0 0 12%;
+	margin-right: 10%;
+	position: relative;
+}
+/*價格（紅字)*/
+.cus_slideshow ul li .step .price p+p{
+	font-size: 23px;
+}
+/*儲存按鈕底板*/
+.cus_slideshow ul li .step .save{
+	width: 78%;
+	height: 40px;
+	margin: 0 10% 0 12%;
+}
+/*確認儲存按鈕*/
+.cus_slideshow ul li .step .save a, .cus_slideshow ul li .step .save button{
+	width: 75px;
+	height:25px;
+	border-radius: 20px ;
+	font-size: 12px;
+	line-height: 25px;
+}
+
+/*內容區=======================================*/
+
+/*----------幻燈片01------------*/
+
+/*提醒文字：只展示I6*/
+.cus_slideshow ul li .step .case_brand p+p{
+	font-size: 8px;
+}
+/*木頭材質*/
+.cus_slideshow ul li .step .case_wood a.wooden{
+	width: 32px;
+	height: 32px;
+	margin: 15px 2% 0 0 ; 
+}
+/*調整底板高度*/
+.cus_slideshow ul li .step .case_wood{
+	height: 110px;
+}
+.cus_slideshow ul li.slide01 .step .save{
+	height: 60px;
+}
+
+/*確認儲存按鈕*/
+.cus_slideshow ul li.slide01 .step .save a.ok_buy{
+	width: 85px;
+	height:25px;
+	border-radius: 20px ;
+	font-size: 14px;
+}
+.cus_slideshow ul li.slide01 .step .save a.ok_buy{
+	line-height: 25px;
+}	
+
+
+/*----------幻燈片02------------*/
+
+
+
+
+/*----------幻燈片03------------*/
+
+
+/*打造座右銘這幾個字作些微修改*/
+.cus_slideshow ul li .step .motto > p{
+	width: 42%;
+	letter-spacing: 1px;
+	line-height: 30px;
+	font-weight: bold;
+
+	/*background-color: #cfd;*/
+}
+
+/*add text 功能底板*/
+.cus_slideshow ul li .step .motto .control_bar .add_text{
+	width: 50%;
+}
+/*清除功能底板*/
+.cus_slideshow ul li .step .motto .control_bar .clear{
+	width: 50%;
+}
+
+/*icon設定*/
+.cus_slideshow ul li .step .motto .control_bar  a{
+	width: 16px;
+	height: 16px;
+	margin-right: 2px;
+	top: 11px;
+}
+.cus_slideshow ul li .step .motto .control_bar  i{
+	font-size: 16px;
+}
+
+/*功能文字*/
+.cus_slideshow ul li .step .motto .control_bar p{
+	font-size: 7px;
+}
+
+/*text_size輸入文字的外觀*/
+.cus_slideshow ul li .step .con_text .text_table .text_size label{
+	font-size: 10px;
+}
+.cus_slideshow ul li .step .con_text .text_table .text_size input{
+	width: 20%;
+	margin-left:3%; 
+}
+
+
+
+/*----------幻燈片04------------*/
+
+
+
+/*標題文字*/
+.cus_slideshow ul li .step .msg label{
+	font-size: 12px;
+}
+/*提醒文字：上限100字*/
+.cus_slideshow ul li .step .msg span{
+	font-size: 5px;
+}
+
+
+
+
+}

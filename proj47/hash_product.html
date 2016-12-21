@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css">
+
+    <script src="js/jquery-3.1.0.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+    <div class="col-lg-12">
+        <div class="col-lg-3">
+
+            <div  style="margin-top: 50px;">
+                <form action="">
+                    <div class="form-group">
+                        <select name="price_sel" id="price_sel" class="form-control">
+                            <option value="">所有價格</option>
+                            <option value="p1">200 元以下</option>
+                            <option value="p2">201~400元</option>
+                            <option value="p3">401~600元</option>
+                            <option value="p4">601~800元</option>
+                            <option value="p5">801~1000元</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-9" id="mycontent">
+    </div>
+
+
+</div>
+
+
+<script>
+    var do_request = function(){
+        //console.log(location.hash);
+        var price = location.hash.slice(1);
+        $.get('hash_product_list.php', {price:price}, function(data){
+            $('#mycontent').html(data);
+        });
+        $('#price_sel').val(price);
+    };
+
+    window.addEventListener('hashchange', do_request);
+
+    $('#price_sel').change(function(){
+        location.href = '#'+ $(this).val();
+    });
+
+    do_request();
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+	<meta charset="UTF-8">
+	<title>UniSay</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="css/custom.css" rel="stylesheet" type="text/css">
+
+
+<!-- Icons -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+ 	rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">	
+
+
+<!-- fonts -->
+ 	<link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative" rel="stylesheet">
+ 	<!-- font-family: 'Cinzel Decorative', cursive; -->
+
+ 	<link href="https://fonts.googleapis.com/css?family=Amita" rel="stylesheet">
+ 	<!-- font-family: 'Amita', cursive; -->
+
+ 	<link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC" rel="stylesheet">
+ 	<!-- font-family: 'IM Fell English SC', serif; -->
+
+ 	<link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
+ 	<!-- font-family: 'Fredericka the Great', cursive; -->
+
+
+</head>
+
+
+<!-- ====================================================================================== -->
+
+
+<body>
+	
+
+
+<!-- 主頁面內容 -->
+<div class="wrap">
+	
+	<header>
+
+		<!-- 平板手機會fixed的banner -->
+		<div class="banner">
+
+			<!-- 三明治選單 -->
+			<div class="sandwich"></div>
+			
+
+			<!-- fixed的按鈕 -->
+			
+			<div class="cart_icon"></div>
+			<div class="cart_sidebar"></div>
+
+			<div class="member_icon"></div>
+			<div class="member_sidebar"></div>
+
+			<div class="totop_icon"></div>
+			
+
+			<!-- 中央logo -->
+			<div class="logo"><img src="images/header/header_logo.svg" alt=""></div>
+			
+		
+
+
+			<!-- 上方選單列 -->
+			<nav> 
+				<ul>
+					<!-- 當前頁面掛上here的class -->
+					<li class="icon_aboutus ">
+						<a href="aboutus.html"></a>
+					</li>
+					<li class="icon_product">
+						<a href="product.html"></a>
+					</li>
+					<li class="icon_custom here">
+						<a href="custom.html"></a>
+					</li>
+					<li class="icon_inspire">
+						<a href="inspire.html"></a>
+					</li>
+				</ul>
+			</nav>
+
+
+			<!-- 暗幕的背景 -->
+			<div class="fixed_shadowbg"></div>
+
+		</div><!-- banner包全部 -->
+
+	</header>
+
+
+<!-- ====================================================================================== -->
+
+
+	<content>
+	
+		<div class="custom">
+			<div class="controller controller-L">
+				<a href="javasript:;" class="con_prev"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></a>
+			</div>
+			<div class="cus_navbar">
+				<ul >
+					<li class="cus_light on"><
+						<div class="light_image"></div>
+						<div class="light_text"><p>材質</p></div>
+					</li>
+					<li class="cus_light"><
+						<div class="light_image"></div>
+						<div class="light_text"><p>動物</p></div>
+					</li>
+					<li class="cus_light"><
+						<div class="light_image"></div>
+						<div class="light_text"><p>文字</p></div>
+					</li>
+					<li class="cus_light"><
+						<div class="light_image"></div>
+						<div class="light_text"><p>卡片</p></div>
+					</li>
+					<li class="cus_light"><
+						<div class="light_image"></div>
+						<div class="light_text"><p>包裝</p></div>
+					</li>
+				</ul>
+			</div>
+			<div class="cus_slideshow">
+				<ul class="cus_slides">
+					<li class="slide01">
+						<div class="case_img"><img src="images/product/classic/01-cherry-wood.png" alt=""></div>
+						<div class="step">
+							<div class="title">
+								<p>-  Make your own case  -</p>
+							</div>
+							<form action="" class="form01">
+								<div class="case_brand">
+									<p>手機型號</p>
+									<p>*本站僅以iPhone 6作為展示</p>
+									<select name="brand" class="brand">
+									<option value="defalt">請選擇手機型號</option>
+									<option value="IPHONE">IPHONE</option>
+									<option value="SONY">SONY</option>
+									<option value="HTC">HTC</option>
+									<option value="SAMSUNG">SAMSUNG</option>
+									</select>
+								</div>
+								<div class="case_wood">
+									<p>木頭材質</p>
+									<a href="" class="wooden"><img src="images/product/classic-icon/01-cherry-wood.png" alt=""></a>
+									<a href="" class="wooden"><img src="images/product/classic-icon/02-oak-wood.png" alt=""></a>
+									<a href="" class="wooden"><img src="images/product/classic-icon/03-maple-wood.png" alt=""></a>
+									<a href="" class="wooden"><img src="images/product/classic-icon/04-rose-wood.png" alt=""></a>
+									<a href="" class="wooden"><img src="images/product/classic-icon/05-walnut-wood.png" alt=""></a>
+								</div>
+								<div class="price">
+									<p>目前價格</p>
+									<p>NT$800</p>
+								</div>
+								<div class="save">
+									<a href="javascript:;" class="ok_buy">確定</a>
+								</div>
+							</form>	
+						</div>
+					</li>
+					<li class="slide02">
+						<div class="case_img">
+							<div class="case">
+								<img src="images/product/classic/01-cherry-wood.png" alt="" id="aaa">
+							</div>
+							<div class="insert_img">
+								
+								<canvas id="c" width="200" height="418"></canvas>
+							</div>
+						</div>	
+						<div class="step">
+							<div class="title">
+								<p>-  Make your own case  -</p>
+							</div>
+							
+							<div class="case_animal">
+								<p>守護精靈</p>
+								<div class="add_to_buy">
+								<img src="images/custom/add_price_icon.svg" alt="">
+								<p>&nbsp;&nbsp;加購價 100元</p>
+								</div>
+								<!-- <a href="" class="animal"><img src="images/animal_icon/bee.svg" alt=""></a>
+								<a href="" class="animal"><img src="images/animal_icon/bird.svg" alt=""></a>
+								<a href="" class="animal"><img src="images/animal_icon/cat.svg" alt=""></a>
+								<a href="" class="animal"><img src="images/animal_icon/deer.svg" alt=""></a> -->
+							</div>
+							<div class="price">
+								<p>目前價格</p>
+								<p>NT$800</p>
+							</div>
+							<div class="save">
+								<a href="javascript:;" class="skip">SKIP</a>
+								<a href="javascript:;" class="ok_buy">確定</a>
+							</div>
+						</div>
+					</li>
+					<li class="slide03">
+						<div class="case_img">						
+							<img src="images/product/classic/01-cherry-wood.png" alt="">
+							<div class="test">
+								<textarea disabled class="test-here"></textarea>
+							</div>
+						</div>
+
+						<div class="step">
+							<div class="title">
+								<p>-  Make your own case  -</p>
+							</div>
+							<form action="" class="form03">
+								<div class="motto">
+									<p>打造座右銘</p>
+									<div class="add_to_buy">
+										<img src="images/custom/add_price_icon.svg" alt=""><p>加購價 30元</p>
+									</div>
+									<div class="control_bar">
+										<div class="add_text">
+											<a href="javascript:;" class="addText"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>			
+											<p>Add text</p>
+										</div>
+										<div class="clear">
+											<a href="javascript:;" class="clearText"><i class="fa fa-times-circle" aria-hidden="true"></i></a>
+											<p>Clear text</p>
+										</div>
+									</div>
+								</div>
+								<div class="con_text" id="tabs">
+									<ul class="tt">
+									<!-- 其他tab用js寫 -->
+								        <li class="tab edit">
+								        	<a href="javascript:;" >TEXT 1</a>
+								        </li>
+									</ul>
+									<!-- 其他tab table用js寫 -->
+									<div class="text_table" id="tab-1">
+										<div class="text_word">
+											<input type="text" name="word" class="motto_word" placeholder="請輸入座右銘">
+										</div>
+										<div class="text_font">
+											<select name="font" class="font">
+											<option value="微軟正黑體">微軟正黑體</option>
+											<option value="圓體">圓體</option>
+											<option value="Slabo">Slabo</option>
+											<option value="Ubuntu">Ubuntu</option>
+											<option value="Nova_Mono">Nova Mono</option>
+											<option value="Indie_Flower">Indie Flower</option>
+											</select>
+										</div>
+										<div class="size_bar">
+											<div class="size">
+												<input type="text" id="size1" class="input_size" placeholder="size" min="8" max="50" ></input>
+											</div>
+											<div class="range-slider">
+												<input id="range_slider1" class="range_slider" type="range" min="8" max="50" step="1">
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="price">
+									<p>目前價格</p>
+									<p>NT$900</p>
+								</div>
+								<div class="save">
+									<a href="javascript:;" class="skip">SKIP</a>
+									<a href="javascript:;" class="ok_buy">確定</a>
+								</div>
+							</form>
+						</div>
+					</li>
+					<li class="slide04">
+						<div class="case_img">						
+							<img src="images/custom/card-01.png" alt=""></div>
+						<div class="step">
+							<div class="title">
+								<p>-  Make your own case  -</p>
+							</div>
+							<form action="" class="form04">
+								<div class="to_who">
+									<p>想寫卡片給誰</p>
+									<input type="text" name="to_who" >
+									<div class="add_to_buy">
+										<img src="images/custom/add_price_icon.svg" alt=""><p>&nbsp;&nbsp;加購價 30元</p>
+									</div>
+									
+								</div>
+								<div class="msg">
+									<label for="msg">想說些什麼話<span>（上限100字)</span></label>
+                            		<textarea class="msg_text" id="msg" name="msg" maxlength="100" wrap="hard"></textarea>
+								</div>
+								<div class="price">
+									<p>目前價格</p>
+									<p>NT$1000</p>
+								</div>
+								<div class="save">
+									<a href="javascript:;" class="skip">SKIP</a>
+									<a href="javascript:;" class="ok_buy">確定</a>
+								</div>
+							</form>
+						</div>
+					</li>
+					<li class="slide05">
+						<div class="case_img">						
+							<img src="images/custom/giftbox02.png" alt=""></div>
+						<div class="step">
+							<div class="title">
+								<p>-  Make your own case  -</p>
+							</div>
+							<div class="box">
+								<p>外盒款式</p>
+								<div class="add_to_buy">
+									<img src="images/custom/add_price_icon.svg" alt=""><p>&nbsp;&nbsp;加購價 30元</p>
+								</div>
+								<a href="javascript:;" class="box_img">
+									<!-- <img src="images/custom/g01.png" alt=""> -->
+								</a>
+								<a href="javascript:;" class="box_img2">
+									<!-- <img src="images/custom/g02.png" alt=""> -->
+								</a>
+							</div>
+							<div class="price">
+								<p>目前價格</p>
+								<p>NT$1030</p>
+							</div>
+							<div class="save">
+								<button type="submit" class="skip">SKIP</button>
+								<button type="submit" class="ok_buy ok_save">確認儲存</button>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="controller controller-R">
+				<a href="javasript:;" class="con_next"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i></a>
+			</div>
+		</div>
+
+	</content>
+
+<!-- ====================================================================================== -->
+
+
+	<footer>
+	
+
+
+	</footer>
+
+
+<!-- ====================================================================================== -->
+
+
+</div><!-- wrap的結尾 -->
+<script type="text/x-tpl" id="tpl_a">
+	<div class="text_table" id="tab-<%= id %>">
+		<div class="text_word">
+			<input type="text" name="word" class="motto_word" placeholder="請輸入座右銘">
+		</div>
+		<div class="text_font">
+			<select name="font" class="font">
+			<option value="微軟正黑體">微軟正黑體</option>
+			<option value="圓體">圓體</option>
+			<option value="Slabo">Slabo</option>
+			<option value="Ubuntu">Ubuntu</option>
+			<option value="Nova_Mono">Nova Mono</option>
+			<option value="Indie_Flower">Indie Flower</option>
+			</select>
+		</div>
+		<div class="size_bar">
+			<div class="size">
+				<input type="text" id="size<%= id %>" class="input_size" placeholder="size" min="8" max="50" ></input>
+			</div>
+			<div class="range-slider">
+				<input id="range_slider<%= id %>" class="range_slider" type="range" min="8" max="50" step="1">
+			</div>
+		</div>
+	</div>
+</script>
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="js/underscore.js"></script>
+<script src="js/nav_icon.js"></script>
+<script src="js/custom/fabric.js"></script>
+<script src="js/custom.js"></script>
+<script src="js/custom/jquery.easydrag.handler.beta2.js"></script>
+
+
+
+
+
+</body>
+</html>

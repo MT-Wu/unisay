@@ -1,0 +1,254 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+@import url(reset.css);
+
+@import url(US_header.css);
+@import url(US_footer.css);
+
+@import url(aboutus_content.css);
+
+
+
+	/*background-color: rgba(244,240,240,1);  #F4F0F0; ---背景底色*/
+	/*background-color: rgba(239,174,162,1);  #EFAEA2; ---重點粉紅色*/
+	/*background-color: rgba(,,,1);  #91BAB1; ---粉綠色*/
+
+	
+
+	/*margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;*/
+
+	/*-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;*/
+
+*{
+	font-family: sans-serif, 微軟正黑體, 黑體;
+}
+
+body{
+	background-color: rgba(244,240,240,1);
+	overflow: hidden; /*讓scrollbar消失，畫面才不會有雙捲軸*/
+}
+
+
+
+.wrap{ /*葉子背景*/
+	/*置中*/
+	position: relative;
+	margin: auto;
+	left: 0;
+	right: 0;
+
+	width: 100%; /*100%讓section和螢幕同寬*/
+	
+	background-size: 100%; /*寬度下100%背景圖才會撐滿並置中*/
+}
+
+
+
+header, content, footer{
+	/*置中*/
+	display: block;
+	margin: auto;
+	left: 0;
+	right: 0;
+	
+	width: 90%; /*白紙底目前設定90%螢幕寬（wrap為100%螢幕寬）*/
+	max-width: 1080px; /*白紙底最大寬度1080px（含陰影），裡面全白區域1024px*/ 
+}
+
+
+/*畫面已經被parallax侷限*/
+header{
+	position: absolute;
+	height: 120px;
+
+	opacity: 1;
+	transition: 1s; 
+}
+
+	/*一開始先隱藏*/
+	.header2{
+		opacity: 0;
+	}
+
+nav{
+	position: absolute; /*拉出來到section之上*/
+	z-index: 9; /*在陰影後面*/
+	
+	/*置中*/
+	left: 0;
+	right: 0;
+}
+
+/*先把花關掉，平板之後再打開*/
+li.here a:before,li.here a:after{
+	opacity: 0;
+}
+
+
+
+/*白紙底*/
+content{ 
+	position: relative;
+	background: url(../images/background/paper01.svg); /*白紙背景必須用svg保持邊緣俐落，因為RWD縮放時會有拉伸*/
+	background-size: 100%;
+	min-height: 590px; /*高度撐開至少590px(螢幕1580*830的單頁)，之後自然隨裡面的物件撐開*/
+}
+content:before, content:after{
+	content:'';
+	position: absolute;
+	width: 100%;
+	height: 28px;
+}
+content:before{ /*白紙底的上緣*/
+	top:-28px;
+
+	background: url(../images/background/paper02.svg);
+	background-size: 100% 100%; /*避免repeat並且拉伸到完美接合*/
+}
+content:after{ /*白紙底的下緣*/
+	bottom:-28px;
+
+	background: url(../images/background/paper03.svg);
+	background-size: 100% 100%;
+}
+
+
+
+footer{
+	position: relative;
+	height: 120px; /*和header一樣高*/
+}
+
+
+
+/*---滾動的secondbanner---*/
+
+.secondbanner{
+	position: absolute; /*因為parallax已經鎖住螢幕了所以直接用絕對定位即可*/
+	z-index: 11; /*拉到上面*/
+
+	margin: auto;
+	top: 0;
+	bottom: 0;
+
+	left: 0;
+	width: 5%;
+	height: 50%;
+}
+
+.secondbanner ul{
+	position: absolute;
+	width: 100%;
+	height: 215px;
+
+	margin: auto;
+	top: 0;
+	bottom: 0;
+
+	transform: scale(0.9);
+}
+
+.secondbanner ul li{
+	/*一顆鈕初始設定25*25*/
+	width: 25px;
+	height: 25px;
+
+	margin: 15px auto;
+	border-radius: 50%;
+	border-color: #ccc;
+	border-width: 1px;
+	border-style: solid;
+
+	transform: scale(0.8);
+	transition: 0.5s;
+
+	cursor: pointer; /*滑鼠變手*/
+}
+
+.secondbanner ul li:hover{
+	background-color: rgba(102,102,102,0.4);
+}
+
+.secondbanner ul li.secondbannerhere{
+	background-color: rgba(102,102,102,0.6);
+}
+
+
+
+/*____________________________________________________________________________*/
+
+/*==========平板版本==========*/
+
+@media screen and (max-width: 1080px) {/*IPAD尺寸*/
+
+	header{
+		width: 100%;
+	}
+	
+	/*調回預設值，就可以自然不影響section*/
+	.banner{
+		position: static;
+	}
+
+	nav{
+	height: 100vh;
+	left: -50%;
+
+	z-index: 12; /*平板手機版拉上來*/ 
+	}
+
+	li.here a:before,li.here a:after{
+	opacity: 1;
+	}
+
+
+
+
+
+}
+
+
+/*____________________________________________________________________________*/
+
+/*==========手機版本==========*/
+
+@media screen and (max-width: 760px) {
+	
+	header{
+		height: 85px; /*header調小*/
+	}
+
+
+
+/*---滾動的secondbanner---*/
+
+.secondbanner{
+	right: -90%; /*移到右邊*/
+}
+
+.secondbanner ul{
+	transform: scale(0.7);
+}
+
+.secondbanner ul li{
+	transform: scale(0.8);
+}
+
+
+
+}
+
+
+
+
+
+
+

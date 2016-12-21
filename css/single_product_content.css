@@ -1,0 +1,748 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+	/*background-color: rgba(244,240,240,1);  #F4F0F0; ---背景底色*/
+	/*background-color: rgba(239,174,162,1);  #EFAEA2; ---重點粉紅色*/
+	/*background-color: rgba(145,186,177,1);  #91BAB1; ---粉綠色*/
+	/*background-color: rgba(103,147,137,1);  #679389; ---粉綠色*/
+	/*background-color: rgba(251,176,59,1);   #FBB03B; ---焦點黃色*/
+
+	
+
+
+
+	/*margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;*/
+
+	/*-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;*/
+
+
+
+/*----------麵包屑----------*/
+
+.breadcrumb_trail{
+	margin: auto;
+	left: 0;
+	right: 0;
+
+	width: 90%;
+	height: 80px;
+}
+.breadcrumb_trail ul li{
+	position: relative;
+	display: inline-block;
+	padding: 0 12px; 
+}
+.breadcrumb_trail ul li ~ li:after{
+	content: "＞";
+	position: absolute;
+	left: -9px;
+	top: 0;
+	height: 100%;
+
+	font-size: 16px;
+	color: #666;
+	line-height: 80px;
+}
+.breadcrumb_trail ul li a{
+	font-size: 16px;
+	color: #679389;
+	line-height: 80px;
+	text-decoration: none;
+}
+
+
+
+/*----------產品簡介分區----------*/
+.product_content {
+	position: relative;
+	width: 90%;
+	margin: 0 auto 115px;
+	left: 0;
+	right: 0;
+
+	height: 500px;
+	font-size: 0;
+}
+.product_content:after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 1px;
+
+	margin: auto;
+	left: 0;
+	right: 0;
+	bottom: -35px;
+	background-color: #ccc;
+}
+
+.product_img{
+	display: inline-block;
+	width: 55%;
+	height: 100%;
+	
+	vertical-align: top; 
+}
+
+.product_info{
+	display: inline-block;
+	width: 45%;
+	height: 100%;
+	padding: 0 1% 0 3%; 
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+
+/*---圖片區---*/
+
+.product_img_big{
+	width: 100%;
+	height: 420px;
+	overflow: hidden;
+}
+.product_img_big img{
+	margin: 0 1%; 
+	width: 98%;
+	height: 100%;
+	
+	object-fit: contain;
+	object-position: center;
+}
+
+.product_img_small{
+	width: 100%;
+	height: 80px;
+}
+.product_img_small ul li{
+	position: relative;
+	display: inline-block;
+	width: 18%;
+	height: 70px;
+	margin: 10px 1% 0;
+
+	background-color: rgba(102,102,102,0.1);
+	cursor: pointer;
+}
+.product_img_small ul li:after{
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255,255,255,0);
+
+	transition: 0.2s;
+}
+.product_img_small ul li:hover:after{
+	background-color: rgba(255,255,255,0.5);
+}
+.product_img_small ul li.this_pic:after{
+	background-color: rgba(0,0,0,0.2);
+}
+
+.product_img_small ul li img{
+	width: 100%;
+	height: 100%;
+	
+	object-fit: contain;
+	object-position: center;
+}
+
+
+
+/*---簡介區---*/
+
+/*大標題*/
+.product_info .product_name{
+	font-size: 28px;
+	line-height: 50px;
+	color: #333;
+	letter-spacing: 1px;
+}
+.product_info .product_motto{
+	font-size: 20px;
+	line-height: 25px;
+	color: #555;
+	height: 50px;
+	letter-spacing: 1px;
+}
+
+
+/*選擇區*/
+.product_info .product_option{
+	position: relative;
+	width: 100%;
+	height: 400px; 
+
+	padding: 30px 0 0 0 ; 
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.product_info .product_option:before{
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	background-color: #aaa;
+}
+.product_info .product_option:before{
+	top: 5px;
+	left: 0;
+}
+
+
+
+/*價錢*/
+.product_info .product_option .product_price{
+	position: relative;
+	font-size: 30px;
+	line-height: 50px;
+	letter-spacing: 1px;
+
+	color: rgba(219,77,77,0.8);
+
+	margin: 0 0 25px 0; 
+	font-weight: bold;
+}
+
+
+/*數量中文*/
+.product_info .product_option .product_price .product_qty {
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	height: 50px;
+	width: 130px;
+	letter-spacing: 1px;
+
+
+	font-size: 18px;
+	line-height: 48px;
+	color: #666;
+}
+/*數量選單*/
+.product_info .product_option .product_price .product_qty select.qty{
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	width: 55%;
+	height: 100%;
+	font-size: 18px;
+
+	background-color: #fff; 
+	border-color: #ccc;
+	color: #666;
+}
+
+
+/*手機規格*/
+.product_info .product_option select.phone_type{
+	width: 100%;
+	height: 50px;
+
+	background-color: #fff; 
+	border-color: #ccc;
+	color: #666;
+
+	font-size: 18px;
+	letter-spacing: 1px;
+
+	margin: 0 0 25px 0; 
+}
+
+
+
+/*wood icons*/
+
+.product_info .product_option div.woodicon{
+	position: relative;
+	left: -20%;
+	width: 140%;
+	height: 60px;
+	text-align: center;
+
+	margin: 0 0 25px 0; 
+}
+
+.product_info .product_option div.woodicon div{
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+	margin: 0 2%;
+
+	cursor: pointer;
+
+	border: 1px solid #ccc;
+	border-radius: 50%;
+}
+.product_info .product_option div.woodicon div img{
+	width: 100%;
+	height: 100%;
+}
+
+
+.product_info .product_option div.woodicon div:after{
+	position: absolute;
+	left: 0;
+	top: 0;
+
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+
+	font-size: 16px;
+	line-height: 60px;
+	text-align: center;
+
+	color: rgba(102,102,102,0);
+	background-color: rgba(255,255,255,0);
+	transition:0.5s; 
+}
+.wood01_cherry:after{
+	content: "櫻桃木";
+}
+.wood02_oak:after{
+	content: "白橡木";
+}
+.wood03_maple:after{
+	content: "楓木";
+}
+.wood04_rose:after{
+	content: "花梨木";
+}
+.wood05_walnut:after{
+	content: "胡桃木";
+}
+
+
+.product_info .product_option div.woodicon div:hover:after{
+	background-color: rgba(255,255,255,0.5);
+	color: rgba(102,102,102,1);
+}
+.product_info .product_option div.woodicon div.this_woodicon:after{
+	background-color: rgba(255,255,255,0.8);
+	color: #666;
+	font-size: 17px;
+}
+
+
+
+/*加到購物車*/
+.product_info .product_option div.add_to{
+	position: relative;
+	height: 50px;
+	width: 100%;
+}
+
+.product_info .product_option .add_to div.add_to_cart{
+	position: absolute;
+	width: 79%;
+	height: 50px;
+	background-color: rgba(251,176,60,1);
+
+	border-radius: 25px;
+	font-size: 22px;
+	text-align: center;
+	line-height: 50px;
+	color: #fff;
+	letter-spacing: 1px;
+
+	cursor: pointer;
+}
+.product_info .product_option .add_to div.add_to_cart:hover{
+	background-color: rgba(0,0,0,0.4); /*變成按鈕下的陰影*/
+}
+/*按鈕浮起效果*/
+.product_info .product_option .add_to div.add_to_cart:after{
+	content: "加入購物車";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+
+	background-color: rgba(251,176,59,0);
+	border-radius: 25px;
+	font-size: 22px;
+	text-align: center;
+	line-height: 50px;
+	color: rgba(255,255,255,0);
+	letter-spacing: 1px;
+
+	transition: top 0.2s;
+}
+.product_info .product_option .add_to div.add_to_cart:hover:after{
+	background-color: rgba(251,176,59,1);
+	color: rgba(255,255,255,1);
+	top: -5px;
+}
+
+
+
+/*加到最愛*/
+.product_info .product_option .add_to div.add_to_love{
+	position: absolute;
+	right: 5px;
+	width: 50px;
+	height: 50px;
+
+	background: url(../images/product/buy_icon.svg) no-repeat;
+	background-size: 200px 50px;
+	background-position: 0px 0;
+
+	border-radius: 50%;
+	border:1px solid #ccc; 
+
+	cursor: pointer;
+}
+.product_info .product_option .add_to div.add_to_love:hover{
+	background-position: -50px 0;
+}
+
+
+
+/*---分享鈕---*/
+
+.product_info .product_option div.share_icons{
+	position: absolute; /*要定在最下面*/
+	left:0;
+	bottom: 0;
+	width: 100%;
+	height: 60px;
+}
+
+.product_info .product_option div.share_icons ul.share-buttons{
+	position: relative;
+	top: 33px;
+	text-align: right;
+}
+
+.product_info .product_option div.share_icons ul.share-buttons li{
+	display: inline;
+	margin: 0 1.5%; 
+}
+.product_info .product_option div.share_icons ul.share-buttons li a{
+	height: 60px;
+	font-size: 20px;
+	color: #ccc;
+	transition: 0.2s;
+}
+.product_info .product_option div.share_icons ul.share-buttons li a:hover{
+	color: #888;
+}
+.product_info .product_option div.share_icons ul.share-buttons li a i{
+	line-height: 20px;
+}
+
+.product_info .product_option div.share_icons ul.share-buttons .sr-only {
+	position: absolute;
+	clip: rect(1px 1px 1px 1px);
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+
+
+/*----------產品細節----------*/
+
+.product_intro{
+	width: 78%;
+	margin: auto;
+	left: 0;
+	right: 0;
+}
+
+.product_intro .product_detail{
+	font-size: 14px;
+	line-height: 28px;
+	letter-spacing: 1px;
+	color: #666;
+}
+
+.product_intro .product_detail .UniSay_Symbol img{
+	width: 100%;
+}
+
+
+
+
+
+/*____________________________________________________________________________
+
+/*==========平板版本==========*/
+
+@media screen and (max-width: 1080px) {/*IPAD尺寸*/
+
+
+	.product_info .product_option div.woodicon div{
+		width: 50px;
+		height: 50px;
+		margin: 0 0.5%;
+	}
+	.product_info .product_option div.woodicon div:after{
+		font-size: 14px;
+		line-height: 50px;
+	}
+	.product_info .product_option div.woodicon div.this_woodicon:after{
+		font-size: 15px;
+		line-height: 50px;
+	}
+	
+
+	.product_info .product_option .add_to div.add_to_cart{
+		width: 78%;
+	}
+	.product_info .product_option .add_to div.add_to_love{
+		right: 0;
+	}
+
+
+}
+
+/*____________________________________________________________________________*/
+
+/*==========手機版本==========*/
+
+@media screen and (max-width: 760px) {
+	
+
+	/*----------麵包屑----------*/
+
+	.breadcrumb_trail{
+		height: 50px;
+	}
+	.breadcrumb_trail ul li{
+		padding: 0 8px; 
+	}
+	.breadcrumb_trail ul li ~ li:after{
+		font-size: 14px;
+		line-height: 50px;
+	}
+	.breadcrumb_trail ul li a{
+		font-size: 14px;
+		line-height: 50px;
+	}
+
+
+
+/*----------產品簡介分區----------*/
+	.product_content {
+		width: 85%;
+		margin: 10px auto 40px;
+		height: auto;
+	}
+	.product_content:after {
+		bottom: -15px;
+	}
+
+	.product_img{
+		width: 100%;
+		height: 400px;
+	}
+
+	.product_info{
+		width: 100%;
+		height: 430px;
+		padding: 0; 
+	}
+
+
+
+	/*---圖片區---*/
+
+	.product_img_big{
+		width: 100%;
+		height: 300px;
+	}
+	.product_img_big img{
+		height: 95%;
+	}
+
+	.product_img_small{
+		height: 50px;
+	}
+	.product_img_small ul li{
+		height: 50px;
+	}
+
+
+
+/*---簡介區---*/
+
+	/*大標題*/
+	.product_info .product_name{
+		font-size: 24px;
+		line-height: 36px;
+	}
+	.product_info .product_motto{
+		font-size: 18px;
+	}
+
+
+	/*選擇區*/
+	.product_info .product_option{
+		height: 350px; 
+	}
+
+
+
+	/*價錢*/
+	.product_info .product_option .product_price{
+		font-size: 28px;
+		height: 40px;
+		line-height: 45px;
+	}
+
+
+	/*數量中文*/
+	.product_info .product_option .product_price .product_qty {
+		height: 40px;
+		font-size: 16px;
+		line-height: 40px;
+		width: 100px;
+	}
+	/*數量選單*/
+	.product_info .product_option .product_price .product_qty select.qty{
+		width: 48%;
+		font-size: 16px;
+	}
+
+
+	/*手機規格*/
+	.product_info .product_option select.phone_type{
+		height: 40px;
+		font-size: 16px;
+	}
+
+
+
+	/*wood icons*/
+
+	.product_info .product_option div.woodicon{
+		left: -5%;
+		width: 110%;
+		height: 50px;
+	}
+
+	.product_info .product_option div.woodicon div{
+		width: 50px;
+		height: 50px;
+		margin: 0 1vw;
+	}
+
+
+	.product_info .product_option div.woodicon div:after{
+		font-size: 14px;
+		line-height: 50px;
+	}
+	.product_info .product_option div.woodicon div.this_woodicon:after{
+		font-size: 15px;
+	}
+
+
+
+	/*加到購物車*/
+	.product_info .product_option div.add_to{
+		height: 40px;
+	}
+
+	.product_info .product_option .add_to div.add_to_cart{
+		width: 80%;
+		height: 40px;
+
+		font-size: 20px;
+		line-height: 40px;
+	}
+	/*按鈕浮起效果*/
+	.product_info .product_option .add_to div.add_to_cart:after{
+		font-size: 20px;
+		line-height: 40px;
+	}
+
+
+
+	/*加到最愛*/
+	.product_info .product_option .add_to div.add_to_love{
+		right: 2.5px;
+		width: 40px;
+		height: 40px;
+
+		background-size: 400% 100%;
+		background-position: 0 0;
+	}
+	.product_info .product_option .add_to div.add_to_love:hover{
+		background-position: 33% 0;
+	}
+
+
+
+	/*---分享鈕---*/
+
+	.product_info .product_option div.share_icons ul.share-buttons{
+		text-align: center;
+		top: 32px;
+	}
+
+	.product_info .product_option div.share_icons ul.share-buttons li{
+		margin: 0 2%; 
+	}
+	.product_info .product_option div.share_icons ul.share-buttons li a{
+		font-size: 20px;
+	}
+
+
+
+	/*----------產品細節----------*/
+
+	.product_intro{
+		width: 80%;
+	}
+
+	.product_intro .product_detail{
+		font-size: 14px;
+		line-height: 28px;
+	}
+
+	.product_intro .product_detail .UniSay_Symbol img{
+		width: 100%;
+		height: 225px;
+		object-fit: cover;
+		object-position: center;
+	}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+

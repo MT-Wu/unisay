@@ -1,0 +1,631 @@
+@charset "utf-8";
+
+
+
+/*---中央logo區域---*/
+
+.logo{
+	position: absolute; /*從位置列抽起來讓nav疊在下面*/
+	margin: auto;
+	left: 0;
+	right: 0;
+	z-index: 20; /*logo要在最上面*/
+
+	width: 280px;
+	height: 120px;  
+
+	transform: scale(0.75);
+}
+
+
+/*=======================================*/
+
+
+/*---nav選單列---*/
+
+
+nav ul{
+	width: 100%;
+	height: 120px;
+
+	font-size: 0; /*讓選單的li之間不要有縫隙*/
+	text-align: center; /*讓li置中*/
+}
+
+
+nav ul li{ /*洞要挖固定大小140*120，因為要用sprite去換圖*/
+	position: relative;
+	width: 140px;
+	height: 120px;
+	display: inline-block;
+	
+	/*按鈕的sprite背景*/
+	background-image: url(../images/header/header_nav.svg);
+	background-size: 560px 360px; 
+	/*要設定原始整張圖的大小*/ 
+}
+
+/*每個鈕的位置分別下*/
+li.icon_aboutus{
+	margin-right: 3%;
+	background-position: 0px 0px;
+}
+li.icon_aboutus:hover{
+	background-position: 0px -120px;
+}
+
+li.icon_product{
+	margin-right: 150px; /*中央logo的寬度一半*/
+	background-position: -140px 0px;
+}
+li.icon_product:hover{
+	background-position: -140px -120px;
+}
+
+li.icon_custom{
+	margin-left: 150px; /*中央logo的寬度一半*/
+	background-position: -280px 0px;
+}
+li.icon_custom:hover{
+	background-position: -280px -120px;
+}
+
+li.icon_inspire{
+	margin-left: 3%;
+	background-position: -420px 0px;
+}
+li.icon_inspire:hover{
+	background-position: -420px -120px;
+}
+
+
+
+/*here的class掛到當前頁面li標籤裡*/
+li.here{
+	background-position-y: -240px; /*當前頁面用紅字，y軸設定-240px*/
+}
+
+/*當前頁面的左右兩條直線*/
+li.here:before, li.here:after{
+	content:'';
+	position: absolute;
+	background-color: rgba(239,174,162,1);
+	width: 1px;
+	height: 16px;
+
+	/*上下置中*/
+	margin: auto;
+	top: 0;
+	bottom: 0;
+}
+li.here:before{ 
+	left: 0px;
+}
+li.here:after{
+	right: 0px;
+}
+
+
+
+/*hover前的左右兩條直線先不出現*/
+nav ul li:before, nav ul li:after{
+	content:'';
+	position: absolute;
+	background-color: rgba(239,174,162,0); /*透明度先設定0*/
+	width: 1px;
+	height: 16px;
+
+	/*上下置中*/
+	margin: auto;
+	top: 0;
+	bottom: 0;
+
+	transition:.5s; 
+}
+nav ul li:before{ 
+	left: 0px;
+}
+nav ul li:after{
+	right: 0px;
+}
+/*hover後的左右兩條線出現的動畫*/
+nav ul li:hover:before, nav ul li:hover:after{
+	background-color: rgba(239,174,162,1); /*透明度設定1出現*/
+	width: 2px;
+	height: 16px;
+}
+nav ul li:hover:before{ 
+	left: 15px;
+}
+nav ul li:hover:after{
+	right: 15px;
+}
+
+
+
+/*---nav選單列的link範圍---*/
+
+nav ul li a{ /*感應區域開跟li一樣大*/
+	position: relative; /*給before的background依附*/
+	width: 100%;
+	height: 100%;
+	display: block;	 
+}
+
+/*當前頁面掛上葉子裝飾*/
+li.here a:before, li.here a:after{
+	content:'';
+	position: absolute; /*定位在a的後面*/
+	width: 200px;
+	height: 120px;
+	left: -30px;
+	top:35px;
+	background: url(../images/header/header_leaves.svg) no-repeat;
+	background-size: cover; /*填滿前面設定的寬高*/
+}
+
+
+/*=======================================*/
+
+
+/*---右邊icons---*/
+.cart_icon, .member_icon, .totop_icon{
+	position: fixed; /*fixed在右邊*/
+	z-index: 9; /*層次在陰影10下面，陰影出來就不能按*/
+
+	width: 50px;
+	height: 50px;
+	right: 15px; 
+
+	/*icon的sprite背景*/
+	background-image: url(../images/header/header_icon.svg);
+	background-size: 400px 50px;
+	/*要設定原始整張圖的大小*/ 
+
+	transition: .5s;
+
+	cursor: pointer;
+}
+
+
+.cart_icon{
+	top: 210px;
+	background-position: -300px 0px; 
+}
+.member_icon{
+	top: 140px; 
+	background-position: -200px 0px; 
+}
+.totop_icon{
+	transition: 1s;
+	transform: scale(1.2);
+
+	opacity: 0.6;
+	bottom: 13px;
+	right: 13px;  /*稍微移右邊一點*/
+
+	/*icon的sprite背景*/
+	background-image: url(../images/header/header_icon.svg),
+					  url(../images/header/header_icon_totop.svg);
+	background-size:  400px 50px,
+					  50px 100px;
+	background-position: -100px 0px ,
+						    0px 0px ; 
+
+	-webkit-clip-path: circle(18px at center); /*遮色片*/
+}
+
+.cart_icon:hover{
+	right: 30px; 
+}
+.member_icon:hover{
+	right: 30px; 
+}
+.totop_icon:hover{
+	background-position: -100px 0px ,
+						  0px -50px; 
+}
+
+
+/*icon後面的標籤*/
+.cart_icon:before, .member_icon:before{
+	content: '';
+	position: absolute;
+	
+	left: -10px;
+	width: 90px;
+	height: 50px;
+	background-color: rgba(239,174,162,.5); 
+}
+.cart_icon:after, .member_icon:after{
+	content: '';
+	position: absolute;
+	
+	right: 60px;
+	border-style: solid;
+	border-width: 25px 25px;
+	border-color: transparent rgba(239,174,162,.5) transparent transparent;  
+}
+
+
+/*=======================================*/
+
+
+/*---sidebar右邊拉出---*/
+.cart_sidebar, .member_sidebar{
+	position: fixed;
+	z-index: 12; /*上面的icon在9，click之後會拉到13*/
+	top: 0;
+
+	width: 30%;
+	height: 100%;
+
+	background-color: #fff;
+
+	box-shadow: 0 0 0px 0px #888; /*陰影也先關掉*/
+	right: -30%; /*先收起來*/
+	transition: .5s;
+}
+
+
+/*icons點擊後從右邊出現*/
+.rightshow{ 
+	box-shadow: 0 0 50px 5px #888; /*陰影拉出來*/
+	right: -30px; /*對齊icon標籤*/
+	transition: 1.5s;
+}
+
+.cart_icon2, .member_icon2{
+	right: 30%;
+	transition: right 1.5s;
+	z-index: 13; /*拉到sidebar12的上面*/
+}
+
+.cart_icon2:hover{
+	right: 30%;
+}
+.member_icon2:hover{
+	right: 30%; 
+}
+/*icon後面的標籤變色*/
+.cart_icon2:hover:before, .member_icon2:hover:before{
+	background-color: rgba(239,174,162,.6); 
+}
+.cart_icon2:hover:after, .member_icon2:hover:after{
+	border-color: transparent rgba(239,174,162,.6) transparent transparent;  
+}
+
+
+/*---fixed選單出現後畫面的暗幕---*/
+
+.fixed_shadowbg{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 100%;
+
+	left: -100%;
+	z-index: -1;  /*先收起來到後面*/
+	background-color: rgba(0,0,0,0);
+
+	transition: z-index 1.5s, background-color 1.5s;
+}
+
+/*icons點擊後淡入出現*/
+.shadowshow{ 
+	left: 0;
+	z-index: 10; /*陰影層次拉到10(暫定在banner裡面的最底是10)*/
+	background-color: rgba(0,0,0,.2);
+}
+
+
+
+
+
+/*____________________________________________________________________________*/
+
+/*---調整平板版和手機版的banner---*/
+
+
+/*==========平板版本==========*/
+
+@media screen and (max-width: 1080px) {/*IPAD尺寸*/
+
+/*---banner調成fixed---*/
+.banner{
+	position: fixed;
+	z-index: 2; /*層次拉上來到header content他們的上面*/
+	width: 100%;
+	height: 120px;
+
+	transition: 1s; 
+}
+/*banner fixed的樣式*/
+.banner2{
+	background-color: rgba(244,240,240,.8);
+}
+
+
+
+/*---中央logo區域---*/
+
+.logo{
+	top: 8px;
+	transform: scale(0.75); 
+	transition: 2s;
+}
+/*sidebar點擊後的樣式*/
+.logo2{
+	left: -50%;
+}
+
+
+
+/*---三明治選單---*/
+
+/*三明治按鈕出現*/
+.sandwich{
+	position: absolute; /*fixed在banner*/
+	z-index: 15; /*拉到z-index15*/
+
+	width: 50px;
+	height: 50px;
+	top: 35px; /*置中於header（120/2-50/2）*/
+	left: 35px; /*和上面一樣35px*/
+
+	/*icon的sprite背景*/
+	background-image: url(../images/header/header_icon.svg);
+	background-size: 400px 50px; 
+	background-position: 0px 0px; 
+	/*要設定原始整張圖的大小*/ 
+
+	cursor: pointer;
+	
+}
+
+
+
+/*---nav移到三明治選單---*/
+
+nav{
+	position: fixed;
+	z-index:12; /*層次跟其他sidebar一樣*/
+
+	width: 50%;
+	height: 100%;
+
+	background-color: #fff;
+
+	box-shadow: 0 0 0px 0px #888; /*陰影先關*/
+	overflow: hidden; /*把當頁的花朵裝飾超出範圍藏起來*/
+
+	left: -50%; /*先收起來*/
+	transition: 1.5s;
+}
+/*sandwich點擊後nav從左邊出現*/
+.leftshow{ 
+	box-shadow: 0 0 50px 5px #888;
+	left: 0; 
+}
+
+
+nav ul{
+	position: absolute;
+	top: 120px;
+	height:auto;
+}
+
+nav ul li{ 
+	display: block; /*讓鈕一列一列分開*/
+} 
+
+/*每個鈕都把margin關掉，變置中*/
+li.icon_aboutus, li.icon_product, li.icon_custom, li.icon_inspire{
+	margin: auto;
+}
+
+/*葉子的裝飾*/
+li.here a:before, li.here a:after{
+	width: 200px;
+	height: 120px;
+}
+
+li.here a:before{ /*左邊的葉子*/
+	left: -150px;
+	top:-25px;
+	transform: rotate(-10deg);
+}
+
+li.here a:after{ /*右邊的葉子*/
+	left: 90px;
+	top:25px;
+	transform: rotate(170deg);
+}
+
+
+
+
+
+/*---右上角icons---*/
+.cart_icon, .member_icon, .totop_icon{
+	position: absolute; /*定在banner*/
+
+	margin: 0; /*關掉垂直置中*/
+	top: 35px; /*跟三明治選單一樣高*/
+
+	transition: 0s; /*關掉移動動畫，直接變色*/
+	transition: right 1.5s; /*下給sidebar回去的時候一起移動*/
+}
+
+
+.cart_icon{
+	right: 35px; 
+	opacity: 0.6;
+}
+.member_icon{
+	right: 85px;
+	opacity: 0.6;
+}
+.totop_icon{
+	transition: 1s;
+	right: 135px;
+	transform: scale(1);
+}
+.cart_icon:hover{
+	right: 35px;
+	background-position: -350px 0px; 
+}
+.member_icon:hover{
+	right: 85px;
+	background-position: -250px 0px; 
+}
+.totop_icon:hover{
+	right: 135px;
+}
+
+/*平板手機把before和after關掉*/
+.cart_icon:before, .member_icon:before, .totop_icon:before{
+	height: 0;
+}
+.cart_icon::after, .member_icon::after, .totop_icon::after{
+	border-width: 0;  
+}
+
+
+
+/*---sidebar右邊拉出---*/
+.cart_sidebar, .member_sidebar{
+	width: 50%;
+	right: -50%;
+}
+
+/*icons點擊後sidebar從右邊出現*/
+.rightshow{ 
+	right: 0px; 
+}
+
+.cart_icon2, .member_icon2{
+	right: 40%;
+}
+
+.cart_icon2:hover{
+	right: 40%;
+}
+.member_icon2:hover{
+	right: 40%;
+}
+
+
+
+
+
+
+} /*平板版本結束*/
+
+
+/*____________________________________________________________________________*/
+
+/*==========手機版本==========*/
+
+@media screen and (max-width: 760px) {
+
+/*---banner調成fixed---*/
+.banner{
+	height: 70px; /*比header 85px小一點點*/
+	/*不能直接調整top，會影響到子層fixed的定位*/
+}
+/*banner fixed的樣式*/
+.banner2{
+	background-color: rgba(244,240,240,.8);
+}
+
+
+
+/*---中央logo區域---*/
+
+.logo{
+	transform: scale(0.55) translateY(-50px); 
+	transition: 1.5s;
+}
+/*sidebar點擊後的樣式不要變*/
+.logo2{
+	left: 0px;
+	right: 0px;
+}
+
+
+
+/*---三明治選單---*/
+
+/*三明治按鈕位置*/
+.sandwich{
+	transform: scale(0.75) translate(-33px,-30px);
+	transition:1.5s; 
+}
+
+
+
+/*---nav裡的鈕移上去一點---*/
+
+nav ul{
+	top: 85px; /*跟header一樣*/
+}
+
+
+
+/*---右上角icons---*/
+.cart_icon{
+ 	transform: scale(0.75) translate(33px,-30px);  /*跟三明治選單鈕調一樣*/
+ 	transition: z-index 3s; 
+}
+.member_icon{
+ 	transform: scale(0.75) translate(43px,-30px);  
+ 	transition: z-index 3s; 
+}
+.totop_icon{
+ 	transform: scale(0.75) translate(0px,-30px);
+ 	left:53px; 
+	/*手機版不用hover，直接顯示top*/
+	background-position: -100px 0px ,
+						    0px -50px ;  
+}
+
+
+
+
+
+/*---sidebar右邊拉出---*/
+.cart_sidebar, .member_sidebar{
+	width: 50%;
+	right: -50%;
+}
+
+/*icons點擊後sidebar從右邊出現*/
+.rightshow{ 
+	right: 0px; 
+}
+/*icons點擊後不動*/
+.cart_icon2, .cart_icon2:hover{
+ 	transition: z-index 0s; /*馬上跳上來*/
+	right: 35px;
+}
+.member_icon2, .member_icon2:hover{
+ 	transition: z-index 0s; /*馬上跳上來*/
+	right: 85px;
+}
+
+
+
+
+} /*手機版本結束*/
+
+
+
+
+
+
+
+
+
+
+

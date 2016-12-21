@@ -1,0 +1,136 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+@import url(reset.css);
+
+@import url(US_header.css);
+@import url(US_footer.css);
+
+
+
+	/*background-color: rgba(244,240,240,1);  #F4F0F0; ---背景底色*/
+	/*background-color: rgba(239,174,162,1);  #EFAEA2; ---重點粉紅色*/
+	/*background-color:   #91BAB1; ---粉綠色*/
+
+	
+
+	/*margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;*/
+
+	/*-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;*/
+
+*{
+	font-family: sans-serif, 微軟正黑體, 黑體;
+}
+
+body{
+	background-color: rgba(244,240,240,1);
+	overflow-y: scroll; /*讓右側scrollbar一直存在，畫面才不會跳掉*/
+}
+
+
+
+.wrap{ /*葉子背景*/
+	/*置中*/
+	position: relative;
+	margin: auto;
+	left: 0;
+	right: 0;
+
+	width: 100%; /*葉子底100%跟body螢幕同寬*/
+	max-width: 1280px; /*葉子底最大寬度1280px*/
+
+	background: url(../images/background/background_leaves.png); /*背景不會放大所以用png即可，檔案小很多*/
+	background-size: 100%; /*寬度下100%背景圖才會撐滿並置中*/
+}
+
+
+
+header, content, footer{
+	/*置中*/
+	display: block;
+	margin: auto;
+	left: 0;
+	right: 0;
+	
+	width: 90%; /*白紙底目前設定90%螢幕寬（wrap為100%螢幕寬）*/
+	max-width: 1080px; /*白紙底最大寬度1080px（含陰影），裡面全白區域1024px*/ 
+}
+
+
+
+header{
+	height: 120px;
+}
+
+
+
+/*白紙底*/
+content{ 
+	position: relative;
+	background: url(../images/background/paper01.svg); /*白紙背景必須用svg保持邊緣俐落，因為RWD縮放時會有拉伸*/
+	background-size: 100%;
+	min-height: 590px; /*高度撐開至少590px(螢幕1580*830的單頁)，之後自然隨裡面的物件撐開*/
+
+	z-index: 1;
+}
+content:before, content:after{
+	content:'';
+	position: absolute;
+	width: 100%;
+	height: 28px;
+}
+content:before{ /*白紙底的上緣*/
+	top:-28px;
+
+	background: url(../images/background/paper02.svg);
+	background-size: 100% 100%; /*避免repeat並且拉伸到完美接合*/
+}
+content:after{ /*白紙底的下緣*/
+	bottom:-28px;
+
+	background: url(../images/background/paper03.svg);
+	background-size: 100% 100%;
+}
+
+
+
+footer{
+	position: relative;
+	height: 120px; /*和header一樣高*/
+}
+
+
+
+/*____________________________________________________________________________*/
+
+/*==========平板版本==========*/
+
+@media screen and (max-width: 1080px) {/*IPAD尺寸*/
+
+	header{
+		width: 100%;
+	}
+	
+}
+
+/*____________________________________________________________________________*/
+
+/*==========手機版本==========*/
+
+@media screen and (max-width: 760px) {
+	
+	header{
+		height: 85px; /*header調小*/
+	}
+
+
+}
+
+

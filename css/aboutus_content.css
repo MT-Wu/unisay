@@ -1,0 +1,794 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+	/*background-color: rgba(244,240,240,1);  #F4F0F0; ---背景底色*/
+	/*background-color: rgba(239,174,162,1);  #EFAEA2; ---重點粉紅色*/
+	/*background-color: rgba(,,,1);  #91BAB1; ---粉綠色*/
+
+	
+
+	/*margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;*/
+
+	/*-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;*/
+
+
+
+/*---視差捲動基本設定---*/
+
+.parallax {
+    height: 100vh;
+    overflow-x: hidden; /*水平方向不要超出*/
+    overflow-y: auto; /*垂直方向有很多個section就用捲軸捲動*/
+
+	/*設定透視點，讓後面的section產生3D視差效果*/
+    -webkit-perspective: 1px;
+    perspective: 1px;
+
+
+	/*保險起見把變形原點和透視原點設定一樣*/
+    -webkit-perspective-origin: center; 
+    perspective-origin: center;
+}
+
+
+section{
+	position: relative;
+	height: 100vh;
+	width: 100%;
+
+	/*讓裡面的物件有3D變型*/
+    -webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.parallax_layer { /*置中*/
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	/*保險起見把變形原點和透視原點設定一樣*/
+	-webkit-transform-origin: center;
+	transform-origin: center;
+}
+
+
+
+/*---視差捲動  不同Z層次設定---*/
+
+.parallax_layer-2 {
+	-webkit-transform: translateZ(-2px) scale(3);
+	transform: translateZ(-2px) scale(3);
+
+	z-index: 3;
+}
+
+.parallax_layer-15 {
+	-webkit-transform: translateZ(-1.5px) scale(2.5);
+	transform: translateZ(-1.5px) scale(2.5);
+
+	z-index: 4;
+}
+
+.parallax_layer-1 {
+	-webkit-transform: translateZ(-1px) scale(2);
+	transform: translateZ(-1px) scale(2);
+
+	z-index: 4;
+}
+
+.parallax_layer0 {
+	/*拉層次和z-index*/
+    -webkit-transform: translateZ(0px);
+    transform: translateZ(0px);
+
+    z-index: 5;
+}
+
+.parallax_layer01 {
+	-webkit-transform: translateZ(0.1px) scale(0.9);
+	transform: translateZ(0.1px) scale(0.9);
+
+	z-index: 6;
+}
+
+
+.parallax_layer03 {
+	-webkit-transform: translateZ(0.3px) scale(0.7);
+	transform: translateZ(0.3px) scale(0.7);
+
+	z-index: 7;
+}
+
+.parallax_layer04 {
+	-webkit-transform: translateZ(0.4px) scale(0.6);
+	transform: translateZ(0.4px) scale(0.6);
+
+	z-index: 7;
+}
+
+
+.parallax_layer05 {
+	-webkit-transform: translateZ(0.5px) scale(0.5);
+	transform: translateZ(0.5px) scale(0.5);
+
+	z-index: 8;
+}
+
+.parallax_layer06 {
+	-webkit-transform: translateZ(0.6px) scale(0.4);
+	transform: translateZ(0.6px) scale(0.4);
+
+	z-index: 9;
+}
+
+.parallax_layer07 {
+	-webkit-transform: translateZ(0.7px) scale(0.3);
+	transform: translateZ(0.7px) scale(0.3);
+
+	z-index: 9;
+}
+
+
+/*____________________________________________________________________________*/
+
+
+/*---各個section背景設定---*/
+
+
+
+/*---section01---*/
+.section01{
+	background: url(..//images/logo_ani/BG.png) no-repeat;
+	background-size: 1580px 100%;
+	background-position: 50% 50%;
+}
+
+
+
+/*木板logo大小的漸變範圍*/
+.circle_logo{
+	font-size: 0; /*讓50%inline排在一起剛好*/
+}
+
+.circle_logo img{
+	width: 45%;
+	max-width: 700px;
+	min-width: 600px;
+
+	/*置中*/
+	position: absolute;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+.circle_logo img.LOGO_0{
+	animation: LOGO_0 2s 0s ease 1 backwards ;
+}
+
+	@keyframes LOGO_0{
+		  0%{opacity:0.5 ;}
+		100%{opacity:1 ;}
+	}
+
+
+
+/*繩子*/
+.circle_logo .logo_line01, .circle_logo .logo_line02{
+	width: 50%;
+	max-width: 790px;
+	min-width: 677.14px; /* 790/700*600px */
+
+	height: 45vw;
+	max-height: 700px;
+	min-height: 600px;
+
+	display: inline-block; /*左右排在一起*/
+	overflow: hidden; /*超出線段消失*/
+
+	/*置中*/
+	position: absolute;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+
+	opacity: 0.75; 	/*繩子顏色淡一點*/
+}
+
+.circle_logo .logo_line01{ /*左邊的線*/
+	right: 50%;
+
+	background: url(../images/logo_ani/line_1.svg) no-repeat;
+	background-size: 200% 100%;
+	background-position: -100% 0;
+
+	animation: logo_line01 6s 2s linear 1 backwards ;
+}
+
+.circle_logo .logo_line02{ /*右邊的線*/
+	left: 50%;
+
+	background: url(../images/logo_ani/line_1.svg) no-repeat;
+	background-size: 200% 100%;
+	background-position: 200% 0;
+
+	animation: logo_line02 6s 2s linear 1 backwards ;
+}
+
+	@keyframes logo_line01{
+		  0%{background-position: 0 0;}
+		100%{background-position: -100% 0;}
+	}
+
+	@keyframes logo_line02{
+		  0%{background-position: 100% 0;}
+		100%{background-position: 200% 0;}
+	}
+
+
+
+/*葉子*/
+
+.leaves_1{
+	animation: leaves_1 5s 2s linear 1 backwards ;
+}
+.leaves_2{
+	animation: leaves_2 5s 2s linear 1 backwards ; 
+}
+.leaves_3{
+	animation: leaves_3 5s 2s linear 1 backwards ;
+}
+.leaves_4{
+	animation: leaves_4 5s 2s linear 1 backwards ;
+}
+.leaves_5{
+	animation: leaves_5 5s 2s linear 1 backwards ;
+}
+.leaves_6{
+	animation: leaves_6 5s 2s linear 1 backwards ;
+}
+
+	/*分三階段：起始位置、拉到圓上、轉回原位*/
+	@keyframes leaves_1{
+		  0%{transform: translate(75%,-5%) scale(0.8);}
+		 60%{transform: translate(1%,-5%) scale(0.8);}
+		100%{transform: translate(0,0) scale(1);}
+	}
+
+	@keyframes leaves_2{
+		  0%{transform: rotate(20deg) translate(55%,-25%) scale(0.8);}
+		 50%{transform: rotate(20deg) translate(-4%,-3%) scale(0.8);}
+		100%{transform: translate(0,0) scale(1);}
+	}
+
+	@keyframes leaves_3{
+		  0%{transform: rotate(76deg) translate(4%,-35%) scale(0.8);}
+		 23%{transform: rotate(76deg) translate(-3%,-8%) scale(0.8);}
+		100%{transform: translate(0,0) scale(1);}
+	}
+
+	@keyframes leaves_4{
+		  0%{transform: translate(-70%,6%) scale(0.8); }
+		 70%{transform: translate(-2%,6%) scale(0.8); }
+		100%{transform: translate(0,0) scale(1);}
+	}
+
+	@keyframes leaves_5{
+		  0%{transform: rotate(25deg) translate(-42%,27%) scale(0.8); }
+		 50%{transform: rotate(25deg) translate(2%,8%) scale(0.8); }
+		100%{transform: translate(0,0) scale(1);}
+	}
+
+	@keyframes leaves_6{
+		  0%{transform: rotate(75deg) translate(-2%,28%) scale(0.8); }
+		 15%{transform: rotate(75deg) translate(1%,15%) scale(0.8); }
+		100%{transform: translate(0,0) scale(1);}
+	}
+
+
+
+/*小動物*/
+
+.animal_1{
+	animation: animal_1 8s 2s ease 1 backwards ;
+}
+
+.animal_2{
+	animation: animal_2 8s 2s ease 1 backwards ;
+}
+
+.animal_3{
+	animation: animal_3 8s 2s ease 1 backwards ;
+}
+
+	@keyframes animal_1{
+		  0%{opacity:0; transform: translate(20%,20%);}
+		 10%{opacity:1; transform: translate(15%,15%);}
+		 70%{transform: translate(15%,15%);}
+		 80%{transform: translate(0,0);}
+	}
+
+	@keyframes animal_2{
+		  0%{opacity:0; transform: translate(18%,-12%);}
+		 70%{opacity:0; transform: translate(18%,-12%);}
+		 80%{opacity:1; transform: translate(18%,-12%);}
+		 90%{transform: translate(0,0);}
+	}
+
+	@keyframes animal_3{
+		  0%{opacity:0; transform: translate(-12%,6%);}
+		 80%{opacity:0; transform: translate(-12%,6%);}
+		 90%{opacity:1; transform: translate(-12%,6%);}
+		100%{transform: translate(0,0);}
+	}
+
+
+
+/*由你說*/
+
+.circle_logo img.yousay{
+	left: 50%;
+	animation: yousay 1s 9.5s ease 1 backwards ;
+	transform-origin: 45% 45%; 
+}
+
+	@keyframes yousay{
+		   0%{opacity:0; transform: translate(-15%,-10%) scale(0);}
+		 100%{opacity:1; transform: translate(0,0) scale(1);}
+	}
+
+
+
+/*向下指引*/
+
+.circle_logo img.section01_downbottom1, .circle_logo img.section01_downbottom2{
+	transform: translate(0,-8%);
+	animation: downbottom1 1s 11s ease 1 backwards ;
+	transition: 0.5s;
+
+	bottom: -100vh;
+}
+
+	@keyframes downbottom1{
+		   0%{opacity:0.5 ; transform: translate(0,7%);}
+		 100%{opacity:1 ; transform: translate(0,-8%);}
+	}
+
+.circle_logo img.section01_downbottom2{
+	transform: translate(0,-8%) rotate(-45deg);
+	animation: downbottom2 1s 11s ease 1 backwards ;
+}
+
+	@keyframes downbottom2{
+		   0%{opacity:0.5; transform: translate(0,7%) rotate(0deg);}
+		 100%{opacity:1; transform: translate(0,-8%) rotate(-45deg);}
+	}
+
+	/*向下滑之後 bottom變透明*/ /*寫在nav_icon裡面*/
+	.circle_logo img.section01_downbottom2_02{
+		transform: translate(0,-8%) rotate(0deg);
+		opacity:0.5;
+		transition: 1s;
+	}
+
+
+
+/*---section02---*/
+
+
+
+.circle_logo img.section02_rabbit{
+	transform: translate(0,-12%);
+	animation: section02_rabbit 1s 11s ease 1 backwards ;
+}
+
+	@keyframes section02_rabbit{
+		   0%{transform: translate(0,0);}
+		 100%{transform: translate(0,-12%);}
+	}
+
+
+
+/*品牌故事抬頭*/
+.circle_logo img.USstory_title{
+	left: 50%;
+}
+
+
+/*紙*/
+.circle_logo img.paperframe{
+	left: -30%;
+}
+
+
+/*背景葉子*/
+.parallax_layer img.section02_BG{
+	left: -100%;
+	top: 50%;
+}
+
+
+
+/*---section03---*/
+
+/*要撐100%的圖片*/
+.section_frame img{
+	width: 105%; /*確保滿版*/
+	max-width: 1600px;
+
+	/*置中*/
+	position: absolute;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+
+	/*雲彩背景*/
+	.section_frame img.section03_window{
+		top: 180px; /*下移到下層header*/
+		opacity: 0; /*為了畫面好看一開始先消失*/
+		transition: 0.5s; 
+
+		max-width: 1580px;
+	}
+
+	.section_frame img.section03_window02{
+		opacity: 1;
+	}
+
+
+
+/*---section05---*/
+
+/*背景木紋*/
+.section_frame img.section05_BG{
+	height: 100%;
+}
+
+
+/*三大款式*/
+.section05_wood, .section05_animal, .section05_motto{
+	position: absolute;
+	z-index: 9;
+	margin: auto;
+	right: 0;
+	left: 0;
+	
+	background-color: #fff;
+	box-shadow: 5px 5px 30px 0px #555;
+	border-radius: 3px;
+
+	background-size: 100% 100%;
+	transition: 0.5s;
+
+	cursor: pointer;
+	
+}
+
+.section05_wood{
+	left: -50%;
+	top: 25%;
+	bottom: 0;
+
+	width: 25%;
+	height: 18vw;
+
+	background-image: url(../images/aboutus/section05_product01.jpg);
+	background-position: 50% 50%;
+
+}
+
+.section05_animal{
+	top: 32%;
+	
+	width: 25%;
+	height: 18vw;
+
+	background-image: url(../images/aboutus/section05_product02.jpg);
+	background-position: 50% 50%;
+
+}
+
+.section05_motto{
+	left: 50%;
+	bottom: 23%;
+
+	width: 25%;
+	height: 18vw;
+
+	background-image: url(../images/aboutus/section05_product03.jpg);
+	background-position: 50% 50%;
+}
+
+
+.section05_wood:after, .section05_animal:after, .section05_motto:after{
+	content: "";
+	font-size: 28px;
+	letter-spacing: 2px;
+	color: #fff;
+
+	text-align: center;
+	line-height: 18vw;
+
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #679389;
+
+	opacity: 0;
+	transition: 0.5s;
+}
+
+/*文字內容*/
+.section05_wood:after{
+	content: "經典中的經典";
+}
+.section05_animal:after{
+	content: "尋找療癒萌友";
+}
+.section05_motto:after{
+	content: "想對自己說";
+}
+
+/*綠色cover出現*/
+.section05_wood:hover:after, .section05_animal:hover:after, .section05_motto:hover:after{
+	opacity: 0.95;
+	transition: 0.5s;
+}
+
+.section05_wood:hover, .section05_animal:hover, .section05_motto:hover{
+	background-size: 120% 120%;
+}
+
+
+
+/*暫時多設定一個區段去調整LOGO位置*/
+@media screen and (max-width: 1280px) {
+/*三大類別的LOGO*/
+
+.section_frame img.section05_logo02{
+	top: 0;
+	bottom: auto;
+	max-height: 100%;
+}
+
+
+
+}
+
+
+
+/*____________________________________________________________________________
+
+/*==========平板版本==========*/
+
+@media screen and (max-width: 1080px) {/*IPAD尺寸*/
+
+/*木板logo大小的漸變範圍*/
+	.circle_logo img{
+		width: 90%;
+		max-width: 600px;
+		min-width: 0px;
+	}
+
+	/*繩子*/
+	.circle_logo .logo_line01, .circle_logo .logo_line02{
+		width: 203.14%;
+		max-width: 677.14px;
+		min-width: 0px;   
+
+		height: 90vw;
+		max-height: 600px;
+		min-height: 0px;
+	}
+	
+
+
+	/*---section02---*/
+
+	/*品牌故事抬頭*/
+	.circle_logo img.USstory_title{
+		left: 48%;
+	}
+
+	/*紙*/
+	.circle_logo img.paperframe{
+		left: -40%;
+	}
+
+
+
+	/*---section03---*/
+
+	/*雲彩背景*/
+	.section_frame img.section03_window{
+		top: 0px; 
+		transform: scale(1.1);
+		opacity: 1;
+	}
+
+
+
+/*---section05---*/
+
+/*三大款式*/
+
+.section05_wood{
+	width: 30%;
+	height: 20vw;
+}
+
+.section05_animal{
+	width: 30%;
+	height: 20vw;
+}
+
+.section05_motto{
+	width: 30%;
+	height: 20vw;
+}
+
+.section05_wood:after, .section05_animal:after, .section05_motto:after{
+	line-height: 20vw;
+}
+
+
+
+}
+
+/*____________________________________________________________________________*/
+
+/*==========手機版本==========*/
+
+@media screen and (max-width: 760px) {
+	
+	/*由你說手機版先拿掉*/
+	.circle_logo img.yousay{
+		display: none;
+	}
+
+
+
+	/*向下指引*/
+
+	.circle_logo img.section01_downbottom1, .circle_logo img.section01_downbottom2{
+		transform: translate(0,-15%);
+		animation: downbottom1 1s 11s ease 1 backwards ;
+		transition: 0.5s;
+
+		bottom: -100vh;
+	}
+
+		@keyframes downbottom1{
+			   0%{opacity:0.5 ; transform: translate(0,7%);}
+			 100%{opacity:1 ; transform: translate(0,-15%);}
+		}
+
+	.circle_logo img.section01_downbottom2{
+		transform: translate(0,-15%) rotate(-45deg);
+		animation: downbottom2 1s 11s ease 1 backwards ;
+	}
+
+		@keyframes downbottom2{
+			   0%{opacity:0.5; transform: translate(0,7%) rotate(0deg);}
+			 100%{opacity:1; transform: translate(0,-15%) rotate(-45deg);}
+		}
+
+		/*向下滑之後 bottom變透明*/ /*寫在nav_icon裡面*/
+		.circle_logo img.section01_downbottom2_02{
+			transform: translate(0,-15%) rotate(0deg);
+			opacity:0.5;
+			transition: 1s;
+		}
+
+
+	/*要撐100%的圖片*/
+	.section_frame img{
+		width: 200%;
+		left: -50%;
+	}
+
+
+	/*---section02---*/
+
+	/*品牌故事抬頭*/
+	.circle_logo img.USstory_title{
+		left: 30%;
+		top: -25%;
+	}
+
+
+	/*---section03---*/
+
+	/*雲彩背景*/
+	.section_frame img.section03_window{
+		top: 60px;
+		opacity: 0;
+	}
+
+	.section_frame img.section03_window02{
+		opacity: 1;
+	}
+
+
+
+	/*---section05---*/
+
+	/*三大款式*/
+
+	.section05_wood{
+		left: 15%;
+		right: 0;
+		top: -40%;
+		bottom: 0;
+
+		width: 50%;
+		height: 30vw;
+	}
+
+	.section05_animal{
+		left: 10%;
+		right: 0;
+		top: 0;
+		bottom: 0;
+
+		width: 50%;
+		height: 30vw;
+	}
+
+	.section05_motto{
+		left: 15%;
+		right: 0;
+		top: 40%;
+		bottom: 0;
+
+		width: 50%;
+		height: 30vw;
+	}
+
+	.section05_wood:after, .section05_animal:after, .section05_motto:after{
+		line-height: 30vw;
+		font-size: 20px;
+	}
+
+
+
+/*三大類別的LOGO*/
+
+.section_frame img.section05_logo01{
+ 	left: -1%;
+ 	top: -50%;
+}
+
+.section_frame img.section05_logo02{
+ 	top: 15%;
+ 	bottom:10%;
+}
+
+.section_frame img.section05_logo03{
+	left: -177%;
+ 	top: 38%;
+}
+
+
+
+}
+
+
+
+
+

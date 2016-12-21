@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+	<meta charset="UTF-8">
+	<title>UniSay</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="css/aboutus.css" rel="stylesheet" type="text/css">
+
+
+<!-- Icons -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+ 	rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">	
+
+
+<!-- fonts -->
+ 	<link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative" rel="stylesheet">
+ 	<!-- font-family: 'Cinzel Decorative', cursive; -->
+
+ 	<link href="https://fonts.googleapis.com/css?family=Amita" rel="stylesheet">
+ 	<!-- font-family: 'Amita', cursive; -->
+
+ 	<link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC" rel="stylesheet">
+ 	<!-- font-family: 'IM Fell English SC', serif; -->
+
+ 	<link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
+ 	<!-- font-family: 'Fredericka the Great', cursive; -->
+
+
+</head>
+
+
+<!-- ====================================================================================== -->
+
+
+<body>
+	
+
+
+<!-- 主頁面內容 -->
+<div class="wrap">
+
+		<!-- header拉出來釘在wrap上面，頁面已經被parallax鎖在視窗範圍內了 -->
+		<!-- 一開始先addClass"header2"消失，捲上去再removeClass"header2"出現 -->
+		<header class="header2">
+
+			<!-- 平板手機會fixed的banner -->
+			<div class="banner">
+
+				<!-- 三明治選單 -->
+				<div class="sandwich"></div>
+				
+
+				<!-- fixed的按鈕 -->
+				
+				<div class="cart_icon"></div>
+				<div class="cart_sidebar"></div>
+
+				<div class="member_icon"></div>
+				<div class="member_sidebar"></div>
+
+				<div class="totop_icon"></div>
+				
+
+				<!-- 中央logo -->
+				<div class="logo"><img src="images/header/header_logo.svg" alt=""></div>
+				
+			
+
+
+				<!-- 上方選單列 -->
+				<nav> 
+					<ul>
+						<!-- 當前頁面掛上here的class -->
+						<li class="icon_aboutus here">
+							<a href="aboutus.html"></a>
+						</li>
+						<li class="icon_product">
+							<a href="product.html"></a>
+						</li>
+						<li class="icon_custom">
+							<a href="custom.html"></a>
+						</li>
+						<li class="icon_inspire">
+							<a href="inspire.html"></a>
+						</li>
+					</ul>
+				</nav>
+
+
+				<!-- 暗幕的背景 -->
+				<div class="fixed_shadowbg"></div>
+
+			</div><!-- banner包全部 --> 
+
+		</header>	
+
+
+
+		<!-- 旁邊滾動的五顆鈕 -->
+		<div class="secondbanner">
+			<ul>
+				<li class="secondbannerhere"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	
+
+
+	<!-- 視差捲動 -->
+	<div class="parallax">
+
+	<!-- 第一幕 logo動畫 -->
+		<section class="section01">
+
+
+			<!-- 向下指引 -->
+			<div class="parallax_layer parallax_layer0 circle_logo">
+				<img class="section01_downbottom2" src="images/aboutus/section01_downbottom_2.png">
+				<img class="section01_downbottom1" src="images/aboutus/section01_downbottom_1.png">
+			</div>
+
+
+			<!-- 由你說文字層 -->
+			<div class="parallax_layer parallax_layer-1 circle_logo">
+				<img class="yousay" src="images/logo_ani/yousay.svg" alt="">
+			</div>
+
+			
+			<!-- 葉子層 -->
+			<div class="parallax_layer parallax_layer03 circle_logo">
+
+				<img class="leaves_1" src="images/logo_ani/leaves_1.png" alt="">
+				<img class="leaves_2" src="images/logo_ani/leaves_2.png" alt="">
+				<img class="leaves_3" src="images/logo_ani/leaves_3.png" alt="">
+				<img class="leaves_4" src="images/logo_ani/leaves_4.png" alt="">
+				<img class="leaves_5" src="images/logo_ani/leaves_5.png" alt="">
+				<img class="leaves_6" src="images/logo_ani/leaves_6.png" alt="">
+
+			</div>
+
+
+			<!-- 小動物層 -->
+			<div class="parallax_layer parallax_layer05 circle_logo">
+				<img class="animal_1" src="images/logo_ani/animal_1.png" alt="">
+				<img class="animal_2" src="images/logo_ani/animal_2.png" alt="">
+				<img class="animal_3" src="images/logo_ani/animal_3.png" alt="">
+			</div>
+
+
+			<!-- 葉子捲線層 -->
+			<div class="parallax_layer parallax_layer05 circle_logo">
+
+				<div class="logo_line01"></div>
+				<div class="logo_line02"></div>
+
+			</div>
+
+
+			<!-- 中央木板層 -->
+			<div class="parallax_layer parallax_layer05 circle_logo">
+				<!-- 木板 -->
+				<img class="LOGO_0" src="images/logo_ani/LOGO_0.png" alt="">
+				<!-- 白色logo -->
+				<img src="images/logo_ani/LOGO_1.svg" alt="">
+			</div>
+
+			<div class="parallax_layer parallax_layer07 circle_logo">
+
+			</div>
+		</section>
+
+
+	<!-- ====================================================================================== -->
+
+
+	<!-- 第二幕 兔子介紹品牌理念 -->
+		<section class="section02">
+
+			<!-- 兔子 -->
+			<div class="parallax_layer parallax_layer-15 circle_logo">
+				<img class="section02_rabbit" src="images/aboutus/section02_rabbit.png" alt="">
+			</div>
+
+			<!-- 背景葉子 -->
+			<div class="parallax_layer parallax_layer0 section_frame">
+				<img class="section02_BG" src="images/aboutus/section02_BG.png" alt="">
+			</div>
+
+			<!-- 品牌故事 -->
+			<div class="parallax_layer parallax_layer03 circle_logo">
+				<img class="USstory_title" src="images/aboutus/section02_aboutus.svg" alt="">
+			</div>
+
+			<!-- 紙 -->
+			<div class="parallax_layer parallax_layer05 circle_logo">
+				<img class="paperframe" src="images/aboutus/section02_paperframe.png" alt="">
+			</div>
+
+			
+
+		</section>
+
+
+
+		<!-- 第三幕 森林-->
+		<section class="section03">
+
+			<!-- 背景雲彩 -->
+			<div class="parallax_layer parallax_layer0 section_frame">
+				<img class="section03_window" src="images/aboutus/section03_window_1.png" alt="">
+			</div>
+
+
+			<!-- 森林之窗 -->
+			<div class="parallax_layer parallax_layer03 section_frame">
+				<img src="images/aboutus/section03_window_2.png" alt="">
+			</div>
+
+
+			<div class="parallax_layer parallax_layer07 section_frame">
+
+			</div>
+
+		</section>
+
+
+
+		<!-- 第四幕 小動物 -->
+		<section class="section04">
+
+
+			<div class="parallax_layer parallax_layer0 section_frame">
+				<img src="images/aboutus/section04_BG01.png" alt="">
+			</div>
+
+			<div class="parallax_layer parallax_layer01 section_frame">
+				<img src="images/aboutus/section04_frame01.png" alt="">
+			</div>
+
+			<div class="parallax_layer parallax_layer03 section_frame">
+				<img src="images/aboutus/section04_animal01.png" alt="">
+			</div>
+
+			<div class="parallax_layer parallax_layer04 section_frame">
+				<img src="images/aboutus/section04_BG02.png" alt="">
+			</div>
+
+			<div class="parallax_layer parallax_layer05 section_frame">
+				<img src="images/aboutus/section04_animal02.png" alt="">
+			</div>
+
+			<div class="parallax_layer parallax_layer06 section_frame">
+				<img src="images/aboutus/section04_frame02.png" alt="">
+			</div>
+
+
+		</section>
+
+
+		<!-- 第五幕 導向產品頁 -->
+		<section class="section05">
+			
+
+			<div class="parallax_layer parallax_layer0 section_frame">
+				<img class="section05_BG" src="images/aboutus/section05_BG.jpg" alt="">
+			</div>
+			
+			<!-- 照片包在同一層才能做hover效果 -->
+			<div class="parallax_layer parallax_layer06 section_frame">
+				<div class="section05_wood"></div>
+				<div class="section05_animal"></div>
+				<div class="section05_motto"></div>
+			</div>
+
+
+			<!-- 三大類別的LOGO -->
+			<div class="parallax_layer parallax_layer03 section_frame">
+				<img class="section05_logo01" src="images/aboutus/section05_productlogo01.png" alt="">
+			</div>
+
+			<div class="parallax_layer parallax_layer01 section_frame">
+				<img class="section05_logo02" src="images/aboutus/section05_productlogo02.png" alt="">
+			</div>
+
+			<div class="parallax_layer parallax_layer05 section_frame">
+				<img class="section05_logo03" src="images/aboutus/section05_productlogo03.png" alt="">
+			</div>
+
+
+		</section>
+
+
+	
+
+	<!-- ====================================================================================== -->
+
+<!-- 
+		<footer>
+		
+
+
+		</footer>
+ -->
+
+	</div>
+
+
+<!-- ====================================================================================== -->
+
+
+</div><!-- wrap的結尾 -->
+
+
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+<script src="js/nav_icon.js"></script>
+<script src="js/aboutus.js"></script>
+
+
+
+
+</body>
+</html>

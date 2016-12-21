@@ -1,0 +1,1049 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+@import url(reset.css);
+
+@import url(US_header.css);
+@import url(US_footer.css);
+
+
+
+	/*background-color: rgba(244,240,240,1);  #F4F0F0; ---背景底色*/
+	/*background-color: rgba(239,174,162,1);  #EFAEA2; ---重點粉紅色*/
+	/*background-color:   #91BAB1; ---粉綠色*/
+
+	
+
+	/*margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;*/
+
+	/*-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;*/
+
+*{
+	font-family: sans-serif, 微軟正黑體;
+}
+
+body{
+	background-color: rgba(244,240,240,1);
+	overflow-y: scroll; /*讓右側scrollbar一直存在，畫面才不會跳掉*/
+}
+
+
+
+.wrap{ /*葉子背景*/
+	/*置中*/
+	position: relative;
+	margin: auto;
+	left: 0;
+	right: 0;
+
+	width: 100%; /*葉子底100%跟body螢幕同寬*/
+	max-width: 1280px; /*葉子底最大寬度1280px*/
+
+	background: url(../images/background/background_leaves.png); /*背景不會放大所以用png即可，檔案小很多*/
+	background-size: 100%; /*寬度下100%背景圖才會撐滿並置中*/
+}
+
+
+
+header, content, footer{
+	/*置中*/
+	display: block;
+	margin: auto;
+	left: 0;
+	right: 0;
+	
+	width: 90%; /*白紙底目前設定90%螢幕寬（wrap為100%螢幕寬）*/
+	max-width: 1080px; /*白紙底最大寬度1080px（含陰影），裡面全白區域1024px*/ 
+}
+
+
+
+header{
+	height: 120px;
+}
+
+
+
+/*白紙底*/
+content{ 
+	position: relative;
+	background: url(../images/background/paper01.svg); /*白紙背景必須用svg保持邊緣俐落，因為RWD縮放時會有拉伸*/
+	background-size: 100%;
+	min-height: 590px; /*高度撐開至少590px(螢幕1580*830的單頁)，之後自然隨裡面的物件撐開*/
+	/*把超出的地方遮起來*/
+	overflow: hidden;	
+}
+content:before, content:after{
+	content:'';
+	position: absolute;
+	width: 100%;
+	height: 28px;
+}
+content:before{ /*白紙底的上緣*/
+	top:-28px;
+
+	background: url(../images/background/paper02.svg);
+	background-size: 100% 100%; /*避免repeat並且拉伸到完美接合*/
+}
+content:after{ /*白紙底的下緣*/
+	bottom:-28px;
+
+	background: url(../images/background/paper03.svg);
+	background-size: 100% 100%;
+}
+
+
+footer{
+	position: relative;
+	height: 120px; /*和header一樣高*/
+}
+
+
+
+/*_____________________________共同的設定______________________________________*/
+
+/*logo*/
+.open_bg{
+	width: 400px;
+	height: 400px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+.open_bg img{
+	width: 100%;
+	height: 100%;
+}
+
+/*===============================開場頁=========================*/
+/*大框框*/
+.inspire{
+	display: block;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: -200%;	/*先藏在外面，可調0回來*/
+	width: 96%;
+	min-height: 590px;
+	font-size: 0;
+}
+
+/*底板範圍*/
+.opennig{
+	width: 100%;
+	height: 590px;
+	position: relative;
+	display: inline-block;
+	font-size: 0;
+	left: -0.25%;		/*讓圖和邊界之間不要露白*/
+}
+
+/*左右動畫基本設定*/
+.opennig .left_banner, .opennig .right_banner{
+	width: 50%;
+	height: 63px;
+	position: absolute;		/*這樣動畫才跑得順*/
+	top: 300px;
+	opacity: 0.5;
+	transition: 1s;
+	cursor: pointer;
+}
+
+/*左右動畫*/
+.opennig .left_banner{
+	animation: left_open 2s  backwards;
+	right: 50%; /*定位right的話，動畫才會從右到左展開*/
+	background: linear-gradient(to left,#fff,#EFAEA2);
+}
+
+.opennig .right_banner{
+	animation: right_open 2s  backwards;
+	background: linear-gradient(to right,#fff,#A2D7C9);
+	left:50%;   /*定位left的話，動畫才會從左到右展開*/
+}
+@keyframes left_open{
+	0%{ width:0%;
+		opacity: 0;
+		background: linear-gradient(to left,#fff,#EFAEA2); }
+	100%{ width:50%;
+		opacity: 0.5;
+		background: linear-gradient(to left,#fff,#EFAEA2);  }
+}
+@keyframes right_open{
+	0%{ width:0%;
+		opacity: 0;
+		background: linear-gradient(to right,#fff,#A2D7C9); }
+	100%{ width:50%;
+		opacity: 0.5;
+		background: linear-gradient(to right,#fff,#A2D7C9);  }
+}
+
+/*左右文字共同設定*/
+.opennig .left_word, .opennig .right_word{
+	width: 50%;
+	height: 135px;
+	position: relative;
+	display: inline-block;
+	top: 255px;
+	/*background-color: #ccc;*/
+}
+.opennig .left_word{
+	left: 0;
+}
+
+.opennig .right_word{
+	/*left: 50%;*/
+}
+/*左邊文字-----------------*/
+.opennig .left_word img{
+	position: absolute;
+}
+/*文字圖片個別設定*/
+.opennig .left_word img.LW01{
+	animation: LW_01 1s 2s backwards;
+}
+.opennig .left_word img.LW02{
+	animation: LW_01 .5s 2.5s backwards;
+}
+.opennig .left_word img.LW03{
+	animation: LW_02 1s 3s backwards;
+}
+/*左邊動畫*/
+@keyframes LW_01{
+	0%{ opacity: 0; }
+	100%{ opacity: 1;}
+}
+@keyframes LW_02{
+	0%{ opacity: 0;
+		top:50px; }
+	100%{ opacity: 1;
+		top:0;}
+}
+
+/*右邊文字------------------*/
+.opennig .right_word img{
+	position: absolute;
+	right: 0;
+}
+/*文字圖片個別設定*/
+.opennig .right_word img.RW01{
+	animation: RW_01 1s 2s backwards;
+}
+.opennig .right_word img.RW02{
+	animation: RW_01 .5s 2.5s backwards;
+}
+.opennig .right_word img.RW03{
+	animation: RW_02 1s 3s backwards;
+}
+/*右邊動畫*/
+@keyframes RW_01{
+	0%{ opacity: 0; }
+	100%{ opacity: 1;}
+}
+@keyframes RW_02{
+	0%{ opacity: 0;
+		top:50px; }
+	100%{ opacity: 1;
+		top:0;}
+}
+
+/*hover文字-----------------*/
+
+/*左邊*/
+.opennig .left_banner:hover{
+	height: 100%;
+	top: 0;
+}
+/*右邊*/
+.opennig .right_banner:hover{
+	height: 100%;
+	top: 0;
+}
+
+
+
+/*===============================心測開場頁=========================*/
+/*大框框*/
+.findAnimal{
+	display: block;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 0%;
+	right: 0%;	/*消失控制鈕*/
+	width: 96%;
+	min-height: 590px;
+}
+/*底板範圍*/
+.bg{
+	width: 100%;
+	height: 590px;
+	position: relative;
+	display: block;
+}
+
+
+/*中間文字大標的底板*/
+.find_title{
+	width: 270px;
+	height: 250px;
+	position: relative;
+	margin: auto;
+	top: 190px;
+	bottom: 0;
+	left: 0%;
+	right: 0%;
+	border-radius: 50%;
+
+	/*background-color: #ccc;*/
+}
+/*中間文字的圖*/
+.find_title img{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+/*中間文字的動畫*/
+/*尋*/
+.find_title img.FA01{
+	animation: FA01 1s backwards;
+}
+
+@keyframes FA01{
+	0%{  opacity:0;left:-10%; }
+	100%{  opacity:1;left: 0%;}
+}
+/*精靈*/
+.find_title img.FA04{
+	animation: FA04 1s .5s backwards;
+}
+@keyframes FA04{
+	0%{ opacity:0;bottom:-10%; }
+	100%{ opacity:1;bottom: 0%;}
+}
+/*找、守護*/
+.find_title img.FA02, .find_title img.FA03{
+	animation: FA02 1s 1.5s backwards;
+}
+@keyframes FA02{
+	0%{ opacity:0; }
+	100%{ opacity:1;}
+}
+
+/*當中間圓板被hover時，把“找”加上ＣＬＡＳＳ*/
+.find_title img.FA02{
+	transform: rotate(0deg);
+	transition: 1s;
+}
+
+.find_title img.touch{
+	transform: rotate(30deg);
+	top: -10px;
+}
+
+/*左上文字底板 */
+.introL{
+	width: 180px;
+	height: 60px;
+	position: absolute;
+	top:160px;
+	right: 72%;
+}
+/*動畫*/
+/*想知道哪位小精靈*/
+.introL img.iL01{
+	animation: iL01 1.2s 2.5s  ease-out backwards;
+}
+@keyframes iL01{
+	0%{ opacity:0;left: -30%; }
+	100%{ opacity:1;left: 0%;}
+}
+/*與你最心有靈犀嗎？*/
+.introL img.iL02{
+	animation: iL01 1.2s 4s  ease-out backwards;
+}
+
+/*右下文字底板*/
+.introR{
+	width: 280px;
+	height: 25px;
+	position: absolute;
+	top:460px;
+	right: 50px;
+
+	/*background-color: #ccc;*/
+}
+/*動畫*/
+/*讓我帶你尋找守護精靈*/
+.introR img.iR01{
+	animation: iR01 1.2s 5s backwards;
+}
+@keyframes iR01{
+	0%{ opacity:0;bottom: -30%; }
+	100%{ opacity:1;bottom: 0%;}
+}
+/*右邊說話的底板*/
+.talk{
+	width: 240px;
+	height: 85px;
+	position: absolute;
+	top:250px;
+	left: 710px;
+	opacity: 0;
+
+	/*background-color: #ccc;*/
+}
+/*左右文字圖共同設定*/
+.introL img, .introR img, .talk img{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+
+
+/*_____________________________心理測驗內頁______________________________________*/
+
+/*底板*/
+.find_bg{
+	display: block;
+	position: relative;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;	
+	width: 85%;
+	height: 490px;
+	padding: 40px 0 60px 0;	/*H+P最大590*/
+	/*把超出的地方遮起來*/
+	overflow: hidden;	
+
+	/*background-color: #ccc;*/
+}
+/*總長度*/
+.find_bg ul{
+	position: relative;
+	display: block;
+	width: 500%;
+	height: 100%;
+	left: 0%;	/*用來推移li*/
+	font-size: 0;
+
+	/*background-color: #fa0;*/
+}
+/*步驟樣板設定*/
+.find_bg ul li{
+	position: relative;
+	display: inline-block;
+	width: 20%;
+	height: 100%;
+	vertical-align: top;
+}
+
+
+/*下層問答底板*/
+.find_bg ul li .down_text{
+	width: 100%;
+	height: 225px;
+	margin-top: 15px;
+	position: relative;
+	text-align: center;
+
+	/*background-color: #aaa;*/
+}
+
+
+/*==============STEP1=========*/
+
+/*上層圖片底板*/
+.find_bg ul li.step1 .up_img{
+	width: 100%;
+	height: 250px;
+	background-image: url(../images/inspire/up_img01-01.png);
+	background-size: cover;
+	background-position:center;  
+}
+/*下層文字版*/
+.down_text .choose1{
+	width: 100%;
+	height: 82px;
+	margin-top: 25px;	/*選擇的間距*/
+	text-align: center;
+
+	/*background-color: #fa0;*/
+}
+.down_text .choose1 a{
+	width: 262px;
+	height: 100%;	
+	display: inline-block;
+	/*SVG的長度，xy軸各有兩張*/
+	background-size: 200% 200%;
+	background-image: url(../images/inspire/choose1-01.svg);
+
+	/*background-color: #ccc;*/
+}
+.down_text .choose1 a.c1-1{
+	/*y軸設100%就會換hover色*/
+	background-position:0% 0%;
+}
+.down_text .choose1 a.c1-2{
+	/*y軸設100%就會換hover色*/
+	background-position:100% 0%;
+}
+.down_text .choose1 a.c1-1:hover{
+	/*y軸設100%就會換hover色*/
+	background-position:0% 100%;
+}
+
+.down_text .choose1 a.c1-2:hover{
+	/*y軸設100%就會換hover色*/
+	background-position:100% 100%;
+}
+
+/*==============STEP2=========*/
+
+/*上層圖片底板*/
+.find_bg ul li.step2 .up_img{
+	width: 100%;
+	height: 250px;
+	background-image: url(../images/inspire/up_img02-01.png);
+	background-size: cover;
+	background-position:center;  
+}
+/*下層文字版*/
+.down_text .choose2{
+	width: 100%;
+	height: 82px;
+	margin-top: 25px;	/*選擇的間距*/
+	text-align: center;
+
+	/*background-color: #fa0;*/
+}
+.down_text .choose2 a{
+	width: 542px;
+	height: 100%;	
+	display: inline-block;
+	/*SVG的長度，xy軸各有兩張*/
+	background-size: 200% 200%;
+	background-image: url(../images/inspire/choose2-01.svg);
+
+	/*background-color: #ccc;*/
+}
+.down_text .choose2 a.c2-1{
+	/*x軸設100%就會換hover色*/
+	background-position:0% 0%;
+}
+.down_text .choose2 a.c2-2{
+	/*x軸設100%就會換hover色*/
+	background-position:0% 100%;
+}
+.down_text .choose2 a.c2-1:hover{
+	background-position:100% 0%;
+}
+
+.down_text .choose2 a.c2-2:hover{
+	background-position:100% 100%;
+}
+
+
+/*==============STEP3=========*/
+
+/*上層圖片底板*/
+.find_bg ul li.step3 .up_img{
+	width: 100%;
+	height: 250px;
+	background-image: url(../images/inspire/up_img03-01.png);
+	background-size: cover;
+	background-position:center;  
+}
+/*下層文字版*/
+.down_text .choose3{
+	width: 100%;
+	height: 82px;
+	margin-top: 25px;	/*選擇的間距*/
+	text-align: center;
+
+	/*background-color: #fa0;*/
+}
+.down_text .choose3 a{
+	width: 243px;
+	height: 100%;	
+	display: inline-block;
+	/*SVG的長度，xy軸各有兩張*/
+	background-size: 200% 200%;
+	background-image: url(../images/inspire/choose3-01.svg);
+
+	/*background-color: #ccc;*/
+}
+.down_text .choose3 a.c3-1{
+	/*x軸設100%就會換hover色*/
+	background-position:0% 0%;
+}
+.down_text .choose3 a.c3-2{
+	/*x軸設100%就會換hover色*/
+	background-position:0% 100%;
+}
+.down_text .choose3 a.c3-1:hover{
+	background-position:100% 0%;
+}
+
+.down_text .choose3 a.c3-2:hover{
+	background-position:100% 100%;
+}
+
+/*==============STEP4=========*/
+
+/*上層圖片底板*/
+.find_bg ul li.step4 .up_img{
+	width: 100%;
+	height: 250px;
+	background-image: url(../images/inspire/up_img04-01.png);
+	background-size: cover;
+	background-position:center;  
+}
+/*下層文字版*/
+.down_text .choose4{
+	width: 100%;
+	height: 82px;
+	margin-top: 25px;	/*選擇的間距*/
+	text-align: center;
+
+	/*background-color: #fa0;*/
+}
+.down_text .choose4 a{
+	width: 414px;
+	height: 100%;	
+	display: inline-block;
+	/*SVG的長度，xy軸各有兩張*/
+	background-size: 200% 200%;
+	background-image: url(../images/inspire/choose4-01.svg);
+
+	/*background-color: #ccc;*/
+}
+.down_text .choose4 a.c4-1{
+	/*x軸設100%就會換hover色*/
+	background-position:0% 0%;
+}
+.down_text .choose4 a.c4-2{
+	/*x軸設100%就會換hover色*/
+	background-position:0% 100%;
+}
+.down_text .choose4 a.c4-1:hover{
+	background-position:100% 0%;
+}
+
+.down_text .choose4 a.c4-2:hover{
+	background-position:100% 100%;
+}
+
+/*==============STEP5  測驗結果=========*/
+/*測驗結果（上層）*/
+.find_bg ul li.step5 .up_img{
+	width: 100%;
+	height: 274px;
+	position: relative;
+	background-image: url(../images/inspire/ans_img-02-01.png);
+	background-size: cover;
+	background-position:center;  
+	font-size: 0;
+}
+/*上層左區塊底板*/
+.find_bg ul li.step5 .up_img .ani_icon{
+	width: 35%;
+	height: 100%;
+	display: inline-block;
+	position: relative;
+	top: 0;
+	left: 0;
+
+	/*background-color: rgba(255,255,255,.5);*/
+}
+/*動物陰影圖*/
+.find_bg ul li.step5 .up_img .ani_icon .ani_icon_img{
+	width: 270px;
+	height: 270px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	right: 0;
+	left: 0;
+	background-image: url(../images/inspire/animal_icons-01-01.svg);
+	background-size: 800% 200%;
+	background-position: -700% -100%;
+	
+}
+
+/*上層右區塊底板*/
+.find_bg ul li.step5 .up_img .ani_wrap{
+	width: 62%;
+	margin-left: 3%;	/*W+M最多65%*/
+	height: 100%;
+	display: inline-block;
+	position: relative;
+	vertical-align: top;
+
+	/*background-color: rgba(200,200,200,.5);*/
+}
+/*右區上-動物名稱*/
+.find_bg ul li.step5 .up_img .ani_name{
+	width: 100%;
+	height: 90px;
+	position: relative;
+
+	/*background-color: rgba(0,200,200,.5);*/
+}
+.find_bg ul li.step5 .up_img .ani_name p{
+	position: absolute;	/*定位在左下角*/
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	font-size: 40px;
+	color: #fff;
+    text-shadow: 0px 0px  10px #000;
+}
+
+/*右區下-動物屬性*/
+.find_bg ul li.step5 .up_img .ani_say{
+	width: 100%;
+	height: 169px;
+	margin-top: 15px;	/*h+M最多184*/
+
+	/*background-color: rgba(150,200,200,.5);*/
+}
+.find_bg ul li.step5 .up_img .ani_say p{
+	width: 100%;
+	font-size: 20px;
+	line-height: 30px;
+	color: #333;
+}
+/*=====================================*/
+
+/*推薦商品大框框（下層）*/
+.find_bg ul li.step5 .might_like{
+	width: 100%;
+	height: 216px;
+
+	/*background-color: #aaa;*/
+}
+/*你可能會喜歡-文字設定*/
+.find_bg ul li.step5 .might_like p{
+	width: 97.5%;
+	height: 40px;
+	color: #333;
+	font-size: 20px;
+	line-height: 40px;
+	font-weight: bold;
+	margin-left: 2.5%;
+
+	/*background-color: #fa0;*/
+}
+/*推薦商品底板*/
+.find_bg ul li.step5 .might_like .ani_item{
+	width: 100%;
+	height: 176px;
+	font-size: 0;
+
+	/*background-color: #bbb;*/
+}
+/*推薦商品底板-個別的*/
+.find_bg ul li.step5 .might_like .ani_item div{
+	width: 30%;
+	height: 100%;
+	display: inline-block;
+	margin-left: 2.5%;
+
+	background-color: #ccc;
+}
+
+
+
+/*==========平板版本==========*/
+
+@media screen and (max-width: 1080px) {/*IPAD尺寸*/
+/*_____________________________共同的設定______________________________________*/
+
+/*logo*/
+.open_bg{
+	transform: scale(0.8);
+}
+
+
+/*===============================開場頁=========================*/
+
+
+
+
+
+
+/*===============================心測開場頁=========================*/
+
+/*中間文字大標的底板*/
+.find_title{
+	transform: scale(0.8);
+}
+/*左上文字底板 */
+.introL{
+	transform: scale(0.9);
+}
+/*右下文字底板*/
+.introR{
+	transform: scale(0.9);
+	right: 2%;
+}
+
+
+
+
+
+/*_____________________________心理測驗內頁______________________________________*/
+
+
+/*動物陰影圖*/
+.find_bg ul li.step5 .up_img .ani_icon .ani_icon_img{
+	width: 200px;
+	height: 200px;
+}
+/*右區上-動物名稱*/
+.find_bg ul li.step5 .up_img .ani_name p{
+	font-size: 30px;
+}
+/*右區下-動物屬性*/
+.find_bg ul li.step5 .up_img .ani_say{
+	width: 100%;
+	height: 164px;
+	margin-top: 20px;	/*h+M最多184*/
+
+	/*background-color: rgba(150,200,200,.5);*/
+}
+.find_bg ul li.step5 .up_img .ani_say p{
+	font-size: 15px;
+	line-height: 26px;
+}
+
+
+
+
+
+
+
+
+
+	
+}
+
+/*____________________________________________________________________________*/
+
+/*==========手機版本==========*/
+
+@media screen and (max-width: 760px) {
+
+content {
+	min-height: 450px;
+}
+/*_____________________________共同的設定______________________________________*/
+/*logo*/
+.open_bg{
+	width: 300px;
+	height: 300px;
+}	
+
+
+
+
+
+/*===============================心測開場頁=========================*/
+
+/*中間文字大標的底板*/
+.find_title{
+	width: 189px;
+	height: 175px;
+	top: 215px;
+}
+/*左上文字底板 */
+.introL{
+	display: none;
+}
+/*右下文字底板*/
+.introR{
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*____________________________心理測驗內頁______________________________________*/
+
+/*底板*/
+.find_bg{
+	height: 430px;
+	padding: 20px 0 0px 0;	/*H+P最大450*/
+	/*把超出的地方遮起來*/
+	overflow: hidden;	
+
+	/*background-color: #ccc;*/
+}
+/*==============STEP1~4=========*/
+
+/*上層圖片底板*/
+.find_bg ul li.step1 .up_img,
+.find_bg ul li.step2 .up_img,
+.find_bg ul li.step3 .up_img,
+.find_bg ul li.step4 .up_img
+{
+	height: 150px;
+}
+.find_bg ul li.step4 .up_img
+{
+	height: 140px;
+}
+/*下層文字版*/
+.down_text .choose1,
+.down_text .choose2,
+.down_text .choose3,
+.down_text .choose4
+{
+	height: 60px;
+	margin-top: 30px;	/*選擇的間距*/
+}
+.down_text .choose1 a{
+	width: 192px;
+}
+/*這頁要換圖*/
+.down_text .choose2 a{
+	width: 300px;
+	background-image: url(../images/inspire/choose2-01-s.svg);
+}
+.down_text .choose3 a{
+	width: 178px;
+}	
+.down_text .choose4 a{
+	width: 303px;
+}
+/*==============STEP 5=========*/
+
+/*測驗結果（上層）*/
+.find_bg ul li.step5 .up_img{
+	width: 100%;
+	height: 230px;
+	position: relative;
+	background-image: url(../images/inspire/ans_img-02-01.png);
+	background-size: cover;
+	background-position:center;  
+	font-size: 0;
+}
+/*上層左區塊底板*/
+.find_bg ul li.step5 .up_img .ani_icon{
+	width: 35%;
+	height: 100%;
+	display: block;	/*先關起來*/
+	position: absolute;	
+	top: 0;
+	right: 0;
+	text-align: right;
+
+	/*background-color: rgba(255,255,255,.5);*/
+}
+/*動物陰影圖*/
+.find_bg ul li.step5 .up_img .ani_icon .ani_icon_img{
+	width: 270px;
+	height: 270px;
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	right: 0;
+	left: 0;
+	background-image: url(../images/inspire/animal_icons-01-01.svg);
+	background-size: 800% 200%;
+	background-position: -700% -100%;
+	opacity: .3;	
+}
+
+/*上層右區塊底板*/
+.find_bg ul li.step5 .up_img .ani_wrap{
+	width: 100%;
+	margin: 0 5% ;	
+	height: 100%;
+	display: inline-block;
+	position: relative;
+	vertical-align: top;
+
+	/*background-color: rgba(200,200,200,.5);*/
+}
+
+/*右區上-動物名稱*/
+.find_bg ul li.step5 .up_img .ani_name{
+	width: 100%;
+	height: 60px;
+	position: relative;
+
+	/*background-color: rgba(0,200,200,.5);*/
+}
+.find_bg ul li.step5 .up_img .ani_name p{
+	position: absolute;	/*定位在左下角*/
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	font-size: 25px;
+	color: #fff;
+    text-shadow: 0px 0px  10px #000;
+}
+
+/*右區下-動物屬性*/
+.find_bg ul li.step5 .up_img .ani_say{
+	width: 100%;
+	height: 169px;
+	margin-top: 15px;	/*h+M最多184*/
+
+	/*background-color: rgba(150,200,200,.5);*/
+}
+.find_bg ul li.step5 .up_img .ani_say p{
+	width: 100%;
+	font-size: 12px;
+	line-height: 24px;
+	font-weight: normal;
+	color: #333;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
