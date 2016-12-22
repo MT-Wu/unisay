@@ -54,6 +54,8 @@
 
 	transition: 0s;
 	z-index: 5;
+
+	cursor: pointer;
 }
 .product_logo div.this_productclass{
 	position: absolute;
