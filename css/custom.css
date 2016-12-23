@@ -172,7 +172,7 @@ div.cus_navbar{
 /*加class:on來顯示粉色線*/
 .cus_navbar li.on:after{
 	background-color: #FFBAB1;
-	z-index: 10;
+	z-index: 5;
 }
 
 /*幻燈片----------------------------------------------------------------------------
@@ -278,7 +278,7 @@ div.cus_slideshow{
 .cus_slideshow ul li .step .add_to_buy{
 	position: absolute;
 	text-align: right;
-	width: 50%;
+	width: 100%;
 	height: 30px;
 	top: 0;
 	right: 0;
@@ -356,8 +356,8 @@ div.cus_slideshow{
 ----------------------------------*/
 
 /*微調MAKE CASE 底板*/
-.cus_slideshow ul li.slide02 .step .title{
-	height: 70px;	/*預設50px*/
+.cus_slideshow ul li.slide01 .step .title{
+	height: 60px;	/*預設50px*/
 }
 
 /*每個div高度*/
@@ -476,26 +476,204 @@ div.cus_slideshow{
 
 	/*background-color: #a5a;*/
 }
-.cus_slideshow ul li .step .case_animal a.animal{
+
+/*------------*/
+/*微調-價格底板*/
+.cus_slideshow ul li .step .price{
+	width: 78%;
+	height: 40px;
+	padding: 10px 0 0 12%;
+	margin-right: 10%;
+	position: relative;
+
+	/*background-color: #00a;*/
+}
+
+/*動物ＩＣＯＮ的底板*/
+.cus_slideshow ul li .step .case_animal .productclass_secondnav{
+	width: 100%;
+	height: 230px;
+
+	/*background-color: #fa0;*/
+}
+
+/*包住icons的兩排*/
+.productclass_secondnav div{
+	width: 100%;
+	text-align: center;
+}
+
+/*icons*/
+.productclass_secondnav div div{
+	position: relative;
 	display: inline-block;
+
 	width: 50px;
 	height: 50px;
+	margin: 0.4% 3.5%; 
+
 	border-radius: 50%;
-	border: 1px solid #ccc;
-	margin: 10px 2% 0 0 ; 
-	text-align: center;
-	vertical-align: middle;
-}
-.cus_slideshow ul li .step .case_animal a.animal img{
-	width: 100%;
-	height: 100%;
+	border: 1px solid #eee;
+
+	transition: 0.5s;
+	background-size: 800% 200%;
 
 }
+
+/*hover用after暗幕蓋住*/
+.productclass_secondnav div div:after{
+	content: "";
+	font-size: 12px;
+	color: rgba(255,255,255,0); /*一開始字就在，顏色先關掉，hover才不會是糊掉*/
+	line-height: 50px;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background: rgba(102,102,102,0);
+
+	transition: 0.5s;
+}
+.productclass_secondnav div div:hover:after{
+	background: rgba(102,102,102,0.9);
+	color: rgba(255,255,255,1);
+}
+
+/*每個icons的sprite位置*/
+.animalicon01_owl{
+	background: url(../images/product/animal_icons.svg) no-repeat 0 0;
+}
+.productclass_secondnav div div.animalicon01_owl:after{
+	content: "貓頭鷹";
+}
+
+.animalicon02_fox{
+	background: url(../images/product/animal_icons.svg) no-repeat -50px 0;
+}
+.productclass_secondnav div div.animalicon02_fox:after{
+	content: "狐狸";
+}
+
+.animalicon03_rabbit{
+	background: url(../images/product/animal_icons.svg) no-repeat -100px 0;
+}
+.productclass_secondnav div div.animalicon03_rabbit:after{
+	content: "兔子";
+}
+
+.animalicon04_lion{
+	background: url(../images/product/animal_icons.svg) no-repeat -150px 0;
+}
+.productclass_secondnav div div.animalicon04_lion:after{
+	content: "獅子";
+}
+
+.animalicon05_deer{
+	background: url(../images/product/animal_icons.svg) no-repeat -200px 0;
+}
+.productclass_secondnav div div.animalicon05_deer:after{
+	content: "鹿";
+}
+
+.animalicon06_eagle{
+	background: url(../images/product/animal_icons.svg) no-repeat -250px 0;
+}
+.productclass_secondnav div div.animalicon06_eagle:after{
+	content: "老鷹";
+}
+
+.animalicon07_cat{
+	background: url(../images/product/animal_icons.svg) no-repeat -300px 0;
+}
+.productclass_secondnav div div.animalicon07_cat:after{
+	content: "貓咪";
+}
+
+.animalicon08_bird{
+	background: url(../images/product/animal_icons.svg) no-repeat -350px 0;
+}
+.productclass_secondnav div div.animalicon08_bird:after{
+	content: "鳥兒";
+}
+
+.animalicon09_wolf{
+	background: url(../images/product/animal_icons.svg) no-repeat 0 -50px;
+}
+.productclass_secondnav div div.animalicon09_wolf:after{
+	content: "狼";
+}
+
+.animalicon10_monkey{
+	background: url(../images/product/animal_icons.svg) no-repeat -50px -50px;
+}
+.productclass_secondnav div div.animalicon10_monkey:after{
+	content: "猴子";
+}
+
+.animalicon11_bee{
+	background: url(../images/product/animal_icons.svg) no-repeat -100px -50px;
+}
+.productclass_secondnav div div.animalicon11_bee:after{
+	content: "蜜蜂";
+}
+
+.animalicon12_squirrel{
+	background: url(../images/product/animal_icons.svg) no-repeat -150px -50px;
+}
+.productclass_secondnav div div.animalicon12_squirrel:after{
+	content: "松鼠";
+}
+
+.animalicon13_dog{
+	background: url(../images/product/animal_icons.svg) no-repeat -200px -50px;
+}
+.productclass_secondnav div div.animalicon13_dog:after{
+	content: "狗";
+}
+
+.animalicon14_porcupine{
+	background: url(../images/product/animal_icons.svg) no-repeat -250px -50px;
+}
+.productclass_secondnav div div.animalicon14_porcupine:after{
+	content: "刺蝟";
+}
+
+.animalicon15_parrot{
+	background: url(../images/product/animal_icons.svg) no-repeat -300px -50px;
+}
+.productclass_secondnav div div.animalicon15_parrot:after{
+	content: "鸚鵡";
+}
+
+.animalicon16_elephant{
+	background: url(../images/product/animal_icons.svg) no-repeat -350px -50px;
+}
+.productclass_secondnav div div.animalicon16_elephant:after{
+	content: "象";
+}
+
+
+
 /*幻燈片03-右側面板--------------------------------------------------------
 ------------------------------------------------------------------
 ------------------------------------------------------------------
 ------------------------------------------------------------------
 ----------------------------------*/
+/*調整手機殼圖片位置*/
+/*改成絕對定位*/
+.cus_slideshow ul li.slide03 .case_img img{
+	width: 64%;		/*抓原圖比例去算的*/
+	height: 100%;
+	position: absolute;
+	display: inline-block;
+	top: 0;
+	left: 0;
+	/*background-color: #fa0;*/
+}
 /*座右銘底板*/
 .cus_slideshow ul li .step .motto{
 	width: 78%;
@@ -854,12 +1032,23 @@ input[type=range]:focus::-ms-track {
 ----------------------------------*/
 
 /*左側卡片圖大小設定*/
+/*改成絕對定位*/
 .cus_slideshow ul li.slide04 .case_img img{
 	width: 90%;		
 	height: 100%;
-	position: relative;
+	position: absolute;
 	display: inline-block;
 	margin: 0 5%;
+}
+
+/*置入（ＣＡＮＶＡＳ）*/
+.cus_slideshow ul li.slide04 div.case_img .insert_text{
+	width: 69%;
+	height: 50%;
+	position: absolute;
+	top: 0;
+	padding: 25% 14% 25% 17%;	/*控制左右邊界的位置*/
+	display: inline-block;
 }
 
 /*給誰的底板*/
@@ -1185,8 +1374,10 @@ div.cus_slideshow{
 	margin: 40px 0 0 0;
 }
 .cus_slideshow ul li .case_img img{
-	width: 64%;		/*抓原圖比例去算的*/
+	width: 100%;		/*抓原圖比例去算的*/
 	height: 100%;
+	object-fit: contain;	/*讓圖片維持原樣不變形，類似DIV裡用Background-image的功能	*/
+	object-position: center;
 	position: relative;
 	display: block;
 	left: 0;
