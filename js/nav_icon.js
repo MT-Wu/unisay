@@ -26,7 +26,8 @@
 
     // ajax載入購物車和會員中心側邊欄內容
     cart_sidebar.load("ajax/cart_and_member.html .cart_sidebar_content");
-    member_sidebar.load("ajax/cart_and_member.html .member_sidebar_content");
+    // member_sidebar.load("ajax/cart_and_member.html .member_sidebar_content");
+    member_sidebar.load("ajax/cart_and_member.html .member_sidebar_content2");
 
 
 
