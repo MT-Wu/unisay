@@ -183,7 +183,7 @@ if(isset($_POST['password'])){
 
 	<!-- 上方的bar -->
 		<div class="upframe">
-			<div class="up1">
+			<div class="up1 here">
 				<img src="images/member/mushroom.svg">
 				<a href="memberaccountmember.php">會員專區</a>
 			</div>
@@ -200,12 +200,13 @@ if(isset($_POST['password'])){
 			<p>E-COURPON  購物金查詢</p>
 			<img src="images/member/line2-01.svg">
 			<div class="ecourpon">
-			<p>您有購物金 xxx 元。</p>
-			<!-- <span style="font-size:40px;"> -->
+				<p>您有購物金 xxx 元。</p>
+
 			</div>
 			<div class="howtoget">
-				<a href="memberrecycle.html">(如何獲得購物金？)</a>
+					<a href="memberrecycle.html">(如何獲得購物金？)</a>
 			</div>
+
 		</div>
 
 

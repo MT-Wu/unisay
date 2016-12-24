@@ -184,10 +184,10 @@ if(isset($_POST['password'])){
 	<!-- 上方的bar -->
 		<div class="upframe">
 			<div class="up1">
-				<img src="images/member/mushroom.svg">
 				<a href="memberaccountmember.php">會員專區</a>
 			</div>
-			<div class="up2">
+			<div class="up2 here">
+				<img src="images/member/mushroom.svg">
 				<a href="memberaccounteditinfopw.php">修改資料</a>
 			</div>
 			<div class="up3">
@@ -201,30 +201,30 @@ if(isset($_POST['password'])){
 			<img src="images/member/line2-01.svg">
 		    <div class="editinfo">
 			    <form class="editinfoarea" name="form1"  method="post">
-						<div class="form-group">
-                <label for="email_id">Email address</label>
-                <input type="email" class="form-control" id="email_id" value="<?= $_SESSION['user']['email_id'] ?>" disabled>
-            </div>
-            <div class="form-group">
-                <label for="password">* Password</label> <span id="password_info" style="color:red;display:none;">密碼長度請設定大於 6 !</span>
-                <input type="password" class="form-control" id="password" name="password">
-            </div>
-            <div class="form-group">
-                <label for="new_password">New password</label> <span id="password_info" style="color:red">不修改請留白</span>
-                <input type="password" class="form-control" id="new_password" name="new_password">
-            </div>
-            <div class="form-group">
-                <label for="nickname">* Nickname</label> <span id="nickname_info" style="color:red;display:none;">暱稱長度請設定大於 2 !</span>
-                <input type="text" class="form-control" id="nickname" name="nickname"  value="<?= $_SESSION['user']['nickname'] ?>">
-            </div>
-            <div class="form-group">
-                <label for="mobile">Mobile</label>
-                <input type="text" class="form-control" id="mobile" name="mobile"  value="<?= $_SESSION['user']['mobile'] ?>">
-            </div>
-            <div class="form-group">
-                <label for="address">Address</label>
-                <input type="text" class="form-control" id="address" name="address"><?= $_SESSION['user']['address'] ?></input>
-            </div>
+					<div class="form-group havetowrite">
+		                <label for="email_id">帳號</label>
+		                <input type="email" class="form-control" id="email_id" value="<?= $_SESSION['user']['email_id'] ?>" disabled>
+		            </div>
+		            <div class="form-group havetowrite">
+		                <label for="password">密碼</label> <span id="password_info" style="color:red;display:none;">密碼長度請設定大於 6 !</span>
+		                <input type="password" class="form-control" id="password" name="password">
+		            </div>
+		            <div class="form-group">
+		                <label for="new_password">新密碼</label> <span id="password_info" style="color:red">不修改請留白</span>
+		                <input type="password" class="form-control" id="new_password" name="new_password">
+		            </div>
+		            <div class="form-group havetowrite">
+		                <label for="nickname">暱稱</label> <span id="nickname_info" style="color:red;display:none;">暱稱長度請設定大於 2 !</span>
+		                <input type="text" class="form-control" id="nickname" name="nickname"  value="<?= $_SESSION['user']['nickname'] ?>">
+		            </div>
+		            <div class="form-group">
+		                <label for="mobile">電話</label>
+		                <input type="text" class="form-control" id="mobile" name="mobile"  value="<?= $_SESSION['user']['mobile'] ?>">
+		            </div>
+		            <div class="form-group">
+		                <label for="address">地址</label>
+		                <input type="text" class="form-control" id="address" name="address"><?= $_SESSION['user']['address'] ?></input>
+		            </div>
 					<div class="tab-editok">
 						<a href="#" onclick="$(this).closest('form').submit()">確認修改</a>
 					</div>

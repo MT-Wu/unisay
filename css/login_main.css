@@ -569,8 +569,11 @@
 		color: #fff;
 	}
 
-	/*會員專區*/
-	/*上方的sidebar*/
+
+
+/*----------會員專區----------*/
+
+/*上方的sidebar*/
 
 	.upframe{
 		width: 50%;
@@ -580,104 +583,58 @@
 		top:15px;
 	}
 
-	.up1{
-		display: inline-block;
-		width:26%;
-		height:19%;
-		border: 1px solid #666666;
-		border-radius: 10%;
-		background-color: #666666;
-		margin:3%;
-	}
-
-	.up1 a{
-		text-decoration: none;
-		color:#fff;
-		z-index: 0;
-		font-size: 16px;
+	.up1, .up2, .up3{
 		position: relative;
-		top:5px;
-		left:25px;
-	}
-
-	.up1 img{
-		position:absolute;
-		bottom:72%;
-		left: 20%;
-		z-index: 1;
-	}
-
-	.up2{
 		display: inline-block;
 		width:26%;
-		height:19%;
+		height:30px;
+
 		border: 1px solid #666666;
-		border-radius: 10%;
-		background-color: #fff;
-		/*position: relative;*/
-		margin:3%;
-
-	}
-
-	.up2:hover{
-		background-color: #666666;
-	}
-
-	.up2 a{
-		text-decoration: none;
-		color:#666666;
-		z-index: 0;
-		font-size: 16px;
-		position: relative;
-		top:5px;
-		left:25px;
-	}
-
-	.up2 a:hover{
-		color: #fff;
-	}
-
-	.up3{
-		display: inline-block;
-		width:26%;
-		height:19%;
-		border: 1px solid #666666;
-		border-radius: 10%;
+		border-radius: 6px; /*小童說要寫px不能出現長寬不同弧度*/
 		background-color: #fff;
 		margin:3%;
 	}
 
-	.up3:hover{
+	.up1:hover, .up2:hover, .up3:hover{
+		background-color: #666666;
+	}
+	.up1.here, .up2.here, .up3.here{
 		background-color: #666666;
 	}
 
-	.up3 a{
+	.up1 a, .up2 a, .up3 a{
 		text-decoration: none;
-		color:#666666;
-		z-index: 0;
-		font-size: 16px;
-		position: relative;
-		top:5px;
-		left:25px;
-	}
+		display: inline-block;
+		width: 100%;
+		height: 100%;
 
-	.up3 a:hover{
+		color:#666;
+		font-size: 16px;
+		line-height: 30px; /*行高和按鈕的高度一樣確保字垂直置中*/
+		text-align: center;	
+		z-index: 0;
+	}
+	.up1:hover a, .up2:hover a, .up3:hover a{
+		color: #fff;
+	}
+	.up1.here a, .up2.here a, .up3.here a{
 		color: #fff;
 	}
 
-	.up3 img{
+	.up1 img, .up2 img, .up3 img{
 		position:absolute;
-		bottom:72%;
-		left: 86%;
+		bottom:20%;
+		right: 0%;
 		z-index: 1;
 	}
+
 
 
 	/*下方的內容*/
 	.downframe{
 		width: 100%;
 		height: 30vh;
-		position: absolute;
+		position: relative;
 		top:130px;
 		left:2%;
 	}
@@ -703,12 +660,12 @@
 
 	.howtoget{
 		position: relative;
-		top:11%;
-		left:75%;
+		width: 100%;
+		text-align: right; 
+		/*開100%靠右，避免直接調left爆版*/
 	}
 
 	.howtoget a{
-		/*text-decoration: none;*/
 		color:#666666;
 		font-size: 14px;
 	}
@@ -1035,18 +992,17 @@
  /*加入會員頁面*/
  	.joinus{
  		position: relative;
- 		top:130px;
  		font-size: 16px;
  		width: 100%;
     	height: 500px;
-		/*vertical-align: top;  /*左右兩個div上下排列的狀況消失*/*/
  	}
 
  /*加入會員的輸入區域*/
  	.mainbody2{
+
  		line-height: 30px;
  		position: relative;
- 		top:-15%;
+ 		top:50px;
  		text-align: center;
  	}
 	
@@ -1082,12 +1038,6 @@
 		width: 70%;
 		left: 10%;
 	}
-
-
-
-
-
-
 
 
 
@@ -1142,83 +1092,59 @@
 		width: 20%;
 	}
 
-/*會員專區-購物金查詢*/
-	.downframe{
-		width: 60%;
-    	height: 16vh;
-    	position: relative;
-    	top: 110px;
-    	left: 3%;
-	}
 
-	.downframe img {
-    	width: 160%;
+
+/*----------會員專區-購物金查詢----------*/
+	.downframe{
+		width: 100%;
+    	height: 16vh;
+    	top: 180px;
+    	left: 3%;
 	}
 
 	.downframe p{
 		font-size: 15px;
 	}
 
-	.howtoget{
-		position: relative;
-		top:25%;
-		left:60%;
-	}
-
 	.ecourpon p {
-    	font-size: 19px;
+		position: relative;
+		top:10px;
+    	font-size: 20px;
+    	height: 22px;
 	}
 
 /*進去會員中心時變成手機版時的三個按鈕配置*/
+/*----------會員專區----------*/
+
+/*上方的sidebar*/
+
 	.upframe{
-		width: 60%;
-    	height: 8vh;
-    	position: relative;
-    	left: 30%;
-    	top: 100px;
+		width: 100%;
+		margin: auto;
+		right: 0;
+		left: 0;
+		top:75px;
+
+		text-align: center; /*三顆按鈕置中*/
 	}
+
+	.up1, .up2, .up3{
+		width:18%;
+		height:28px;
+	}
+
+	.up1 a, .up2 a, .up3 a{
+		font-size: 14px;
+		line-height: 28px; /*行高和按鈕的高度一樣確保字垂直置中*/
+	}
+
+	.up1 img, .up2 img, .up3 img{
+		bottom:15%;
+	}
+
+
+
 	
-	
-	.up1{
-		width:18%;
-		height:32%;
-	}
-
-	.up1 a{
-		font-size: 12px;
-		top:3px;
-		left:7px;
-		/*background-color: #666666;*/
-	}
-
-	.up1 img {
-    	position: absolute;
-    	bottom: 50%;
-   	 	left: 16%;
-    	z-index: 2;
-    }
-
-	.up2{
-		width:18%;
-		height:32%;
-	}
-
-	.up2 a{
-		font-size: 12px;
-		top:3px;
-		left:7px;
-	}
-
-	.up3{
-		width:18%;
-		height:32%;
-	}
-
-	.up3 a{
-		font-size: 12px;
-		top:3px;
-		left:7px;
-	}
 
 /*回收制度*/
 
@@ -1452,42 +1378,49 @@
     	padding-top: 7px;
 	}
 
-	/*會員專區購物金查詢*/
-	.upframe {
-    	width: 100%;
-    	height: 8vh;
-    	position: relative;
-    	left: 0%;
-    	top: 100px;
+/*會員專區購物金查詢*/
+/*----------會員專區----------*/
+
+/*上方的sidebar*/
+
+	.upframe{
+		top:95px;
 	}
 
-	.up1 {
-    	width: 25%;
-    	height: 40%;
+	.up1, .up2, .up3{
+		width:28%;
+		height:25px;
+
+		margin:2%; 
 	}
 
-	.up2 {
-    	width: 25%;
-    	height: 40%;
+	.up1 a, .up2 a, .up3 a{
+		font-size: 14px;
+		line-height: 25px; /*行高和按鈕的高度一樣確保字垂直置中*/
 	}
 
-	.up3 {
-    	width: 25%;
-    	height: 40%;
+	.up1 img, .up2 img, .up3 img{
+		bottom:10%;
 	}
 
     .downframe {
-    	width: 65
-    	%;
-    	height: 16vh;
-    	position: relative;
-    	top: 118px;
-    	left: 3%;
+    	width: 90%;
+    	top: 165px;
     }
 
     .downframe img {
-   		width: 130%;
+   		width: 100%;
 	}	
+
+	.ecourpon p {
+    	height: 70px;
+    	top:15px;
+	}
+
+
+
+
+
 
 	/*回收制度頁面*/
 	.recycleimg img {

@@ -124,8 +124,6 @@ require __DIR__. '/__connect_db.php';
 			<div class="member_note">
 				＊UniSay提供手機殼終身保固<br>
 				<br>
-				＊現在加入立即取得首購禮<br>
-				<br>
 				＊會員獨享舊殼換新殼現賺購物金<br>
 				  &nbsp;&nbsp;&nbsp;&nbsp;環保愛地球也讓自己有好新情<br>
 				  &nbsp;&nbsp;&nbsp;&nbsp;詳情請見->舊換新回收制度<br>

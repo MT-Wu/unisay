@@ -111,6 +111,11 @@
 		position: relative;
 		top: 30%;
 	}
+		/*第一項有兩行*/
+		.cart_navbar ul li .light_text p.doubleline{
+			line-height: 20px;
+			top: 30%;
+		}
 
 	/*進度線-全長*/
 	.cart_navbar ul:after , .cart_navbar li:after{
@@ -131,16 +136,9 @@
 		z-index: 1;
 	}
 
-	/*下面的清單明細*/
-	/*.down{
-		width: 100%;
-		width: 500px;
-	}*/
-
  	.list{
  		width: 100%;
  		height: 150px;
- 		/*background-color: #fa0;	*/
  		position: relative;
  		top:0%;
 		font-size: 0;
@@ -157,24 +155,15 @@
  		right: 0;
  		bottom: 0;
  	}
-	
-	/*.list img{
-		width: 100%;
-		position: absolute;
-		top:5%;*/
-		/*margin:0 auto;*/
-	/*}*/
 
 	.list div{
 		font-size: 14px;
 		display: inline-block;
 		color: #666666;
 		vertical-align: top;
-		/*background-color: #fa0;
-
-		/*width: 100%;*/
 	}
 	
+
 	/*清單選項*/
 	/*1左邊這塊寬度開50%，開inlineblock排列*/
 	.oneproduct_top{
@@ -189,8 +178,6 @@
 		width: 50%;
 		height: 100%;
 		display: inline-block;
-
-		/*background-color: #a0f;*/
 	}
 	
 	.oneproduct_01{
@@ -234,8 +221,6 @@
 		
 		object-fit: contain;
 		object-position: center;
-
-		/*background-color: #eee;*/
 	}
 
 	/*商品名稱四個字*/
@@ -250,8 +235,6 @@
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
-
-		/*background-color: #afa;*/
 	}
 
 	.oneproduct_02 .p2 span{
@@ -285,8 +268,6 @@
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
-
-		/*background-color: #aaa;*/
 	}
 
 	/*iphone*/
@@ -315,46 +296,40 @@
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
-
-		/*background-color: #aaa;*/
 	}
 
 	/*材質*/
 	.oneproduct_02 div.p7{
 		position:relative;
 		text-align: center;
-		display: inline-block;
 		width:100%;
 		height: 30px;
 
 		padding: 0;
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		box-sizing: border-box;
-
-		/*background-color: #0aa;*/
 	}
 	
 	.oneproduct_02 div.wood div.sel{
 		width: 100%;
-		height: 90px;
-
-		/*background-color: #fa0;*/
+		height: 100%;
 	}
 
 	/*材質的下拉式選單*/
 	.oneproduct_02 div.wood select.sel{
 		position: relative;
-		top: 15px;
+		top: 29px;
 		bottom: 0;
-		width: 60%;
+		width: 70px;
+		height: 25px;
 
 		margin: auto;
 		left: 0;
 		right: 0;
-		height: 20px;
-		border:1px solid #eee;
-		/*background-color:#8D8D8D;*/
+		border:1px solid #ccc;
+		color: #333;
+
+		background-color: #fff;
+
+		font-size: 14px;
 	}
 
 
@@ -372,46 +347,36 @@
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
-
-		/*background-color: #aaa;*/
 	}
 
 	/*數量*/
 	.oneproduct_03 div.p3{
-		position:relative;
-		text-align: center;
-		display: inline-block;
 		width:100%;
 		height: 30px;
-
-		padding: 0;
-		-webkit-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		box-sizing: border-box;
-
-		/*background-color: #0aa;*/
 	}
 	
 	.oneproduct_03 div.qty div.sel1{
 		width: 100%;
-		height: 90px;
-
-		/*background-color: #fa0;*/
+		height: 100%;
 	}
 
 	/*數量的下拉式選單*/
 	.oneproduct_03 div.qty select.sel1{
 		position: relative;
-		top: 15px;
+		top: 13px;
 		bottom: 0;
-		width: 30%;
+		width: 40px;
+		height: 25px;
 
 		margin: auto;
 		left: 0;
 		right: 0;
-		height: 20px;
-		border:1px solid #eee;
-		/*background-color:#8D8D8D;*/
+		border:1px solid #ccc;
+		color: #333;
+
+		background-color: #fff;
+
+		font-size: 14px;
 	}
 
 
@@ -428,7 +393,6 @@
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
 
-		/*background-color: #aaa;*/
 	}
 
 	/*100*/
@@ -458,7 +422,6 @@
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
 
-		/*background-color: #aaa;*/
 	}
 
 	/*200*/
@@ -486,8 +449,6 @@
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
-
-		/*background-color: #aaa;*/
 	}
 
 	/*1200*/
@@ -503,25 +464,19 @@
 		height: 20px;
 	}
 
-
-	/*勾選式選單
-	.checks{
-		position: relative;
-		top:40%;
-		left:37%;
-	}*/
-
 	
 	/*備註部分*/
 	.warning3{
-		width: 70%;
-		height: 30%;
+		width: 100%;
+		height: 50px;
 		position: relative;
-		top:40px;
+		top:50px;
 		display: inline-block;
 	}
 
 	.warning3 p{
+		position: absolute;
+		bottom: 0;
 		font-size: 14px;
 		color:#666666;
 	}
@@ -570,17 +525,16 @@
 	
 	/*按鈕區塊*/
 	.btn-grs{
-		width: 50%;
-    	height: 50%;
-    	position: relative;
-    	top: 150px;
-    	line-height: 30px;
-    	display: inline-block;
-    	margin-left: 55%;
+		width: 100%;
+    	height: 100%;
+    	position: absolute;
+    	top: 0;
+    	right: 0;
 	}
 
+
 	/*繼續購物鈕*/
-	.btn-keepgoingshop1{
+/*	.btn-keepgoingshop1{
 		width: 22%;
 	    height: 10%;
 	    background-color: #fff;
@@ -607,39 +561,49 @@
 	.btn-keepgoingshop1 a:hover{
 		text-decoration: none;
 		color:#fff;
-	}
+	}*/
 
-	/*下一步鈕*/
-	.btn-nextstep{
-		width: 20%;
-	    height: 10%;
-	    background-color: #fff;
-	    border: 1px solid #666666;
-	    color: #666666;
-	    line-height: 30px;
-	    position: relative;
-	    left: 5%;
-	    display: inline-block;
-	}
 
-	.btn-nextstep:hover{
+
+	.btn-keepgoingshop, .btn-nextstep{
+		position: absolute;
+		right: 0;
+		bottom: 0;
+
+		width:15%;
+		height: 30px;
+		
+		background-color: #fff;
+		border:1px solid #666666;
+	}
+		.btn-nextstep{
+			right: 17%;
+		}
+	
+	.btn-keepgoingshop:hover, .btn-nextstep:hover{
 		background-color: #666666;
 	}
 
-	.btn-nextstep a{
-		width: 15%;
-		height: 10%;
+	.btn-keepgoingshop a, .btn-nextstep a{ /*要撐滿div感應區才會一樣大*/
+		position: absolute;
+		left: 0;
+		top: 0;	
+		width:100%;
+		height: 100%;
+
+		font-size: 16px;
 		text-decoration: none;
-		font-size: 15px;
 		color:#666666;
-		padding: 0 15% 0 25%;
 
+		line-height: 30px; /*垂直置中*/
+		text-align: center; /*水平置中*/
 	}
 
-	.btn-nextstep a:hover{
-		text-decoration: none;
-		color:#fff;
+	.btn-keepgoingshop:hover a, .btn-nextstep:hover a{
+		color:#FFF;
 	}
+
+
 
 	/*填寫超商取貨資訊頁面*/
 	.totalmoney2{
@@ -956,76 +920,74 @@
 		background-image: url(../images/shoppingcart/signframe8.png);
 		background-repeat: no-repeat; 
 		background-size: 50% 100%; 
-		/*background-color: : #4C4C4C;*/
 		position: relative;
 	 	top:18%;
 	 	left:30%;
 	}
-	
-	.btn-keepgoingshop{
-		width:15%;
-		height: 20px;
-		background-color: #fff;
-		border:1px solid #666666;
-		margin-left: 70%;
-	}
-	
-	.btn-keepgoingshop:hover{
-		background-color: #666666;
-	}
 
-	.btn-keepgoingshop a{
-		width:15%;
-		height: 20px;
-		font-size: 16px;
-		text-decoration: none;
-		color:#666666;
-		padding-left:30px;
-		padding-top: 4px;
-	}
 
-	.btn-keepgoingshop a:hover{
-		color:#FFF;
-	}
+
+
 
 
 	
 /*==========平板版本==========*/
 
 @media screen and (max-width: 1080px) {/*IPAD尺寸*/
+	
 	/*進度bar*/
-	div.cart_navbar{
-		width: 105%;		
-		height: 80px;
-		padding-top:15px; 
+	.cart_navbar ul li .light_text p{
+		font-size: 14px;
+		top: 40%;
 	}
+		/*第一項有兩行*/
+		.cart_navbar ul li .light_text p.doubleline{
+			top: 35%;
+		}
 
-	/*產品清單*/
-	.p1 img{
-		width: 40px;
-    	position: relative;
-    	top: 5px;
-	}
 
 	.oneproduct_02 {
-	    position: relative;
 	    width: 78%;
-	    height: 100%;
-	    display: inline-block;
-	    text-align: center;
+	    text-align: right;
 	}
 
 	.oneproduct_03 div.p8 {
 		width: 21%;
 	}
 
+
+
+	/*備註部分*/
+	.warning3{
+		height: 100px;
+	}
+
+	.warning3 p{
+		top: 0;
+	}
+
+	.btn-keepgoingshop, .btn-nextstep{
+		width:18%;
+		height: 28px;
+	}
+		.btn-nextstep{
+			right: 21%;
+		}
+
+	.btn-keepgoingshop a, .btn-nextstep a{ /*要撐滿div感應區才會一樣大*/
+		font-size: 16px;
+		line-height: 28px; /*垂直置中*/
+	}
+
+
+
+
+/*
 	.btn-keepgoingshop1 {
     	width: 28%;
 	}
+*/
 
-	.btn-nextstep {
-    	width: 24%;
-    }
 
     /*填寫店配頁面*/
 	.box-fill1 {
@@ -1058,17 +1020,6 @@
 	    background-size: 55% 90%;
 	}
 
-	.btn-keepgoingshop a {
-		padding-left: 17px;
-	}
-
-	.btn-keepgoingshop{
-		width: 12%;
-		position: relative;
-	    top: 20px;
-	    left: 10%;
-	}
-	
 
 
 
@@ -1080,92 +1031,265 @@
 /*==========手機版本==========*/
 
 @media screen and (max-width: 768px) {
-	
-	.wrap{
 
-		}
-
-		header{
-/*			width: 100%;
-			height: 130px;
-			background-color: rgba(255,255,255,0);*/
-		}
-
-		content, footer{
-/*			width: 80%;
-			height: 100%; 完全撐開到margin
-			min-width: 300px;*/
-		}
-
-
-	/*進度bar*/
-	div.cart_navbar{		
-		height: 30px;
+	.con{
+		min-height: 490px;
+		overflow: hidden;
 	}
 
-	.cart_navbar ul li .light_text p {
+	/*進度navbar*/
+	div.cart_navbar{
+		height: 55px;
+		width: 110%;
+		left: -5%;
+
+		margin: 0 0 70px 0;  /*隔開下面的產品*/
+	}
+
+	/*圖示及文字的共同設定*/
+	.cart_navbar ul li div{
+		width: 100%;
+	}
+
+	/*小樹圖示區塊*/
+	.cart_navbar ul li .light_image{
+		height: 70%;
+		top:30%;
+	}
+
+	/*文字區塊*/
+	.cart_navbar ul li .light_text{
+		height: 100%;
+		width: 74%;
+		left: 13%;
+
+		top: 10px;
+	}
+
+	.cart_navbar ul li .light_text p{
 		font-size: 12px;
-		line-height: 15px;
-	}		
-	
+		line-height: 16px;		/*垂直置中，設與高度相同*/
+	}
+		/*第一項有兩行*/
+		.cart_navbar ul li .light_text p.doubleline{
+			line-height: 16px;
+		}
+
+	/*進度線-全長*/
+	.cart_navbar ul:after , .cart_navbar li:after{
+		width: 100%;
+		margin: auto;
+		left: 0;
+		right: 0;
+
+		top: 100%;
+	}
+
+
+
+
+
+/*清單選項*/
 	.list{
-		top:-35px;
+		height: 210px;
 	}
-
-	.list img{
-		width: 100%;
+	/*上面這塊寬度開100%，裡面開inlineblock排列*/
+	.oneproduct_top{
 		position: relative;
-		top:65px;
-	}
-
-	.list p{
-		font-size: 6px;
-	}
-
-	.cart_navbar ul:after, .cart_navbar li:after {
-		top: 55px;
-	}
-
-	/*清單選項*/
-	.oneproduct_top {
 		width: 100%;
-		/*display: inline-block;*/
+		height: 75%;
 	}
-
-	.p1 img{
-		top:30px;
-	}
-	.oneproduct_01{
-		width: 50%;
-		display: inline-block;
-	}
-	.oneproduct_02 {
-		width: 50%;
-		display: inline-block;
-	}
-
-	.oneproduct_02 div.p2 {
-		width: 100%;
-		display: block;
-	}
-
-	.oneproduct_02 div.p6 {
-		width: 100%;
-		display: block;
-	}
-
-	.oneproduct_02 div.p7 {
-		width: 100%;
-		display: block;
-	}
+		.oneproduct_01{
+			width: 25%;
+		}
+		.oneproduct_02{
+			width: 70%;
+			text-align: left;
+		}
 
 	.oneproduct_03{
 		width: 100%;
+		height: 25%;
+	}
+	
+	.p1{
+		padding: 0;
 	}
 
-	.p1{
-		width: 50%;
+	/*商品名稱四個字*/
+	.oneproduct_02 div.p2{
+		position: relative;
+		display: block;
+		width: 40%;
+		height: auto;
+
+		padding:20px 0 10px 0;
+		text-align: right;
 	}
+
+	/*貓頭鷹*/
+	.oneproduct_02 div.p2 div{
+		position: absolute;
+		height: auto;
+		width: 150%;
+		left: 120%;
+		top: 0px;
+		text-align: left;
+		padding:20px 0 0 0; 
+	}
+
+
+	/*規格*/
+	.oneproduct_02 div.p6{
+		position: relative;
+		display: block;
+		width: 40%;
+		height: auto;
+
+		padding:20px 0 0 0;
+		text-align: right;
+	}
+
+	/*iphone*/
+	.oneproduct_02 div.p6 div{
+		position: absolute;
+		height: auto;
+		width: 150%;
+		left: 120%;
+		top: 0px;
+		text-align: left;
+		padding:20px 0 0 0; 
+	}
+
+	/*材質的外層*/
+	.oneproduct_02 div.wood{
+		width: 100%;
+		height: auto;
+		padding:0; 
+	}
+
+	/*材質*/
+	.oneproduct_02 div.p7{
+		position: relative;
+		display: block;
+		width: 40%;
+		height: auto;
+
+		padding:30px 0 0 0;
+		text-align: right;
+	}
+	
+	.oneproduct_02 div.wood div.sel{
+		position: absolute;
+		height: auto;
+		width: 150%;
+		left: 120%;
+		top: 0px;
+		text-align: left;
+		padding:25px 0 0 0; 
+	}
+
+	/*材質的下拉式選單*/
+	.oneproduct_02 div.wood select.sel{
+		top: 0;
+	}
+
+	/*數量的外層*/
+	.oneproduct_03 div.qty{
+		width:20%;
+		padding: 0px 0 0 0;
+	}
+
+	/*數量*/
+	.oneproduct_03 div.p3{
+		width:100%;
+		height: 100%;
+	}
+	
+	/*數量的下拉式選單*/
+	.oneproduct_03 div.qty select.sel1{
+		position: absolute;
+		top: 15px;
+		height: 20px;
+	}
+
+
+	/*單價*/
+	.oneproduct_03 div.p4{
+		width:25%;
+		padding: 0px 0 0 0;
+	}
+
+	/*1000*/
+	.oneproduct_03 div.p4 div{
+		top: 20px;
+	}
+
+
+	/*折扣*/
+	.oneproduct_03 div.p5{
+		width:25%;
+		padding: 0px 0 0 0;
+	}
+
+	/*200*/
+	.oneproduct_03 div.p5 div{
+		top: 20px;
+	}
+
+	/*小計金額*/
+	.oneproduct_03 div.p8{
+		width:25%;
+		padding: 0px 0 0 0;
+	}
+
+	/*1200*/
+	.oneproduct_03 div.p8 div{
+		top: 20px;
+
+		color:rgba(219,77,77,0.8);
+		font-weight: bold;
+	}
+
+
+
+	/*備註部分*/
+	.warning3{
+		height: 200px;
+		top: 50px;
+	}
+
+	.warning3 p{
+		top: 0;
+		font-size: 12px;
+	}
+
+	.btn-keepgoingshop, .btn-nextstep{
+		width:33%;
+		height: 28px;
+		bottom: 70px;
+
+		margin: auto;
+		left: 0;
+		right: 0;
+	}
+		.btn-keepgoingshop{
+			left: 40%;
+		}
+		.btn-nextstep{
+			right: 40%;
+		}
+
+	.btn-keepgoingshop a, .btn-nextstep a{ /*要撐滿div感應區才會一樣大*/
+		font-size: 14px;
+		line-height: 28px; /*垂直置中*/
+	}
+
+	
+
+
+
+
 
 	/*訂購完成頁面*/
 	.sign8 {
@@ -1176,16 +1300,6 @@
 	    background-size: 100% 65%;
 	}
 
-	.btn-keepgoingshop a {
-    	padding-left: 15px;
-	}
-
-	.btn-keepgoingshop {
-	    width: 33%;
-	    position: relative;
-	    top: -50px;
-	    left: -8%;
-	}
 
 
 }
