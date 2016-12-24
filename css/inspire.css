@@ -69,10 +69,16 @@ content{
 	top: 0;
 	bottom: 0;
 	left: 0;
-	right: -200%;	/*先藏在外面，可調0回來*/
+	right: 0%;	/*先藏在外面，可調0回來*/
 	width: 96%;
 	min-height: 590px;
 	font-size: 0;
+	transition: 1s;
+}
+
+/*點墼守護精靈，從右邊出場*/
+.inspire.come{
+	right:-200%;
 }
 
 /*底板範圍*/
@@ -217,11 +223,18 @@ content{
 	margin: auto;
 	top: 0;
 	bottom: 0;
-	left: 0%;
-	right: 0%;	/*消失控制鈕*/
+	left: -200%;	/*消失控制鈕*/
+	right: 0%;	
 	width: 96%;
 	min-height: 590px;
+	transition: 1s;
 }
+
+/*心測開場出來*/
+.findAnimal.come{
+	left: 0;
+}
+
 /*底板範圍*/
 .bg{
 	width: 100%;
@@ -339,7 +352,7 @@ content{
 	height: 85px;
 	position: absolute;
 	top:250px;
-	left: 710px;
+	left: 70%;
 	opacity: 0;
 	transition: .3s;
 
@@ -833,7 +846,15 @@ content{
 	right: 2%;
 }
 
-
+/*右邊說話的底板*/
+.talk{
+	width: 140px;
+	height: 50px;
+	top:265px;
+	left: 75%;
+	opacity: 1;
+	transition: .3s;
+}
 
 
 

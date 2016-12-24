@@ -1,3 +1,11 @@
+// ===========初始頁=============================
+
+// 進入守護精靈心測頁面
+$('.left_banner').click(function(){
+    $('.inspire').addClass('come');
+    $('.findAnimal').addClass('come');
+})
+
 
 
 
@@ -6,15 +14,16 @@
 
 // ===========心測頁面開場=============================
 
-// $('.find_title img.FA04').hover(function(){
-//     $('.find_title img.FA02').addClass('touch');
-//     $('.talk').addClass('showup');
-// },
-//     function(){
-//     $('.find_title img.FA02').removeClass('touch');
-//     $('.talk').removeClass('showup');
-// }
-// )
+// HOVER到木板後，再讓松鼠說話
+$('.find_title img.FA04').hover(function(){
+    $('.find_title img.FA02').addClass('touch');
+    $('.talk').addClass('showup');
+},
+    function(){
+    $('.find_title img.FA02').removeClass('touch');
+    $('.talk').removeClass('showup');
+}
+)
 
 
 
