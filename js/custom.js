@@ -10,15 +10,15 @@ var _slides_w = $('.cus_slideshow ul.cus_slides li').width();
 // 第一頁不要出現上一頁按鈕
 var checkIndex =function(){
 if(_line_index==0){
-    $('a.con_prev').hide();
+    $('div.con_prev').hide();
 }else{
-    $('a.con_prev').show();
+    $('div.con_prev').show();
 };
 }
 checkIndex();
 
 
-$('a.con_next').click(function(){
+$('div.con_next').click(function(){
     // 檢查是不是最後一頁
     if(_line_index==4){
         confirm('確定要加入購物車了嗎？');
@@ -41,7 +41,7 @@ $('a.con_next').click(function(){
     }
 })
 
-$('a.con_prev').click(function(){
+$('div.con_prev').click(function(){
     // 檢查要不要加i回去
     if(_line_index==4){
         var $iTag = $("<i>").attr({
@@ -72,14 +72,45 @@ $(window).resize(function(){
 
 
 //=====================小樹亮燈========================
+//=====================價格變動========================
+
 var $light_image = $('.cus_navbar li .light_image')
+var _price =parseInt(800);
 
 $('div .ok_buy ').click(function(){
-    $light_image.eq(_line_index).css({"background-position":"0% 100%"});
+
+    //先判斷有沒有加過了，價格才不會重複累加 
+    if(! $light_image.eq(_line_index).hasClass('bling') ){
+        // 取得加購價
+        var _addpay = $(this).parent().siblings('.price').attr('data-paid')
+        _addpay = parseInt(_addpay);
+        // 計算價格並更新
+        _price+=_addpay;
+        $('.price span').html(_price);
+    }
+
+    $light_image.eq(_line_index).addClass('bling');
+    
+
 }) 
 //=====================小樹滅燈========================
+//=====================價格變動========================
+
 $('div .skip ').click(function(){
-    $light_image.eq(_line_index).css({"background-position":"0% 0%"});
+
+    //先判斷有沒有減過了，價格才不會重複減 
+    if( $light_image.eq(_line_index).hasClass('bling') ){
+        // 取得加購價
+        var _addpay = $(this).parent().siblings('.price').attr('data-paid')
+        _addpay = parseInt(_addpay);
+        // 計算價格並更新
+        _price-=_addpay;
+        $('.price span').html(_price);
+    }
+
+    $light_image.eq(_line_index).removeClass('bling');
+
+    
 }) 
 
 
@@ -298,10 +329,13 @@ $('.motto_word').on('change keyup paste', function() {
   // 把文字更新
   addTextbox.setText(newText);
   // 畫布再整理一次
-  canvas.calcOffset();
-  canvas.renderAll();
+  canvasS3.renderAll();
+
 
 });
+
+
+
 
 
 // 同步字型
@@ -341,8 +375,7 @@ $('select.font').on('change', function() {
       fontFamily: fontFamily
     });
   // 畫布再整理一次
-  canvas.calcOffset();
-  canvas.renderAll();
+  canvasS3.renderAll();
 
 
 });
@@ -371,8 +404,7 @@ function range_slider_change(event){
       fontSize: _sizeNow
     });
      // 畫布再整理一次
-    canvas.calcOffset();
-    canvas.renderAll();
+    canvasS3.renderAll();
 
 
 } 
@@ -405,8 +437,7 @@ function input_size_change(event){
       fontSize: _sizeNow
     });
      // 畫布再整理一次
-    canvas.calcOffset();
-    canvas.renderAll();
+    canvasS3.renderAll();
 
 
     }
@@ -465,8 +496,7 @@ $('.cus_slideshow ul li .step .to_who input').on('change keyup paste', function(
   // 把文字更新
   addTextbox2.setText(toWho);
   // 畫布再整理一次
-  canvas.calcOffset();
-  canvas.renderAll();
+  canvasS4.renderAll();
 
 });
 
@@ -475,8 +505,7 @@ $('.cus_slideshow ul li .step .msg textarea').on('change keyup paste', function(
   // 把文字更新
   addTextbox3.setText(saySth);
   // 畫布再整理一次
-  canvas.calcOffset();
-  canvas.renderAll();
+  canvasS4.renderAll();
 
 });
 
