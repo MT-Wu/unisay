@@ -35,7 +35,8 @@
 
 
 /*____________________________________________________________________________*/
-	/*內容區域*/
+
+/*----------會員登入和註冊內容區域----------*/
 	.con{
  		margin: auto;
  		left: 0;
@@ -55,7 +56,6 @@
  		font-size: 20px;
  		position: absolute;
  		top:35px;
- 		/*margin:30px;*/
  	}
 
  	.loginnav p{
@@ -68,10 +68,17 @@
  		width: 80%;
  	}
 
+
+	/*包左右兩個版*/
+	.signin_joinus{
+		position: relative;
+		top: 85px; /*麵包屑的高度*/
+		width: 100%;
+	}
+
 	/*左邊的登入欄位*/
  	.signin{
  		position: relative;
- 		top:80px;
  		font-size: 16px;
  		width: 50%;
  		display: inline-block;
@@ -100,44 +107,73 @@
 
 	/*確認會員登入的鈕*/
  	.loginmember{
- 		width: /*90px*/ 40%;
- 		height: 7%;
- 		position: relative;
- 		top:40%;
- 		left:60%;
+ 		position: absolute;
+ 		margin: auto;
+ 		left: 53%;
+ 		right: 0;
+ 		bottom: 0;
+
+ 		width: 40%;
+ 		height: 30px;
  		z-index: 2;
  	}
 
  	.loginmember a{
+ 		position: absolute;
+ 		left: 0;
+ 		top: 0;
+
  		font-size: 14px;
+ 		line-height: 30px;
+ 		width: 100%;
+ 		height: 100%;
+ 
  		text-decoration: none;
  		color:#666666;
  		background-color: #fff;
  		border:1px solid #666666;
- 		padding: 7px 10px;	
- 		/*height: 30px;*/
- 		/*z-index: 100;*/
  	}
  	.loginmember a:hover{
  		color: #fff;
  		background-color: #666666;
  	}
+
 	/*會員登入的input*/
+
+	.mainbody1 .form-group{
+		margin: 5px 0; 
+	}
+
  	.signin input{
- 		border:0px solid transparent ;
- 		background-image: url(../images/member/ans.svg);
-		background-size: 100%;
+ 		width: 70%;
+ 		height: 20px;
+ 		border:1px solid #ccc;
+
+ 		/*background-image: url(../images/member/ans.svg);*/
+		/*background-size: 100% 100%;*/
+		/*background-repeat: no-repeat;*/
+
  		line-height: 18px;
+ 		font-size: 14px;
  	}
 
  	.signin label{
  		color:#666666;
  	}
 
+ 	div.memberforgerpassword{
+ 		width: 100%;
+ 		height: 50px;
+ 		text-align: right;
+ 	}
+
 	/*右邊的加入會員欄位*/
  	.joinus{
  		position: relative;
- 		top:100px;
+ 		margin: auto;
+ 		top: 0;
+ 		bottom: 0;
+
  		font-size: 16px;
  		width: 50%;
  		display: inline-block;
@@ -145,14 +181,18 @@
 		vertical-align: top;  /*左右兩個div上下排列的狀況消失*/
  	}
 	/*加入會員的輸入區塊*/
+	.mainbody2 .form-group{
+		margin: 5px 0; 
+		position: relative;
+	}
  	.mainbody2{
  		line-height: 30px;
  		width: 50%;
- 		height: 350px; 
+ 		height: 300px; 
  		position: absolute;
  		/*置中*/
  		margin:auto;
- 		top:0px;
+ 		top:0;
  		bottom:0;
  		left: 0;
  		right: 0;
@@ -161,23 +201,31 @@
 
  	/*確定加入會員的鈕*/
  	.joinmenber{
- 		width:40%;
- 		height: 7%;
- 		position: relative;
- 		top:35%;
- 		left:53%;
+ 		position: absolute;
+ 		margin: auto;
+ 		left: 53%;
+ 		right: 0;
+ 		bottom: 0;
+
+ 		width: 40%;
+ 		height: 30px;
  		z-index: 2;
  	}
 
  	.joinmenber a{
+ 		position: absolute;
+ 		left: 0;
+ 		top: 0;
+
  		font-size: 14px;
+ 		line-height: 30px;
+ 		width: 100%;
+ 		height: 100%;
+ 
  		text-decoration: none;
  		color:#605f5f;
  		background-color: white;
  		border:1px solid #605f5f;
- 		padding: 7px 10px;	
- 		height: 30px;
- 		/*z-index: 100;*/
  	}
 
  	.joinmenber a:hover{
@@ -187,43 +235,75 @@
 
 	/*加入會員的input*/
  	.joinus input{
- 		border:0px solid /*#4d4d4d*/ transparent;
- 		background-image: url(../images/member/ans.svg);
-		background-size: 100%;
+ 		width: 70%;
+ 		height: 20px;
+ 		border:1px solid #ccc;
+
+ 		/*background-image: url(../images/member/ans.svg);*/
+		/*background-size: 100% 100%;*/
+		/*background-repeat: no-repeat;*/
+
  		line-height: 18px;
+ 		font-size: 14px;
  	}
 
  	.joinus label{
  		color:#666666;
  	}
 
-	/*---忘記密碼頁面---*/
-	.words1{
-		width: 370px;
-		height: 70px;
-		font-size: 14px;
+	/*必填的米字號，用form-group的before做比較不會跑版*/
+ 	.mainbody2 div.form-group.havetowrite:before{
+		content: "*";
+		position: absolute;
+		bottom: 0;
+		left: -10px;
+		font-size: 20px;
+		line-height: 20px;
+		color:#faa;
+ 	}
+
+
+
+/*----------忘記密碼頁面----------*/
+	.forgetpassword_content{
 		position: relative;
-		top:250px;
-		/*margin:0 auto;*/
-		left:260px;
+		width: 100%;
+		height: 400px;
+		top: 85px;
+	}
+	.words1{
+		width: 50%;
+		height: 100px;
+		font-size: 14px;
+
+		position: absolute;
+		top:165px;
+		text-align: left;
+		
+		margin: auto;
+		left: 10%;
+		right: 0;
+
 		line-height: 20px;
 		color:#666666;
 	}
 
-	/*---查詢密碼頁面---*/
+	/*---查詢密碼區域---*/
 	.checkpw{
-		width: 450px;
+		width: 50%;
 		height: 40px;
 		position: absolute;
-		top:400px;
-		left:260px;
+		top:325px;
+
+		margin: auto;
+		right: 0;
+		left: 10%;
 		font-size: 14px;
 	}
 	
 	.words2{
 		width: 300px;
 		height: 40px;
-		/*font: 14px;*/
 		display: inline-block;
 		color:#666666;
 	}
@@ -257,7 +337,9 @@
 		color:white;
 	}
 
-	/*發送忘記密碼通知*/
+
+
+/*發送忘記密碼通知*/
 	.bigframe{
 		width: 100%;
 		height: 60vh;
@@ -924,7 +1006,7 @@
 	
 
 
-
+/*____________________________________________________________________________*/
 
 /*==========平板版本==========*/
 
@@ -935,23 +1017,18 @@
 	}
 
 
-/*登入頁面*/
+/*----------登入頁面----------*/
 	.signin{
  		position: relative;
- 		top:80px;
  		font-size: 16px;
  		width: 100%;
- 	
  	}
 
  /*登入會員的鈕*/
  	.loginmember{
- 		width: /*90px*/ 70%;
- 		height: 7%;
- 		position: relative;
- 		top:10%;
- 		left:10%;
- 		z-index: 2;
+ 		width:50%;
+ 		left: 0;
+ 		right: 0;
  	}
 
 
@@ -972,32 +1049,47 @@
  		top:-15%;
  		text-align: center;
  	}
+	
+	/*分區塊*/
+ 	.mainbody1:after{
+ 		content: "";
+ 		position: absolute;
+ 		width: 150%;
+ 		height: 2px;
+ 		bottom: -50px;
+ 		left: -25%;
+ 		background-color: #ccc;
+ 	}
 
  /*加入會員的鈕*/
 	.joinmenber{
- 		width:70%;
- 		height: 7%;
- 		position: relative;
- 		top:10%;
- 		left:10%;
- 		z-index: 2;
+ 		width:50%;
+ 		right: 0;
+ 		left: 0;
  	}
 
-/*忘記密碼頁面*/
-	.words1{
-		width: 100%;
-    	position: relative;
-    	left: 18%;
-    }
 
-  	.checkpw{
-		width: 100%;
-    	height: 40%;
-    	position: relative;
-    	top: 325px;
-    	left: 18%;
-    	font-size: 14px;
+
+/*----------忘記密碼頁面----------*/
+
+	.words1{
+		width: 70%;
+		left: 10%;
 	}
+
+	/*---查詢密碼區域---*/
+	.checkpw{
+		width: 70%;
+		left: 10%;
+	}
+
+
+
+
+
+
+
+
 
 /*忘記密碼頁面的確認鈕*/
 	.btn-ok{
@@ -1236,21 +1328,12 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 	
 }
+
+
+
+
 
 /*____________________________________________________________________________*/
 
@@ -1258,25 +1341,11 @@
 
 @media screen and (max-width: 760px) {
 
-	
-	.wrap{
-
-		}
-
-		header{
-		height: 85px; /*header調小*/
+	.con{
+		min-height: 490px;
 	}
 
-
-
-
-
-	/*白紙底*/
-	content{ 
-		min-height: 450px; /*高度撐開至少450px(手機版)，之後自然隨裡面的物件撐開*/
-		position: relative;
-	}
-
+/*會員登入和註冊*/
 	/*麵包屑*/
 	.loginnav{
 		width:119%;
@@ -1287,50 +1356,70 @@
 	}
 
 	.signin {
-		top:50px;
 		font-size: 14px;
 		height: 400px;
 	}
 
 	.joinus{
-		top: 77px;
     	font-size: 14px;
 	}
+
+	/*登入欄位的文字區塊*/
+ 	.mainbody1, .mainbody2{
+ 		line-height: 30px;
+ 		width: 100%;
+ 		height: 300px; 
+ 	}
+
+ 	/*分區塊*/
+ 	.mainbody1:after{
+ 		width: 100%;
+ 		left: 0;
+ 	}
+
+ 	div.memberforgerpassword{
+ 		width: 95%;
+ 	}
+
+
 
 /*忘記密碼頁面*/
+
+	.forgetpassword_content{
+		height: 300px;
+	}
 	.words1{
-		width: 75%;
-    	position: relative;
-    	left: 14%;
-    	height: 10%;	
+		width: 60%;
+		font-size: 12px;
+		left: 0;
+		top: 100px;
 	}
 
-	.checkpw {
-    	width: 100%;
-    	height: 70%;
-    	position: relative;
-    	/*top: 290px;*/
-    	left: 14%;
-    	font-size: 14px;
-    }	
+	/*---查詢密碼區域---*/
+	.checkpw{
+		width: 60%;
+		height: 100px;
 
-    .words2 {
-    	width: 300px;
-    	height: 55px;
-    	display: inline-block;
-    	color: #666666;
+		left: 0;
+		top: 250px;
+	}
+	.words2{
+		width: 80%;
+		height: 50px;
+		line-height: 20px;
 	}
 
-	.words2 label{
-		display: block;
+	.checkpw .btncheck{
+		position: absolute;
+		bottom: 0;
+		
+		right: 0;
 	}
-    
-    .words2 input{
-    	display: block;
-    	margin-top: 8spx;
-    } 
 
-    /*登入完畢*/
+
+
+
+/*登入完畢*/
     .sign5 img{
 		width: 50%;
 		height:50%;
