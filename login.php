@@ -3,7 +3,8 @@
 
 require __DIR__. '/__connect_db.php';
 
-if(isset($_POST['email_id'])){
+if(isset($_POST['type'])){
+  if($_POST['type'] === 'login') {
     $email_id = $_POST['email_id'];
     $password = $_POST['password'];
 
@@ -43,7 +44,34 @@ if(isset($_POST['email_id'])){
         $stmt->close();*/
 
     }
+	} else if($_POST['type'] === 'register') {
+		$email_id = $_POST['email_id'];
+    $password = $_POST['password'];
+    $nickname = $_POST['nickname'];
+    $mobile = $_POST['mobile'];
+    $address = $_POST['address'];
 
+    if(!empty($email_id) and !empty($password) and !empty($nickname) ) {
+        $cert = sha1($email_id. uniqid());
+        $password = sha1($password);
+
+        $sql = "INSERT INTO `members`(
+            `email_id`, `password`, `nickname`, `mobile`,
+            `address`, `created_at`, `certification`
+            ) VALUES (
+            ?, ?, ?, ?,
+            ?, NOW(), '$cert'
+            )
+            ";
+
+        $stmt = $mysqli->prepare($sql);
+        $stmt->bind_param('sssss', $email_id, $password, $nickname, $mobile, $address);
+        $success = $stmt->execute();
+        $stmt->close();
+
+    }
+
+	}
 }
 
 
@@ -171,11 +199,11 @@ if(isset($_POST['email_id'])){
 
 					<div class="btn-groups">
 						<div class="btn-keepgoing">
-							<a href="">繼續選購</a>
+							<a href="product.html">繼續選購</a>
 						</div>
 
 						<div class="btn-back">
-							<a href="">返回會員中心</a>
+							<a href="memberaccountmember.php">返回會員中心</a>
 						</div>
 
 						<div class="btn-logout">
@@ -209,7 +237,8 @@ if(isset($_POST['email_id'])){
 								<label for="">密碼：</label>
 								<input type="password" class="form-control" id="password" name="password">
 							</div>
-							<a href="#">忘記密碼？</a>
+							<input type="hidden" name="type" value="login">
+							<a href="memberforgerpassword.php">忘記密碼？</a>
 							<div class="loginmember">
 
 								<a href="#" onclick="$(this).closest('form').submit()">登入會員</a>
@@ -219,37 +248,33 @@ if(isset($_POST['email_id'])){
 					</div>
 				<!-- 加入會員 -->
 					<div class="joinus" id="loginRight">
-						<form class="mainbody2">
+						<form class="mainbody2" name="form1" method="post">
 							<div class="piclogin">
 								<img src="images/member/picjoinin.svg">
 							</div>
 							<div class="form-group">
-								<label for="name">姓名：</label>
-								<input type="text" name="" >
-							</div>
-							<div class="form-group">
-								<label for="email_id">帳號：</label>
-								<input type="text" name="" >
-								<!-- <img src="../版/會員中心的版/ans.svg"> -->
-							</div>
-							<div class="form-group">
-								<label for="passwrod">密碼：</label>
-								<input type="text" name="">
-							</div>
-							<div class="form-group">
-								<label for="pwagain">再確認：</label>
-								<input type="text" name="">
-							</div>
-							<div class="form-group">
-								<label for="birthday">生日：</label>
-								<input type="date" class="form-control" name="birthday" id="birthday" placeholder="YYY-MM-DD">
-							</div>
-							<div class="form-group">
-								<label for="mobile">電話：</label>
-								<input type="text" name="">
-							</div>
+                  <label for="email_id">* Email address</label> <span id="email_id_info" style="color:red;display:none;">請填寫正確的 email 格式</span>
+                  <input type="email" class="form-control" id="email_id" name="email_id" placeholder="Email">
+              </div>
+              <div class="form-group">
+                  <label for="password">* Password</label> <span id="password_info" style="color:red;display:none;">密碼長度請設定大於 6 !</span>
+                  <input type="password" class="form-control" id="password" name="password">
+              </div>
+              <div class="form-group">
+                  <label for="nickname">* Nickname</label> <span id="nickname_info" style="color:red;display:none;">暱稱長度請設定大於 2 !</span>
+                  <input type="text" class="form-control" id="nickname" name="nickname" placeholder="暱稱">
+              </div>
+              <div class="form-group">
+                  <label for="mobile">Mobile</label>
+                  <input type="text" class="form-control" id="mobile" name="mobile" placeholder="手機號碼">
+              </div>
+              <div class="form-group">
+                  <label for="address">Address</label>
+                  <input type="text" class="form-control" id="address" name="address"></input>
+              </div>
 							<div class="joinmenber">
-							<a href="#">加入會員</a>
+								<input type="hidden" name="type" value="register">
+								<a href="#" onclick="$(this).closest('form').submit()">加入會員</a>
 							</div>
 						</form>
 					</div>
@@ -283,6 +308,8 @@ if(isset($_POST['email_id'])){
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
 <script src="js/nav_icon.js"></script>
+
+
 
 
 
