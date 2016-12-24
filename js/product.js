@@ -26,7 +26,7 @@
 
             // load好再重抓一次
             var click_this_icon = $(".productclass_secondnav div div");
-            
+
             if(page=="wood"){
                 click_this_icon.off('click');
                 click_this_icon.on('click', woodicon_click);
@@ -41,7 +41,18 @@
             };
 
         });
-        product_item.load("ajax/" + product_class_html + " .product_item_content");
+
+        product_item.load("ajax/" + product_class_html + " .product_item_content", function(){
+          if(page=="wood"){
+            product_item.load("product_item.php?sid=" + 2);
+          };
+          if(page=="animal"){
+            $('.product_item_filter').load("product_item2.php?animal=owl");
+          };
+          if(page=="motto"){
+            $('.product_item_filter').load("product_item2.php?mottotype=friendship");
+          };
+        });
 
     }else{
         // 一開始產品頁導進來先預設是wood經典款
@@ -57,7 +68,10 @@
             click_this_icon.on('click', woodicon_click);
 
         });
-        product_item.load("ajax/" + product_class_html + " .product_item_content");
+        product_item.load("ajax/" + product_class_html + " .product_item_content", function() {
+          product_item.load("product_item.php?sid=" + 2);
+        });
+
     };
 
 
@@ -83,7 +97,7 @@
         productclass_secondnav.load("ajax/" + product_class_html + " ." + class_name + "icon", function(){
 
             var click_this_icon = $(".productclass_secondnav div div");
-            
+
             if(class_name=="wood"){
                 click_this_icon.off('click');
                 click_this_icon.on('click', woodicon_click);
@@ -98,7 +112,17 @@
             };
 
         });
-        product_item.load("ajax/" + product_class_html + " .product_item_content");
+        product_item.load("ajax/" + product_class_html + " .product_item_content", function() {
+          if(class_name=="wood"){
+            product_item.load("product_item.php?sid=" + 2);
+          };
+          if(class_name=="animal"){
+            $('.product_item_filter').load("product_item2.php?animal=owl");
+          };
+          if(class_name=="motto"){
+            $('.product_item_filter').load("product_item2.php?mottotype=friendship");
+          };
+        });
 
 
     });
@@ -106,7 +130,7 @@
 
 
 // 經典分頁
-    
+
     var woodicon_click = function(){
         // 先全部移除this_woodicon
         $(this).siblings().removeClass("this_woodicon");
@@ -127,6 +151,9 @@
 
         // 按鈕點擊後往上捲到第二選單(才看得到下面有產品出來)
         $('html,body').stop(true,false).animate({scrollTop:(productclass_secondnav.offset().top - header.outerHeight())},1000);
+
+        var sid = $(this).index() + 1;
+        product_item.load("product_item.php?sid=" + sid);
 
     };
 
@@ -162,6 +189,8 @@
         // 按鈕點擊後往上捲到第二選單(才看得到下面有產品出來)
         $('html,body').stop(true,false).animate({scrollTop:(productclass_secondnav.offset().top - header.outerHeight())},1000);
 
+        $('.product_item_filter').load("product_item2.php?animal=" + animal_name);
+
     };
 
 
@@ -185,10 +214,8 @@
         this_mottoname.text(motto_name);
 
 
-
         // 按鈕點擊後往上捲到第二選單(才看得到下面有產品出來)
         $('html,body').stop(true,false).animate({scrollTop:(productclass_secondnav.offset().top - header.outerHeight())},1000);
 
+        $('.product_item_filter').load("product_item2.php?mottotype=" + motto_name);
     };
-
-
