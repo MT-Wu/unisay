@@ -13,7 +13,7 @@ $result = $mysqli->query($sql);
 <?php
 while($row = $result->fetch_assoc()): ?>
 <div class="one_product" id="<?= $row['sid'] ?>">
-						<div class="one_product_img" style="background-image:url(<?= $row['pic_id'] ?>01_cherry.png);">
+						<div class="one_product_img" style="background-image:url(<?= $row['pic_id'] ?>00.png);">
 						</div>
 						<div class="one_product_info">
 							<p class="product_name"><?= $row['productname'] ?></p>
