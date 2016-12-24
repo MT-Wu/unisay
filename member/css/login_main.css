@@ -1,0 +1,1460 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+@import url(reset.css);
+
+@import url(US_header.css);
+@import url(US_main.css);
+@import url(US_footer.css);
+
+/*@import url(home_content.css);*/
+
+
+
+	/*background-color: rgba(244,240,240,1);  #F4F0F0; ---背景底色*/
+	/*background-color: rgba(239,174,162,1);  #EFAEA2; ---重點粉紅色*/
+
+	
+	
+
+	/*margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;*/
+
+	/*-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;*/
+
+*{
+	font-family: sans-serif, 微軟正黑體;
+}
+
+
+
+/*____________________________________________________________________________*/
+	/*內容區域*/
+	.con{
+ 		margin: auto;
+ 		left: 0;
+ 		right: 0;
+ 		top:0;
+ 		bottom:0;
+ 		width: 80%; /*因為還有before、after的陰影面積所以寬度只需要抓白紙的*/
+ 		font-size: 0; /*兩個div中間還有間距所以要下這個*/
+ 		min-height:590px;
+ 		height: auto;
+ 		position: relative;
+ 	}
+	/*麵包屑*/
+ 	.loginnav{
+ 		width: 400px;
+ 		height: 50px;
+ 		font-size: 20px;
+ 		position: absolute;
+ 		top:35px;
+ 		/*margin:30px;*/
+ 	}
+
+ 	.loginnav p{
+ 		font-family: 'Titillium Web', sans-serif, 微軟正黑體;
+ 		font-size: 23px;
+ 		color:#666666;
+ 	}
+
+ 	.loginnav img{
+ 		width: 80%;
+ 	}
+
+	/*左邊的登入欄位*/
+ 	.signin{
+ 		position: relative;
+ 		top:80px;
+ 		font-size: 16px;
+ 		width: 50%;
+ 		display: inline-block;
+ 		height: 400px; 
+ 	}
+
+ 	.signin a{
+ 		font-size: 14px;
+ 		color:#666666;
+ 		text-decoration: none;
+ 	}
+	/*登入欄位的文字區塊*/
+ 	.mainbody1{
+ 		line-height: 30px;
+ 		width: 50%;
+ 		height: 300px; 
+ 		position: absolute;
+ 		/*置中*/
+ 		margin:auto;
+ 		top:0;
+ 		bottom:0;
+ 		left: 0;
+ 		right: 0;
+ 		text-align: center;
+ 	}
+
+	/*確認會員登入的鈕*/
+ 	.loginmember{
+ 		width: /*90px*/ 40%;
+ 		height: 7%;
+ 		position: relative;
+ 		top:40%;
+ 		left:60%;
+ 		z-index: 2;
+ 	}
+
+ 	.loginmember a{
+ 		font-size: 14px;
+ 		text-decoration: none;
+ 		color:#666666;
+ 		background-color: #fff;
+ 		border:1px solid #666666;
+ 		padding: 7px 10px;	
+ 		/*height: 30px;*/
+ 		/*z-index: 100;*/
+ 	}
+ 	.loginmember a:hover{
+ 		color: #fff;
+ 		background-color: #666666;
+ 	}
+	/*會員登入的input*/
+ 	.signin input{
+ 		border:0px solid transparent ;
+ 		background-image: url(../images/member/ans.svg);
+		background-size: 100%;
+ 		line-height: 18px;
+ 	}
+
+ 	.signin label{
+ 		color:#666666;
+ 	}
+
+	/*右邊的加入會員欄位*/
+ 	.joinus{
+ 		position: relative;
+ 		top:100px;
+ 		font-size: 16px;
+ 		width: 50%;
+ 		display: inline-block;
+ 		height: 400px; 
+		vertical-align: top;  /*左右兩個div上下排列的狀況消失*/
+ 	}
+	/*加入會員的輸入區塊*/
+ 	.mainbody2{
+ 		line-height: 30px;
+ 		width: 50%;
+ 		height: 350px; 
+ 		position: absolute;
+ 		/*置中*/
+ 		margin:auto;
+ 		top:0px;
+ 		bottom:0;
+ 		left: 0;
+ 		right: 0;
+ 		text-align: center;
+ 	}
+
+ 	/*確定加入會員的鈕*/
+ 	.joinmenber{
+ 		width:40%;
+ 		height: 7%;
+ 		position: relative;
+ 		top:35%;
+ 		left:53%;
+ 		z-index: 2;
+ 	}
+
+ 	.joinmenber a{
+ 		font-size: 14px;
+ 		text-decoration: none;
+ 		color:#605f5f;
+ 		background-color: white;
+ 		border:1px solid #605f5f;
+ 		padding: 7px 10px;	
+ 		height: 30px;
+ 		/*z-index: 100;*/
+ 	}
+
+ 	.joinmenber a:hover{
+ 		color:white;
+ 		background-color: #605f5f;
+ 	}
+
+	/*加入會員的input*/
+ 	.joinus input{
+ 		border:0px solid /*#4d4d4d*/ transparent;
+ 		background-image: url(../images/member/ans.svg);
+		background-size: 100%;
+ 		line-height: 18px;
+ 	}
+
+ 	.joinus label{
+ 		color:#666666;
+ 	}
+
+	/*---忘記密碼頁面---*/
+	.words1{
+		width: 370px;
+		height: 70px;
+		font-size: 14px;
+		position: relative;
+		top:250px;
+		/*margin:0 auto;*/
+		left:260px;
+		line-height: 20px;
+		color:#666666;
+	}
+
+	/*---查詢密碼頁面---*/
+	.checkpw{
+		width: 450px;
+		height: 40px;
+		position: absolute;
+		top:400px;
+		left:260px;
+		font-size: 14px;
+	}
+	
+	.words2{
+		width: 300px;
+		height: 40px;
+		/*font: 14px;*/
+		display: inline-block;
+		color:#666666;
+	}
+
+	.words2 input{
+		border:0px solid transparent ;
+ 		background-image: url(../images/member/ans.svg);
+		background-size: 100%;
+		line-height: 18px;
+	}
+
+	.btncheck{
+		width: 70px;
+		height: 20px;
+		display: inline-block;
+
+
+	} 
+
+	.btncheck a{
+		text-decoration: none;
+		background-color: white;
+		color:#666666;
+		border:1px solid #666666;
+		font-size:14px;
+		padding: 3px 5px;	
+	}
+
+	.btncheck a:hover{
+		background-color: #666666;
+		color:white;
+	}
+
+	/*發送忘記密碼通知*/
+	.bigframe{
+		width: 100%;
+		height: 60vh;
+		background-image: url(../images/member/frame1.svg);
+		background-size: 100% 100%;
+		/*background-color: #fa0;*/
+		position: relative;
+	 	top:100px;
+	 	left:0;
+	}
+
+	.sign{
+		width: 100%;
+		height: 30%;
+		background-image: url(../images/member/signframe1.svg);
+		background-size: 100% 100%;
+		position: relative;
+	 	top:120px;
+	}
+
+	.btn-ok{
+		width:6%;
+		height: 4%;
+		border: 1px solid #666666;
+		border-radius: 10%;
+		background-color: #fff;
+		position: relative;
+		top:40%;
+		left:70%;
+		z-index: 5;
+	}
+
+	.btn-ok:hover{
+		background-color: #666666;
+	}
+
+	.btn-ok a{
+		text-decoration: none;
+		color:#666666;
+		font-size: 14px;
+		text-align: center;
+		z-index: 5;
+		width: 100%;
+		height: 100%;
+		display: inline-block;
+		position: relative;
+		top:0;
+		background-color: #fff;
+	}
+
+	.btn-ok a:hover{
+		color:white;
+		background-color: #666666;
+	}
+
+	.btn-ok img{
+		position: absolute;
+		bottom:-4px;
+		left: 10px;
+		z-index: 0;
+	}
+	
+	/*必填資訊尚未填寫完畢請重新確認的提示*/
+	.sign2{
+		width: 100%;
+		height:30%;
+		background-image: url(../images/member/signframe2.svg);
+		background-size: 100% 100%;
+		/*background-color: : #4C4C4C;*/
+		position: relative;
+	 	top:120px;
+	}
+
+	/*email已被使用請換一個的提示*/
+	.sign3{
+		width: 100%;
+		height:30%;
+		background-image: url(../images/member/signframe3.svg);
+		background-size: 100% 100%;
+		/*background-color: : #4C4C4C;*/
+		position: relative;
+	 	top:120px;
+	}
+
+	/*完成註冊提示*/
+	.sign4{
+		width: 100%;
+		height:30%;
+		background-image: url(../images/member/signframe4.svg);
+		background-size: 100% 100%;
+		/*background-color: : #4C4C4C;*/
+		position: relative;
+	 	top:120px;
+	}
+
+	.sign5 img{
+		width: 50%;
+		height:50%;
+		/*background-image: url(../images/member/signframe5-1-01.png);
+		background-repeat: no-repeat; */
+		/*background-color: : #4C4C4C;*/
+		position: relative;
+	 	top:120px;
+	 	left:25%;
+	}
+
+
+	
+	/*下面的導向按鈕*/
+
+	.btn-groups{
+		width: 80%;
+    	height: 20vh;
+    	position: absolute;
+    	top: 400px;
+	}
+
+	/*繼續選購鈕*/
+	.btn-keepgoing{
+		display: inline-block;
+		width:15%;
+		height:20%;
+		border: 1px solid #666666;
+		border-radius: 10%;
+		background-color: #fff;
+		position: relative;
+		top:50%;
+		left:70%;
+		margin:2%;
+		
+	}
+
+	.btn-keepgoing:hover{
+		background-color: #666666;
+	}
+
+	.btn-keepgoing a{
+		text-decoration: none;
+    	color: #666666;
+    	text-align: center;
+    	z-index: 2;
+    	width: 80%;
+    	height: 80%;
+    	font-size: 15px;
+    	position: absolute;
+    	top: 0;
+    	/* background-color: #fa0; */
+    	padding-left: 9px;
+    	padding-top: 6px;
+	}
+
+	.btn-keepgoing a:hover{
+		color: #fff;
+	}
+
+	.btn-back{
+		display: inline-block;
+		width:18%;
+		height: 20%;
+		border: 1px solid #666666;
+		border-radius: 10%;
+		background-color: #fff;
+		position: relative;
+		top:50%;
+		left:70%;
+		margin:2%;
+	}
+
+	.btn-back:hover{
+		background-color: #666666;
+	}
+
+	.btn-back a{
+		text-decoration: none;
+		color:#666666;
+		text-align: center;
+		z-index: 2;
+		width: 80%;
+		height: 80%;
+		font-size: 15px;
+		position: absolute;
+		top:0;
+		padding-left: 10px;
+    	padding-top: 6px;
+
+	}
+
+	.btn-back a:hover{
+		color: #fff;
+	}
+
+	
+
+	.btn-logout{
+		display: inline-block;
+		width:15%;
+		height: 20%;
+		border: 1px solid #666666;
+		border-radius: 10%;
+		background-color: #fff;
+		position: relative;
+		top:50%;
+		left:70%;
+		margin:2%;
+		
+	}
+
+	.btn-logout:hover{
+		background-color: #666666;
+	}
+
+	.btn-logout a{
+		text-decoration: none;
+    	color: #666666;
+    	text-align: center;
+    	z-index: 2;
+    	width: 80%;
+    	height: 80%;
+    	font-size: 15px;
+    	position: absolute;
+    	top: 0;
+    	padding-left: 9px;
+    	padding-top: 6px;
+	}
+
+	.btn-logout a:hover{
+		color: #fff;
+	}
+
+	/*會員專區*/
+	/*上方的sidebar*/
+
+	.upframe{
+		width: 50%;
+		height: 20vh;
+		position: absolute;
+		left:55%;
+		top:15px;
+	}
+
+	.up1{
+		display: inline-block;
+		width:26%;
+		height:19%;
+		border: 1px solid #666666;
+		border-radius: 10%;
+		background-color: #666666;
+		margin:3%;
+	}
+
+	.up1 a{
+		text-decoration: none;
+		color:#fff;
+		z-index: 0;
+		font-size: 16px;
+		position: relative;
+		top:5px;
+		left:25px;
+	}
+
+	.up1 img{
+		position:absolute;
+		bottom:72%;
+		left: 20%;
+		z-index: 1;
+	}
+
+	.up2{
+		display: inline-block;
+		width:26%;
+		height:19%;
+		border: 1px solid #666666;
+		border-radius: 10%;
+		background-color: #fff;
+		/*position: relative;*/
+		margin:3%;
+
+	}
+
+	.up2:hover{
+		background-color: #666666;
+	}
+
+	.up2 a{
+		text-decoration: none;
+		color:#666666;
+		z-index: 0;
+		font-size: 16px;
+		position: relative;
+		top:5px;
+		left:25px;
+	}
+
+	.up2 a:hover{
+		color: #fff;
+	}
+
+	.up3{
+		display: inline-block;
+		width:26%;
+		height:19%;
+		border: 1px solid #666666;
+		border-radius: 10%;
+		background-color: #fff;
+		margin:3%;
+	}
+
+	.up3:hover{
+		background-color: #666666;
+	}
+
+	.up3 a{
+		text-decoration: none;
+		color:#666666;
+		z-index: 0;
+		font-size: 16px;
+		position: relative;
+		top:5px;
+		left:25px;
+	}
+
+	.up3 a:hover{
+		color: #fff;
+	}
+
+	.up3 img{
+		position:absolute;
+		bottom:72%;
+		left: 86%;
+		z-index: 1;
+	}
+
+
+	/*下方的內容*/
+	.downframe{
+		width: 100%;
+		height: 30vh;
+		position: absolute;
+		top:130px;
+		left:2%;
+	}
+
+	.downframe p{
+		font-size: 16px;
+		color:#666666;
+	}
+
+	.downframe img{
+		width: 100%;
+	}
+
+
+	.ecourpon{
+		position: relative;
+		top:8%;
+	}
+
+	.ecourpon p{
+		font-size:30px;
+	}
+
+	.howtoget{
+		position: relative;
+		top:11%;
+		left:75%;
+	}
+
+	.howtoget a{
+		/*text-decoration: none;*/
+		color:#666666;
+		font-size: 14px;
+	}
+
+	/*回收制度頁面*/
+	.recycletext{
+		width: 100%;
+		height: 300px;
+		font-size: 20px;
+		color:#666666;
+		position: relative;
+		top:120px;
+	}
+
+	.recycletext p{
+		line-height: 30px;
+	}
+	
+	.recycleimg .earth{
+		position: relative;
+		top:0%;
+		left:0%;
+	}
+
+	img.squirrel {
+		position: relative;
+		top:-10%;
+	}
+
+	/*訂單查詢頁面*/
+
+	.downframe2{
+		width: 100%;
+    	height: 30vh;
+    	position: absolute;
+    	top: 130px;
+    	left: 2%;
+	}
+
+	.downframe2 p{
+		font-size: 16px;
+		color: #666666;
+	}
+
+	
+
+	.sidebar3 img{
+		position:relative;
+		bottom:100%;
+		left: 80%;
+		/*z-index: -0.5;*/
+	}
+
+	.table{
+		width: 97%;
+		height: 30%;
+		position: relative;
+		top:190px;
+		left:3%;
+	}
+
+	.table table,th,td{ 
+		border-collapse:collapse;
+		border: 1px solid #666666;
+		font-size:16px;
+		color:#666666;
+		line-height: 30px;
+	}
+
+	.table td a{
+		color:#666666;
+		font-size: 16px;
+	}
+	.table th{
+		height:50px;
+		background-color: #666666;
+	}
+
+	.table tr { 
+  		border-bottom:1px solid #000; 
+	}
+
+	.table td{
+		text-align:center;
+	}
+
+	.table th {
+		color:#fff;
+	}
+
+	/*詳細訂單內容*/
+	.member-content{
+		width: 80%;
+		height: 400px;
+		position: relative;
+		top:180px;
+		left:2%;
+	}
+
+	.member-content-hd{
+		color:#666666;
+	}
+
+	.table-order th{
+		font-size: 12px;
+	}
+
+	.table-order td{
+		font-size: 12px;
+	}
+
+	/*修改帳號資料頁面*/
+	.con2{
+ 		margin: auto;
+ 		left: 0;
+ 		right: 0;
+ 		top:0;
+ 		bottom:0;
+ 		width: 80%; /*因為還有before、after的陰影面積所以寬度只需要抓白紙的*/
+ 		font-size: 0; /*兩個div中間還有間距所以要下這個*/
+ 		min-height:590px;
+ 		height: auto;
+ 		position: relative;
+ 	}
+
+	.editinfoarea{
+		line-height: 30px;
+ 		width: 50%;
+ 		height: 300px; 
+ 		position: relative;
+ 		/*置中*/
+ 		margin:auto;
+ 		top:0;
+ 		bottom:0;
+ 		left: -25%;
+ 		right: 0;
+ 		/*text-align: center;*/
+	}
+	.editinfoarea input{
+		font-size: 14px;
+		color:#666666;
+		margin-left:2%;
+	}
+
+	.editinfoarea label{
+		font-size: 14px;
+		color: #666666;
+	}
+
+	.tab-editok{
+		width: 17%;
+		height: 10%;
+		border:1px solid #666666	;
+		background-color: #fff;
+	}
+
+	.tab-editok:hover{
+		background-color: #666666;
+	}
+
+	.tab-editok a{
+		text-decoration: none;
+		color:#666666;
+		padding-left: 10%;
+		font-size: 14px;
+	}
+
+	.tab-editok a:hover{
+		color:#fff;
+
+	}
+
+	.downframe1{
+		width: 100%;
+    	height: 30vh;
+    	position: absolute;
+    	top: 130px;
+    	left: 2%;	
+	}
+
+	.downframe1 p{
+		font-size: 16px;
+		color:#666666;
+	}
+
+	.downframe1 img{
+		width: 100%;
+	}
+
+	.downframe3{
+		width: 100%;
+    	height: 30vh;
+    	position: absolute;
+    	top: 400px;
+    	left: 2%;
+
+	}
+
+	.downframe3 p{
+		font-size: 16px;
+		color:#666666;
+	}
+
+	.downframe3 img{
+		width: 100%;
+	}
+
+	.editpwarea{
+		line-height: 30px;
+ 		width: 50%;
+ 		height: 300px; 
+ 		position: relative;
+ 		/*置中*/
+ 		margin:auto;
+ 		top:0;
+ 		bottom:0;
+ 		left: -25%;
+ 		right: 0;
+ 		/*text-align: center;*/
+	}
+
+	.editpwarea input{
+		font-size: 14px;
+		color:#666666;
+		margin-left:2%;
+	}
+
+	.editpwarea label{
+		font-size: 14px;
+		color: #666666;
+	}
+
+	.tab-pweditok{
+		width: 17%;
+		height: 10%;
+		border:1px solid #666666	;
+		background-color: #fff;
+	}
+
+
+
+	.tab-pweditok:hover{
+		background-color: #666666;
+	}
+
+	.tab-pweditok a{
+		text-decoration: none;
+		color:#666666;
+		padding-left: 10%;
+		font-size: 14px;
+	}
+
+	.tab-pweditok a:hover{
+		color:#fff;
+
+	}
+
+	/*帳號修改完的提示*/
+	.sign6{
+		width: 100%;
+		height:30%;
+		background-image: url(../images/member/signframe6.svg);
+		background-size: 100% 100%;
+		/*background-color: : #4C4C4C;*/
+		position: relative;
+	 	top:120px;
+	}
+	
+	/*修改密碼後的提示*/
+	.sign7{
+		width: 100%;
+		height:30%;
+		background-image: url(../images/member/signframe7.svg);
+		background-size: 100% 100%;
+		/*background-color: : #4C4C4C;*/
+		position: relative;
+	 	top:120px;
+	}
+	
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+/*==========平板版本==========*/
+
+@media screen and (max-width: 1080px) {/*IPAD尺寸*/
+/*麵包屑*/
+	.loginnav img {
+		width: 60%;
+	}
+
+
+/*登入頁面*/
+	.signin{
+ 		position: relative;
+ 		top:80px;
+ 		font-size: 16px;
+ 		width: 100%;
+ 	
+ 	}
+
+ /*登入會員的鈕*/
+ 	.loginmember{
+ 		width: /*90px*/ 70%;
+ 		height: 7%;
+ 		position: relative;
+ 		top:10%;
+ 		left:10%;
+ 		z-index: 2;
+ 	}
+
+
+ /*加入會員頁面*/
+ 	.joinus{
+ 		position: relative;
+ 		top:130px;
+ 		font-size: 16px;
+ 		width: 100%;
+    	height: 500px;
+		/*vertical-align: top;  /*左右兩個div上下排列的狀況消失*/*/
+ 	}
+
+ /*加入會員的輸入區域*/
+ 	.mainbody2{
+ 		line-height: 30px;
+ 		position: relative;
+ 		top:-15%;
+ 		text-align: center;
+ 	}
+
+ /*加入會員的鈕*/
+	.joinmenber{
+ 		width:70%;
+ 		height: 7%;
+ 		position: relative;
+ 		top:10%;
+ 		left:10%;
+ 		z-index: 2;
+ 	}
+
+/*忘記密碼頁面*/
+	.words1{
+		width: 100%;
+    	position: relative;
+    	left: 18%;
+    }
+
+  	.checkpw{
+		width: 100%;
+    	height: 40%;
+    	position: relative;
+    	top: 325px;
+    	left: 18%;
+    	font-size: 14px;
+	}
+
+/*忘記密碼頁面的確認鈕*/
+	.btn-ok{
+		width: 15%;
+    	height: 4%;
+    	position: relative;
+    	top: 35%;
+   		left: 70%;
+	}
+
+/*確認註冊完畢*/
+	.btn-ok img {
+    	left: 30px;
+    	top: -25px;
+	}
+
+/*確認登入完畢*/
+	.sign5 img{
+		width: 50%;
+		height:50%;
+		position: relative;
+	 	top:120px;
+	 	left:25%;
+	}
+
+	.btn-groups{
+		left: -20%;
+   		width: 70%;
+   		position: absolute;
+    	top: 20;
+	}
+
+	.btn-groups a{
+		font-size: 13px;
+		position: absolute;
+		/*top:0;*/
+		padding-left: 10px;
+    	padding-top: 10px;
+	}
+
+	.btn-keepgoing{
+		width: 20%;
+	}
+
+	.btn-back{
+		width: 26%;
+	}
+		
+	.btn-logout{
+		width: 20%;
+	}
+
+/*會員專區-購物金查詢*/
+	.downframe{
+		width: 60%;
+    	height: 16vh;
+    	position: relative;
+    	top: 110px;
+    	left: 3%;
+	}
+
+	.downframe img {
+    	width: 160%;
+	}
+
+	.downframe p{
+		font-size: 15px;
+	}
+
+	.howtoget{
+		position: relative;
+		top:25%;
+		left:60%;
+	}
+
+	.ecourpon p {
+    	font-size: 19px;
+	}
+
+/*進去會員中心時變成手機版時的三個按鈕配置*/
+	.upframe{
+		width: 60%;
+    	height: 8vh;
+    	position: relative;
+    	left: 30%;
+    	top: 100px;
+	}
+	
+	
+	.up1{
+		width:18%;
+		height:32%;
+	}
+
+	.up1 a{
+		font-size: 12px;
+		top:3px;
+		left:7px;
+		/*background-color: #666666;*/
+	}
+
+	.up1 img {
+    	position: absolute;
+    	bottom: 50%;
+   	 	left: 16%;
+    	z-index: 2;
+    }
+
+	.up2{
+		width:18%;
+		height:32%;
+	}
+
+	.up2 a{
+		font-size: 12px;
+		top:3px;
+		left:7px;
+	}
+
+	.up3{
+		width:18%;
+		height:32%;
+	}
+
+	.up3 a{
+		font-size: 12px;
+		top:3px;
+		left:7px;
+	}
+
+/*回收制度*/
+
+	.recycletext p{
+		font-size:16px;
+	}
+
+	.recycleimg img {
+		width: 100%;
+    	position: relative;
+    	top: 65px;
+    }
+
+	.recycletext{
+		height: 85%;
+	}
+
+/*訂單查詢頁面*/
+
+	.table{
+		position: relative;
+    	top: 60px;
+    	left: 12%;
+    	width:75%;
+	}
+
+	.table th{
+		font-size: 10px;
+	}
+
+	.table tbody tr td{
+		font-size: 10px;
+	}
+
+	.downframe2{
+		width: 60%;
+    	height: 16vh;
+   		position: relative;
+    	top: 110px;
+    	left: 3%;
+	}
+
+	.downframe2 img {
+    	width: 160%;
+	}
+
+
+	.up3 img {
+		bottom: 50%;
+    	left: 65%;
+	}
+
+	/*訂單詳細頁面查詢*/
+	.member-content {
+		width: 80%;
+    	height: 500px;
+    	position: relative;
+    	top: 55px;
+    	left: 2%;
+    }
+
+    /*修改帳號密碼*/
+
+    .con{
+ 		margin: auto;
+ 		left: 0;
+ 		right: 0;
+ 		top:0;
+ 		bottom:0;
+ 		width: 80%; /*因為還有before、after的陰影面積所以寬度只需要抓白紙的*/
+ 		font-size: 0; /*兩個div中間還有間距所以要下這個*/
+ 		min-height:590px;
+ 		height: auto;
+ 		position: relative;
+ 	}
+
+    .downframe1{
+    	top:150px;
+    }
+
+	.tab-editok {
+    	width: 24%;
+    }
+
+    .tab-pweditok {
+    	width: 24%;
+    }
+
+    .downframe3{
+    	top:410px;
+    }
+	
+	.editinfoarea input {
+		border:1px solid #666666 ;
+	}
+
+	.editpwarea input{
+		border:1px solid #666666 ;
+	}
+
+	/*確認修改完帳密*/
+	.btn-ok {
+    	width: 10%;
+    	height: 6%;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+}
+
+/*____________________________________________________________________________*/
+
+/*==========手機版本==========*/
+
+@media screen and (max-width: 760px) {
+
+	
+	.wrap{
+
+		}
+
+		header{
+		height: 85px; /*header調小*/
+	}
+
+
+
+
+
+	/*白紙底*/
+	content{ 
+		min-height: 450px; /*高度撐開至少450px(手機版)，之後自然隨裡面的物件撐開*/
+		position: relative;
+	}
+
+	/*麵包屑*/
+	.loginnav{
+		width:119%;
+	}
+
+	.loginnav p {
+    	font-size: 18px;
+	}
+
+	.signin {
+		top:50px;
+		font-size: 14px;
+		height: 400px;
+	}
+
+	.joinus{
+		top: 77px;
+    	font-size: 14px;
+	}
+
+/*忘記密碼頁面*/
+	.words1{
+		width: 75%;
+    	position: relative;
+    	left: 14%;
+    	height: 10%;	
+	}
+
+	.checkpw {
+    	width: 100%;
+    	height: 70%;
+    	position: relative;
+    	/*top: 290px;*/
+    	left: 14%;
+    	font-size: 14px;
+    }	
+
+    .words2 {
+    	width: 300px;
+    	height: 55px;
+    	display: inline-block;
+    	color: #666666;
+	}
+
+	.words2 label{
+		display: block;
+	}
+    
+    .words2 input{
+    	display: block;
+    	margin-top: 8spx;
+    } 
+
+    /*登入完畢*/
+    .sign5 img{
+		width: 50%;
+		height:50%;
+		position: relative;
+	 	top:120px;
+	 	left:25%;
+	}
+
+    .btn-groups {
+    	left: -97%;
+    	width: 140%;
+    	top: 210px;
+	}
+
+	.btn-keepgoing {
+    	width: 16%;
+	}
+
+	.btn-back {
+    	width: 24%;
+	}
+
+	.btn-logout {
+    	width: 16%;
+	}
+
+	.btn-groups a {
+		font-size: 10px;
+    	padding-left: 6px;
+    	padding-top: 7px;
+	}
+
+	/*會員專區購物金查詢*/
+	.upframe {
+    	width: 100%;
+    	height: 8vh;
+    	position: relative;
+    	left: 0%;
+    	top: 100px;
+	}
+
+	.up1 {
+    	width: 25%;
+    	height: 40%;
+	}
+
+	.up2 {
+    	width: 25%;
+    	height: 40%;
+	}
+
+	.up3 {
+    	width: 25%;
+    	height: 40%;
+	}
+
+    .downframe {
+    	width: 65
+    	%;
+    	height: 16vh;
+    	position: relative;
+    	top: 118px;
+    	left: 3%;
+    }
+
+    .downframe img {
+   		width: 130%;
+	}	
+
+	/*回收制度頁面*/
+	.recycleimg img {
+    	width: 100%;
+    	position: relative;
+    	top: 90px;
+    }
+
+    .recycletext {
+    	top:90px;
+    }
+
+    /*訂單查詢頁面*/
+    .up3 img{
+    	left: 85%;
+    }
+
+    /*修改帳號密碼*/
+    .downframe3{
+    	top:560px;
+    	height: 28vh;
+    	display: block;
+    }
+
+    .tab-editok {
+   		width: 50%;
+	}
+	
+	.downframe1 {
+    	height: 60vh;
+    	display: block;
+    }
+
+    .con2{
+		height: 777px;
+    }
+
+    .tab-pweditok {
+    	width: 50%;
+	}
+
+	/*確認修改完帳密*/
+	.btn-ok {
+    	width: 18%;
+    	height: 4%;
+	}
+
+
+
+
+
+
+
+
+
+
+}
+
+
