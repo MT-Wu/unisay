@@ -82,10 +82,10 @@
 						<a href="product.html"></a>
 					</li>
 					<li class="icon_custom">
-						<a href=""></a>
+						<a href="custom.html"></a>
 					</li>
 					<li class="icon_inspire">
-						<a href=""></a>
+						<a href="inspire.html"></a>
 					</li>
 				</ul>
 			</nav>
