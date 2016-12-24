@@ -168,16 +168,16 @@
 
 /*大標題*/
 .product_info .product_name{
-	font-size: 28px;
-	line-height: 50px;
+	font-size: 26px;
+	line-height: 40px;
 	color: #333;
 	letter-spacing: 1px;
 }
 .product_info .product_motto{
-	font-size: 20px;
-	line-height: 25px;
+	font-size: 18px;
+	line-height: 20px;
 	color: #555;
-	height: 50px;
+	height: 60px;
 	letter-spacing: 1px;
 }
 
