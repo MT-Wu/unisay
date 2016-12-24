@@ -1,0 +1,1161 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+@import url(reset.css);
+
+@import url(US_header.css);
+@import url(US_main.css);
+@import url(US_footer.css);
+
+/*@import url(home_content.css);*/
+
+
+
+	/*background-color: rgba(244,240,240,1);  #F4F0F0; ---背景底色*/
+	/*background-color: rgba(239,174,162,1);  #EFAEA2; ---重點粉紅色*/
+
+	
+	
+
+	/*margin: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;*/
+
+	/*-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;*/
+
+*{
+	font-family: sans-serif, 微軟正黑體;
+}
+
+
+
+/*____________________________________________________________________________*/
+	/*內容區域*/
+	.con{
+ 		margin: auto;
+ 		left: 0;
+ 		right: 0;
+ 		top:0;
+ 		bottom:0;
+ 		width: 85%; /*因為還有before、after的陰影面積所以寬度只需要抓白紙的*/
+ 		font-size: 0; /*兩個div中間還有間距所以要下這個*/
+ 		min-height:590px;
+ 		position: relative;
+ 	}
+
+	/*進度navbar*/
+	div.cart_navbar{
+		display: inline-block;
+		position: relative;
+		width: 100%;
+		height: 120px;
+		/*background-color: #aff;*/
+	}
+
+    .cart_navbar ul{
+		position: relative;
+		display: block;
+		width: 100%;
+		height: 100%;
+		font-size: 0;
+	}
+
+	.cart_navbar ul li.cart_light{
+		position: relative;
+		display: inline-block;
+		width: 25%;
+		height: 100%;
+	}
+
+	/*圖示及文字的共同設定*/
+	.cart_navbar ul li div{
+		position: relative;
+		display: inline-block;
+		width: 30%;
+	}
+
+	/*小樹圖示區塊*/
+	.cart_navbar ul li .light_image{
+		position: relative;
+		height: 60%;
+	/*svg要設定原始整張圖的大小，因為洞用百分比，所以它也要用百分比*/
+		background-image:url(../images/shoppingcart/light_img.svg);
+		background-size: 100% 200%;
+	/*y軸設100%就會換綠色*/
+		background-position:0% 0%;
+		top: 15%;	/*上面留空間，做假置中*/
+		left: 0;
+	}
+
+
+	/*文字區塊*/
+	.cart_navbar ul li .light_text{
+		width: 70%;
+		height: 100%;
+		text-align: center;
+		vertical-align: top; 
+
+	}
+
+	.cart_navbar ul li .light_text p{
+		color: #91BAB1;
+		font-size: 16px;
+		/*letter-spacing: 5px;*/
+		line-height: 30px;		/*垂直置中，設與高度相同*/
+		display: inline-block;
+		position: relative;
+		top: 30%;
+	}
+
+	/*進度線-全長*/
+	.cart_navbar ul:after , .cart_navbar li:after{
+		content: '';
+		height: 5px;
+		width: 100%;
+		display: block;
+		position: absolute;
+		top: 90px;
+		background-color: #eee;
+		transition: 2s ease-out;
+	}
+
+	/*進度線-目前位置*/
+	/*加class:on來顯示粉色線*/
+	.cart_navbar li.on:after{
+		background-color: #FFBAB1;
+		z-index: 10;
+	}
+
+	/*下面的清單明細*/
+	/*.down{
+		width: 100%;
+		width: 500px;
+	}*/
+
+ 	.list{
+ 		width: 100%;
+ 		height: 150px;
+ 		/*background-color: #fa0;	*/
+ 		position: relative;
+ 		top:0%;
+		font-size: 0;
+ 	}
+ 	.list:after{
+ 		content: "";
+ 		position: absolute;
+ 		width: 100%;
+ 		height: 2px;
+
+ 		background-color: #ccc;
+ 		margin: auto;
+ 		left: 0;
+ 		right: 0;
+ 		bottom: 0;
+ 	}
+	
+	/*.list img{
+		width: 100%;
+		position: absolute;
+		top:5%;*/
+		/*margin:0 auto;*/
+	/*}*/
+
+	.list div{
+		font-size: 14px;
+		display: inline-block;
+		color: #666666;
+		vertical-align: top;
+		/*background-color: #fa0;*/
+
+		/*width: 100%;*/
+	}
+	
+	/*清單選項*/
+	/*1左邊這塊寬度開50%，開inlineblock排列*/
+	.oneproduct_top{
+		width: 50%;
+		height: 100%;
+		display: inline-block;
+		font-size: 0;
+	}
+
+	/*2右邊這塊寬度開50%，開inlineblock排列*/
+	.oneproduct_03{
+		width: 50%;
+		height: 100%;
+		display: inline-block;
+
+		/*background-color: #a0f;*/
+	}
+	
+	.oneproduct_01{
+		position: relative;
+		width: 20%;
+		height: 100%;
+		display: inline-block;
+	}
+	.oneproduct_02{
+		position: relative;
+		width: 79%;
+		height: 100%;
+		display: inline-block;
+		text-align: center;
+	}
+
+	.p1{
+		/*置中*/
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		/*給寬高*/
+		width: 100%;
+		height: 100%;
+		/*開padding使四周有空白，但要加上這串以防爆開*/
+		padding: 8px;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
+	.p1 img{
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		
+		object-fit: contain;
+		object-position: center;
+
+		/*background-color: #eee;*/
+	}
+
+	/*商品名稱四個字*/
+	.oneproduct_02 div.p2{
+		position:relative;
+		text-align: center;
+		display: inline-block;
+		width: 33%;
+		height: 100%;
+
+		padding: 30px 0 0 0;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+
+		/*background-color: #afa;*/
+	}
+
+	/*貓頭鷹*/
+	.oneproduct_02 div.p2 div{
+		position: absolute;
+		top: 25px;
+		bottom: 0;
+		width: 50%;
+
+		margin: auto;
+		left: 0;
+		right: 0;
+		height: 30px;
+	}
+
+	/*規格*/
+	.oneproduct_02 div.p6{
+		position:relative;
+		text-align: center;
+		display: inline-block;
+		width:30%;
+		height: 100%;
+
+		padding: 30px 0 0 0;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+
+		/*background-color: #aaa;*/
+	}
+
+	/*iphone*/
+	.oneproduct_02 div.p6 div{
+		position: absolute;
+		top: 25px;
+		bottom: 0;
+		width: 50%;
+
+		margin: auto;
+		left: 0;
+		right: 0;
+		height: 20px;
+	}
+
+	/*材質的外層*/
+	.oneproduct_02 div.wood{
+		position:relative;
+		text-align: center;
+		display: inline-block;
+		width:30%;
+
+		height: 100%;
+
+		padding: 30px 0 0 0;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+
+		/*background-color: #aaa;*/
+	}
+
+	/*材質*/
+	.oneproduct_02 div.p7{
+		position:relative;
+		text-align: center;
+		display: inline-block;
+		width:100%;
+		height: 30px;
+
+		padding: 0;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+
+		/*background-color: #0aa;*/
+	}
+	
+	.oneproduct_02 div.wood div.sel{
+		width: 100%;
+		height: 90px;
+
+		/*background-color: #fa0;*/
+	}
+
+	/*材質的下拉式選單*/
+	.oneproduct_02 div.wood select.sel{
+		position: relative;
+		top: 15px;
+		bottom: 0;
+		width: 60%;
+
+		margin: auto;
+		left: 0;
+		right: 0;
+		height: 20px;
+		border:1px solid #eee;
+		/*background-color:#8D8D8D;*/
+	}
+
+
+
+	/*數量的外層*/
+	.oneproduct_03 div.qty{
+		position:relative;
+		text-align: center;
+		display: inline-block;
+		width:25%;
+
+		height: 100%;
+
+		padding: 30px 0 0 0;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+
+		/*background-color: #aaa;*/
+	}
+
+	/*數量*/
+	.oneproduct_03 div.p3{
+		position:relative;
+		text-align: center;
+		display: inline-block;
+		width:100%;
+		height: 30px;
+
+		padding: 0;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+
+		/*background-color: #0aa;*/
+	}
+	
+	.oneproduct_03 div.qty div.sel1{
+		width: 100%;
+		height: 90px;
+
+		/*background-color: #fa0;*/
+	}
+
+	/*數量的下拉式選單*/
+	.oneproduct_03 div.qty select.sel1{
+		position: relative;
+		top: 15px;
+		bottom: 0;
+		width: 30%;
+
+		margin: auto;
+		left: 0;
+		right: 0;
+		height: 20px;
+		border:1px solid #eee;
+		/*background-color:#8D8D8D;*/
+	}
+
+
+	/*單價*/
+	.oneproduct_03 div.p4{
+		position:relative;
+		text-align: center;
+		display: inline-block;
+		width:25%;
+		height: 100%;
+
+		padding: 30px 0 0 0;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+
+		/*background-color: #aaa;*/
+	}
+
+	/*100*/
+	.oneproduct_03 div.p4 div{
+		position: absolute;
+		top: 25px;
+		bottom: 0;
+		width: 50%;
+
+		margin: auto;
+		left: 0;
+		right: 0;
+		height: 20px;
+	}
+
+
+	/*折扣*/
+	.oneproduct_03 div.p5{
+		position:relative;
+		text-align: center;
+		display: inline-block;
+		width:25%;
+		height: 100%;
+
+		padding: 30px 0 0 0;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+
+		/*background-color: #aaa;*/
+	}
+
+	/*200*/
+	.oneproduct_03 div.p5 div{
+		position: absolute;
+		top: 25px;
+		bottom: 0;
+		width: 50%;
+
+		margin: auto;
+		left: 0;
+		right: 0;
+		height: 20px;
+	}
+
+	/*小計金額*/
+	.oneproduct_03 div.p8{
+		position:relative;
+		text-align: center;
+		display: inline-block;
+		width:22%;
+		height: 100%;
+
+		padding: 30px 0 0 0;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+
+		/*background-color: #aaa;*/
+	}
+
+	/*1200*/
+	.oneproduct_03 div.p8 div{
+		position: absolute;
+		top: 25px;
+		bottom: 0;
+		width: 50%;
+
+		margin: auto;
+		left: 0;
+		right: 0;
+		height: 20px;
+	}
+
+
+	/*勾選式選單
+	.checks{
+		position: relative;
+		top:40%;
+		left:37%;
+	}*/
+
+	
+	/*備註部分*/
+	.warning3{
+		width: 100%;
+		height: 30%;
+		position: relative;
+		top:40px;
+		display: inline-block;
+	}
+
+	.warning3 p{
+		font-size: 14px;
+		color:#666666;
+	}
+
+	/*金額總計*/
+	/*.totalmoney{
+		width: 20%;
+		height: 3%;
+		position: relative;
+		left:8%;
+		display: inline-block;
+		line-height: 60px;
+	}*/
+
+	/*.totalmoney p{
+		font-size: 16px;
+		color:#666666;
+	}*/
+
+	/*配送方式
+	.howtodel{
+		width: 60%;
+		height: 20%;
+		position: relative;
+		left:65%;
+		top:-10%;
+		line-height: 30px;
+	}
+
+	.howtodel p{
+		font-size: 16px;
+		color:#666666;
+	}
+
+	.howtodel option{
+		height: 10%;
+	}
+
+	/*按鈕區塊*/
+
+	
+
+	.btn-grs{
+		width: 50%;
+		height: 50%;
+		position: relative;
+		left:65%;
+		top:-5%;
+		line-height: 30px;
+		display: inline-block;
+	}
+
+	/*繼續購物鈕*/
+	.btn-keepgoingshop{
+		width: 15%;
+		height: 10%;
+		background-color: #fff;
+		border:1px solid #666666;
+		color: #666666;
+		line-height: 30px;
+		display:inline-block;
+	}
+
+	.btn-keepgoingshop:hover{
+		background-color: #666666;
+	}
+
+	.btn-keepgoingshop a{
+		width: 15%;
+		height: 10%;
+		text-decoration: none;
+		font-size: 15px;
+		color:#666666;
+		padding: 0 15% 0 20%;
+
+	}
+
+	.btn-keepgoingshop a:hover{
+		text-decoration: none;
+		color:#fff;
+	}
+
+	/*下一步鈕*/
+	.btn-nextstep{
+		width: 15%;
+		height: 10%;
+		background-color: #fff;
+		border:1px solid #666666;
+		color: #666666;
+		line-height: 30px;
+		position: relative;
+		left:5%;
+		display: inline-block;
+	}
+
+	.btn-nextstep:hover{
+		background-color: #666666;
+	}
+
+	.btn-nextstep a{
+		width: 15%;
+		height: 10%;
+		text-decoration: none;
+		font-size: 15px;
+		color:#666666;
+		padding: 0 15% 0 25%;
+
+	}
+
+	.btn-nextstep a:hover{
+		text-decoration: none;
+		color:#fff;
+	}
+
+	/*填寫超商取貨資訊頁面*/
+	.totalmoney2{
+		width: 35%;
+		height: 20%;
+		position: relative;
+		top:0%;
+		left:65%;
+		top:0%;
+	}
+
+	.totalmoney2 p{
+		font-size: 14px;
+		color:#666666;
+		line-height: 25px;
+	}
+
+	.filldata1{
+		width: 100%;
+		height: 560px;
+		/*background-color: #fa0;*/
+	}
+
+	.box-fill1{
+		width: 14%;
+		height: 7%;
+		background-color: #666666;
+		/*border:1px solid #666666;*/
+	}
+
+	.box-fill1 p{
+		font-size: 16px;
+		color: #fff;
+		padding: 10px 10px 0 15px;
+	}
+
+	.p11{
+		position: relative;
+		top:3%;
+	}
+	.p11 p{
+		font-size: 12px;
+		color:#666666;
+	}
+
+	.choosestore{
+		width: 28%;
+		height: 4%;
+		background-color: black;
+		position: relative;
+		top:7%;
+
+	}
+
+	.choosestore a{
+		text-decoration: none;
+		color:#fff;
+		font-size: 16px;
+		padding:5px 10px;
+	}
+
+	.textarea1{
+		width: 100%;
+		height: 300px; 
+		position: relative;
+		top:15% ;
+
+		/*margin-left: 10%;*/
+	}
+
+	.textarea1 input{
+		font-size: 16px;
+		color:#666666;
+		margin-left: 2%;
+	}
+	
+	.textarea1 label{
+		font-size: 16px;
+		color:#666666;
+	}
+
+	.edit-group1{
+		line-height: 30px;
+	}
+
+	.rechoose{
+		width: 22%;
+		height: 8%;
+		background-color: black;
+		position: relative;
+		top:4%;
+		left:8%;
+	}
+
+	.rechoose a{
+		color:#fff;
+		text-decoration: none;
+		font-size :16px;
+		padding:0 4px;
+	}
+
+	/*.btn-confirmcheckout{
+		width: 10%;
+		height: 10%;
+		background-color: #fff;
+		border:1px solid #666666;
+		position: relative;
+		top:10%;
+		left:70%;
+		padding: 10px 4px 0 28px;
+	}
+
+	.btn-confirmcheckout:hover{
+		background-color: #666666;
+	}
+
+	.btn-confirmcheckout a{
+		width: 10%;
+		height: 10%;
+		font-size:16px;
+		color:#666666;
+		text-decoration: none;
+	}
+
+	.btn-confirmcheckout a:hover{
+		color:#fff;
+	}*/
+	
+	/*宅配頁面*/
+	.filldata2{
+		width: 100%;
+		height: 400px;
+		/*background-color: #fa0;*/
+	}
+
+	.textarea2{
+		width: 100%;
+		height: 300px; 
+		position: relative;
+		top:15% ;
+		/*margin-left: 10%;*/
+	}
+
+	.textarea2 input{
+		font-size: 16px;
+		color:#666666;
+		margin-left: 2%;
+	}
+	
+	.textarea2 label{
+		font-size: 16px;
+		color:#666666;
+	}
+
+	/*光箱提示*/
+	.img-replace {
+  	/* replace text with an image */
+  		display: inline-block;
+  		overflow: hidden;
+  		text-indent: 100%;
+  		color: transparent;
+  		white-space: nowrap;
+	}
+
+	.cd-popup-trigger {
+  		display: block;
+  		width: 170px;
+  		height: 50px;
+  		line-height: 50px;
+  		margin: 3em auto;
+  		text-align: center;
+  		color: #FFF;
+  		font-size: 16px;
+  		/*font-weight: bold;*/
+  		text-transform: uppercase;
+  		text-decoration: none;
+  		background: #666666;
+  		position: relative;
+  		top:0%;
+  		left:25%;
+ 	}
+	
+	@media only screen and (min-width: 1170px) {
+  	.cd-popup-trigger {
+    	margin: 6em auto;
+  	}}
+
+
+/* --------------------------------
+
+-------------------------------- */
+/*暗幕*/
+	.cd-popup {
+  		position: fixed;
+  		left: 0;
+  		top: 0;
+  		height: 100%;
+  		width: 100%;
+  		background-color: rgba(94, 110, 141, 0.9);
+  		opacity: 0;
+  		visibility: hidden;
+  		transition: opacity 0.3s 0s, visibility 0s 0.3s;
+	}
+
+/*點了之後看得到*/
+	.cd-popup.is-visible {
+  		opacity: 1;
+  		visibility: visible;
+  		transition: opacity 0.3s 0s, visibility 0s 0s;
+	}
+
+/*光箱出來的樣式*/
+	.cd-popup-container {
+  		position: relative;
+  		top:40%;
+  		height: 20%;
+  		max-width: 50%;
+  		margin: 4em auto;
+  		background: #FFF;
+  		border-radius: .25em .25em .4em .4em;
+  		text-align: center;
+  		box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  		transform: translateY(-40px);
+  		transition-property: transform;
+  		transition-duration: 0.3s;
+	}
+
+	.cd-popup-container p {
+  		font-size: 16px;
+  		color:#666666;
+  		padding: 3em 1em;
+	}
+
+	.cd-popup-container .cd-buttons:after {
+  		content: "";
+  		display: table;
+  		clear: both;
+	}
+
+	.cd-popup-container .cd-buttons li {
+  		float: left;
+  		width: 50%;
+	}
+
+	.cd-popup-container .cd-buttons a {
+ 		display: block;
+  		height: 60px;
+  		line-height: 60px;
+  		text-decoration: none;
+  		text-transform: uppercase;
+  		color: #FFF;
+  		font-size: 16px;
+  		transition: background-color 0.2s;
+	}
+
+	.cd-popup-container .cd-buttons li:first-child a {
+  		background-color:  #ddd ;
+  		color:#666666;
+  		border-radius: 0 0 0 .25em;
+	}
+
+
+	.no-touch .cd-popup-container .cd-buttons li:first-child a:hover {
+  		background-color: #666666;
+  		color:#ddd;
+	}
+
+	.cd-popup-container .cd-buttons li:last-child a {
+  		background-color:  #ddd ;
+  		color:#666666;
+  		border-radius: 0 0 .25em 0;
+	}
+
+	.no-touch .cd-popup-container .cd-buttons li:last-child a:hover {
+  		background-color: #666666;
+  		color:#ddd;
+	}
+
+	.cd-popup-container .cd-popup-close {
+  		position: absolute;
+  		top: 8px;
+  		right: 8px;
+  		width: 30px;
+  		height: 30px;
+	}
+
+	.cd-popup-container .cd-popup-close::before, .cd-popup-container .cd-popup-close::after {
+ 	 	content: '';
+  		position: absolute;
+  		top: 12px;
+  		width: 14px;
+  		height: 3px;
+  		background-color: #8f9cb5;
+	}
+
+	.cd-popup-container .cd-popup-close::before {
+  		transform: rotate(45deg);
+  		left: 8px;
+	}
+
+	.cd-popup-container .cd-popup-close::after {
+  		transform: rotate(-45deg);
+  		right: 8px;
+	}
+
+	.is-visible .cd-popup-container {
+  		transform: translateY(0);
+	}
+
+	/*購買完成頁面*/
+	.sign8{
+		width:  100%;
+		height:370px;
+		background-image: url(../images/shoppingcart/signframe8.png);
+		background-repeat: no-repeat; 
+		/*background-color: : #4C4C4C;*/
+		position: relative;
+	 	top:18%;
+	 	left:30%;
+	}
+	
+	.btn-keepgoingshop{
+		width:20%;
+	}
+
+	.btn-keepgoingshop a{
+		width:12%;
+		height: 10%;
+		font-size: 16px;
+		text-decoration: none;
+		color:#666666;
+		/*padding: 2px;*/
+	}
+
+
+	
+/*==========平板版本==========*/
+
+@media screen and (max-width: 1080px) {/*IPAD尺寸*/
+	/*進度bar*/
+	div.cart_navbar{
+		width: 105%;		
+		height: 80px;
+		padding-top:15px; 
+	}
+
+	.list img{
+		width: 755px;
+    	position: relative;
+    	top: 50px;
+	}
+
+	.p8 {
+		position: relative;
+		top:10%;
+		left:60%;
+	}
+
+	.sel1{
+		position: relative;
+		top:30%;
+		left:-10%;
+	}
+
+	.sel{
+		position: relative;
+		top:30%;
+		left:28%;
+	}
+
+	.line3 img{
+		width: 100%;
+	}
+
+	.warning3{
+		width: 64%;
+	}
+	
+
+	
+}
+
+/*____________________________________________________________________________*/
+
+/*==========手機版本==========*/
+
+@media screen and (max-width: 768px) {
+	
+	.wrap{
+
+		}
+
+		header{
+/*			width: 100%;
+			height: 130px;
+			background-color: rgba(255,255,255,0);*/
+		}
+
+		content, footer{
+/*			width: 80%;
+			height: 100%; 完全撐開到margin
+			min-width: 300px;*/
+		}
+
+
+	/*進度bar*/
+	div.cart_navbar{		
+		height: 30px;
+	}
+
+	.cart_navbar ul li .light_text p {
+		font-size: 12px;
+		line-height: 15px;
+	}		
+	
+	.list{
+		top:-35px;
+	}
+
+	.list img{
+		width: 100%;
+		position: relative;
+		top:65px;
+	}
+
+	.list p{
+		font-size: 6px;
+	}
+
+	.cart_navbar ul:after, .cart_navbar li:after {
+		top: 55px;
+	}
+
+	/*清單選項*/
+	.p1{
+		position: relative;
+		top:50%;
+		display: none;
+	}
+
+	.p2{
+		position: relative;
+		top:40%;
+		left:20%;
+		display: inline-block;
+	}
+
+	.p6 {
+    	position: relative;
+    	top: 55%;
+    	left: -22%;
+    	display: inline-block;
+	}
+
+	.p7 {
+    	position: relative;
+    	top: 70%;
+    	left: -30%;
+    	display: inline-block;
+	}
+
+	.p3 {
+    	position: relative;
+    	top: 90%;
+    	left: -18%;
+    	display: inline-block;
+	}
+
+	.sel1 {
+    	position: relative;
+    	top: 105%;
+   		left: -76%;
+   		width: 15%;
+	}
+
+	.sel {
+    	position: relative;
+    	top: 57%;
+    	left: 45%;
+    	width: 52%;
+	}
+
+	.p4 {
+    	position: relative;
+    	top: 90%;
+    	left: -8%;
+    	display: inline-block;
+	}
+
+	.p5 {
+    	position: relative;
+    	top: 90%;
+    	left: 3%;
+    	display: inline-block;
+	}
+
+	.p8 {
+    	position: relative;
+    	top: 90%;
+    	left: 0%;
+    	display: inline-block;
+	}
+
+	.line3{
+		top:15px;
+	}
+
+	.warning3{
+		top:10px;
+		width: 100%;
+	}
+
+	.btn-keepgoingshop {
+    	width: 50%;
+	}
+
+	.btn-nextstep {
+    	width: 43%;
+    }
+
+    .btn-grs {
+    	width: 70%;
+    	height: 50%;
+    	position: relative;
+    	left: 30%;
+    	top: 80px;
+    	line-height: 30px;
+}
+
+}
+
+
