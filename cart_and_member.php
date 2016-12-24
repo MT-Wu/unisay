@@ -1,3 +1,6 @@
+<?php
+require __DIR__. '/__connect_db.php';
+?>
 <!-- fixed的按鈕 -->
 
 <div class="cart_sidebar">
@@ -79,58 +82,58 @@
 
 
 <div class="member_sidebar">
-	<div class="member_sidebar_content">
-		<div class="say_hello">
-			嗨～歡迎來到UniSay<br>
-			趕快加入我們吧：）
-		<!-- 	嗨，Hana
-			歡迎加入UniSay
-			今天想說些什麼呢？ -->
-		</div>
+	<?php if(! isset($_SESSION['user'])): ?>
+		<div class="member_sidebar_content">
+			<div class="say_hello">
+				嗨～歡迎來到UniSay<br>
+				趕快加入我們吧：）
+			<!-- 	嗨，Hana
+				歡迎加入UniSay
+				今天想說些什麼呢？ -->
+			</div>
 
-		<div class="member_info">
-			<div class="login" onclick="location.href='login.php'">登入</div>
-			<div class="register" onclick="location.href='login.php'">註冊</div>
-		</div>
+			<div class="member_info">
+				<div class="login" onclick="location.href='login.php'">登入</div>
+				<div class="register" onclick="location.href='login.php'">註冊</div>
+			</div>
 
-		<div class="member_note">
-			＊UniSay提供手機殼終身保固<br>
-			<br>
-			＊現在加入立即取得首購禮<br>
-			<br>
-			＊會員獨享舊殼換新殼現賺購物金<br>
-			  &nbsp;&nbsp;&nbsp;&nbsp;環保愛地球也讓自己有好新情<br>
-			  &nbsp;&nbsp;&nbsp;&nbsp;詳情請見->舊換新回收制度<br>
-		</div>
-
-	</div>
-</div>
-
-
-<div class="member_sidebar">
-	<div class="member_sidebar_content2">
-		<div class="say_hello">
-			嗨，Hana <br>
-			歡迎加入UniSay：） <br>
-			今天想說些什麼呢？
-		</div>
-
-		<div class="member_info">
-			<div>會員專區</div>
-			<div>修改資料</div>
-			<div>訂單查詢</div>
+			<div class="member_note">
+				＊UniSay提供手機殼終身保固<br>
+				<br>
+				＊現在加入立即取得首購禮<br>
+				<br>
+				＊會員獨享舊殼換新殼現賺購物金<br>
+				  &nbsp;&nbsp;&nbsp;&nbsp;環保愛地球也讓自己有好新情<br>
+				  &nbsp;&nbsp;&nbsp;&nbsp;詳情請見->舊換新回收制度<br>
+			</div>
 
 		</div>
+	<?php else: ?>
+		<div class="member_sidebar_content">
+			<div class="say_hello">
+				嗨，<?= $_SESSION['user']['nickname'] ?><br>
+				歡迎加入UniSay：） <br>
+				今天想說些什麼呢？
+			</div>
 
-		<div class="member_note">
-			＊UniSay提供手機殼終身保固<br>
-			<br>
-			＊現在加入立即取得首購禮<br>
-			<br>
-			＊會員獨享舊殼換新殼現賺購物金<br>
-			  &nbsp;&nbsp;&nbsp;&nbsp;環保愛地球也讓自己有好新情<br>
-			  &nbsp;&nbsp;&nbsp;&nbsp;詳情請見->舊換新回收制度<br>
+			<div class="member_info">
+				<div onclick="location.href='memberaccountmember.php'">會員專區</div>
+				<div onclick="location.href='memberaccounteditinfopw.php'">修改資料</div>
+				<div>訂單查詢</div>
+
+			</div>
+
+			<div class="member_note">
+				＊UniSay提供手機殼終身保固<br>
+				<br>
+				＊現在加入立即取得首購禮<br>
+				<br>
+				＊會員獨享舊殼換新殼現賺購物金<br>
+				  &nbsp;&nbsp;&nbsp;&nbsp;環保愛地球也讓自己有好新情<br>
+				  &nbsp;&nbsp;&nbsp;&nbsp;詳情請見->舊換新回收制度<br>
+			</div>
+
 		</div>
+	<?php endif ?>
 
-	</div>
 </div>
