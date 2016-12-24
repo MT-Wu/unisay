@@ -253,23 +253,23 @@ if(isset($_POST['type'])){
 								<img src="images/member/picjoinin.svg">
 							</div>
 							<div class="form-group">
-                  <label for="email_id">* Email address</label> <span id="email_id_info" style="color:red;display:none;">請填寫正確的 email 格式</span>
+                  <label for="email_id">* 帳號：</label> <span id="email_id_info" style="color:red;display:none;">請填寫正確的 email 格式</span>
                   <input type="email" class="form-control" id="email_id" name="email_id" placeholder="Email">
               </div>
               <div class="form-group">
-                  <label for="password">* Password</label> <span id="password_info" style="color:red;display:none;">密碼長度請設定大於 6 !</span>
+                  <label for="password">* 密碼：</label> <span id="password_info" style="color:red;display:none;">密碼長度請設定大於 6 !</span>
                   <input type="password" class="form-control" id="password" name="password">
               </div>
               <div class="form-group">
-                  <label for="nickname">* Nickname</label> <span id="nickname_info" style="color:red;display:none;">暱稱長度請設定大於 2 !</span>
+                  <label for="nickname">* 暱稱：</label> <span id="nickname_info" style="color:red;display:none;">暱稱長度請設定大於 2 !</span>
                   <input type="text" class="form-control" id="nickname" name="nickname" placeholder="暱稱">
               </div>
               <div class="form-group">
-                  <label for="mobile">Mobile</label>
+                  <label for="mobile">手機：</label>
                   <input type="text" class="form-control" id="mobile" name="mobile" placeholder="手機號碼">
               </div>
               <div class="form-group">
-                  <label for="address">Address</label>
+                  <label for="address">地址：</label>
                   <input type="text" class="form-control" id="address" name="address"></input>
               </div>
 							<div class="joinmenber">
