@@ -5,6 +5,7 @@
 @import url(reset.css);
 
 @import url(US_header.css);
+@import url(US_main.css);
 @import url(US_footer.css);
 
 
@@ -25,49 +26,7 @@
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;*/
 
-*{
-	font-family: sans-serif, 微軟正黑體;
-}
 
-body{
-	background-color: rgba(244,240,240,1);
-	overflow-y: scroll; /*讓右側scrollbar一直存在，畫面才不會跳掉*/
-}
-
-
-
-.wrap{ /*葉子背景*/
-	/*置中*/
-	position: relative;
-	margin: auto;
-	left: 0;
-	right: 0;
-
-	width: 100%; /*葉子底100%跟body螢幕同寬*/
-	max-width: 1280px; /*葉子底最大寬度1280px*/
-
-	background: url(../images/background/background_leaves.png); /*背景不會放大所以用png即可，檔案小很多*/
-	background-size: 100%; /*寬度下100%背景圖才會撐滿並置中*/
-}
-
-
-
-header, content, footer{
-	/*置中*/
-	display: block;
-	margin: auto;
-	left: 0;
-	right: 0;
-	
-	width: 90%; /*白紙底目前設定90%螢幕寬（wrap為100%螢幕寬）*/
-	max-width: 1080px; /*白紙底最大寬度1080px（含陰影），裡面全白區域1024px*/ 
-}
-
-
-
-header{
-	height: 120px;
-}
 
 
 
@@ -79,30 +38,6 @@ content{
 	min-height: 590px; /*高度撐開至少590px(螢幕1580*830的單頁)，之後自然隨裡面的物件撐開*/
 	/*把超出的地方遮起來*/
 	overflow: hidden;	
-}
-content:before, content:after{
-	content:'';
-	position: absolute;
-	width: 100%;
-	height: 28px;
-}
-content:before{ /*白紙底的上緣*/
-	top:-28px;
-
-	background: url(../images/background/paper02.svg);
-	background-size: 100% 100%; /*避免repeat並且拉伸到完美接合*/
-}
-content:after{ /*白紙底的下緣*/
-	bottom:-28px;
-
-	background: url(../images/background/paper03.svg);
-	background-size: 100% 100%;
-}
-
-
-footer{
-	position: relative;
-	height: 120px; /*和header一樣高*/
 }
 
 
@@ -329,6 +264,7 @@ footer{
 /*精靈*/
 .find_title img.FA04{
 	animation: FA04 1s .5s backwards;
+	cursor: pointer;
 }
 @keyframes FA04{
 	0%{ opacity:0;bottom:-10%; }
@@ -346,7 +282,9 @@ footer{
 /*當中間圓板被hover時，把“找”加上ＣＬＡＳＳ*/
 .find_title img.FA02{
 	transform: rotate(0deg);
-	transition: 1s;
+	transform-origin: center;
+	transition: .2s;
+	top: 0; /*讓動畫結尾能順*/
 }
 
 .find_title img.touch{
@@ -403,9 +341,14 @@ footer{
 	top:250px;
 	left: 710px;
 	opacity: 0;
+	transition: .3s;
 
 	/*background-color: #ccc;*/
 }
+.talk.showup{
+	opacity: 1;
+}
+
 /*左右文字圖共同設定*/
 .introL img, .introR img, .talk img{
 	width: 100%;
@@ -684,9 +627,93 @@ footer{
 	left: 0;
 	background-image: url(../images/inspire/animal_icons-01-01.svg);
 	background-size: 800% 200%;
-	background-position: -700% -100%;
-	
+	background-position: -700% -100%;	
 }
+
+/*-----------------換動物----------------*/
+/*貓頭鷹*/
+.find_bg ul li.step5 .up_img .ani_icon .ani_icon_img.owl{
+	background-position: 0% 0%;
+}
+
+/*狐狸*/
+.find_bg ul li.step5 .up_img .ani_icon .ani_icon_img.fox{
+	background-position: -100% 0%;
+}
+
+/*兔子*/
+.find_bg ul li.step5 .up_img .ani_icon .ani_icon_img.rabbit{
+	background-position: -200% 0%;
+}
+
+/*獅子*/
+.find_bg ul li.step5 .up_img .ani_icon .ani_icon_img.lion{
+	background-position: -300% 0%;
+}
+
+/*鹿*/
+.find_bg ul li.step5 .up_img .ani_icon .ani_icon_img.deer{
+	background-position: -400% 0%;
+}
+
+/*老鷹*/
+.find_bg ul li.step5 .up_img .ani_icon .ani_icon_img.eagle{
+	background-position: -500% 0%;
+}
+
+/*貓*/
+.find_bg ul li.step5 .up_img .ani_icon .ani_icon_img.cat{
+	background-position: -600% 0%;
+}
+
+/*鳥*/
+.find_bg ul li.step5 .up_img .ani_icon .ani_icon_img.bird{
+	background-position: -700% 0%;
+}
+
+/*狼*/
+.find_bg ul li.step5 .up_img .ani_icon .ani_icon_img.wolf{
+	background-position: 0% -100%;
+}
+
+/*猴子*/
+.find_bg ul li.step5 .up_img .ani_icon .ani_icon_img.monkey{
+	background-position: -100% -100%;
+}
+
+/*蜜蜂*/
+.find_bg ul li.step5 .up_img .ani_icon .ani_icon_img.bee{
+	background-position: -200% -100%;
+}
+
+/*松鼠*/
+.find_bg ul li.step5 .up_img .ani_icon .ani_icon_img.squirrel{
+	background-position: -300% -100%;
+}
+
+/*狗*/
+.find_bg ul li.step5 .up_img .ani_icon .ani_icon_img.dog{
+	background-position: -400% -100%;
+}
+
+/*刺蝟*/
+.find_bg ul li.step5 .up_img .ani_icon .ani_icon_img.porcupine{
+	background-position: -500% -100%;
+}
+
+/*鸚鵡*/
+.find_bg ul li.step5 .up_img .ani_icon .ani_icon_img.parrot{
+	background-position: -600% -100%;
+}
+
+/*大象*/
+.find_bg ul li.step5 .up_img .ani_icon .ani_icon_img.elephant{
+	background-position: -700% -100%;
+}
+/*------------------------------------------*/
+
+
+
 
 /*上層右區塊底板*/
 .find_bg ul li.step5 .up_img .ani_wrap{

@@ -268,6 +268,7 @@ li.here a:before, li.here a:after{
 }
 
 /*---側邊欄的html在cart_and_member.html---*/
+/*---購物車側邊欄---*/
 .cart_sidebar_content, .member_sidebar_content{
 	position: absolute;
 	width: 100%;
@@ -539,6 +540,70 @@ li.here a:before, li.here a:after{
 	color: rgba(255,255,255,1);
 	top: -5px;
 }
+
+
+
+/*---會員中心側邊欄---*/
+.member_sidebar .member_sidebar_content .say_hello{
+	font-size: 18px;
+	color:rgba(103,147,137,1);
+	
+	line-height: 32px;
+	letter-spacing: 1px;
+
+	margin-bottom: 50px;
+}
+.member_sidebar .member_sidebar_content .member_info{
+	
+	width: 60%;
+
+	margin: auto;
+	left: 0;
+	right: 0;
+
+	border-top: 1px solid #ccc;
+}
+.member_sidebar .member_sidebar_content .member_info div{
+	position: relative;
+	width: 100%;
+	height: 75px;
+
+	line-height: 75px;
+	font-size: 20px;
+	color:#666;
+
+	text-align: center;
+	transition:0.1s; 
+
+	cursor: pointer;
+}
+.member_sidebar .member_sidebar_content .member_info div:hover{
+	background-color: rgba(145,186,177,1);
+}
+.member_sidebar .member_sidebar_content .member_info div:after{
+	position: absolute;
+	left: 0;
+	content: "";
+	width: 100%;
+	height: 1px;
+	background-color: #ccc;
+}
+.member_sidebar .member_sidebar_content .member_info div:after{
+	bottom: 0;
+}
+.member_sidebar .member_sidebar_content .member_note{
+	width: 100%;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	margin: 25px 25px 50px;
+
+	color: rgba(103,147,137,1);
+	font-size: 16px;
+	line-height: 22px;
+}
+
+
 
 
 
@@ -886,8 +951,8 @@ nav ul{
 }
 
 .member_sidebar{
-	width: 50%;
-	right: -50%;
+	width: 83%;
+	right: -83%;
 }
 
 /*icons點擊後sidebar從右邊出現*/
