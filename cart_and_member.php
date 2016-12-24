@@ -87,9 +87,6 @@ require __DIR__. '/__connect_db.php';
 			<div class="say_hello">
 				嗨～歡迎來到UniSay<br>
 				趕快加入我們吧：）
-			<!-- 	嗨，Hana
-				歡迎加入UniSay
-				今天想說些什麼呢？ -->
 			</div>
 
 			<div class="member_info">
