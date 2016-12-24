@@ -3,15 +3,18 @@
 
 require __DIR__. '/__connect_db.php';
 
-if(isset($_POST['type'])){
-  if($_POST['type'] === 'info') {
-
+if(isset($_POST['password'])){
+    $password = $_POST['password'];
+    $new_password = $_POST['new_password'];
     $nickname = $_POST['nickname'];
     $mobile = $_POST['mobile'];
     $address = $_POST['address'];
 
-    $sql = sprintf("SELECT * FROM `members` WHERE `email_id`='%s'",
-        $mysqli->escape_string($_SESSION['user']['email_id'])
+    $password = sha1($password);
+
+    $sql = sprintf("SELECT * FROM `members` WHERE `email_id`='%s' AND `password`='%s'",
+        $mysqli->escape_string($_SESSION['user']['email_id']),
+        $mysqli->escape_string($password)
     );
 
     $result = $mysqli->query($sql);
@@ -20,14 +23,22 @@ if(isset($_POST['type'])){
 
     if($success){
         $row = $result->fetch_assoc();
-
+        if(empty($new_password)){
             $sql = sprintf("UPDATE `members` SET `nickname`='%s',`mobile`='%s',`address`='%s' WHERE `sid`=%s",
                     $mysqli->escape_string($nickname),
                     $mysqli->escape_string($mobile),
                     $mysqli->escape_string($address),
                     $row['sid']
                 );
-
+        } else {
+            $sql = sprintf("UPDATE `members` SET `password`='%s', `nickname`='%s',`mobile`='%s',`address`='%s' WHERE `sid`=%s",
+                sha1($new_password),
+                $mysqli->escape_string($nickname),
+                $mysqli->escape_string($mobile),
+                $mysqli->escape_string($address),
+                $row['sid']
+                );
+        }
         if($mysqli->query($sql)){
             $msg = array(
                 'success' => true,
@@ -49,60 +60,12 @@ if(isset($_POST['type'])){
     } else {
         $msg = array(
             'success' => false,
-            'info' => '找不到這個人',
-        );
-
-
-    }
-
-	} else if($_POST['type'] === 'password') {
-
-		$password = $_POST['password'];
-    $new_password = $_POST['new_password'];
-
-    $password = sha1($password);
-
-    $sql = sprintf("SELECT * FROM `members` WHERE `email_id`='%s' AND `password`='%s'",
-        $mysqli->escape_string($_SESSION['user']['email_id']),
-        $mysqli->escape_string($password)
-    );
-
-    $result = $mysqli->query($sql);
-
-    $success = $result->num_rows>0;
-
-    if($success){
-
-        $row = $result->fetch_assoc();
-
-        $sql = sprintf("UPDATE `members` SET `password`='%s' WHERE `sid`=%s",
-            sha1($new_password),
-            $row['sid']);
-
-        if($mysqli->query($sql)){
-            $msg = array(
-                'success' => true,
-                'info' => '修改完成',
-            );
-        }else{
-            $msg = array(
-                'success' => false,
-                'info' => '錯誤, 請找開發人員',
-            );
-        }
-
-
-    } else {
-        $msg = array(
-            'success' => false,
             'info' => '密碼錯誤',
         );
 
 
     }
 
-
-	}
 }
 ?>
 <!DOCTYPE html>
@@ -243,6 +206,14 @@ if(isset($_POST['type'])){
                 <input type="email" class="form-control" id="email_id" value="<?= $_SESSION['user']['email_id'] ?>" disabled>
             </div>
             <div class="form-group">
+                <label for="password">* Password</label> <span id="password_info" style="color:red;display:none;">密碼長度請設定大於 6 !</span>
+                <input type="password" class="form-control" id="password" name="password">
+            </div>
+            <div class="form-group">
+                <label for="new_password">New password</label> <span id="password_info" style="color:red">不修改請留白</span>
+                <input type="password" class="form-control" id="new_password" name="new_password">
+            </div>
+            <div class="form-group">
                 <label for="nickname">* Nickname</label> <span id="nickname_info" style="color:red;display:none;">暱稱長度請設定大於 2 !</span>
                 <input type="text" class="form-control" id="nickname" name="nickname"  value="<?= $_SESSION['user']['nickname'] ?>">
             </div>
@@ -255,7 +226,6 @@ if(isset($_POST['type'])){
                 <input type="text" class="form-control" id="address" name="address"><?= $_SESSION['user']['address'] ?></input>
             </div>
 					<div class="tab-editok">
-						<input type="hidden" name="type" value="info">
 						<a href="#" onclick="$(this).closest('form').submit()">確認修改</a>
 					</div>
 				</form>
@@ -265,24 +235,22 @@ if(isset($_POST['type'])){
 		<div class="downframe3">
 			<p>Edit Account Password  修改密碼</p>
 			<img src="images/member/line2-01.svg">
-			<form name="form1"  method="post">
-				<div class="editpwarea">
 
-					<div class="form-group">
-							<label for="password">* Password</label> <span id="password_info" style="color:red;display:none;">密碼長度請設定大於 6 !</span>
-							<input type="password" class="form-control" id="password" name="password">
-					</div>
-					<div class="form-group">
-							<label for="new_password">New password</label> <span id="password_info" style="color:red">不修改請留白</span>
-							<input type="password" class="form-control" id="new_password" name="new_password">
-					</div>
-
-					<div class="tab-pweditok">
-						<input type="hidden" name="type" value="password">
-							<a href="#" onclick="$(this).closest('form').submit()">確認修改</a>
-						</div>
+			<div class="editpwarea">
+				<div class="edit-group">
+					<label for="fillpw">填入新密碼</label>
+					<input type="text" name="">
 				</div>
-			</form>
+
+				<div class="edit-group">
+					<label for="conpw">確認新密碼</label>
+					<input type="text" name="">
+				</div>
+
+				<div class="tab-pweditok">
+						<a href="#">確認修改</a>
+					</div>
+			</div>
 
 		</div>
 
