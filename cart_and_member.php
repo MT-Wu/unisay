@@ -117,8 +117,8 @@ require __DIR__. '/__connect_db.php';
 			</div>
 
 			<div class="member_info">
-				<div>會員專區</div>
-				<div>修改資料</div>
+				<div onclick="location.href='memberaccountmember.php'">會員專區</div>
+				<div onclick="location.href='memberaccounteditinfopw.php'">修改資料</div>
 				<div>訂單查詢</div>
 
 			</div>
