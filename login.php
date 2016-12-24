@@ -1,5 +1,5 @@
 <?php
-$page_name = 'login';
+// `$page_name` = 'login';
 
 require __DIR__. '/__connect_db.php';
 
@@ -152,74 +152,112 @@ if(isset($_POST['email_id'])){
 
 
 <!-- ====================================================================================== -->
+<content>
 
 
-	<content>
-	<div class="con">
-	<!-- 麵包屑 -->
-		<div class="loginnav">
-			<p>LOG IN</p>
-			<img src="images/member/line.svg">
-		</div>
+	<?php if(isset($success)): ?>
+				<?php if($success): ?>
+					<div class="con">
+					<!-- 麵包屑 -->
+						<div class="loginnav">
+							<p>LOG IN</p>
+							<img src="images/member/line.svg">
+						</div>
 
-	<!-- 會員登入 -->
-		<div class="signin" id="loginRight">
-			<form class="mainbody1">
-				<div class="picsignin">
-					<img src="images/member/picsignin.svg">
-				</div>
-				<div class="form-group">
-					<label for="">帳號：</label>
-					<input type="text" name="" >
-				</div>
-				<div class="form-group">
-					<label for="">密碼：</label>
-					<input type="text" name="">
-				</div>
-				<a href="#">忘記密碼？</a>
-				<div class="loginmember">
-				<a href="#">登入會員</a>
-			</div>
-		</form>
-		</div>
-	<!-- 加入會員 -->
-		<div class="joinus" id="loginRight">
-			<form class="mainbody2">
-				<div class="piclogin">
-					<img src="images/member/picjoinin.svg">
-				</div>
-				<div class="form-group">
-					<label for="name">姓名：</label>
-					<input type="text" name="" >
-				</div>
-				<div class="form-group">
-					<label for="email_id">帳號：</label>
-					<input type="text" name="" >
-					<!-- <img src="../版/會員中心的版/ans.svg"> -->
-				</div>
-				<div class="form-group">
-					<label for="passwrod">密碼：</label>
-					<input type="text" name="">
-				</div>
-				<div class="form-group">
-					<label for="pwagain">再確認：</label>
-					<input type="text" name="">
-				</div>
-				<div class="form-group">
-					<label for="birthday">生日：</label>
-					<input type="date" class="form-control" name="birthday" id="birthday" placeholder="YYY-MM-DD">
-				</div>
-				<div class="form-group">
-					<label for="mobile">電話：</label>
-					<input type="text" name="">
-				</div>
-				<div class="joinmenber">
-				<a href="#">加入會員</a>
-				</div>
-			</form>
-		</div>
+					<!-- 中間提示內容 -->
+					<div class="sign5">
+						<img src="images/member/signframe5-1-01.png">
+					 </div>
 
-	</div>
+					<div class="btn-groups">
+						<div class="btn-keepgoing">
+							<a href="">繼續選購</a>
+						</div>
+
+						<div class="btn-back">
+							<a href="">返回會員中心</a>
+						</div>
+
+						<div class="btn-logout">
+							<a href="logout.php">會員登出</a>
+						</div>
+					</div>
+					</div>
+				<?php endif; ?>
+			<?php else: ?>
+				<div class="con">
+				<!-- 麵包屑 -->
+					<div class="loginnav">
+						<p>LOG IN</p>
+						<img src="images/member/line.svg">
+					</div>
+
+				<!-- 會員登入 -->
+
+
+
+					<div class="signin" id="loginRight">
+						<form class="mainbody1" name="form1" method="post"> <!-- 不要讓表單送出 -->
+							<div class="picsignin">
+								<img src="images/member/picsignin.svg">
+							</div>
+							<div class="form-group">
+								<label for="">帳號：</label>
+								<input type="email" class="form-control" id="email_id" name="email_id" placeholder="Email">
+							</div>
+							<div class="form-group">
+								<label for="">密碼：</label>
+								<input type="password" class="form-control" id="password" name="password">
+							</div>
+							<a href="#">忘記密碼？</a>
+							<div class="loginmember">
+
+								<a href="#" onclick="$(this).closest('form').submit()">登入會員</a>
+
+						</div>
+					</form>
+					</div>
+				<!-- 加入會員 -->
+					<div class="joinus" id="loginRight">
+						<form class="mainbody2">
+							<div class="piclogin">
+								<img src="images/member/picjoinin.svg">
+							</div>
+							<div class="form-group">
+								<label for="name">姓名：</label>
+								<input type="text" name="" >
+							</div>
+							<div class="form-group">
+								<label for="email_id">帳號：</label>
+								<input type="text" name="" >
+								<!-- <img src="../版/會員中心的版/ans.svg"> -->
+							</div>
+							<div class="form-group">
+								<label for="passwrod">密碼：</label>
+								<input type="text" name="">
+							</div>
+							<div class="form-group">
+								<label for="pwagain">再確認：</label>
+								<input type="text" name="">
+							</div>
+							<div class="form-group">
+								<label for="birthday">生日：</label>
+								<input type="date" class="form-control" name="birthday" id="birthday" placeholder="YYY-MM-DD">
+							</div>
+							<div class="form-group">
+								<label for="mobile">電話：</label>
+								<input type="text" name="">
+							</div>
+							<div class="joinmenber">
+							<a href="#">加入會員</a>
+							</div>
+						</form>
+					</div>
+
+				</div>
+	<?php endif; ?>
+
+
 
 
 	</content>
