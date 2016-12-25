@@ -100,10 +100,10 @@ while ($row = $result->fetch_assoc()) {
 			<nav>
 				<ul>
 					<!-- 當前頁面掛上here的class -->
-					<li class="icon_aboutus here">
+					<li class="icon_aboutus">
 						<a href="aboutus.html"></a>
 					</li>
-					<li class="icon_product">
+					<li class="icon_product here">
 						<a href="product.html"></a>
 					</li>
 					<li class="icon_custom">

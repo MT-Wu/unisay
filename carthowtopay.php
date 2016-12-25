@@ -32,9 +32,6 @@ while ($row = $result->fetch_assoc()) {
 
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 <!-- bootstrap -->
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<link href="source/css/bootstrap.min.css" rel="stylesheet">
-	<script src="source/js/bootstrap.min.js"></script> -->
 
 
 <!-- Icons -->
@@ -100,17 +97,17 @@ while ($row = $result->fetch_assoc()) {
 			<nav> 
 				<ul>
 					<!-- 當前頁面掛上here的class -->
-					<li class="icon_aboutus here">
+					<li class="icon_aboutus">
 						<a href="aboutus.html"></a>
 					</li>
-					<li class="icon_product">
+					<li class="icon_product here">
 						<a href="product.html"></a>
 					</li>
 					<li class="icon_custom">
-						<a href=""></a>
+						<a href="custom.html"></a>
 					</li>
 					<li class="icon_inspire">
-						<a href=""></a>
+						<a href="inspire.html"></a>
 					</li>
 				</ul>
 			</nav>
@@ -132,19 +129,19 @@ while ($row = $result->fetch_assoc()) {
 	<!-- 進度navbar -->
 	<div class="cart_navbar">
 		<ul>
-			<li class="cart_light on"><
+			<li class="cart_light on">
 				<div class="light_image"></div>
-				<div class="light_text"><p>購物清單<br>與修改商品明細</p></div>
+				<div class="light_text"><p class="doubleline">購物清單<br>與修改商品明細</p></div>
 			</li>
-			<li class="cart_light"><
+			<li class="cart_light on">
 				<div class="light_image"></div>
 				<div class="light_text"><p>配送與付款方式</p></div>
 			</li>
-			<li class="cart_light"><
+			<li class="cart_light">
 				<div class="light_image"></div>
 				<div class="light_text"><p>填寫配送資料</p></div>
 			</li>
-			<li class="cart_light"><
+			<li class="cart_light">
 				<div class="light_image"></div>
 				<div class="light_text"><p>完成訂購</p></div>
 			</li>
@@ -229,40 +226,56 @@ while ($row = $result->fetch_assoc()) {
 
 	
 
-	<div class="warning3">
-		<p> ˙請確認您購買的商品規格與數量，確認後訂單將無法做任何更改。<br>
-				˙若您上有其他商品需購買，請點選繼續購物，如要進行結帳，請點選下一步。<br>
-				˙商品售價將以您實際結帳之即時價格為主，商品數量與優惠等，也將以您實際結帳為準。</p>
-	</div>
+	
 
-	<div class="totalmoney">金額總計：
-			<div>
-				1200
+	<div class="totalmoney">金額總計 ▍ 
+		<div class="price">NT 1200</div>
+
+		<div class="howtodel">
+
+			<div class="pay">付款方式 ▍ 
+
+				<select name="getpro" class="sel2">
+					<option selected="true">超商付款取貨服務</option>
+					<option>貨到付款-付現</option>
+				</select>
+
 			</div>
+			
+			<div class="pay">配送方式 ▍ 
+			
+				<select name="deli" class="sel3">
+					<option selected="true">7-11店配</option>
+					<option>宅配</option>
+				</select>
+
+			</div>
+
+		</div>
+
 	</div>	
 
-	<div class="howtodel">
-		<div class="pay">配送/付款方式</div>
-		<select name="getpro" class="sel2">
-			<option selected="true">超商付款取貨服務</option>
-			<option>貨到付款-付現</option>
-		</select>
 
-		<select name="deli" class="sel3">
-			<option selected="true">7-11店配</option>
-			<option>宅配</option>
-			</select>
-		</div>
 	
-	<div class="btn-grs">
-		<div class="btn-keepgoingshop1">
-			<a href="product.html">繼續購物</a>
-		</div>
 
-		<div class="btn-nextstep">
-			<a href="cartfilldatahome.php">下一步</a>
+
+	<div class="warning3">
+		<p> ˙請確認您購買的商品規格與數量，確認後訂單將無法做任何更改。<br>
+			˙若您上有其他商品需購買，請點選繼續購物，如要進行結帳，請點選下一步。<br>
+			˙商品售價將以您實際結帳之即時價格為主，商品數量與優惠等，也將以您實際結帳為準。</p>
+
+		<div class="btn-grs">
+			<div class="btn-keepgoingshop">
+				<a href="product.html">繼續購物</a>
+			</div>
+
+			<div class="btn-nextstep">
+				<a href="cartfilldatahome.php">下一步</a>
+			</div>
 		</div>
 	</div>
+
+	
 
 
 

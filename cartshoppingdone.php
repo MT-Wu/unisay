@@ -78,14 +78,14 @@
 					<li class="icon_aboutus">
 						<a href="aboutus.html"></a>
 					</li>
-					<li class="icon_product">
+					<li class="icon_product here">
 						<a href="product.html"></a>
 					</li>
 					<li class="icon_custom">
-						<a href=""></a>
+						<a href="custom.html"></a>
 					</li>
 					<li class="icon_inspire">
-						<a href=""></a>
+						<a href="inspire.html"></a>
 					</li>
 				</ul>
 			</nav>
@@ -103,36 +103,40 @@
 
 
 	<content>
-	<div class="con">
-	<!-- 進度navbar -->
-	<div class="cart_navbar">
-		<ul>
-			<li class="cart_light"><
-				<div class="light_image"></div>
-				<div class="light_text"><p>購物清單<br>與修改商品明細</p></div>
-			</li>
-			<li class="cart_light"><
-				<div class="light_image"></div>
-				<div class="light_text"><p>配送與付款方式</p></div>
-			</li>
-			<li class="cart_light"><
-				<div class="light_image"></div>
-				<div class="light_text"><p>填寫配送資料</p></div>
-			</li>
-			<li class="cart_light on"><
-				<div class="light_image"></div>
-				<div class="light_text"><p>完成訂購</p></div>
-			</li>
-		</ul>
-	</div>
-	<!-- 下方內容 -->
-	<div class="sign8"></div>
 
-	<div class="btn-keepgoingshop">
-		<a href="#"> 繼續購物 </a>
-	</div>
+		<div class="con">
 
-	</div>
+			<!-- 進度navbar -->
+			<div class="cart_navbar">
+				<ul>
+					<li class="cart_light on">
+						<div class="light_image"></div>
+						<div class="light_text"><p class="doubleline">購物清單<br>與修改商品明細</p></div>
+					</li>
+					<li class="cart_light on">
+						<div class="light_image"></div>
+						<div class="light_text"><p>配送與付款方式</p></div>
+					</li>
+					<li class="cart_light on">
+						<div class="light_image"></div>
+						<div class="light_text"><p>填寫配送資料</p></div>
+					</li>
+					<li class="cart_light on">
+						<div class="light_image"></div>
+						<div class="light_text"><p>完成訂購</p></div>
+					</li>
+				</ul>
+			</div>
+
+			<!-- 下方內容 -->
+			<div class="sign8"></div>
+
+			<div class="btn-keepgoingshop btn-keepgoingshop2">
+				<a href="#"> 繼續購物 </a>
+			</div>
+
+		</div>
+
 	</content>
 
 
@@ -154,10 +158,10 @@
 
 
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="js/nav_icon.js"></script>
+
 
 <script src="js/main.js"></script>
-
-
 <script src="js/member.js"></script>
 
 

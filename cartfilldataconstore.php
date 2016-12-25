@@ -112,7 +112,7 @@
 		<ul>
 			<li class="cart_light on"><
 				<div class="light_image"></div>
-				<div class="light_text"><p>購物清單<br>與修改商品明細</p></div>
+				<div class="light_text"><p class="doubleline">購物清單<br>與修改商品明細</p></div>
 			</li>
 			<li class="cart_light"><
 				<div class="light_image"></div>
