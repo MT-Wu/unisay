@@ -191,7 +191,7 @@ if(isset($_POST['password'])){
 				<a href="memberaccounteditinfopw.php">修改資料</a>
 			</div>
 			<div class="up3">
-				<a href="#">訂單查詢</a>
+				<a href="member_ordered_list.php">訂單查詢</a>
 			</div>
 		</div>
 

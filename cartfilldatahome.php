@@ -277,7 +277,7 @@ while ($row = $result->fetch_assoc()) {
 				<p>訂單送出後即無法修改，<br>請確認訂單再送出。</p>
 				<ul class="cd-buttons">
 					<li><a href="cartfilldatahome.php">取消</a></li>
-					<li><a href="cartshoppingdone.php">確認</a></li>
+					<li><a href="buy.php">確認</a></li>
 				</ul>
 			<a href="#0" class="cd-popup-close img-replace">Close</a>
 			</div> <!-- cd-popup-container -->
