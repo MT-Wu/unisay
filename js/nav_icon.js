@@ -25,7 +25,8 @@
     var member_sidebar=$(".member_sidebar");
 
     // ajax載入購物車和會員中心側邊欄內容
-    cart_sidebar.load("ajax/cart_and_member.html .cart_sidebar_content");
+    // cart_sidebar.load("ajax/cart_and_member.html .cart_sidebar_content");
+    cart_sidebar.load("side_cart.php", cart_sidebar_initial());
     // member_sidebar.load("ajax/cart_and_member.html .member_sidebar_content");
     // member_sidebar.load("ajax/cart_and_member.html .member_sidebar_content2");
     member_sidebar.load("cart_and_member.php .member_sidebar_content");
@@ -130,3 +131,7 @@
 
 // 因為有可能載入畫面時，剛好停在有動畫元件的位置，這時就寫下面這行，window一載入就觸發scroll事件
 $window.trigger('scroll');
+
+// Cart SideBar 初始化
+function cart_sidebar_initial() {
+}
