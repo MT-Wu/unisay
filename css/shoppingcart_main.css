@@ -961,6 +961,13 @@
 			top: 35%;
 		}
 
+	
+	/*小樹圖示區塊*/
+	.cart_navbar ul li .light_image{
+		height: 50px;
+		top:33%;
+	}
+
 
 	.oneproduct_02 {
 	    width: 78%;
@@ -1000,13 +1007,6 @@
 	}
 
 
-
-
-/*
-	.btn-keepgoingshop1 {
-    	width: 28%;
-	}
-*/
 
 
     /*填寫店配頁面*/
@@ -1146,6 +1146,17 @@
 	
 	.p1{
 		padding: 0;
+	}
+
+	/*圖片*/
+	.oneproduct_01 div.p1{
+		width: 100%;
+		height: auto;
+
+		padding:15px 0 8px 0;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
 	}
 
 	/*商品名稱四個字*/

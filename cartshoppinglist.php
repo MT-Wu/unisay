@@ -132,19 +132,19 @@ while ($row = $result->fetch_assoc()) {
 	<!-- 進度navbar -->
 	<div class="cart_navbar">
 		<ul>
-			<li class="cart_light on"><
+			<li class="cart_light on">
 				<div class="light_image"></div>
 				<div class="light_text"><p class="doubleline">購物清單<br>與修改商品明細</p></div>
 			</li>
-			<li class="cart_light"><
+			<li class="cart_light">
 				<div class="light_image"></div>
 				<div class="light_text"><p>配送與付款方式</p></div>
 			</li>
-			<li class="cart_light"><
+			<li class="cart_light">
 				<div class="light_image"></div>
 				<div class="light_text"><p>填寫配送資料</p></div>
 			</li>
-			<li class="cart_light"><
+			<li class="cart_light">
 				<div class="light_image"></div>
 				<div class="light_text"><p>完成訂購</p></div>
 			</li>
