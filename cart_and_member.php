@@ -1,10 +1,10 @@
 <?php
 require __DIR__ . '/__connect_db.php';
 
-if (empty($_SESSION['cart'])) {
-    header('Location: product_list.php');
-    exit();
-}
+//if (empty($_SESSION['cart'])) {
+//    header('Location: product_list.php');
+//    exit();
+//}
 
 $sids = array_keys($_SESSION['cart']);
 

@@ -7,23 +7,21 @@
  */
 require __DIR__ . '/__connect_db.php';
 
-if (empty($_SESSION['cart'])) {
-    header('Location: product_list.php');
-    exit();
-}
-
-$sids = array_keys($_SESSION['cart']);
+if (!empty($_SESSION['cart'])) {
+    $sids = array_keys($_SESSION['cart']);
 
 //$sql = "SELECT * FROM `products` WHERE `sid` IN (". implode(',', $sids). ") ";
-$sql = sprintf("SELECT * FROM `products` WHERE `sid` IN (%s) ", implode(',', $sids));
+    $sql = sprintf("SELECT * FROM `products` WHERE `sid` IN (%s) ", implode(',', $sids));
 //echo $sql;
-$result = $mysqli->query($sql);
-$p_data = array();
+    $result = $mysqli->query($sql);
+    $p_data = array();
 
-while ($row = $result->fetch_assoc()) {
-    $row['qty'] = $_SESSION['cart'][$row['sid']];
-    $p_data[$row['sid']] = $row;
+    while ($row = $result->fetch_assoc()) {
+        $row['qty'] = $_SESSION['cart'][$row['sid']];
+        $p_data[$row['sid']] = $row;
+    }
 }
+
 
 ?>
 <!-- fixed的按鈕 -->
@@ -31,11 +29,12 @@ while ($row = $result->fetch_assoc()) {
 <div class="cart_sidebar_content">
 
     <div class="buy_products">
+        <?php if(isset($sids)): ?>
         <?php foreach ($sids as $sid): ?>
             <div class="one_product" id="<?= $sid ?>" data-sid="<?= $sid ?>">
 
                 <!-- 移除商品按鈕 -->
-                <div class="product_remove remove-item" style="z-index:100;" onclick="remove_item_click">
+                <div class="product_remove remove-item" style="z-index:100;">
                     <i class="fa fa-times" aria-hidden="true"></i>
                 </div>
                 <!-- 產品照 -->
@@ -79,6 +78,7 @@ while ($row = $result->fetch_assoc()) {
 
             </div>
         <?php endforeach; ?>
+        <?php endif; ?>
 
     </div>
 
@@ -124,5 +124,43 @@ while ($row = $result->fetch_assoc()) {
         }, 'json');
 
     });
+
+    $('.remove-item').click(function () {
+        console.log('remove item!');
+        var sid = $(this).closest('i').attr('data-sid');
+        var one_product = $(this).closest('.one_product');
+        var sid = one_product.attr('data-sid');
+
+        $.get('add_to_cart.php', {sid: sid}, function (data) {
+            console.log(data);
+            calTotalQty(data);
+            one_product.remove();
+            calTotal();
+        }, 'json');
+
+    });
+
+    function calTotalQty(data) {
+        var count = 0;
+        for (var s in data) {
+            count += data[s];
+        }
+        $('.cart_qty').text(count);
+    }
+
+    var calTotal = function () {
+
+        var total = 0;
+        $('.one_product').each(function () {
+            total += parseInt($(this).children('div.product_info').children('div.calculate_price').children('div').children('span').text(), 10);
+            console.log(total);
+        });
+
+        $('#totalPrice').text(total);
+    };
+
+    calTotal();
+
+
 
 </script>

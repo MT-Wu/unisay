@@ -21,6 +21,7 @@ if(isset($_GET['sid'])){
         unset( $_SESSION['cart'][$sid] ); // 移除設定
     } else {
         $_SESSION['cart'][$sid] = $qty; // 設定商品的數量
+        $_SESSION['cart'][$sid] = $qty; // 設定商品的數量
     }
 
 

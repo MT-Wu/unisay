@@ -16,10 +16,8 @@ $p_data = array();
 
 while ($row = $result->fetch_assoc()) {
     $row['qty'] = $_SESSION['cart'][$row['sid']];
-    $row['spec'] = $_SESSION['cart'][$row['spec']];
     $p_data[$row['sid']] = $row;
 }
-
 
 ?>
 <!DOCTYPE html>
@@ -172,7 +170,7 @@ while ($row = $result->fetch_assoc()) {
 
 				<div class="p6">規格
 					<div>
-						<?= $p_data[$sid]['spec'] ?>
+						iPhone 6
 					</div>
 				</div>
 

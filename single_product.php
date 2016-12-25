@@ -389,6 +389,7 @@ $row = $result->fetch_assoc();
             calTotalQty(data);
 //            $(".cart_sidebar").load("cart_and_member.php .cart_sidebar_content");
             alert('商品已加入購物車');
+            $('.cart_sidebar').load("side_cart.php");
         }, 'json');
 
     });
