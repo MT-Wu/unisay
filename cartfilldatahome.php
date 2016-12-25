@@ -1,3 +1,25 @@
+<?php
+require __DIR__ . '/__connect_db.php';
+
+if (empty($_SESSION['cart'])) {
+    header('Location: product.html');
+    exit();
+}
+
+$sids = array_keys($_SESSION['cart']);
+
+//$sql = "SELECT * FROM `products` WHERE `sid` IN (". implode(',', $sids). ") ";
+$sql = sprintf("SELECT * FROM `products` WHERE `sid` IN (%s) ", implode(',', $sids));
+//echo $sql;
+$result = $mysqli->query($sql);
+$p_data = array();
+
+while ($row = $result->fetch_assoc()) {
+    $row['qty'] = $_SESSION['cart'][$row['sid']];
+    $p_data[$row['sid']] = $row;
+}
+
+?>
 <!DOCTYPE html>
 <html lang="zh-tw">
 <head>
@@ -129,76 +151,81 @@
 		</ul>
 	</div>
 	<!-- 下方內容 -->
-		<div class="list">
-		<!-- <img src="images/shoppingcart/shoppingbar.svg"> -->
-		<div class="oneproduct_top">
-			<div class="oneproduct_01">
-				<div class="p1">
-					<img src="images/member/squirrel.png">
-				</div>
-			</div>
+        <?php foreach ($sids as $sid): ?>
+            <div class="list">
+                <!-- <img src="images/shoppingcart/shoppingbar.svg"> -->
+                <div class="oneproduct_top">
+                    <div class="oneproduct_01">
+                        <div class="p1">
+                            <img src="<?= $p_data[$sid]['pic_id'] ?>01_cherry.png">
+                        </div>
+                    </div>
 
-			<div class="oneproduct_02">
-				<div class="p2">商品名稱
-					<div>
-						貓頭鷹的決心
-					</div>
-				</div>
+                    <div class="oneproduct_02">
+                        <div class="p2">商品名稱
+                            <div>
+                                <?= $p_data[$sid]['productname'] ?>
+                            </div>
+                        </div>
 
-				<div class="p6">規格
-					<div>
-						iPhone
-					</div>
-				</div>
+                        <div class="p6">規格
+                            <div>
+                                iPhone 6
+                            </div>
+                        </div>
 
-				<div class="wood">
-					<div class="p7">材質</div>
-					<div class="sel">
-						<select name="wood" class="sel">
-							<option selected="true">櫻桃木</option>
-							<option>胡桃木</option>
-							<option>楓木</option>
-							<option>花梨木</option>
-							<option>白橡木</option>
-						</select>
-					</div>
-				</div>
+                        <div class="wood">
+                            <div class="p7">材質
+                                <div class="sel">
+                                    <select name="wood" class="sel">
+                                        <option selected="true">櫻桃木</option>
+                                        <option>胡桃木</option>
+                                        <option>楓木</option>
+                                        <option>花梨木</option>
+                                        <option>白橡木</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
 
-			</div>
-		</div>
-		
-		<div class="oneproduct_03">
+                    </div>
+                </div>
 
-			<div class="qty">
-				<div class="p3">數量</div>
-				<select name="qty" class="sel1">
-					<option selected="true">1</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
-				</select>
-			</div>
+                <div class="oneproduct_03">
 
-			<div class="p4">單價
-				<div>
-					1000
-				</div>
-			</div>
+                    <div class="qty">
+                        <div class="p3">數量</div>
+                        <select name="qty" class="sel1 qty_sel" data-qty="<?= $p_data[$sid]['qty'] ?>" data-sid="<?= $p_data[$sid]['sid'] ?>" data-price="<?= $p_data[$sid]['price'] ?>">
+                            <?php for($i=1; $i<=9; $i++): ?>
+                                <option value="<?= $i ?>"><?= $i ?></option>
+                            <?php endfor; ?>
+                        </select>
+                    </div>
 
-			<div class="p5">折扣
-				<div>
-					200
-				</div>
-			</div>
+                    <div class="p4">單價
+                        <div>
+                            <?= $p_data[$sid]['price'] ?>
+                        </div>
+                    </div>
 
-			<div class="p8">小計金額
-				<div>
-					1200
-				</div>
-			</div>
-		</div>
-	</div>
+                    <div class="p5">折扣
+                        <div>
+                            0
+                        </div>
+                    </div>
+
+                    <div class="p8">小計金額
+                        <div data-sid="<?= $p_data[$sid]['sid'] ?>">
+                            <?= $p_data[$sid]['qty']*$p_data[$sid]['price'] ?>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        <?php endforeach; ?>
 
 	
 
