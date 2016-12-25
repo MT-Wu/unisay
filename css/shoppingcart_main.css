@@ -40,12 +40,16 @@
  		margin: auto;
  		left: 0;
  		right: 0;
- 		top:0;
- 		bottom:0;
+ 		
  		width: 85%; /*因為還有before、after的陰影面積所以寬度只需要抓白紙的*/
  		font-size: 0; /*兩個div中間還有間距所以要下這個*/
  		min-height:590px;
  		position: relative;
+
+ 		padding: 0 0 100px 0 ; 
+ 		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
  	}
 
 	/*進度navbar*/
@@ -91,6 +95,14 @@
 		top: 15%;	/*上面留空間，做假置中*/
 		left: 0;
 	}
+		/*小樹圖示已完成區塊變色*/
+		.cart_navbar ul li.on .light_image{
+		/*svg要設定原始整張圖的大小，因為洞用百分比，所以它也要用百分比*/
+			background-image:url(../images/shoppingcart/light_img.svg);
+			background-size: 100% 200%;
+		/*y軸設100%就會換綠色*/
+			background-position:0% 100%;
+		}
 
 
 	/*文字區塊*/
@@ -245,9 +257,9 @@
 	/*貓頭鷹*/
 	.oneproduct_02 div.p2 div{
 		position: absolute;
-		top: 25px;
+		top: 35px;
 		bottom: 0;
-		width: 50%;
+		width: 85%;
 
 		margin: auto;
 		left: 0;
@@ -934,6 +946,10 @@
 /*==========平板版本==========*/
 
 @media screen and (max-width: 1080px) {/*IPAD尺寸*/
+
+	.con{ /*給底下的按鈕區塊*/
+ 		padding: 0 0 80px 0 ; 
+	}
 	
 	/*進度bar*/
 	.cart_navbar ul li .light_text p{
@@ -949,6 +965,10 @@
 	.oneproduct_02 {
 	    width: 78%;
 	    text-align: right;
+	}
+
+	.oneproduct_02 div.p2 div{
+		width: 70%;
 	}
 
 	.oneproduct_03 div.p8 {
@@ -1035,6 +1055,8 @@
 	.con{
 		min-height: 490px;
 		overflow: hidden;
+
+ 		padding: 0 0 0px 0 ; 	
 	}
 
 	/*進度navbar*/
@@ -1110,6 +1132,16 @@
 	.oneproduct_03{
 		width: 100%;
 		height: 25%;
+	}
+
+	.oneproduct_top:after{ /*上下區塊用一條細線稍微分開*/
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 1px;
+		background-color: #ddd; 
+		right: 0;
+		bottom: 10px;
 	}
 	
 	.p1{
