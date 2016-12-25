@@ -103,7 +103,6 @@
 
 
 	<content>
-<<<<<<< HEAD
 
 		<div class="con">
 
@@ -138,38 +137,7 @@
 
 		</div>
 
-=======
-	<div class="con">
-	<!-- 進度navbar -->
-	<div class="cart_navbar">
-		<ul>
-			<li class="cart_light"><
-				<div class="light_image"></div>
-				<div class="light_text"><p>購物清單<br>與修改商品明細</p></div>
-			</li>
-			<li class="cart_light"><
-				<div class="light_image"></div>
-				<div class="light_text"><p>配送與付款方式</p></div>
-			</li>
-			<li class="cart_light"><
-				<div class="light_image"></div>
-				<div class="light_text"><p>填寫配送資料</p></div>
-			</li>
-			<li class="cart_light on"><
-				<div class="light_image"></div>
-				<div class="light_text"><p>完成訂購</p></div>
-			</li>
-		</ul>
-	</div>
-	<!-- 下方內容 -->
-	<div class="sign8"></div>
 
-	<div class="btn-keepgoingshop">
-		<a href="product.html"> 繼續購物 </a>
-	</div>
-
-	</div>
->>>>>>> ebf312a422b38c5a05ccd94cb40df54b1efabdcc
 	</content>
 
 
