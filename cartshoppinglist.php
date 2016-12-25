@@ -153,7 +153,6 @@ while ($row = $result->fetch_assoc()) {
 	<!-- 下方內容 -->
     <?php foreach ($sids as $sid): ?>
 	<div class="list">
-		<!-- <img src="images/shoppingcart/shoppingbar.svg"> -->
 		<div class="oneproduct_top">
 			<div class="oneproduct_01">
 				<div class="p1">
