@@ -245,17 +245,17 @@ while ($row = $result->fetch_assoc()) {
 			<form class="fillarea2">
 				<div class="edit-group1">
 						<label for="">收件人姓名</label>
-						<input type="text" name="">
+						<input type="text" name="" value="<?= $_SESSION['user']['nickname'] ?>">
 				</div>
 
 				<div class="edit-group1">
 						<label for="">收件人行動電話</label>
-						<input type="text" name="">
+						<input type="text" name="" value="<?= $_SESSION['user']['mobile'] ?>">
 				</div>
 
 				<div class="edit-group1">
 						<label for="">收件人地址</label>
-						<input type="text" name="">
+						<input type="text" name="" value="<?= $_SESSION['user']['address'] ?>">
 				</div>
 
 				<div class="edit-group1">
