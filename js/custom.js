@@ -25,12 +25,31 @@ $('div.con_next').click(function(){
         return false;
     }
 
+
     // 下一頁
     _line_index++;
     // left不能下％，像這樣抓li長度去推移會有BUG，要再寫下面那段window resize才能解bug
     $('.cus_slideshow ul.cus_slides').stop(true,false).animate({left:_slides_w*_line_index*-1});   
     $('.cus_navbar li').eq(_line_index).addClass('on');
+
     checkIndex();
+
+    //檢查:把選單隱藏
+    if(_line_index==1){
+        $('.cus_slideshow ul li.slide01 .step').stop(true,false).animate({opacity:0},100);
+    }else if(_line_index==2){
+        $('.cus_slideshow ul li.slide02 .step').stop(true,false).animate({opacity:0},100);
+        
+        // 文字方塊出現
+        addTextbox.set({
+            top: 40,
+            left: 20
+        });
+        canvas.renderAll();
+
+    }else if(_line_index==3){
+        $('.toTop').hide();
+    }
 
     // 最後一頁換icon
     if(_line_index==4){
@@ -51,12 +70,24 @@ $('div.con_prev').click(function(){
         $('.controller .con_next img').remove();
         $('.controller .con_next').append($iTag);
     }    
+
+    //檢查:把選單打開
+    if( _line_index==1){
+        $('.cus_slideshow ul li.slide01 .step').stop(true,false).animate({opacity:1},1000);
+    }else if( _line_index==2){
+        $('.cus_slideshow ul li.slide02 .step').stop(true,false).animate({opacity:1},1000);
+    }else if( _line_index==3){
+        $('.toTop').show(500);
+    }
+
     // 上一頁
     $('.cus_navbar li').eq(_line_index).removeClass('on');
     _line_index--;
     // left不能下％，像這樣抓li長度去推移會有BUG，要再寫下面那段window resize才能解bug
     $('.cus_slideshow ul.cus_slides').stop(true,false).animate({left:_slides_w*_line_index*-1});  
     checkIndex();
+
+    
     
 })
 
@@ -110,48 +141,107 @@ $('div .skip ').click(function(){
 
     $light_image.eq(_line_index).removeClass('bling');
 
+    // 取消加購動物圖
+    if( _line_index==1 ){
+        if(window.animal_img){
+        window.animal_img.remove();
+        }
+    };
+
+    // 取消加購文字
+    if( _line_index==2 ){
+       // 待寫
+    };
+
+
     
 }) 
 
 
-//=========================幻燈片01========================= 
-// 換手機材質圖
-$('.cus_slideshow ul li .step .case_wood a').click(function(){
-    var wood = $(this).attr('data-wood');
-    console.log(wood);
-    $('.cus_slideshow ul li .caseG img').attr('src','images/product/classic/'+wood+'.png');
-})
+//=========================幻燈片-canvas畫布設定========================= 
 
 
 
-
-
-//=========================幻燈片02========================= 
 // 抓手機殼的寬給CANVAS的寬
 var c=document.getElementById('c');
-var s3=document.getElementById('s3');
 //用手機殼的0.9倍寬(為了讓CANVAS的框在手機殼內) 
-var _caseWidth = $('#aaa').width()*.9;
+var _caseWidth = $('#aaa').width();
 var _caseHeight =$('#aaa').height();
 
 c.width=_caseWidth;
 c.height=_caseHeight;
 
-s3.width=_caseWidth;
-s3.height=_caseHeight;
 
-// 隨視窗改變大小（但會有點秀逗
-// $(window).resize(function(){
-// c.width=caseWidth;
-// });
-
- // 設定一個變數來存目前的圖片名稱
+// 設定一個變數來存目前的木頭圖片名稱
+var wood_img = null;
+// 設定一個變數來存目前的動物圖片名稱
 var animal_img = null;
+// 用來存動態輸入的文字
+var newText;
+
 // CANVAS置入圖片
 var canvas = new fabric.Canvas('c');
-fabric.Image.fromURL('images/custom/ani_img/07cat.png', function(img) {
-  img.scale(0.5).set({
+
+
+
+// ----------------手機殼底圖設定-------------------
+fabric.Image.fromURL('images/product/classic/01-cherry-wood.png', function(img0) {
+    img0.scale(0.5).set({
     left: 0,
+    top: 0,
+    lockMovementX :true,
+    lockMovementY : true,
+    lockScalingX : true,
+    lockScalingY : true,
+    hasControls: false,
+    hasBorders: false,
+    selectable :false
+  });
+  canvas.add(img0).sendBackwards(img0);
+  wood_img = img0;
+});
+  
+
+
+// 換手機材質圖
+$('.cus_slideshow ul li .step .case_wood a').click(function(){
+    var wood = $(this).attr('data-wood');
+    // console.log(wood);
+
+    // 如果畫面上有圖，先把它移除
+    if(window.wood_img){
+        window.wood_img.remove();
+    }
+
+    // 將目前點擊的圖的data-pic塞進資料裡，使CANVAS重新跑一次
+    fabric.Image.fromURL('images/product/classic/'+wood+'.png', function(img0) {
+      img0.scale(0.5).set({
+        left: 0,
+        top: 0,
+        lockMovementX :true,
+        lockMovementY : true,
+        lockScalingX : true,
+        lockScalingY : true,
+        hasControls: false,
+        hasBorders: false,
+        selectable :false
+      });
+      canvas.add(img0).sendBackwards(img0);
+      // 回傳值（全域變數）回去ＣＡＮＶＡＳ函式
+      window.wood_img = img0;
+    });
+    
+})
+
+
+// ------------------動物圖設定-----------------
+
+
+ 
+fabric.Image.fromURL('', function(img) {
+  img.scale(0.5).set({
+    // 一開始先不要出現框框和圖
+    left: -10,
     top: 100,
     angle: 0
   });
@@ -191,7 +281,8 @@ $('.productclass_secondnav').click(function(event){
     // 抓圖片的data-pic
     var data_pic = target.attr('data-pic');
 
-    // 檢查機制：如果沒有圖就不要繼續下去
+    
+// 檢查機制：如果沒有圖就不要繼續下去
     if(! data_pic){
         return;
     }
@@ -212,8 +303,41 @@ $('.productclass_secondnav').click(function(event){
       window.animal_img = img;
     });
 
+});
+
+// ===============建立文字方塊======================
+
+
+
+// 新增文字方塊
+var addTextbox = new fabric.Text('Type here', {
+  fontFamily: '"Indie Flower"',
+  left:5,
+  top:-100,
+  fill:'#333',
+  selectable :true
+});
+// 把方塊放進畫布裡並且讓他可被縮放
+canvas.add(addTextbox).setActiveObject(addTextbox);
+
+
+
+
+
+// 同步文字
+$('.motto_word').on('change keyup paste', function() {
+  newText = $(this).val();
+  // 把文字更新
+  addTextbox.setText(newText);
+  // 畫布再整理一次
+  canvas.renderAll();
+
 
 });
+
+
+
+
 
 //=========================幻燈片03========================= 
 
@@ -306,33 +430,7 @@ $('a.clearText').click(function () {
 
 
 
-// ========建立文字方塊======================
 
-// 用來存動態輸入的文字
-var newText;
-
-// 抓到ＩＤ叫s3的畫布
-var canvasS3 = new fabric.Canvas('s3');
-// 新增文字方塊
-var addTextbox = new fabric.Text('Type here', {
-  fontFamily: '"Indie Flower"',
-  left:10,
-  top:50
-});
-// 把方塊放進畫布裡並且讓他可被縮放
-canvasS3.add(addTextbox).setActiveObject(addTextbox);
-
-
-// 同步文字
-$('.motto_word').on('change keyup paste', function() {
-  newText = $(this).val();
-  // 把文字更新
-  addTextbox.setText(newText);
-  // 畫布再整理一次
-  canvasS3.renderAll();
-
-
-});
 
 
 
@@ -375,7 +473,7 @@ $('select.font').on('change', function() {
       fontFamily: fontFamily
     });
   // 畫布再整理一次
-  canvasS3.renderAll();
+  canvas.renderAll();
 
 
 });
@@ -404,7 +502,7 @@ function range_slider_change(event){
       fontSize: _sizeNow
     });
      // 畫布再整理一次
-    canvasS3.renderAll();
+    canvas.renderAll();
 
 
 } 
@@ -437,7 +535,7 @@ function input_size_change(event){
       fontSize: _sizeNow
     });
      // 畫布再整理一次
-    canvasS3.renderAll();
+    canvas.renderAll();
 
 
     }
@@ -476,7 +574,9 @@ var addTextbox2 = new fabric.Text('＿＿＿＿', {
   fontSize:18,
   fill:"#603813",
   left:70,
-  top:27
+  top:27,
+  hasControls: false,
+  hasBorders: false
 });
 var addTextbox3 = new fabric.Text('saysomethig...', {
   fontFamily: 'cwTeXYen',
@@ -484,7 +584,9 @@ var addTextbox3 = new fabric.Text('saysomethig...', {
   fontSize:24,
   fill:"#C69C6D",
   left:20,
-  top:63
+  top:63,
+  hasControls: false,
+  hasBorders: false
 });
 // 把方塊放進畫布裡並且讓他可被縮放
 canvasS4.add(addTextbox2).setActiveObject(addTextbox2);
@@ -512,7 +614,7 @@ $('.cus_slideshow ul li .step .msg textarea').on('change keyup paste', function(
 //=========================幻燈片05========================= 
 
 
-// 換手機材質圖
+// 換禮物盒子圖
 $('.cus_slideshow ul li .step .box a').click(function(){
     var gift = $(this).attr('data-gift');
     $('.cus_slideshow ul li.slide05 .case_img img').attr('src','images/custom/'+gift+'.png');

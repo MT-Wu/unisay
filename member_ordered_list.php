@@ -1,72 +1,14 @@
 <?php
-// `$page_name` = 'login';
+require __DIR__ . '/__connect_db.php';
 
-require __DIR__. '/__connect_db.php';
-
-if(isset($_POST['password'])){
-    $password = $_POST['password'];
-    $new_password = $_POST['new_password'];
-    $nickname = $_POST['nickname'];
-    $mobile = $_POST['mobile'];
-    $address = $_POST['address'];
-
-    $password = sha1($password);
-
-    $sql = sprintf("SELECT * FROM `members` WHERE `email_id`='%s' AND `password`='%s'",
-        $mysqli->escape_string($_SESSION['user']['email_id']),
-        $mysqli->escape_string($password)
-    );
-
-    $result = $mysqli->query($sql);
-
-    $success = $result->num_rows>0;
-
-    if($success){
-        $row = $result->fetch_assoc();
-        if(empty($new_password)){
-            $sql = sprintf("UPDATE `members` SET `nickname`='%s',`mobile`='%s',`address`='%s' WHERE `sid`=%s",
-                    $mysqli->escape_string($nickname),
-                    $mysqli->escape_string($mobile),
-                    $mysqli->escape_string($address),
-                    $row['sid']
-                );
-        } else {
-            $sql = sprintf("UPDATE `members` SET `password`='%s', `nickname`='%s',`mobile`='%s',`address`='%s' WHERE `sid`=%s",
-                sha1($new_password),
-                $mysqli->escape_string($nickname),
-                $mysqli->escape_string($mobile),
-                $mysqli->escape_string($address),
-                $row['sid']
-                );
-        }
-        if($mysqli->query($sql)){
-            $msg = array(
-                'success' => true,
-                'info' => '修改完成',
-            );
-            $_SESSION['user']['nickname'] = $nickname;
-            $_SESSION['user']['mobile'] = $mobile;
-            $_SESSION['user']['address'] = $address;
-
-
-        }else{
-            $msg = array(
-                'success' => false,
-                'info' => '錯誤, 請找開發人員',
-            );
-        }
-
-
-    } else {
-        $msg = array(
-            'success' => false,
-            'info' => '密碼錯誤',
-        );
-
-
-    }
-
+if (!isset($_SESSION['user'])) {
+    header('Location: login.php');
+    exit;
 }
+
+$mid = $_SESSION['user']['sid'];
+$sql = "SELECT * FROM `orders` JOIN members ON members.sid=orders.member_sid WHERE `member_sid` = $mid";
+$result = $mysqli->query($sql);
 ?>
 <!DOCTYPE html>
 <html lang="zh-tw">
@@ -84,7 +26,7 @@ if(isset($_POST['password'])){
 <!-- Icons -->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
  	rel="stylesheet">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">	
 
 
 <!-- fonts -->
@@ -108,12 +50,12 @@ if(isset($_POST['password'])){
 
 
 <body>
-
+	
 
 
 <!-- 主頁面內容 -->
 <div class="wrap">
-
+	
 	<header>
 
 		<!-- 平板手機會fixed的banner -->
@@ -121,10 +63,10 @@ if(isset($_POST['password'])){
 
 			<!-- 三明治選單 -->
 			<div class="sandwich"></div>
-
+			
 
 			<!-- fixed的按鈕 -->
-
+			
 			<div class="cart_icon"></div>
 			<div class="cart_sidebar"></div>
 
@@ -132,16 +74,16 @@ if(isset($_POST['password'])){
 			<div class="member_sidebar"></div>
 
 			<div class="totop_icon"></div>
-
+			
 
 			<!-- 中央logo -->
 			<div class="logo"><img src="images/header/header_logo.svg" alt=""></div>
-
-
+			
+		
 
 
 			<!-- 上方選單列 -->
-			<nav>
+			<nav> 
 				<ul>
 					<!-- 當前頁面掛上here的class -->
 					<li class="icon_aboutus ">
@@ -151,10 +93,10 @@ if(isset($_POST['password'])){
 						<a href="product.html"></a>
 					</li>
 					<li class="icon_custom">
-						<a href="custom.html"></a>
+						<a href=""></a>
 					</li>
 					<li class="icon_inspire">
-						<a href="inspire.html"></a>
+						<a href=""></a>
 					</li>
 				</ul>
 			</nav>
@@ -179,43 +121,64 @@ if(isset($_POST['password'])){
 			<img src="images/member/line.svg">
 		</div>
 
-	<!-- 中間內容 -->
-
 	<!-- 上方的bar -->
 		<div class="upframe">
-			<div class="up1 here">
-				<img src="images/member/mushroom.svg">
+			<div class="up1">
 				<a href="memberaccountmember.php">會員專區</a>
 			</div>
 			<div class="up2">
 				<a href="memberaccounteditinfopw.php">修改資料</a>
 			</div>
-			<div class="up3">
-				<a href="member_ordered_list.php">訂單查詢</a>
+			<div class="up3 here">
+				<img src="images/member/mushroom.svg">
+				<a href="">訂單查詢</a>
 			</div>
 		</div>
 
 	<!-- 下方欄位 -->
-		<div class="downframe">
-			<p>E-COURPON  購物金查詢</p>
+		<div class="downframe2">
+			<p>ORDERS  訂單查詢</p>
 			<img src="images/member/line2-01.svg">
-			<div class="ecourpon">
-				<p>您有購物金 xxx 元。</p>
+		</div>
+		
+		<table class="table table-condensed"> 
+			<thead> 
+				<tr> 
+					<th>訂購日期</th> 
+    				<th>訂購編號</th> 
+    				<th>訂單狀態</th> 
+    				<th>應付金額</th> 
+    				<th>退貨</th>
+    				<th>發票</th> 
+				</tr> 
+			</thead> 
 
-			</div>
-			<div class="howtoget">
-					<a href="memberrecycle.html">(如何獲得購物金？)</a>
-			</div>
+			<tbody>
+                <?php
+                while ($row = $result->fetch_assoc()): ?>
+                    <tr>
+                        <td scope="row"><?=$row['order_date']?></td>
+                        <td><?= ''?></td>
+                        <td>已出貨</td>
+                        <td>$ <?=$row['amount']?></td>
+                        <td><a href="#">申請退貨</a></td>
+                        <td><a href="member_ordered_detail.php">查詢</a></td>
+                    </tr>
+                <?php endwhile; ?>
+			</tbody> 
+		</table>
+		
 
 		</div>
+		
 
 
-
+	
 	</div>
 
+	
 
-
-
+	
 
 	</content>
 
@@ -224,7 +187,7 @@ if(isset($_POST['password'])){
 
 
 	<footer>
-
+	
 
 
 	</footer>

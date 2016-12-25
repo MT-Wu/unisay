@@ -247,6 +247,7 @@ while ($row = $result->fetch_assoc()) {
 
 		
 
+<<<<<<< HEAD
 			<div class="totalmoney">金額總計 ▍ 
 				<div class="price2">NT 1200</div>
 
@@ -263,6 +264,24 @@ while ($row = $result->fetch_assoc()) {
 						<div class="sel3">NT 1260</div>
 
 					</div>
+=======
+		<div class="textarea2">
+			<form class="fillarea2">
+				<div class="edit-group1">
+						<label for="">收件人姓名</label>
+						<input type="text" name="" value="<?= $_SESSION['user']['nickname'] ?>">
+				</div>
+
+				<div class="edit-group1">
+						<label for="">收件人行動電話</label>
+						<input type="text" name="" value="<?= $_SESSION['user']['mobile'] ?>">
+				</div>
+
+				<div class="edit-group1">
+						<label for="">收件人地址</label>
+						<input type="text" name="" value="<?= $_SESSION['user']['address'] ?>">
+				</div>
+>>>>>>> ebf312a422b38c5a05ccd94cb40df54b1efabdcc
 
 				</div>
 
@@ -278,11 +297,29 @@ while ($row = $result->fetch_assoc()) {
 
 				<div class="textarea2">
 
+<<<<<<< HEAD
 					<form class="fillarea2">
 						<div class="edit-group1">
 								<label for="">收件人姓名</label>
 								<input type="text" name="">
 						</div>
+=======
+			<div class="cd-popup" role="alert">
+			<div class="cd-popup-container">
+				<p>訂單送出後即無法修改，<br>請確認訂單再送出。</p>
+				<ul class="cd-buttons">
+					<li><a href="cartfilldatahome.php">取消</a></li>
+					<li><a href="buy.php">確認</a></li>
+				</ul>
+			<a href="#0" class="cd-popup-close img-replace">Close</a>
+			</div> <!-- cd-popup-container -->
+			</div> <!-- cd-popup -->
+			
+		</div>
+			
+		</div>
+	</div>
+>>>>>>> ebf312a422b38c5a05ccd94cb40df54b1efabdcc
 
 						<div class="edit-group1">
 								<label for="">收件人行動電話</label>
