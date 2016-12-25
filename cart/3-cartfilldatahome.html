@@ -110,7 +110,7 @@
 	<!-- 進度navbar -->
 	<div class="cart_navbar">
 		<ul>
-			<li class="cart_light on"><
+			<li class="cart_light"><
 				<div class="light_image"></div>
 				<div class="light_text"><p>購物清單<br>與修改商品明細</p></div>
 			</li>
@@ -118,7 +118,7 @@
 				<div class="light_image"></div>
 				<div class="light_text"><p>配送與付款方式</p></div>
 			</li>
-			<li class="cart_light"><
+			<li class="cart_light on"><
 				<div class="light_image"></div>
 				<div class="light_text"><p>填寫配送資料</p></div>
 			</li>
@@ -129,7 +129,7 @@
 		</ul>
 	</div>
 	<!-- 下方內容 -->
-	<div class="list">
+		<div class="list">
 		<!-- <img src="images/shoppingcart/shoppingbar.svg"> -->
 		<div class="oneproduct_top">
 			<div class="oneproduct_01">
@@ -198,39 +198,73 @@
 				</div>
 			</div>
 		</div>
-
-		
-		
-		
 	</div>
 
 	
 
-	<div class="warning3">
-		<p> ˙請確認您購買的商品規格與數量，確認後訂單將無法做任何更改。<br>
-				˙若您上有其他商品需購買，請點選繼續購物，如要進行結帳，請點選下一步。<br>
-				˙商品售價將以您實際結帳之即時價格為主，商品數量與優惠等，也將以您實際結帳為準。
-		</p>
+	<div class="totalmoney2">
+		<p>金額總計</p>
+		<p>運費[貨到付款,付現,宅配]</p>
+		<p span style="color:red; font-size: 16px">應付總金額</p>
+	</div>	
 
-
-		<div class="btn-grs">
-			<div class="btn-keepgoingshop">
-				<a href="#">繼續購物</a>
-			</div>
-
-			<div class="btn-nextstep">
-				<a href="#">下一步</a>
-			</div>
-
+	<div class="filldata1">
+		<div class="box-fill1">
+			<p>填寫配送資料</p>
 		</div>
-	
 
 
+		<div class="textarea2">
+			<form class="fillarea2">
+				<div class="edit-group1">
+						<label for="">收件人姓名</label>
+						<input type="text" name="">
+				</div>
+
+				<div class="edit-group1">
+						<label for="">收件人行動電話</label>
+						<input type="text" name="">
+				</div>
+
+				<div class="edit-group1">
+						<label for="">收件人地址</label>
+						<input type="text" name="">
+				</div>
+
+				<div class="edit-group1">
+						<label for=" ">備註說明</label>
+						<input type="text" name="">
+				</div>
+
+				<div class="edit-group1">
+						<label for="">發票資訊：託管電子發票</label>
+				</div>
+			</form>
 
 
+			<!-- 光箱提示 -->
+			<a href="#0" class="cd-popup-trigger">確認結帳</a>
+
+			<div class="cd-popup" role="alert">
+			<div class="cd-popup-container">
+				<p>訂單送出後即無法修改，<br>請確認訂單再送出。</p>
+				<ul class="cd-buttons">
+					<li><a href="#0">取消</a></li>
+					<li><a href="#0">確認</a></li>
+				</ul>
+			<a href="#0" class="cd-popup-close img-replace">Close</a>
+			</div> <!-- cd-popup-container -->
+			</div> <!-- cd-popup -->
+			
+		</div>
+			
+		</div>
 	</div>
+
 	
 	
+	
+
 
 
 
@@ -262,8 +296,11 @@
 
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
-<script src="js/nav_icon.js"></script>
+<script src="js/modernizr.js"></script> <!-- Modernizr -->
+<script src="js/main.js"></script>
 
+
+<script src="js/member.js"></script>
 
 
 </body>

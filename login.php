@@ -162,10 +162,10 @@ if(isset($_POST['type'])){
 						<a href="product.html"></a>
 					</li>
 					<li class="icon_custom">
-						<a href=""></a>
+						<a href="custom.html"></a>
 					</li>
 					<li class="icon_inspire">
-						<a href=""></a>
+						<a href="inspire.html"></a>
 					</li>
 				</ul>
 			</nav>
@@ -223,60 +223,63 @@ if(isset($_POST['type'])){
 				<!-- 會員登入 -->
 
 
+					<div class="signin_joinus">
+						<div class="signin" id="loginRight">
+							<form class="mainbody1" name="form1" method="post"> <!-- 不要讓表單送出 -->
+								<div class="picsignin">
+									<img src="images/member/picsignin.svg">
+								</div>
+								<div class="form-group">
+									<label for="">帳號：</label>
+									<input type="email" class="form-control" id="email_id" name="email_id" placeholder=" Email">
+								</div>
+								<div class="form-group">
+									<label for="">密碼：</label>
+									<input type="password" class="form-control" id="password" name="password">
+								</div>
+								<input type="hidden" name="type" value="login">
+								<div class="memberforgerpassword">
+									<a href="memberforgerpassword.php">忘記密碼？</a>
+								</div>
+								<div class="loginmember">
 
-					<div class="signin" id="loginRight">
-						<form class="mainbody1" name="form1" method="post"> <!-- 不要讓表單送出 -->
-							<div class="picsignin">
-								<img src="images/member/picsignin.svg">
-							</div>
-							<div class="form-group">
-								<label for="">帳號：</label>
-								<input type="email" class="form-control" id="email_id" name="email_id" placeholder="Email">
-							</div>
-							<div class="form-group">
-								<label for="">密碼：</label>
-								<input type="password" class="form-control" id="password" name="password">
-							</div>
-							<input type="hidden" name="type" value="login">
-							<a href="memberforgerpassword.php">忘記密碼？</a>
-							<div class="loginmember">
+									<a href="#" onclick="$(this).closest('form').submit()">登入會員</a>
 
-								<a href="#" onclick="$(this).closest('form').submit()">登入會員</a>
-
+								</div>
+							</form>
 						</div>
-					</form>
-					</div>
-				<!-- 加入會員 -->
-					<div class="joinus" id="loginRight">
-						<form class="mainbody2" name="form1" method="post">
-							<div class="piclogin">
-								<img src="images/member/picjoinin.svg">
-							</div>
-							<div class="form-group">
-                  <label for="email_id">* 帳號：</label> <span id="email_id_info" style="color:red;display:none;">請填寫正確的 email 格式</span>
-                  <input type="email" class="form-control" id="email_id" name="email_id" placeholder="Email">
-              </div>
-              <div class="form-group">
-                  <label for="password">* 密碼：</label> <span id="password_info" style="color:red;display:none;">密碼長度請設定大於 6 !</span>
-                  <input type="password" class="form-control" id="password" name="password">
-              </div>
-              <div class="form-group">
-                  <label for="nickname">* 暱稱：</label> <span id="nickname_info" style="color:red;display:none;">暱稱長度請設定大於 2 !</span>
-                  <input type="text" class="form-control" id="nickname" name="nickname" placeholder="暱稱">
-              </div>
-              <div class="form-group">
-                  <label for="mobile">手機：</label>
-                  <input type="text" class="form-control" id="mobile" name="mobile" placeholder="手機號碼">
-              </div>
-              <div class="form-group">
-                  <label for="address">地址：</label>
-                  <input type="text" class="form-control" id="address" name="address"></input>
-              </div>
-							<div class="joinmenber">
-								<input type="hidden" name="type" value="register">
-								<a href="#" onclick="$(this).closest('form').submit()">加入會員</a>
-							</div>
-						</form>
+					<!-- 加入會員 -->
+						<div class="joinus" id="loginRight">
+							<form class="mainbody2" name="form1" method="post">
+								<div class="piclogin">
+									<img src="images/member/picjoinin.svg">
+								</div>
+								<div class="form-group havetowrite">
+					                  <label for="email_id">帳號：</label> <span id="email_id_info" style="color:red;display:none;">請填寫正確的 email 格式</span>
+					                  <input type="email" class="form-control" id="email_id" name="email_id" placeholder=" Email">
+					            </div>
+					            <div class="form-group havetowrite">
+					                <label for="password">密碼：</label> <span id="password_info" style="color:red;display:none;">密碼長度請設定大於 6 !</span>
+					                <input type="password" class="form-control" id="password" name="password">
+					            </div>
+					            <div class="form-group havetowrite">
+					                <label for="nickname">暱稱：</label> <span id="nickname_info" style="color:red;display:none;">暱稱長度請設定大於 2 !</span>
+					                <input type="text" class="form-control" id="nickname" name="nickname" placeholder=" 暱稱">
+					            </div>
+					            <div class="form-group">
+					                <label for="mobile">手機：</label>
+					                <input type="text" class="form-control" id="mobile" name="mobile" placeholder=" 手機號碼">
+					            </div>
+					            <div class="form-group">
+					                <label for="address"> 地址：</label>
+					                <input type="text" class="form-control" id="address" name="address"></input>
+					            </div>
+								<div class="joinmenber">
+									<input type="hidden" name="type" value="register">
+									<a href="#" onclick="$(this).closest('form').submit()">加入會員</a>
+								</div>
+							</form>
+						</div>
 					</div>
 
 				</div>

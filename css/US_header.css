@@ -596,7 +596,7 @@ li.here a:before, li.here a:after{
 	position: absolute;
 	left: 0;
 	bottom: 0;
-	margin: 25px 25px 50px;
+	margin: 25px 25px 25px;
 
 	color: rgba(103,147,137,1);
 	font-size: 16px;
@@ -857,7 +857,7 @@ li.here a:after{ /*右邊的葉子*/
 
 
 /*---側邊欄的html在cart_and_member.html---*/
-.cart_sidebar_content, .member_sidebar_content{
+.cart_sidebar_content, .member_sidebar_content, .member_sidebar_content2{
 	padding: 25px;
 }
 
@@ -972,7 +972,7 @@ nav ul{
 
 
 /*---側邊欄的html在cart_and_member.html---*/
-.cart_sidebar_content, .member_sidebar_content{
+.cart_sidebar_content, .member_sidebar_content, .member_sidebar_content2{
 	padding: 75px 25px 25px;
 }
 
@@ -1025,8 +1025,29 @@ nav ul{
 .cart_sidebar_content .buy_products .one_product .product_info .calculate_price .price{
 	font-size: 18px;
 }
+.cart_sidebar_content .check_total_price .total_price .price{
+	font-size: 24px;
+}
 
 
+/*---會員中心側邊欄---*/
+.member_sidebar .say_hello{
+	font-size: 16px;
+	line-height: 22px;
+}
+
+.member_sidebar .member_info div{
+	height: 50px;
+
+	line-height: 50px;
+	font-size: 18px;
+}
+
+.member_sidebar .member_note{
+	font-size: 14px;
+	line-height: 18px;
+	letter-spacing: 1px;
+}
 
 
 
