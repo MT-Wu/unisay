@@ -1,25 +1,3 @@
-<?php
-require __DIR__ . '/__connect_db.php';
-
-if (empty($_SESSION['cart'])) {
-    header('Location: product.html');
-    exit();
-}
-
-$sids = array_keys($_SESSION['cart']);
-
-//$sql = "SELECT * FROM `products` WHERE `sid` IN (". implode(',', $sids). ") ";
-$sql = sprintf("SELECT * FROM `products` WHERE `sid` IN (%s) ", implode(',', $sids));
-//echo $sql;
-$result = $mysqli->query($sql);
-$p_data = array();
-
-while ($row = $result->fetch_assoc()) {
-    $row['qty'] = $_SESSION['cart'][$row['sid']];
-    $p_data[$row['sid']] = $row;
-}
-
-?>
 <!DOCTYPE html>
 <html lang="zh-tw">
 <head>
@@ -40,7 +18,7 @@ while ($row = $result->fetch_assoc()) {
 <!-- Icons -->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
  	rel="stylesheet">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">	
 
 
 <!-- fonts -->
@@ -64,12 +42,12 @@ while ($row = $result->fetch_assoc()) {
 
 
 <body>
-
+	
 
 
 <!-- 主頁面內容 -->
 <div class="wrap">
-
+	
 	<header>
 
 		<!-- 平板手機會fixed的banner -->
@@ -77,10 +55,10 @@ while ($row = $result->fetch_assoc()) {
 
 			<!-- 三明治選單 -->
 			<div class="sandwich"></div>
-
+			
 
 			<!-- fixed的按鈕 -->
-
+			
 			<div class="cart_icon"></div>
 			<div class="cart_sidebar"></div>
 
@@ -88,16 +66,16 @@ while ($row = $result->fetch_assoc()) {
 			<div class="member_sidebar"></div>
 
 			<div class="totop_icon"></div>
-
+			
 
 			<!-- 中央logo -->
 			<div class="logo"><img src="images/header/header_logo.svg" alt=""></div>
-
-
+			
+		
 
 
 			<!-- 上方選單列 -->
-			<nav>
+			<nav> 
 				<ul>
 					<!-- 當前頁面掛上here的class -->
 					<li class="icon_aboutus here">
@@ -107,10 +85,10 @@ while ($row = $result->fetch_assoc()) {
 						<a href="product.html"></a>
 					</li>
 					<li class="icon_custom">
-						<a href="custom.html"></a>
+						<a href=""></a>
 					</li>
 					<li class="icon_inspire">
-						<a href="inspire.html"></a>
+						<a href=""></a>
 					</li>
 				</ul>
 			</nav>
@@ -134,7 +112,7 @@ while ($row = $result->fetch_assoc()) {
 		<ul>
 			<li class="cart_light on"><
 				<div class="light_image"></div>
-				<div class="light_text"><p class="doubleline">購物清單<br>與修改商品明細</p></div>
+				<div class="light_text"><p>購物清單<br>與修改商品明細</p></div>
 			</li>
 			<li class="cart_light"><
 				<div class="light_image"></div>
@@ -151,109 +129,169 @@ while ($row = $result->fetch_assoc()) {
 		</ul>
 	</div>
 	<!-- 下方內容 -->
-    <?php foreach ($sids as $sid): ?>
 	<div class="list">
 		<!-- <img src="images/shoppingcart/shoppingbar.svg"> -->
 		<div class="oneproduct_top">
 			<div class="oneproduct_01">
 				<div class="p1">
-					<img src="<?= $p_data[$sid]['pic_id'] ?>01_cherry.png">
+					<img src="images/member/squirrel.png">
 				</div>
 			</div>
 
 			<div class="oneproduct_02">
 				<div class="p2">商品名稱
 					<div>
-                        <?= $p_data[$sid]['productname'] ?>
+						貓頭鷹的決心
 					</div>
 				</div>
 
 				<div class="p6">規格
 					<div>
-						iPhone 6
+						iPhone
 					</div>
 				</div>
 
 				<div class="wood">
-					<div class="p7">材質
-                        <div class="sel">
-                            <select name="wood" class="sel">
-                                <option selected="true">櫻桃木</option>
-                                <option>胡桃木</option>
-                                <option>楓木</option>
-                                <option>花梨木</option>
-                                <option>白橡木</option>
-                            </select>
-                        </div>
-                    </div>
+					<div class="p7">材質</div>
+					<div class="sel">
+						<select name="wood" class="sel">
+							<option selected="true">櫻桃木</option>
+							<option>胡桃木</option>
+							<option>楓木</option>
+							<option>花梨木</option>
+							<option>白橡木</option>
+						</select>
+					</div>
 				</div>
 
 			</div>
 		</div>
-
+		
 		<div class="oneproduct_03">
 
 			<div class="qty">
 				<div class="p3">數量</div>
-				<select name="qty" class="sel1 qty_sel" data-qty="<?= $p_data[$sid]['qty'] ?>" data-sid="<?= $p_data[$sid]['sid'] ?>" data-price="<?= $p_data[$sid]['price'] ?>">
-                    <?php for($i=1; $i<=9; $i++): ?>
-                        <option value="<?= $i ?>"><?= $i ?></option>
-                    <?php endfor; ?>
+				<select name="qty" class="sel1">
+					<option selected="true">1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
 				</select>
 			</div>
 
 			<div class="p4">單價
 				<div>
-                    <?= $p_data[$sid]['price'] ?>
+					1000
 				</div>
 			</div>
 
 			<div class="p5">折扣
 				<div>
-					0
+					200
 				</div>
 			</div>
 
 			<div class="p8">小計金額
-				<div data-sid="<?= $p_data[$sid]['sid'] ?>">
-                    <?= $p_data[$sid]['qty']*$p_data[$sid]['price'] ?>
+				<div>
+					1200
 				</div>
 			</div>
 		</div>
+	</div>
+
+	<div class="totalmoney2">
+		<p>金額總計:1200元</p>
+		<p>運費[7-11門市付款取貨服務,店配]</p>
+		<p span style="color:red; font-size: 16px">應付總金額:1200元</p>
+	</div>	
+
+	<div class="filldata1">
+		<div class="box-fill1">
+			<p>填寫配送資料</p>
+		</div>
+
+		<div class="p11">
+			<p>注意事項：請按下面按鈕選擇店配取貨門市。</p>
+		</div>
+		
+		<div class="choosestore">
+			<a href="http://emap.pcsc.com.tw/ecmap/default.aspx">選擇店配門市(將連結至7-11網站)</a>
+		</div>
+
+		<div class="textarea1">
+			<form class="fillarea1">
+				<div class="edit-group1">
+						<label for="">提貨人姓名</label>
+						<input type="text" name="">
+				</div>
+
+				<div class="edit-group1">
+						<label for="">提貨人行動電話</label>
+						<input type="text" name="">
+				</div>
+
+				<div class="edit-group1">
+						<label for="">提貨通知email信箱</label>
+						<input type="text" name="">
+				</div>
+
+				<div class="edit-group1">
+						<label for=" ">備註說明</label>
+						<input type="text" name="">
+				</div>
+
+				<!-- 這兩個要連結超商 -->
+				<div class="edit-group1">
+						<label for=" ">指定門市</label>
+				</div>
+
+				<!-- 這兩個要連結超商 -->
+				<div class="edit-group1">
+						<label for=" ">門市地址</label>
+				</div>
+
+				<div class="rechoose">
+					<a href="http://emap.pcsc.com.tw/ecmap/default.aspx">上一步：重新選擇門市</a>
+				</div>
+
+				<div class="edit-group1">
+						<label for="">發票資訊：託管電子發票</label>
+				</div>
+			</form>
+		</div>
+
+		<!-- 光箱提示 -->
+			<a href="#0" class="cd-popup-trigger">確認結帳</a>
+
+			<div class="cd-popup" role="alert">
+			<div class="cd-popup-container">
+				<p>訂單送出後即無法修改，<br>請確認訂單再送出。</p>
+				<ul class="cd-buttons">
+					<li><a href="#0">取消</a></li>
+					<li><a href="#0">確認</a></li>
+				</ul>
+			<a href="#0" class="cd-popup-close img-replace">Close</a>
+			</div> <!-- cd-popup-container -->
+			</div> <!-- cd-popup -->
+			
+	</div>
+
+	
+
+	
+
+	
+	
+	
+
+
 
 
 
 
 	</div>
-    <?php endforeach; ?>
-
-
-
-	<div class="warning3">
-		<p> ˙請確認您購買的商品規格與數量，確認後訂單將無法做任何更改。<br>
-			˙若您上有其他商品需購買，請點選繼續購物，如要進行結帳，請點選下一步。<br>
-            ˙商品售價將以您實際結帳之即時價格為主，商品數量與優惠等，也將以您實際結帳為準。</p>
-
-        <div class="btn-grs">
-            <div class="btn-keepgoingshop">
-                <a href="#">繼續購物</a>
-            </div>
-
-            <div class="btn-nextstep" onclick="location.href='carthowtopay.php'">
-                <a href="#">下一步</a>
-            </div>
-        </div>
-
-    </div>
-
-
-
-
-
-
-
-    </div>
-
+	
 
 	</content>
 
@@ -262,7 +300,7 @@ while ($row = $result->fetch_assoc()) {
 
 
 	<footer>
-
+	
 
 
 	</footer>
@@ -276,9 +314,12 @@ while ($row = $result->fetch_assoc()) {
 
 
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script src="js/nav_icon.js"></script>
-<script src="js/shopping_cart.js"></script>
 
+<script src="js/modernizr.js"></script> <!-- Modernizr -->
+<script src="js/main.js"></script>
+
+
+<script src="js/member.js"></script>
 
 
 </body>

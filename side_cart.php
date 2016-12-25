@@ -39,7 +39,7 @@ if (!empty($_SESSION['cart'])) {
                 </div>
                 <!-- 產品照 -->
                 <div class="product_img">
-                    <img src="images/product/classic/01-cherry-wood.png">
+                    <img src="<?= $p_data[$sid]['pic_id'] ?>01_cherry.png">
                 </div>
 
                 <!-- 產品介紹區 -->
