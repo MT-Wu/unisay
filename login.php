@@ -175,9 +175,7 @@ if (isset($_POST['type'])) {
                     </div>
 
                     <!-- 中間提示內容 -->
-                    <div class="sign5">
-                        <img src="images/member/signframe5-1-01.png">
-                    </div>
+                    <div class="sign5"></div>
 
                     <div class="btn-groups">
                         <div class="btn-keepgoing">
@@ -192,6 +190,7 @@ if (isset($_POST['type'])) {
                             <a href="logout.php">會員登出</a>
                         </div>
                     </div>
+                    
                 </div>
             <?php endif; ?>
         <?php else: ?>

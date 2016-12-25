@@ -342,34 +342,42 @@
 /*發送忘記密碼通知*/
 	.bigframe{
 		width: 100%;
-		height: 60vh;
+		height: 400px;
+
 		background-image: url(../images/member/frame1.svg);
+		background-position: center;
 		background-size: 100% 100%;
-		/*background-color: #fa0;*/
+
 		position: relative;
 	 	top:100px;
-	 	left:0;
 	}
 
 	.sign{
+		position: absolute;
+		margin: auto;
+		top: 0;
+		bottom: 0;
+
 		width: 100%;
-		height: 30%;
+		height:150px;
+
 		background-image: url(../images/member/signframe1.svg);
-		background-size: 100% 100%;
-		position: relative;
-	 	top:120px;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
 	}
 
 	.btn-ok{
-		width:6%;
-		height: 4%;
+		width:75px;
+		height: 25px;
+
 		border: 1px solid #666666;
-		border-radius: 10%;
+		border-radius: 6px;
 		background-color: #fff;
-		position: relative;
-		top:40%;
-		left:70%;
-		z-index: 5;
+
+		position: absolute;
+		right: 25%;
+		bottom: 50px;
 	}
 
 	.btn-ok:hover{
@@ -380,194 +388,148 @@
 		text-decoration: none;
 		color:#666666;
 		font-size: 14px;
+		line-height: 25px;
 		text-align: center;
-		z-index: 5;
+		
+		position: absolute;
+		top:0;
+		left: 0;
 		width: 100%;
 		height: 100%;
-		display: inline-block;
-		position: relative;
-		top:0;
+
 		background-color: #fff;
+		border-radius: 6px;
 	}
 
-	.btn-ok a:hover{
+	.btn-ok:hover a{
 		color:white;
 		background-color: #666666;
 	}
 
 	.btn-ok img{
 		position: absolute;
-		bottom:-4px;
-		left: 10px;
-		z-index: 0;
+		bottom:4px;
+		left: 22px;
 	}
 	
 	/*必填資訊尚未填寫完畢請重新確認的提示*/
 	.sign2{
+		position: absolute;
+		margin: auto;
+		top: 0;
+		bottom: 0;
+
 		width: 100%;
-		height:30%;
+		height:150px;
+
 		background-image: url(../images/member/signframe2.svg);
-		background-size: 100% 100%;
-		/*background-color: : #4C4C4C;*/
-		position: relative;
-	 	top:120px;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
 	}
 
 	/*email已被使用請換一個的提示*/
 	.sign3{
+		position: absolute;
+		margin: auto;
+		top: 0;
+		bottom: 0;
+
 		width: 100%;
-		height:30%;
+		height:150px;
+
 		background-image: url(../images/member/signframe3.svg);
-		background-size: 100% 100%;
-		/*background-color: : #4C4C4C;*/
-		position: relative;
-	 	top:120px;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
 	}
 
 	/*完成註冊提示*/
 	.sign4{
+		position: absolute;
+		margin: auto;
+		top: 0;
+		bottom: 0;
+
 		width: 100%;
-		height:30%;
+		height:150px;
+
 		background-image: url(../images/member/signframe4.svg);
-		background-size: 100% 100%;
-		/*background-color: : #4C4C4C;*/
-		position: relative;
-	 	top:120px;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
 	}
 
-	.sign5 img{
-		width: 50%;
-		height:50%;
-		/*background-image: url(../images/member/signframe5-1-01.png);
-		background-repeat: no-repeat; */
-		/*background-color: : #4C4C4C;*/
+	.sign5{
 		position: relative;
-	 	top:120px;
-	 	left:25%;
+		width: 100%;
+		height:350px;
+
+		background-image: url(../images/member/signframe5-1-01.png);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+		
+	 	top:125px;
 	}
 
 
-	
-	/*下面的導向按鈕*/
+
+/*下面的導向按鈕*/
 
 	.btn-groups{
-		width: 80%;
-    	height: 20vh;
+		width: 100%;
+    	height: 75px;
+    	text-align: right;
+
     	position: absolute;
-    	top: 400px;
+    	bottom:0;
+    	right: -25px;
 	}
 
-	/*繼續選購鈕*/
-	.btn-keepgoing{
-		display: inline-block;
-		width:15%;
-		height:20%;
-		border: 1px solid #666666;
-		border-radius: 10%;
-		background-color: #fff;
+	/*三顆導向鈕一起設定*/
+	.btn-keepgoing, .btn-back, .btn-logout{
 		position: relative;
-		top:50%;
-		left:70%;
-		margin:2%;
-		
+
+		display: inline-block;
+		width:120px;
+		height:30px;
+
+		border: 1px solid #666666;
+		border-radius: 6px; /*直接設定px才會是正圓角*/
+		background-color: #fff;
+		color: #666;
+
+		margin: 0 12px;
 	}
 
-	.btn-keepgoing:hover{
+	.btn-keepgoing:hover, .btn-back:hover, .btn-logout:hover{
 		background-color: #666666;
 	}
 
-	.btn-keepgoing a{
-		text-decoration: none;
-    	color: #666666;
-    	text-align: center;
-    	z-index: 2;
-    	width: 80%;
-    	height: 80%;
-    	font-size: 15px;
-    	position: absolute;
-    	top: 0;
-    	/* background-color: #fa0; */
-    	padding-left: 9px;
-    	padding-top: 6px;
-	}
-
-	.btn-keepgoing a:hover{
-		color: #fff;
-	}
-
-	.btn-back{
-		display: inline-block;
-		width:18%;
-		height: 20%;
-		border: 1px solid #666666;
-		border-radius: 10%;
-		background-color: #fff;
-		position: relative;
-		top:50%;
-		left:70%;
-		margin:2%;
-	}
-
-	.btn-back:hover{
-		background-color: #666666;
-	}
-
-	.btn-back a{
-		text-decoration: none;
-		color:#666666;
-		text-align: center;
-		z-index: 2;
-		width: 80%;
-		height: 80%;
-		font-size: 15px;
+	.btn-keepgoing a, .btn-back a, .btn-logout a{
 		position: absolute;
-		top:0;
-		padding-left: 10px;
-    	padding-top: 6px;
+    	top: 0;
+    	left: 0;
 
-	}
-
-	.btn-back a:hover{
-		color: #fff;
-	}
-
-	
-
-	.btn-logout{
-		display: inline-block;
-		width:15%;
-		height: 20%;
-		border: 1px solid #666666;
-		border-radius: 10%;
-		background-color: #fff;
-		position: relative;
-		top:50%;
-		left:70%;
-		margin:2%;
-		
-	}
-
-	.btn-logout:hover{
-		background-color: #666666;
-	}
-
-	.btn-logout a{
 		text-decoration: none;
     	color: #666666;
     	text-align: center;
+
     	z-index: 2;
-    	width: 80%;
-    	height: 80%;
-    	font-size: 15px;
-    	position: absolute;
-    	top: 0;
-    	padding-left: 9px;
-    	padding-top: 6px;
+    	width: 100%;
+    	height: 100%;
+    	/*a的感應區要開跟鈕一樣大*/
+
+    	font-size: 16px;
+    	line-height: 30px; /*行高開跟鈕一樣高就會垂直置中*/
 	}
 
-	.btn-logout a:hover{
+	.btn-keepgoing:hover a, .btn-back:hover a, .btn-logout:hover a{
 		color: #fff;
 	}
+
+
 
 
 
@@ -1043,53 +1005,19 @@
 
 /*忘記密碼頁面的確認鈕*/
 	.btn-ok{
-		width: 15%;
-    	height: 4%;
-    	position: relative;
-    	top: 35%;
-   		left: 70%;
+		margin: auto;
+		left: 50%;
+		right: 0;
 	}
 
-/*確認註冊完畢*/
-	.btn-ok img {
-    	left: 30px;
-    	top: -25px;
-	}
+
 
 /*確認登入完畢*/
-	.sign5 img{
-		width: 50%;
-		height:50%;
-		position: relative;
-	 	top:120px;
-	 	left:25%;
-	}
 
-	.btn-groups{
-		left: -20%;
-   		width: 70%;
-   		position: absolute;
-    	top: 20;
-	}
-
-	.btn-groups a{
-		font-size: 13px;
-		position: absolute;
-		/*top:0;*/
-		padding-left: 10px;
-    	padding-top: 10px;
-	}
-
-	.btn-keepgoing{
-		width: 20%;
-	}
-
-	.btn-back{
-		width: 26%;
-	}
-		
-	.btn-logout{
-		width: 20%;
+	/*下面的導向按鈕*/
+	.btn-groups{ /*改成置中*/
+    	text-align: center;
+    	right: 0px;
 	}
 
 
@@ -1245,12 +1173,6 @@
 		border:1px solid #666666 ;
 	}
 
-	/*確認修改完帳密*/
-	.btn-ok {
-    	width: 10%;
-    	height: 6%;
-    }
-
 
 
 
@@ -1345,38 +1267,30 @@
 
 
 
+
 /*登入完畢*/
-    .sign5 img{
-		width: 50%;
-		height:50%;
-		position: relative;
-	 	top:120px;
-	 	left:25%;
+    .sign5{
+		width: 100%;
+		height:250px;
 	}
 
-    .btn-groups {
-    	left: -97%;
-    	width: 140%;
-    	top: 210px;
+	.btn-groups{
+		height: 45px;
 	}
 
-	.btn-keepgoing {
-    	width: 16%;
+	/*下面的導向按鈕*/
+	/*三顆導向鈕一起設定*/
+	.btn-keepgoing, .btn-back, .btn-logout{
+		width:30%;
+		margin: 0 1%;
+	}
+	
+	.btn-keepgoing a, .btn-back a, .btn-logout a{
+		font-size: 12px;
 	}
 
-	.btn-back {
-    	width: 24%;
-	}
 
-	.btn-logout {
-    	width: 16%;
-	}
 
-	.btn-groups a {
-		font-size: 10px;
-    	padding-left: 6px;
-    	padding-top: 7px;
-	}
 
 /*會員專區購物金查詢*/
 /*----------會員專區----------*/
@@ -1462,12 +1376,28 @@
     	width: 50%;
 	}
 
-	/*確認修改完帳密*/
-	.btn-ok {
-    	width: 18%;
-    	height: 4%;
+
+
+	.bigframe{
+		width: 100%;
+		height: 400px;
+	 	top:70px;
 	}
 
+	.bigframe div.sign2{
+		margin: auto;
+		left: 0;
+		right: 0;
+		
+		width: 80%;
+		top: -30px;
+	}
+
+	.bigframe .btn-ok{
+		margin: auto;
+		top: 0;
+		bottom:-125px;
+	}
 
 
 
