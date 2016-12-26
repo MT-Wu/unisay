@@ -887,24 +887,34 @@
 
 	/*帳號修改完的提示*/
 	.sign6{
+		position: absolute;
+		margin: auto;
+		top: 0;
+		bottom: 0;
+
 		width: 100%;
-		height:30%;
+		height:150px;
+
 		background-image: url(../images/member/signframe6.svg);
-		background-size: 100% 100%;
-		/*background-color: : #4C4C4C;*/
-		position: relative;
-	 	top:120px;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
 	}
 	
 	/*修改密碼後的提示*/
 	.sign7{
+		position: absolute;
+		margin: auto;
+		top: 0;
+		bottom: 0;
+
 		width: 100%;
-		height:30%;
+		height:150px;
+
 		background-image: url(../images/member/signframe7.svg);
-		background-size: 100% 100%;
-		/*background-color: : #4C4C4C;*/
-		position: relative;
-	 	top:120px;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
 	}
 	
 
@@ -1378,17 +1388,20 @@
 
 
 
+
+
+/*提示字串*/
 	.bigframe{
 		width: 100%;
 		height: 400px;
 	 	top:70px;
 	}
 
-	.bigframe div.sign2{
+	.bigframe div.sign2, .bigframe div.sign3, .bigframe div.sign4, .bigframe div.sign6, .bigframe div.sign7{
 		margin: auto;
 		left: 0;
 		right: 0;
-		
+
 		width: 80%;
 		top: -30px;
 	}

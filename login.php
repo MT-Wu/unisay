@@ -137,7 +137,7 @@ if (isset($_POST['type'])) {
             <nav>
                 <ul>
                     <!-- 當前頁面掛上here的class -->
-                    <li class="icon_aboutus">
+                    <li class="icon_aboutus here">
                         <a href="aboutus.html"></a>
                     </li>
                     <li class="icon_product">
