@@ -43,6 +43,7 @@
  		right: 0;
  		top:0;
  		bottom:0;
+
  		width: 80%; /*因為還有before、after的陰影面積所以寬度只需要抓白紙的*/
  		font-size: 0; /*兩個div中間還有間距所以要下這個*/
  		min-height:590px;
@@ -632,7 +633,9 @@
 		font-size: 14px;
 	}
 
-	/*回收制度頁面*/
+
+
+/*回收制度頁面*/
 	.recycletext{
 		width: 100%;
 		height: 300px;
@@ -652,12 +655,9 @@
 		left:0%;
 	}
 
-	img.squirrel {
-		position: relative;
-		top:-10%;
-	}
 
-	/*訂單查詢頁面*/
+
+/*訂單查詢頁面*/
 
 	.downframe2{
 		width: 100%;
@@ -739,73 +739,33 @@
 		font-size: 12px;
 	}
 
-	/*修改帳號資料頁面*/
-	.con2{
- 		margin: auto;
- 		left: 0;
- 		right: 0;
- 		top:0;
- 		bottom:0;
- 		width: 80%; /*因為還有before、after的陰影面積所以寬度只需要抓白紙的*/
- 		font-size: 0; /*兩個div中間還有間距所以要下這個*/
- 		min-height:590px;
- 		height: auto;
- 		position: relative;
- 	}
 
-	.editinfoarea{
-		line-height: 30px;
- 		width: 50%;
- 		height: 300px; 
- 		position: relative;
- 		/*置中*/
- 		margin:auto;
- 		top:0;
- 		bottom:0;
- 		left: -25%;
- 		right: 0;
- 		/*text-align: center;*/
-	}
-	.editinfoarea input{
-		font-size: 14px;
-		color:#666666;
-		margin-left:2%;
-	}
 
-	.editinfoarea label{
-		font-size: 14px;
-		color: #666666;
-	}
+/*修改帳號資料頁面*/
 
-	.tab-editok{
-		width: 17%;
-		height: 10%;
-		border:1px solid #666666	;
-		background-color: #fff;
-	}
+.con3{
+	margin: auto;
+	left: 0;
+	right: 0;
+	top:0;
+	bottom:0;
 
-	.tab-editok:hover{
-		background-color: #666666;
-	}
+	width: 80%; /*因為還有before、after的陰影面積所以寬度只需要抓白紙的*/
+	font-size: 0; /*兩個div中間還有間距所以要下這個*/
+	min-height:590px;
+	height: auto;
+	position: relative;
 
-	.tab-editok a{
-		text-decoration: none;
-		color:#666666;
-		padding-left: 10%;
-		font-size: 14px;
-	}
-
-	.tab-editok a:hover{
-		color:#fff;
-
-	}
+	padding: 125px 0 25px 0; 
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
 
 	.downframe1{
 		width: 100%;
-    	height: 30vh;
-    	position: absolute;
-    	top: 130px;
-    	left: 2%;	
+    	height: 300px;
+    	position: relative;
 	}
 
 	.downframe1 p{
@@ -819,11 +779,8 @@
 
 	.downframe3{
 		width: 100%;
-    	height: 30vh;
-    	position: absolute;
-    	top: 400px;
-    	left: 2%;
-
+    	height: 200px;
+    	position: relative;
 	}
 
 	.downframe3 p{
@@ -834,19 +791,74 @@
 	.downframe3 img{
 		width: 100%;
 	}
+	
+	.editinfo{
+ 		height: 200px; 
+		width: 100%;
+	}
+	
+	.editinfoarea{
+		top: 10px;
+
+		line-height: 30px;
+ 		position: relative;
+	}
+
+	.editinfoarea input{
+		font-size: 14px;
+		color:#666666;
+		margin-left:2%;
+	}
+
+	.editinfoarea label{
+		font-size: 14px;
+		color: #666666;
+	}
+
+
+
+	.tab-editok, .tab-pweditok{
+		position: relative;
+		width: 75px;
+		height: 25px;
+
+		border:1px solid #666666;
+		background-color: #fff;
+
+		margin-top: 20px;
+	}
+
+	.tab-editok:hover,.tab-pweditok:hover{
+		background-color: #666666;
+	}
+
+	.tab-editok a, .tab-pweditok a{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+
+		text-decoration: none;
+		color:#666666;
+		font-size: 14px;
+		line-height: 25px;
+		text-align: center;
+	}
+
+	.tab-editok:hover a, .tab-pweditok:hover a{
+		color:#fff;
+	}
+
+	
 
 	.editpwarea{
+		top: 10px;
+
 		line-height: 30px;
- 		width: 50%;
- 		height: 300px; 
+ 		width: 100%;
+ 		height: 100px; 
  		position: relative;
- 		/*置中*/
- 		margin:auto;
- 		top:0;
- 		bottom:0;
- 		left: -25%;
- 		right: 0;
- 		/*text-align: center;*/
 	}
 
 	.editpwarea input{
@@ -860,32 +872,9 @@
 		color: #666666;
 	}
 
-	.tab-pweditok{
-		width: 17%;
-		height: 10%;
-		border:1px solid #666666	;
-		background-color: #fff;
-	}
 
 
-
-	.tab-pweditok:hover{
-		background-color: #666666;
-	}
-
-	.tab-pweditok a{
-		text-decoration: none;
-		color:#666666;
-		padding-left: 10%;
-		font-size: 14px;
-	}
-
-	.tab-pweditok a:hover{
-		color:#fff;
-
-	}
-
-	/*帳號修改完的提示*/
+/*帳號修改完的提示*/
 	.sign6{
 		position: absolute;
 		margin: auto;
@@ -1080,8 +1069,6 @@
 		bottom:15%;
 	}
 
-
-
 	
 
 /*回收制度*/
@@ -1099,6 +1086,8 @@
 	.recycletext{
 		height: 85%;
 	}
+
+
 
 /*訂單查詢頁面*/
 
@@ -1144,48 +1133,17 @@
     	left: 2%;
     }
 
-    /*修改帳號密碼*/
 
-    .con{
- 		margin: auto;
- 		left: 0;
- 		right: 0;
- 		top:0;
- 		bottom:0;
- 		width: 80%; /*因為還有before、after的陰影面積所以寬度只需要抓白紙的*/
- 		font-size: 0; /*兩個div中間還有間距所以要下這個*/
- 		min-height:590px;
- 		height: auto;
- 		position: relative;
- 	}
 
-    .downframe1{
-    	top:150px;
-    }
+/*----------修改帳號密碼----------*/
 
-	.tab-editok {
-    	width: 24%;
-    }
+	.con3{
+		padding:  175px 0 0 0 ;
+	}
 
-    .tab-pweditok {
-    	width: 24%;
-    }
 
-    .downframe3{
-    	top:410px;
-    }
 	
-	.editinfoarea input {
-		border:1px solid #666666 ;
-	}
-
-	.editpwarea input{
-		border:1px solid #666666 ;
-	}
-
-
-
-
+	
 	
 }
 
@@ -1343,48 +1301,48 @@
 
 
 
-
-
-
-	/*回收制度頁面*/
+/*回收制度頁面*/
 	.recycleimg img {
-    	width: 100%;
-    	position: relative;
-    	top: 90px;
+    	/*top: 90px;*/
     }
 
-    .recycletext {
+    .recycletext{
     	top:90px;
+		width: 105%;
     }
+
+    .recycletext p{
+    	font-size: 12px;
+    }
+
+
 
     /*訂單查詢頁面*/
     .up3 img{
     	left: 85%;
     }
 
-    /*修改帳號密碼*/
-    .downframe3{
-    	top:560px;
-    	height: 28vh;
-    	display: block;
-    }
 
-    .tab-editok {
-   		width: 50%;
+
+/*修改帳號密碼*/
+
+	.downframe1 div, .downframe3 div{
+		text-align: center;
 	}
-	
-	.downframe1 {
-    	height: 60vh;
-    	display: block;
-    }
+
+    .tab-editok, .tab-pweditok{
+   		margin: auto;
+   		left: 0;
+   		right: 0;
+
+   		top: 25px;
+	}
+
 
     .con2{
 		height: 777px;
     }
 
-    .tab-pweditok {
-    	width: 50%;
-	}
 
 
 
@@ -1411,10 +1369,6 @@
 		top: 0;
 		bottom:-125px;
 	}
-
-
-
-
 
 
 

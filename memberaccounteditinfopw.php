@@ -212,7 +212,7 @@ if(isset($_POST['type'])){
 
 
 	<content>
-	<div class="con2">
+	<div class="con3">
 	<!-- 麵包屑 -->
 		<div class="loginnav">
 			<p>ACCOUNT-MEMBER</p>
