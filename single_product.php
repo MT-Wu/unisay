@@ -374,6 +374,7 @@ $row = $result->fetch_assoc();
 
         var sid = $(this).attr('data-sid');
         var qty = $(this).closest('.caption').find('.qty').val();
+        var type = $( ".product_img_small>ul>li" ).index( $('.this_pic') ) + 1;
 
 
         //alert(sid+":"+qty);
@@ -381,7 +382,8 @@ $row = $result->fetch_assoc();
         $.get('add_to_cart.php',
             {
                 sid: sid,
-                qty: qty
+                qty: qty,
+                type: type
             },
             function (data) {
             console.log(data);
