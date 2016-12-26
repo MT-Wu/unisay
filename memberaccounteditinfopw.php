@@ -184,7 +184,7 @@ if(isset($_POST['type'])){
 			<nav>
 				<ul>
 					<!-- 當前頁面掛上here的class -->
-					<li class="icon_aboutus ">
+					<li class="icon_aboutus">
 						<a href="aboutus.html"></a>
 					</li>
 					<li class="icon_product">
@@ -212,87 +212,86 @@ if(isset($_POST['type'])){
 
 
 	<content>
-	<div class="con3">
-	<!-- 麵包屑 -->
-		<div class="loginnav">
-			<p>ACCOUNT-MEMBER</p>
-			<img src="images/member/line.svg">
-		</div>
 
-	<!-- 中間內容 -->
 
-	<!-- 上方的bar -->
-		<div class="upframe">
-			<div class="up1">
-				<a href="memberaccountmember.php">會員專區</a>
+		<div class="con3">
+			<!-- 麵包屑 -->
+			<div class="loginnav">
+				<p>ACCOUNT-MEMBER</p>
+				<img src="images/member/line.svg">
 			</div>
-			<div class="up2 here">
-				<img src="images/member/mushroom.svg">
-				<a href="memberaccounteditinfopw.php">修改資料</a>
+
+			<!-- 中間內容 -->
+
+			<!-- 上方的bar -->
+			<div class="upframe">
+				<div class="up1">
+					<a href="memberaccountmember.php">會員專區</a>
+				</div>
+				<div class="up2 here">
+					<img src="images/member/mushroom.svg">
+					<a href="memberaccounteditinfopw.php">修改資料</a>
+				</div>
+				<div class="up3">
+					<a href="member_ordered_list.php">訂單查詢</a>
+				</div>
 			</div>
-			<div class="up3">
-				<a href="member_ordered_list.php">訂單查詢</a>
+
+			<!-- 下方欄位 -->
+			<div class="downframe1">
+				<p>Edit Account Info  修改帳號資料</p>
+				<img src="images/member/line2-01.svg">
+			    <div class="editinfo">
+				    <form class="editinfoarea" name="form1"  method="post">
+						<div class="form-group havetowrite">
+			                <label for="email_id">帳號</label>
+			                <input type="email" class="form-control" id="email_id" value="<?= $_SESSION['user']['email_id'] ?>" disabled>
+			            </div>
+			            <div class="form-group havetowrite">
+			                <label for="nickname">暱稱</label> <span id="nickname_info" style="color:red;display:none;">暱稱長度請設定大於 2 !</span>
+			                <input type="text" class="form-control" id="nickname" name="nickname"  value="<?= $_SESSION['user']['nickname'] ?>">
+			            </div>
+			            <div class="form-group">
+			                <label for="mobile">電話</label>
+			                <input type="text" class="form-control" id="mobile" name="mobile"  value="<?= $_SESSION['user']['mobile'] ?>">
+			            </div>
+			            <div class="form-group">
+			                <label for="address">地址</label>
+			                <input type="text" class="form-control" id="address" name="address" value="<?= $_SESSION['user']['address'] ?>">
+			            </div>
+						<div class="tab-editok">
+	                        <input type="hidden" name="type" value="info">
+							<a href="#" onclick="$(this).closest('form').submit()">確認修改</a>
+						</div>
+					</form>
+				</div>
 			</div>
-		</div>
 
-	<!-- 下方欄位 -->
-		<div class="downframe1">
-			<p>Edit Account Info  修改帳號資料</p>
-			<img src="images/member/line2-01.svg">
-		    <div class="editinfo">
-			    <form class="editinfoarea" name="form1"  method="post">
-					<div class="form-group havetowrite">
-		                <label for="email_id">帳號</label>
-		                <input type="email" class="form-control" id="email_id" value="<?= $_SESSION['user']['email_id'] ?>" disabled>
-		            </div>
-		            <div class="form-group havetowrite">
-		                <label for="nickname">暱稱</label> <span id="nickname_info" style="color:red;display:none;">暱稱長度請設定大於 2 !</span>
-		                <input type="text" class="form-control" id="nickname" name="nickname"  value="<?= $_SESSION['user']['nickname'] ?>">
-		            </div>
-		            <div class="form-group">
-		                <label for="mobile">電話</label>
-		                <input type="text" class="form-control" id="mobile" name="mobile"  value="<?= $_SESSION['user']['mobile'] ?>">
-		            </div>
-		            <div class="form-group">
-		                <label for="address">地址</label>
-		                <input type="text" class="form-control" id="address" name="address" value="<?= $_SESSION['user']['address'] ?>">
-		            </div>
-					<div class="tab-editok">
-                        <input type="hidden" name="type" value="info">
-						<a href="#" onclick="$(this).closest('form').submit()">確認修改</a>
-					</div>
-				</form>
+			<div class="downframe3">
+				<p>Edit Account Password  修改密碼</p>
+				<img src="images/member/line2-01.svg">
+	            <form name="form1"  method="post">
+	                <div class="editpwarea">
+
+	                    <div class="form-group">
+	                        <label for="password">原始密碼</label> <span id="password_info" style="color:red;display:none;">密碼長度請設定大於 6 !</span>
+	                        <input type="password" class="form-control" id="password" name="password">
+	                    </div>
+	                    <div class="form-group">
+	                        <label for="new_password">更新密碼</label> <span id="password_info" style="color:red">不修改請留白</span>
+	                        <input type="password" class="form-control" id="new_password" name="new_password">
+	                    </div>
+
+	                    <div class="tab-pweditok">
+	                        <input type="hidden" name="type" value="password">
+	                        <a href="#" onclick="$(this).closest('form').submit()">確認修改</a>
+	                    </div>
+	                </div>
+	            </form>
+
 			</div>
-		</div>
-
-		<div class="downframe3">
-			<p>Edit Account Password  修改密碼</p>
-			<img src="images/member/line2-01.svg">
-            <form name="form1"  method="post">
-                <div class="editpwarea">
-
-                    <div class="form-group">
-                        <label for="password">原始密碼</label> <span id="password_info" style="color:red;display:none;">密碼長度請設定大於 6 !</span>
-                        <input type="password" class="form-control" id="password" name="password">
-                    </div>
-                    <div class="form-group">
-                        <label for="new_password">更新密碼</label> <span id="password_info" style="color:red">不修改請留白</span>
-                        <input type="password" class="form-control" id="new_password" name="new_password">
-                    </div>
-
-                    <div class="tab-pweditok">
-                        <input type="hidden" name="type" value="password">
-                        <a href="#" onclick="$(this).closest('form').submit()">確認修改</a>
-                    </div>
-                </div>
-            </form>
 
 		</div>
-
-	</div>
-
-
-
 
 
 	</content>

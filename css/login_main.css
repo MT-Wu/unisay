@@ -657,85 +657,94 @@
 
 
 
-/*訂單查詢頁面*/
+/*----------訂單查詢頁面----------*/
 
+	/*下方的內容*/
 	.downframe2{
 		width: 100%;
-    	height: 30vh;
-    	position: absolute;
-    	top: 130px;
-    	left: 2%;
+		height: 70px;
+		position: relative;
 	}
 
 	.downframe2 p{
 		font-size: 16px;
-		color: #666666;
+		color:#666666;
 	}
 
-	
-
-	.sidebar3 img{
-		position:relative;
-		bottom:100%;
-		left: 80%;
-		/*z-index: -0.5;*/
+	.downframe2 img{
+		width: 100%;
 	}
 
 	.table{
-		width: 97%;
-		height: 30%;
 		position: relative;
-		top:190px;
-		left:3%;
+		margin: auto;
+		left: 0;
+		right: 0;
+
+		width: 90%;
 	}
 
-	.table table,th,td{ 
-		border-collapse:collapse;
+	.table tr,th,td{ 
 		border: 1px solid #666666;
 		font-size:16px;
 		color:#666666;
-		line-height: 30px;
+
+		height:40px;
+		line-height: 40px;
+		text-align:center;
+	}
+
+	.table th{
+		color:#fff;
+		background-color: #666666;
 	}
 
 	.table td a{
 		color:#666666;
 		font-size: 16px;
 	}
-	.table th{
-		height:50px;
-		background-color: #666666;
-	}
 
-	.table tr { 
-  		border-bottom:1px solid #000; 
-	}
 
-	.table td{
-		text-align:center;
-	}
 
-	.table th {
-		color:#fff;
-	}
+/*----------詳細訂單內容----------*/
 
-	/*詳細訂單內容*/
 	.member-content{
-		width: 80%;
-		height: 400px;
 		position: relative;
-		top:180px;
-		left:2%;
+
+		margin: auto;
+		left: 0;
+		right: 0;
+
+		width: 90%;
 	}
 
-	.member-content-hd{
+	.member-content-hd h4{
+		height: 50px;
+		color:#333;
+		font-size: 18px;
+	}
+
+	.section h5{
+		line-height: 50px;
+		height: 50px;
 		color:#666666;
+		font-size: 16px;
 	}
 
-	.table-order th{
-		font-size: 12px;
+	table.table-order{
+		width: 100%;
 	}
 
-	.table-order td{
+	.member-content-bd{
+		width: 100%;
+		padding:0 0 50px 0; /*開給頁尾*/
+
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box; 
+	}
+
+	.table-order th, .table-order td{
 		font-size: 12px;
 	}
 
@@ -1089,52 +1098,6 @@
 
 
 
-/*訂單查詢頁面*/
-
-	.table{
-		position: relative;
-    	top: 60px;
-    	left: 12%;
-    	width:75%;
-	}
-
-	.table th{
-		font-size: 10px;
-	}
-
-	.table tbody tr td{
-		font-size: 10px;
-	}
-
-	.downframe2{
-		width: 60%;
-    	height: 16vh;
-   		position: relative;
-    	top: 110px;
-    	left: 3%;
-	}
-
-	.downframe2 img {
-    	width: 160%;
-	}
-
-
-	.up3 img {
-		bottom: 50%;
-    	left: 65%;
-	}
-
-	/*訂單詳細頁面查詢*/
-	.member-content {
-		width: 80%;
-    	height: 500px;
-    	position: relative;
-    	top: 55px;
-    	left: 2%;
-    }
-
-
-
 /*----------修改帳號密碼----------*/
 
 	.con3{
@@ -1317,13 +1280,6 @@
 
 
 
-    /*訂單查詢頁面*/
-    .up3 img{
-    	left: 85%;
-    }
-
-
-
 /*修改帳號密碼*/
 
 	.downframe1 div, .downframe3 div{
@@ -1336,13 +1292,8 @@
    		right: 0;
 
    		top: 25px;
+   		width: 80px;
 	}
-
-
-    .con2{
-		height: 777px;
-    }
-
 
 
 
@@ -1371,6 +1322,41 @@
 	}
 
 
+
+/*----------訂單查詢頁面----------*/
+
+	.con3{
+		min-height: 490px;
+		padding: 175px 0 50px 0;
+	}
+
+	.table_frame{
+		margin: auto;
+		left: 0;
+		right: 0;
+
+		width: 90%;
+		overflow-x: auto;
+
+		border: 6px inset rgba(145,186,177,1);
+	}
+
+	.table{
+		width: 100%;
+
+		border: 2px solid #fff;
+		min-width: 700px;
+	}
+
+
+
+	.member-content-bd{
+		padding:0 0 50px 0;
+	}
+
+	.member-content-hd h4{
+		font-size: 16px;
+	}
 
 
 

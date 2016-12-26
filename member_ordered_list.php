@@ -86,7 +86,7 @@ $result = $mysqli->query($sql);
 			<nav> 
 				<ul>
 					<!-- 當前頁面掛上here的class -->
-					<li class="icon_aboutus ">
+					<li class="icon_aboutus">
 						<a href="aboutus.html"></a>
 					</li>
 					<li class="icon_product">
@@ -114,71 +114,68 @@ $result = $mysqli->query($sql);
 
 
 	<content>
-	<div class="con">
-	<!-- 麵包屑 -->
-		<div class="loginnav">
-			<p>ACCOUNT-MEMBER</p>
-			<img src="images/member/line.svg">
-		</div>
 
-	<!-- 上方的bar -->
-		<div class="upframe">
-			<div class="up1">
-				<a href="memberaccountmember.php">會員專區</a>
+
+		<div class="con3">
+
+			<!-- 麵包屑 -->
+			<div class="loginnav">
+				<p>ACCOUNT-MEMBER</p>
+				<img src="images/member/line.svg">
 			</div>
-			<div class="up2">
-				<a href="memberaccounteditinfopw.php">修改資料</a>
+
+			<!-- 上方的bar -->
+			<div class="upframe">
+				<div class="up1">
+					<a href="memberaccountmember.php">會員專區</a>
+				</div>
+				<div class="up2">
+					<a href="memberaccounteditinfopw.php">修改資料</a>
+				</div>
+				<div class="up3 here">
+					<img src="images/member/mushroom.svg">
+					<a href="">訂單查詢</a>
+				</div>
 			</div>
-			<div class="up3 here">
-				<img src="images/member/mushroom.svg">
-				<a href="">訂單查詢</a>
+
+			<!-- 下方欄位 -->
+			<div class="downframe2">
+				<p>ORDERS  訂單查詢</p>
+				<img src="images/member/line2-01.svg">
 			</div>
+			
+			<div class="table_frame">
+				<table class="table"> 
+					<thead> 
+						<tr> 
+							<th>訂購日期</th> 
+		    				<th>訂購編號</th> 
+		    				<th>訂單狀態</th> 
+		    				<th>應付金額</th> 
+		    				<th>退貨</th>
+		    				<th>明細</th> 
+						</tr> 
+					</thead> 
+
+					<tbody>
+		                <?php
+		                while ($row = $result->fetch_assoc()): ?>
+		                    <tr>
+		                        <td scope="row"><?=$row['order_date']?></td>
+		                        <td><?= ''?></td>
+		                        <td>已出貨</td>
+		                        <td>$ <?=$row['amount']?></td>
+		                        <td><a href="#">申請退貨</a></td>
+		                        <td><a href="member_ordered_detail.php">查詢</a></td>
+		                    </tr>
+		                <?php endwhile; ?>
+					</tbody> 
+				</table>
+
+			</div>
+		
 		</div>
 
-	<!-- 下方欄位 -->
-		<div class="downframe2">
-			<p>ORDERS  訂單查詢</p>
-			<img src="images/member/line2-01.svg">
-		</div>
-		
-		<table class="table table-condensed"> 
-			<thead> 
-				<tr> 
-					<th>訂購日期</th> 
-    				<th>訂購編號</th> 
-    				<th>訂單狀態</th> 
-    				<th>應付金額</th> 
-    				<th>退貨</th>
-    				<th>發票</th> 
-				</tr> 
-			</thead> 
-
-			<tbody>
-                <?php
-                while ($row = $result->fetch_assoc()): ?>
-                    <tr>
-                        <td scope="row"><?=$row['order_date']?></td>
-                        <td><?= ''?></td>
-                        <td>已出貨</td>
-                        <td>$ <?=$row['amount']?></td>
-                        <td><a href="#">申請退貨</a></td>
-                        <td><a href="member_ordered_detail.php">查詢</a></td>
-                    </tr>
-                <?php endwhile; ?>
-			</tbody> 
-		</table>
-		
-
-		</div>
-		
-
-
-	
-	</div>
-
-	
-
-	
 
 	</content>
 
