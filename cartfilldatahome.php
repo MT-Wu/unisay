@@ -6,18 +6,7 @@ if (empty($_SESSION['cart'])) {
     exit();
 }
 
-$sids = array_keys($_SESSION['cart']);
-
-//$sql = "SELECT * FROM `products` WHERE `sid` IN (". implode(',', $sids). ") ";
-$sql = sprintf("SELECT * FROM `products` WHERE `sid` IN (%s) ", implode(',', $sids));
-//echo $sql;
-$result = $mysqli->query($sql);
-$p_data = array();
-
-while ($row = $result->fetch_assoc()) {
-    $row['qty'] = $_SESSION['cart'][$row['sid']];
-    $p_data[$row['sid']] = $row;
-}
+require __DIR__ . '/cart.php';
 
 ?>
 <!DOCTYPE html>
@@ -175,7 +164,7 @@ while ($row = $result->fetch_assoc()) {
 	                <div class="oneproduct_top">
 	                    <div class="oneproduct_01">
 	                        <div class="p1">
-	                            <img src="<?= $p_data[$sid]['pic_id'] ?>01_cherry.png">
+	                            <img src="<?= $p_data[$sid]['pic_id'] ?><?= $p_data[$sid]['type_pic'] ?>">
 	                        </div>
 	                    </div>
 
