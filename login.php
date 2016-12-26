@@ -245,18 +245,18 @@ if (isset($_POST['type'])) {
                             <div class="form-group havetowrite">
                                 <label for="password">密碼：</label> <span id="password_info2"
                                                                         style="color:red;display:none;">密碼長度請設定大於 6 !</span>
-                                <input type="password" class="form-control" id="password" name="password">
+                                <input type="password" class="form-control" id="password" name="password" placeholder=" 密碼長度至少6位">
                             </div>
                             <div class="form-group havetowrite">
                                 <label for="nickname">暱稱：</label> <span id="nickname_info2"
                                                                         style="color:red;display:none;">暱稱長度請設定大於 2 !</span>
                                 <input type="text" class="form-control" id="nickname" name="nickname" placeholder=" 暱稱">
                             </div>
-                            <div class="form-group">
+                            <div class="form-group havetowrite">
                                 <label for="mobile">手機：</label>
                                 <input type="text" class="form-control" id="mobile" name="mobile" placeholder=" 手機號碼">
                             </div>
-                            <div class="form-group">
+                            <div class="form-group havetowrite">
                                 <label for="address"> 地址：</label>
                                 <input type="text" class="form-control" id="address" name="address"></input>
                             </div>
