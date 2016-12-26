@@ -25,7 +25,7 @@ $p_data = array();
 $totalPrice = 0;
 
 while($row=$result->fetch_assoc()){
-    $row['qty'] = $_SESSION['cart'][$row['sid']];
+    $row['qty'] = $_SESSION['cart'][$row['sid']][0];
     $p_data[$row['sid']] = $row;
 
     $totalPrice += $row['qty']*$row['price'];

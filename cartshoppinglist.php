@@ -145,7 +145,7 @@ require __DIR__ . '/cart.php';
 		<div class="oneproduct_top">
 			<div class="oneproduct_01">
 				<div class="p1">
-					<img src="<?= $p_data[$sid]['pic_id'] ?><?= $p_data[$sid]['type_pic'] ?>">
+					<img src="<?= $sid > 102 ? $p_data[$sid]['pic_id']  : $p_data[$sid]['pic_id'] . $p_data[$sid]['type_pic']?>">
 				</div>
 			</div>
 
@@ -158,7 +158,7 @@ require __DIR__ . '/cart.php';
 
 				<div class="p6">規格
 					<div>
-						iPhone 6
+                        <?= $p_data[$sid]['spec'] ?>
 					</div>
 				</div>
 

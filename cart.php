@@ -14,10 +14,15 @@ if (!empty($_SESSION['cart'])) {
     $result = $mysqli->query($sql);
     $p_data = array();
 
+    $spec_index = ['iPhone 6','iPhone 6 Plus','iPhone 6s','iPhone 6s Plus','iPhone 7','iPhone 7 Plus'];
+
+    $total_cost = 0;
+
     while ($row = $result->fetch_assoc()) {
         $row['qty'] = $_SESSION['cart'][$row['sid']][0];
         $row['type'] = $_SESSION['cart'][$row['sid']][1];
-        $row['spec'] = $_SESSION['cart'][$row['sid']][2];
+        $row['spec'] = $spec_index[$_SESSION['cart'][$row['sid']][2] - 1];
+
 
         if (!empty($row['type'])) {
             switch ($row['type']) {
@@ -45,5 +50,7 @@ if (!empty($_SESSION['cart'])) {
         }
 
         $p_data[$row['sid']] = $row;
+
+        $total_cost += $p_data[$row['sid']]['qty'] * $p_data[$row['sid']]['price'];
     }
 }

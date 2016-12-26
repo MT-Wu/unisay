@@ -364,7 +364,7 @@ $row = $result->fetch_assoc();
     function calTotalQty(data) {
         var count = 0;
 
-        for(var s in data) {
+        for (var s in data) {
             count += data[s];
         }
         $('.cart_qty').text(count);
@@ -374,25 +374,31 @@ $row = $result->fetch_assoc();
 
         var sid = $(this).attr('data-sid');
         var qty = $(this).closest('.caption').find('.qty').val();
-        var type = $( ".product_img_small>ul>li" ).index( $('.this_pic') ) + 1;
+        var type = $('.woodicon>.wood').index($('.this_woodicon')) + 1;
+        var spec = $('.buy_btn').closest('.caption').find('.phone_type').prop('selectedIndex');
 
+        if (spec === 0) {
+            alert('請選擇手機規格');
+        } else if (type === 0) {
+            alert('請選擇材質');
+        } else {
+            $.get('add_to_cart.php',
+                {
+                    sid: sid,
+                    qty: qty,
+                    type: type,
+                    spec: spec
+                },
+                function (data) {
+                    console.log(data);
 
-        //alert(sid+":"+qty);
-
-        $.get('add_to_cart.php',
-            {
-                sid: sid,
-                qty: qty,
-                type: type
-            },
-            function (data) {
-            console.log(data);
-
-            calTotalQty(data);
+                    calTotalQty(data);
 //            $(".cart_sidebar").load("cart_and_member.php .cart_sidebar_content");
-            alert('商品已加入購物車');
-            $('.cart_sidebar').load("side_cart.php");
-        }, 'json');
+                    alert('商品已加入購物車');
+                    $('.cart_sidebar').load("side_cart.php");
+                }, 'json');
+        }
+
 
     });
 
