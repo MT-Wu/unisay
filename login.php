@@ -23,6 +23,10 @@ if (isset($_POST['type'])) {
 
             if ($success) {
                 $_SESSION['user'] = $result->fetch_assoc();
+            } else {
+                unset($_SESSION['user']);
+//                header("Location: ./login.php");
+                echo "<script>alert('您輸入的帳號或密碼有誤，請重新登入。'); location.href = './login.php';</script>";
             }
 
         }

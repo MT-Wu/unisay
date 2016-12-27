@@ -14,8 +14,8 @@ if (!isset($_SESSION['cart'])) {
 if (isset($_GET['sid'])) {
     $sid = intval($_GET['sid']);
     $qty = isset($_GET['qty']) ? intval($_GET['qty']) : 0;
-    $type = isset($_GET['type']) ? intval($_GET['type']) : 1;
-    $spec = isset($_GET['spec']) ? intval($_GET['spec']) : 1;
+    $type = isset($_GET['type']) ? intval($_GET['type']) : (isset($_SESSION['cart'][$sid][1]) ? $_SESSION['cart'][$sid][1] : 1);
+    $spec = isset($_GET['spec']) ? intval($_GET['spec']) : (isset($_SESSION['cart'][$sid][2]) ? $_SESSION['cart'][$sid][2] : 1);
 
     if (empty($qty)) {
         unset($_SESSION['cart'][$sid]); // 移除設定

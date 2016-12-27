@@ -2,9 +2,15 @@
 require __DIR__ . '/__connect_db.php';
 
 if (empty($_SESSION['cart'])) {
-    header('Location: product.html');
+//    header('Location: product.html');
+    echo "<script>alert('目前購物車沒有商品，歡迎到產品頁進行選購。'); location.href = './product.html';</script>";
+    exit();
+} else if (empty($_SESSION['user'])) {
+//    header('Location: login.php');
+    echo "<script>alert('欲購買商品，請先登入，或加入會員。'); location.href = './login.php';</script>";
     exit();
 }
+
 require __DIR__ . '/cart.php';
 ?>
 <!DOCTYPE html>
@@ -159,7 +165,7 @@ require __DIR__ . '/cart.php';
                                 <div class="p7">材質
                                     <div class="sel">
                                         <div class="dont_sel">
-                                            <?= $p_data[$sid]['type_pic'] ?>
+                                            <?= $p_data[$sid]['type_name'] ?>
                                         </div>
                                     </div>
                                 </div>
