@@ -158,9 +158,9 @@ require __DIR__ . '/cart.php';
                             <div class="wood">
                                 <div class="p7">材質
                                     <div class="sel">
-                                        <select name="wood" class="sel">
-                                            <option selected="true">櫻桃木</option>
-                                        </select>
+                                        <div class="dont_sel">
+                                            <?= $p_data[$sid]['type_pic'] ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -172,7 +172,9 @@ require __DIR__ . '/cart.php';
 
                         <div class="qty">
                             <div class="p3">數量</div>
-                            <?= $p_data[$sid]['qty'] ?>
+                            <div class="dont_sel">
+                                <?= $p_data[$sid]['qty'] ?>
+                            </div>
                         </div>
 
                         <div class="p4">單價

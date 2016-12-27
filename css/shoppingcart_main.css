@@ -344,6 +344,22 @@
 		font-size: 14px;
 	}
 
+		.oneproduct_02 div.wood div.dont_sel{
+			position: relative;
+			top: 34px;
+			bottom: 0;
+			width: 70px;
+			height: 25px;
+
+			margin: auto;
+			left: 0;
+			right: 0;
+			color: #666;
+
+			background-color: #fff;
+
+			font-size: 14px;
+		}
 
 
 	/*數量的外層*/
@@ -390,6 +406,23 @@
 
 		font-size: 14px;
 	}
+
+		.oneproduct_03 div.qty div.dont_sel{
+			position: relative;
+			top: 18px;
+			bottom: 0;
+			width: 40px;
+			height: 25px;
+
+			margin: auto;
+			left: 0;
+			right: 0;
+			color: #666;
+
+			background-color: #fff;
+
+			font-size: 14px;
+		}
 
 
 	/*單價*/
@@ -1250,7 +1283,7 @@
 		position: absolute;
 		top: 15px;
 		height: 20px;
-		
+
 		width: 50px;
 	}
 

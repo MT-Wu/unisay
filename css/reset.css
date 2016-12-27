@@ -49,3 +49,9 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+input:focus, select:focus, button:focus{
+	outline: none;
+}
+
+

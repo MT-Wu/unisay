@@ -400,7 +400,10 @@ li.here a:before, li.here a:after{
 }
 .cart_sidebar_content .buy_products .one_product .product_info .product_motto{
 	font-size: 14px;
-	line-height: 20px;
+	line-height: 16px;
+	max-height: 65px;
+    overflow-y: auto;
+    
 	color: #555;
 	margin: 5px 0 10px 0;
 	height: auto;
