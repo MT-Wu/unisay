@@ -193,12 +193,18 @@ require __DIR__ . '/cart.php';
 
                         <div class="qty">
                             <div class="p3">數量</div>
-                            <select name="qty" class="sel1 qty_sel" data-qty="<?= $p_data[$sid]['qty'] ?>"
+                            
+                            <div class="dont_sel">
+                                <?= $p_data[$sid]['qty'] ?>
+                            </div>
+
+                            <!-- <select name="qty" class="sel1 qty_sel" data-qty="<?= $p_data[$sid]['qty'] ?>"
                                     data-sid="<?= $p_data[$sid]['sid'] ?>" data-price="<?= $p_data[$sid]['price'] ?>">
                                 <?php for ($i = 1; $i <= 9; $i++): ?>
                                     <option value="<?= $i ?>"><?= $i ?></option>
                                 <?php endfor; ?>
-                            </select>
+                            </select> -->
+
                         </div>
 
                         <div class="p4">單價

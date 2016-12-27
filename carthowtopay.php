@@ -172,9 +172,9 @@ require __DIR__ . '/cart.php';
 
                         <div class="qty">
                             <div class="p3">數量</div>
-                            <div class="dont_sel">
-                                <?= $p_data[$sid]['qty'] ?>
-                            </div>
+                                <div class="dont_sel">
+                                    <?= $p_data[$sid]['qty'] ?>
+                                </div>
                         </div>
 
                         <div class="p4">單價

@@ -42,7 +42,7 @@ require __DIR__ . '/__connect_db.php';
         <div class="member_info">
             <div onclick="location.href='memberaccountmember.php'">會員專區</div>
             <div onclick="location.href='memberaccounteditinfopw.php'">修改資料</div>
-            <div onclick="location.href='cartshoppinglist.php'">訂單查詢</div>
+            <div onclick="location.href='member_ordered_list.php'">訂單查詢</div>
             <div onclick="location.href='logout.php'">登出</div>
 
         </div>
