@@ -1,10 +1,10 @@
 <?php include __DIR__. '/__connect_db.php';
 
-// $MBTI = isset($_GET['MBTI']) ? intval($_GET['MBTI']) :'';
+$MBTI = isset($_GET['mbti']) ? ($_GET['mbti']) :'';
+// $MBTI='EPST';
 
-
-$sql = "SELECT * FROM `products` WHERE `mbti`= 'EPST' AND `mottotype`='1'";	
-// echo($sql);
+$sql = "SELECT * FROM `products` WHERE `mbti`= '$MBTI' AND `mottotype`='1'";	
+echo($sql);
 $result = $mysqli->query($sql);
 $row = $result->fetch_assoc();
 
@@ -31,13 +31,20 @@ $row = $result->fetch_assoc();
 	<div class="might_like">
 		<p>你可能會喜歡</p>
 		<div class="ani_item">
+			<div class="item" id="<?= $row['sid'] ?>" style="background-image: url(<?= $row['pic_id'].'00.png' ?>);"></div>
+
 			<?php  while($row = $result->fetch_assoc()): ?>
-			<div class="item" style="background-image: url(<?= $row['pic_id'].'00.png' ?>);"></div>
+			<div class="item" id="<?= $row['sid'] ?>" style="background-image: url(<?= $row['pic_id'].'00.png' ?>);"></div>
 			<?php endwhile; ?>
+			
 		</div>
 	</div>
 
-
+<script>
+  $('.item').click(function() {
+    location.href = 'single_product.php?sid=' + $(this).attr('id');
+  })
+</script>
 
 
 

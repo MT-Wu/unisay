@@ -57,7 +57,7 @@ $(window).resize(function(){
 // --------------------換動物圖
 
 // 存字串
-var MBTI='';
+var mbti='';
 // 字串長度
 var _MBTI_len=0;
 var $a=$('.down_text a');
@@ -65,92 +65,94 @@ var $icon_img=$('.find_bg ul li.step5 .ani_icon_img');
 
 $a.click(function(){
     // 組字串
-    MBTI+= $(this).attr('data-MBTI');
-    // alert(MBTI);
+    mbti+= $(this).attr('data-MBTI');
+    console.log(mbti);
 
     // 更新長度
-    _MBTI_len =MBTI.length; 
+    _MBTI_len =mbti.length; 
 
-    //  判斷是哪種動物
+
+
     if(_MBTI_len==4){
-
-        // 呼叫ajax
-        $('.group').load("find.php?MBTI=" + MBTI);
         
-        switch(MBTI){
-        case "IPNT":
-            $icon_img.addClass('owl');
-            break;
+        // 呼叫ajax
+        $('.group').load("find.php?mbti=" + mbti ,function(){
+            
+            //  判斷是哪種動物
+            var $icon_img=$('.find_bg ul li.step5 .ani_icon_img');
+            // console.log(mbti);
+            switch(mbti){
+                case "IPNT":
+                    $icon_img.addClass('owl');
+                    break;
 
-        case "EPST":
-            $icon_img.addClass('fox');
-            break;
+                case "EPST":
+                    $icon_img.addClass('fox');
+                    break;
 
-        case "IPSF":
-            $icon_img.addClass('rabbit');
-            break;
+                case "IPSF":
+                    $icon_img.addClass('rabbit');
+                    break;
 
-        case "EPST":
-            $icon_img.addClass('fox');
-            break;
+                case "EPST":
+                    $icon_img.addClass('fox');
+                    break;
 
-        case "EJNT":
-            $icon_img.addClass('lion');
-            break;
+                case "EJNT":
+                    $icon_img.addClass('lion');
+                    break;
 
-        case "IJSF":
-            $icon_img.addClass('deer');
-            break;
+                case "IJSF":
+                    $icon_img.addClass('deer');
+                    break;
 
-        case "IJNT":
-            $icon_img.addClass('eagle');
-            break;
+                case "IJNT":
+                    $icon_img.addClass('eagle');
+                    break;
 
-        case "IPST":
-            $icon_img.addClass('cat');
-            break;
+                case "IPST":
+                    $icon_img.addClass('cat');
+                    break;
 
-        case "EPSF":
-            $icon_img.addClass('bird');
-            break;
+                case "EPSF":
+                    $icon_img.addClass('bird');
+                    break;
 
-        case "IJNF":
-            $icon_img.addClass('wolf');
-            break;
+                case "IJNF":
+                    $icon_img.addClass('wolf');
+                    break;
 
-        case "EPNF":
-            $icon_img.addClass('monkey');
-            break;
+                case "EPNF":
+                    $icon_img.addClass('monkey');
+                    break;
 
-        case "EJST":
-            $icon_img.addClass('bee');
-            break;
+                case "EJST":
+                    $icon_img.addClass('bee');
+                    break;
 
-        case "IJST":
-            $icon_img.addClass('squirrel');
-            break;
+                case "IJST":
+                    $icon_img.addClass('squirrel');
+                    break;
 
-        case "EJNF":
-            $icon_img.addClass('dog');
-            break;
+                case "EJNF":
+                    $icon_img.addClass('dog');
+                    break;
 
-        case "IPNF":
-            $icon_img.addClass('porcupine');
-            break;
+                case "IPNF":
+                    $icon_img.addClass('porcupine');
+                    break;
 
-        case "EPNT":
-            $icon_img.addClass('parrot');
-            break;
+                case "EPNT":
+                    $icon_img.addClass('parrot');
+                    break;
 
-        case "EJSF":
-            $icon_img.addClass('elephant');
-            break;
-        }
+                case "EJSF":
+                    $icon_img.addClass('elephant');
+                    break;
+                }
 
-    
-
+        });
     }
-
 
 })
 
