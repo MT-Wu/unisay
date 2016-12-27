@@ -28,25 +28,32 @@ if (!empty($_SESSION['cart'])) {
             switch ($row['type']) {
                 case 1:
                     $row['type_pic'] = "01_cherry.png";
+                    $row['type_name'] = "櫻桃木";
                     break;
                 case 2:
                     $row['type_pic'] = "02_oak.png";
+                    $row['type_name'] = "白橡木";
                     break;
                 case 3:
                     $row['type_pic'] = "03_maple.png";
+                    $row['type_name'] = "楓木";
                     break;
                 case 4:
                     $row['type_pic'] = "04_rose.png";
+                    $row['type_name'] = "花梨木";
                     break;
                 case 5:
                     $row['type_pic'] = "05_walnut.png";
+                    $row['type_name'] = "胡桃木";
                     break;
                 default:
                     $row['type_pic'] = "01_cherry.png";
+                    $row['type_name'] = "櫻桃木";
                     break;
             }
         } else {
             $row['type_pic'] = "01_cherry.png";
+            $row['type_name'] = "櫻桃木";
         }
 
         $p_data[$row['sid']] = $row;

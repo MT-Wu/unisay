@@ -28,7 +28,7 @@ require __DIR__ . '/cart.php';
 
                 <!-- 移除商品按鈕 -->
                 <div class="product_remove remove-item" style="z-index:100;">
-                    <i class="fa fa-times" aria-hidden="true"></i>
+                    <i class="fa fa-times" aria-hidden="true" data-sid="<?= $sid ?>"></i>
                 </div>
                 <!-- 產品照 -->
                 <div class="product_img">
