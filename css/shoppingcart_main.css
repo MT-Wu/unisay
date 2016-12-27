@@ -174,10 +174,34 @@
 		color: #666666;
 		vertical-align: top;
 	}
-
-
 	
+	/*移除商品*/
+	.list .oneproduct_top .remove{
+		position: absolute;
+		margin: auto;
+		top: 0;
+		bottom: 0;
+		left: -35px;
+
+		width: 25px;
+		height: 25px;
+
+		text-align: center;
+		line-height: 25px;
+		font-size: 20px;
+
+		border-radius: 50%;
+		border: 2px solid #aaa;
+		color: #aaa;
+
+		cursor: pointer;
+	}
+		.list .oneproduct_top .remove:hover{
+			background-color: #aaa;
+			color: #fff;
+		}
 	
+
 
 	/*清單選項*/
 	/*1左邊這塊寬度開50%，開inlineblock排列*/
@@ -1146,6 +1170,26 @@
 	.list{
 		height: 210px;
 	}
+
+	/*移除商品*/
+	.list .oneproduct_top .remove{
+		background-color: #ccc;
+		border-color: #ccc;
+		color: #fff;
+		border-radius: 0 0 50% 0;
+
+		left: 0px;
+		top: -1px;	
+		bottom: auto;
+		z-index: 5;
+	}
+		.list .oneproduct_top .remove:hover{
+			background-color: #ccc;
+			border-color: #ccc;
+			color: #fff;
+		}
+
+
 	/*上面這塊寬度開100%，裡面開inlineblock排列*/
 	.oneproduct_top{
 		position: relative;
@@ -1182,6 +1226,7 @@
 	/*圖片*/
 	.oneproduct_01 div.p1{
 		width: 100%;
+		left: 30%;
 		height: auto;
 
 		padding:15px 0 8px 0;
@@ -1266,8 +1311,12 @@
 	/*材質的下拉式選單*/
 	.oneproduct_02 div.wood select.sel{
 		top: 0;
-		width: 90%;
+		width: 80%;
 	}
+		.oneproduct_02 div.wood div.dont_sel{
+			top: 5px;
+			width: 80%;
+		}
 
 	/*數量的外層*/
 	.oneproduct_03 div.qty{
@@ -1289,6 +1338,13 @@
 
 		width: 50px;
 	}
+		.oneproduct_03 div.qty div.dont_sel{
+			position: absolute;
+			top: 20px;
+			height: 20px;
+
+			width: 50px;
+		}
 
 
 	/*單價*/

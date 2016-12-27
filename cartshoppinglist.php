@@ -143,9 +143,11 @@ require __DIR__ . '/cart.php';
     <?php foreach ($sids as $sid): ?>
 	<div class="list">
 		<div class="oneproduct_top">
-			<!-- <div class="remove">
-				
-			</div> -->
+		
+			<div class="remove">
+				<i class="fa fa-times" aria-hidden="true"></i>
+			</div>
+
 			<div class="oneproduct_01">
 				<div class="p1">
 					<img src="<?= $sid > 102 ? $p_data[$sid]['pic_id']  : $p_data[$sid]['pic_id'] . $p_data[$sid]['type_pic']?>">
