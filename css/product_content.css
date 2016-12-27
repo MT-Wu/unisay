@@ -138,7 +138,7 @@
 	line-height: 36px;
 	letter-spacing: 1px;
 
-	font-family: 'IM Fell English SC', 正黑體;
+	font-family: 'IM Fell English SC', 微軟正黑體, 黑體;
 }
 
 .productclass_intro_content p + p{
@@ -269,7 +269,7 @@
 	
 	font-size: 60px;
 	color: #aaa;
-	font-family: 'IM Fell English SC', serif;
+	font-family: 'IM Fell English SC', 微軟正黑體, 黑體;
 }
 
 
@@ -485,7 +485,7 @@
 	
 	font-size: 60px;
 	color: #aaa;
-	font-family: 'IM Fell English SC', serif;
+	font-family: 'IM Fell English SC',  微軟正黑體, 黑體;
 }
 
 
@@ -546,7 +546,7 @@
 	
 	font-size: 60px;
 	color: #aaa;
-	font-family: 'IM Fell English SC', serif;
+	font-family: 'IM Fell English SC',  微軟正黑體, 黑體;
 }
 
 

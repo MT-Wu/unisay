@@ -1230,6 +1230,7 @@
 	/*材質的下拉式選單*/
 	.oneproduct_02 div.wood select.sel{
 		top: 0;
+		width: 90%;
 	}
 
 	/*數量的外層*/
@@ -1249,6 +1250,8 @@
 		position: absolute;
 		top: 15px;
 		height: 20px;
+		
+		width: 50px;
 	}
 
 

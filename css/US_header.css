@@ -255,8 +255,6 @@ li.here a:before, li.here a:after{
 
 
 
-
-
 /*=======================================*/
 
 
@@ -1012,9 +1010,12 @@ nav ul{
 	line-height: 22px;
 }
 .cart_sidebar_content .buy_products .one_product .product_info .product_motto{
-	font-size: 14px;
-	line-height: 18px;
+	font-size: 12px;
+	line-height: 15px;
 	margin: 3px 0 8px 0;
+
+	max-height: 45px;
+	overflow-y: auto;
 }
 
 .cart_sidebar_content .buy_products .one_product .product_info .product_price{
@@ -1022,9 +1023,10 @@ nav ul{
 }
 .cart_sidebar_content .buy_products .one_product .product_info .product_qty{
 	font-size: 13px;
+	width: 85px;
 }
 .cart_sidebar_content .buy_products .one_product .product_info .product_qty select.qty{
-	width: 55%;
+	width: 52%;
 	font-size: 13px;
 }
 
