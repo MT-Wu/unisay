@@ -122,13 +122,6 @@ content:after{ /*白紙底的下緣*/
 
 
 
-footer{
-	position: relative;
-	height: 120px; /*和header一樣高*/
-}
-
-
-
 /*---滾動的secondbanner---*/
 
 .secondbanner{

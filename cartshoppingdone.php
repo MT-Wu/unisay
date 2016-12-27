@@ -132,7 +132,7 @@
 			<div class="sign8"></div>
 
 			<div class="btn-keepgoingshop btn-keepgoingshop2">
-				<a href="#"> 繼續購物 </a>
+				<a href="product.html"> 繼續購物 </a>
 			</div>
 
 		</div>
