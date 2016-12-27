@@ -61,6 +61,7 @@ var MBTI='';
 // 字串長度
 var _MBTI_len=0;
 var $a=$('.down_text a');
+var $icon_img=$('.find_bg ul li.step5 .ani_icon_img');
 
 $a.click(function(){
     // 組字串
@@ -72,76 +73,85 @@ $a.click(function(){
 
     //  判斷是哪種動物
     if(_MBTI_len==4){
-    switch(MBTI){
+
+        // 呼叫ajax
+        $('.group').load("find.php?MBTI=" + MBTI);
+        
+        switch(MBTI){
         case "IPNT":
-            $('.find_bg ul li.step5 .ani_icon_img').addClass('owl');
+            $icon_img.addClass('owl');
             break;
 
         case "EPST":
-            $('.find_bg ul li.step5 .ani_icon_img').addClass('fox');
+            $icon_img.addClass('fox');
             break;
 
         case "IPSF":
-            $('.find_bg ul li.step5 .ani_icon_img').addClass('rabbit');
+            $icon_img.addClass('rabbit');
             break;
 
         case "EPST":
-            $('.find_bg ul li.step5 .ani_icon_img').addClass('fox');
+            $icon_img.addClass('fox');
             break;
 
         case "EJNT":
-            $('.find_bg ul li.step5 .ani_icon_img').addClass('lion');
+            $icon_img.addClass('lion');
             break;
 
         case "IJSF":
-            $('.find_bg ul li.step5 .ani_icon_img').addClass('deer');
+            $icon_img.addClass('deer');
             break;
 
         case "IJNT":
-            $('.find_bg ul li.step5 .ani_icon_img').addClass('eagle');
+            $icon_img.addClass('eagle');
             break;
 
         case "IPST":
-            $('.find_bg ul li.step5 .ani_icon_img').addClass('cat');
+            $icon_img.addClass('cat');
             break;
 
         case "EPSF":
-            $('.find_bg ul li.step5 .ani_icon_img').addClass('bird');
+            $icon_img.addClass('bird');
             break;
 
         case "IJNF":
-            $('.find_bg ul li.step5 .ani_icon_img').addClass('wolf');
+            $icon_img.addClass('wolf');
             break;
 
         case "EPNF":
-            $('.find_bg ul li.step5 .ani_icon_img').addClass('monkey');
+            $icon_img.addClass('monkey');
             break;
 
         case "EJST":
-            $('.find_bg ul li.step5 .ani_icon_img').addClass('bee');
+            $icon_img.addClass('bee');
             break;
 
         case "IJST":
-            $('.find_bg ul li.step5 .ani_icon_img').addClass('squirrel');
+            $icon_img.addClass('squirrel');
             break;
 
         case "EJNF":
-            $('.find_bg ul li.step5 .ani_icon_img').addClass('dog');
+            $icon_img.addClass('dog');
             break;
 
         case "IPNF":
-            $('.find_bg ul li.step5 .ani_icon_img').addClass('porcupine');
+            $icon_img.addClass('porcupine');
             break;
 
         case "EPNT":
-            $('.find_bg ul li.step5 .ani_icon_img').addClass('parrot');
+            $icon_img.addClass('parrot');
             break;
 
         case "EJSF":
-            $('.find_bg ul li.step5 .ani_icon_img').addClass('elephant');
+            $icon_img.addClass('elephant');
             break;
+        }
+
+    
+
     }
-}
+
+
 })
 
 

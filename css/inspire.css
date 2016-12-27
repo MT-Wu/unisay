@@ -806,8 +806,9 @@ content{
 	height: 100%;
 	display: inline-block;
 	margin-left: 2.5%;
-
-	background-color: #ccc;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	
 }
 
 
@@ -1080,6 +1081,33 @@ content {
 
 
 
+/**/
+
+/*推薦商品大框框（下層）*/
+.find_bg ul li.step5 .might_like{
+	height: 180px;
+}
+/*你可能會喜歡-文字設定*/
+.find_bg ul li.step5 .might_like p{
+	width: 97.5%;
+	height: 30px;
+	font-size: 14px;
+	line-height: 30px;
+	margin-left: 2.5%;
+
+}
+/*推薦商品底板*/
+.find_bg ul li.step5 .might_like .ani_item{
+	width: 100%;
+	height: 160px;
+}
+/*推薦商品底板-個別的*/
+.find_bg ul li.step5 .might_like .ani_item div{
+	width: 130px;
+	height: 80px;
+	display: inline-block;
+	margin-left: 2.5%;
+}
 
 
 
