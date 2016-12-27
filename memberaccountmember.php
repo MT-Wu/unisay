@@ -144,7 +144,7 @@ if(isset($_POST['password'])){
 			<nav>
 				<ul>
 					<!-- 當前頁面掛上here的class -->
-					<li class="icon_aboutus ">
+					<li class="icon_aboutus">
 						<a href="aboutus.html"></a>
 					</li>
 					<li class="icon_product">
@@ -172,48 +172,51 @@ if(isset($_POST['password'])){
 
 
 	<content>
-	<div class="con">
-	<!-- 麵包屑 -->
-		<div class="loginnav">
-			<p>ACCOUNT-MEMBER</p>
-			<img src="images/member/line.svg">
+
+
+		<div class="con">
+			<!-- 麵包屑 -->
+			<div class="loginnav">
+				<p>ACCOUNT-MEMBER</p>
+				<img src="images/member/line.svg">
+			</div>
+
+			<!-- 中間內容 -->
+
+			<!-- 上方的bar -->
+			<div class="upframe">
+				<div class="up1 here">
+					<img src="images/member/mushroom.svg">
+					<a href="memberaccountmember.php">會員專區</a>
+				</div>
+				<div class="up2">
+					<a href="memberaccounteditinfopw.php">修改資料</a>
+				</div>
+				<div class="up3">
+					<a href="member_ordered_list.php">訂單查詢</a>
+				</div>
+			</div>
+
+			<!-- 下方欄位 -->
+			<div class="downframe">
+				<p>E-COURPON  購物金查詢</p>
+				
+				<img src="images/member/line2-01.svg">
+				
+				<div class="ecourpon">
+					<p>您有購物金 100 元。</p>
+
+				</div>
+
+				<div class="howtoget">
+					<a href="memberrecycle.html">(如何獲得購物金？)</a>
+				</div>
+
+			</div>
+
+
+
 		</div>
-
-	<!-- 中間內容 -->
-
-	<!-- 上方的bar -->
-		<div class="upframe">
-			<div class="up1">
-				<img src="images/member/mushroom.svg">
-				<a href="memberaccountmember.php">會員專區</a>
-			</div>
-			<div class="up2">
-				<a href="memberaccounteditinfopw.php">修改資料</a>
-			</div>
-			<div class="up3">
-				<a href="#">訂單查詢</a>
-			</div>
-		</div>
-
-	<!-- 下方欄位 -->
-		<div class="downframe">
-			<p>E-COURPON  購物金查詢</p>
-			<img src="images/member/line2-01.svg">
-			<div class="ecourpon">
-			<p>您有購物金 xxx 元。</p>
-			<!-- <span style="font-size:40px;"> -->
-			</div>
-			<div class="howtoget">
-				<a href="memberrecycle.html">(如何獲得購物金？)</a>
-			</div>
-		</div>
-
-
-
-	</div>
-
-
-
 
 
 	</content>

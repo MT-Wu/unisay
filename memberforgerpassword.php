@@ -106,25 +106,27 @@
 
 	<div class="con">
 	<!-- 麵包屑 -->
-		<div class="loginnav">
-			<p>LOG IN > Forget Password</p>
-			<img src="images/member/line.svg">
-		</div>
-
-		<div class="words1">
-			<p>請輸入您當初加入會員使用的〔E-Mail帳號〕，<br>
-			   系統會自動將密碼寄到您的信箱中，請執行完密碼查詢後，<br>
-			   再到您的信箱中確認。</p>  
-		</div>
-		<div class="checkpw">
-			<div class="words2">
-				<label for="emailid">請輸入email帳號：</label>
-				<input type="text" name="" >
+			<div class="loginnav">
+				<p>LOG IN > Forget Password</p>
+				<img src="images/member/line.svg">
 			</div>
-			<div class="btncheck">
-				<a href="#">密碼查詢</a>
+			
+			<div class="forgetpassword_content">
+				<div class="words1">
+					<p>請輸入您當初加入會員使用的〔E-Mail帳號〕，<br>
+					   系統會自動將密碼寄到您的信箱中，請執行完密碼查詢後，<br>
+					   再到您的信箱中確認。</p>  
+				</div>
+				<div class="checkpw">
+					<div class="words2">
+						<label for="emailid">請輸入email帳號：</label>
+						<input type="text" name="" >
+					</div>
+					<div class="btncheck">
+						<a href="#">密碼查詢</a>
+					</div>
+				</div>
 			</div>
-		</div>
 	</div>
 	
 
