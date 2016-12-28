@@ -13,17 +13,18 @@ $result2 = $mysqli->query($sql2);
 $row2 = $result2->fetch_assoc();
 
 // 愛情
-$type =isset($_GET['type']) ? ($_GET['type']) :'';
-echo('tttt'.$type);
 
-if($type=='3'){
-	echo('ggggg');
-	$sql3 = "SELECT * FROM `products` WHERE `introduction`= 'True' AND `mottotype`='love'  ORDER BY RAND() LIMIT 1";	
+// $type =isset($_POST['type']) ? ($_POST['type']) :'';
+// echo('tttt'.$type);
 
-	$result3 = $mysqli->query($sql3);
-	$row3 = $result3->fetch_assoc();
+// if($type=='3'){
+// 	echo('ggggg');
+// 	$sql3 = "SELECT * FROM `products` WHERE `introduction`= 'True' AND `mottotype`='love'  ORDER BY RAND() LIMIT 1";	
 
-}
+// 	$result3 = $mysqli->query($sql3);
+// 	$row3 = $result3->fetch_assoc();
+
+// }
 
 $sql3 = "SELECT * FROM `products` WHERE `introduction`= 'True' AND `mottotype`='love'  ORDER BY RAND() LIMIT 1";	
 
@@ -174,6 +175,8 @@ $row3 = $result3->fetch_assoc();
 							</div>
 						</div>
 					</div>
+
+					
 					<div class="icon_img"></div>					
 				</div>
 				<!-- 第二類 -->
@@ -251,7 +254,7 @@ $row3 = $result3->fetch_assoc();
 							</div>
 						</div>
 					</div>
-
+					
 					<div class="icon_img"></div>
 				</div>
 			</div>
@@ -285,6 +288,9 @@ $row3 = $result3->fetch_assoc();
   $('.item1').click(function() {
     location.href = 'single_product.php?sid=' + $(this).attr('id');
   })
+
+
+
 </script>
 
 </body>

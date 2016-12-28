@@ -28,19 +28,24 @@ $('.select_frame .frames').click(function(){
 })
 
 
+
+var f=$('#f');
+var e=$('#e')
+
 // 改變格言
-$('#f').click(function(){
-    $('.bg_friend').load('motto.php .hug1');
+f.click(function(){
+
+    $('.bg_friend').load('motto2.php');
 
 })
 
-$('#e').click(function(){
-    $('.bg_encourage').load('motto.php .hug2');
+e.click(function(){
+    $('.bg_encourage').load('motto3.php');
 
 })
 
 $('#l').click(function(){
-    $('.bg_love').load('motto.php .hug3?type=3');
+    $('.bg_love').load('motto4.php');
     // $('body').load("motto.php?type=3");
 })
 
