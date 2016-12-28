@@ -13,13 +13,13 @@ require __DIR__ . '/cart.php';
 ?>
 <!-- fixed的按鈕 -->
 
-<!-- <div class="cart_icon"> -->
-    <!-- <div class="products_qty_note">
-        <div class="qty_note_number">1</div>
-    </div> -->
-<!-- </div> -->
+
             
 <div class="cart_sidebar_content">
+
+    <div class="products_qty_note">
+        <div class="qty_note_number">1</div>
+    </div>
 
     <div class="buy_products">
         <?php if(isset($sids)): ?>

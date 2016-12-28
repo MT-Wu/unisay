@@ -42,9 +42,9 @@
 	padding: 0 12px; 
 }
 .breadcrumb_trail ul li ~ li:after{
-	content: "＞";
+	content: "|";
 	position: absolute;
-	left: -9px;
+	left: -5px;
 	top: 0;
 	height: 100%;
 
