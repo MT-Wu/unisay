@@ -40,7 +40,6 @@
     member_sidebar.load("side_member.php");
     footer.load("ajax/cart_and_member.html .footer_content");
 
-
     // 三明治選單收合
     sandwich.click(function(){
       if(nav.hasClass("leftshow")){ //已經打開
@@ -61,6 +60,8 @@
         cart_sidebar.removeClass("rightshow");
         member_sidebar.removeClass("rightshow");
 
+        $(".cart_sidebar_content .products_qty_note").removeClass("products_qty_note2");
+
       }
     });
 
@@ -71,6 +72,7 @@
       if(cart_sidebar.hasClass("rightshow")){ //已經打開
         cart_sidebar.removeClass("rightshow");
         cart_icon.removeClass("cart_icon2");
+        $(".cart_sidebar_content .products_qty_note").removeClass("products_qty_note2");
 
         fixed_shadowbg.removeClass("shadowshow");
         logo.removeClass("logo2");
@@ -78,6 +80,7 @@
       }else{ //還沒打開
         cart_sidebar.addClass("rightshow");
         cart_icon.addClass("cart_icon2");
+        $(".cart_sidebar_content .products_qty_note").addClass("products_qty_note2");
 
         fixed_shadowbg.addClass("shadowshow");
         logo.addClass("logo2");
@@ -118,6 +121,8 @@
         member_icon.removeClass("member_icon2");
         cart_sidebar.removeClass("rightshow");
         member_sidebar.removeClass("rightshow");
+
+        $(".cart_sidebar_content .products_qty_note").removeClass("products_qty_note2");
 
     })
 
