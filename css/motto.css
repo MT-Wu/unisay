@@ -333,6 +333,7 @@
 /*中文*/
 .frames .bg_friend .img_friend .motto p+p{
 	font-size: 22px;
+	font-family: '微軟正黑體','黑體';
 }
 
 /*作者*/
@@ -345,6 +346,7 @@
 	text-align: center;
 	color: #E6E6E6;
 	font-size: 22px;
+	font-family: '微軟正黑體','黑體';
 	
 	/*background-color: rgba(255,255,255,.5);*/
 }	
@@ -460,6 +462,7 @@
 /*中文*/
 .frames .bg_encourage .img_encourage .motto p+p{
 	font-size: 22px;
+	font-family: '微軟正黑體','黑體';
 }
 
 /*作者*/
@@ -472,6 +475,7 @@
 	text-align: center;
 	color: #E6E6E6;
 	font-size: 22px;
+	font-family: '微軟正黑體','黑體';
 	
 	/*background-color: rgba(255,255,255,.5);*/
 }	
@@ -591,6 +595,7 @@
 /*中文*/
 .frames .bg_love .img_love .motto p+p{
 	font-size: 22px;
+	font-family: '微軟正黑體','黑體';
 }
 
 /*作者*/
@@ -603,6 +608,7 @@
 	text-align: center;
 	color: #E6E6E6;
 	font-size: 22px;
+	font-family: '微軟正黑體','黑體';
 	
 	/*background-color: rgba(255,255,255,.5);*/
 }	
