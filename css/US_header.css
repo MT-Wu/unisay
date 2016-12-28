@@ -265,7 +265,7 @@ li.here a:before, li.here a:after{
 	border-radius: 50%;
 
 	text-align: center;
-	line-height: 35px;
+	line-height: 37px;
 	font-size: 22px;
 	font-weight: bold;
 	font-family: 'Amita','cwTeXYen', sans-serif;
@@ -944,7 +944,17 @@ li.here a:after{ /*右邊的葉子*/
 
 	line-height: 32px;
 	font-size: 18px;
+
+	transition: 0.5s;
+
 }
+	.cart_sidebar_content .products_qty_note2{
+		top:27px;
+		left: -40px;
+
+		transition: 1.5s;
+
+	}
 
 
 
@@ -1069,16 +1079,22 @@ nav ul{
 	line-height: 21px;
 	font-size: 14px;
 }
+	.cart_sidebar_content .products_qty_note2{
+		top:15px;
+		left: 15px;
+	}
 
 
 
 /*---sidebar右邊拉出---*/
 .cart_sidebar{
+	z-index: 12;
 	width: 83%;
 	right: -83%;
 }
 
 .member_sidebar{
+	z-index: 12;
 	width: 83%;
 	right: -83%;
 }
