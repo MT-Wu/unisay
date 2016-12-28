@@ -14,13 +14,12 @@ qty_sel.change(function () {
 
     $.get('add_to_cart.php', {sid: sid, qty: qty}, function (data) {
         console.log(data);
-        calTotalQty(data);
         // main: shopping cart
         $('.p8 div[data-sid=' + sid + ']').text(total_price);
-
         // side: shopping cart
         console.log($('.calculate_price div span[data-sid=' + sid + ']'))
         $('.calculate_price div span[data-sid=' + sid + ']').text(total_price);
+        calTotalQty(data);
         calTotal();
     }, 'json');
 
@@ -52,7 +51,7 @@ function calTotalQty(data) {
     // }
     var count = 0;
     $('.one_product').each(function () {
-        count += parseInt($(this).children('div.product_info').children('div.product_price').children('div').children('select').attr('data-qty'));
+        count += parseInt($(this).children('div.product_info').children('div.product_price').children('div').children('select').val());
     });
     $('.qty_note_number').text(count);
     $('.products_qty_note').css("display", function () {
