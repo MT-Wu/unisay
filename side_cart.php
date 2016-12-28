@@ -32,7 +32,7 @@ require __DIR__ . '/cart.php';
                 </div>
                 <!-- 產品照 -->
                 <div class="product_img">
-                    <img src="<?= $sid > 102 ? $p_data[$sid]['pic_id']  : $p_data[$sid]['pic_id'] . $p_data[$sid]['type_pic']?>">
+                    <img src="<?= $sid > 111 ? $p_data[$sid]['pic_id']  : $p_data[$sid]['pic_id'] . $p_data[$sid]['type_pic']?>">
                 </div>
 
                 <!-- 產品介紹區 -->

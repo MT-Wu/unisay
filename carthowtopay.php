@@ -144,7 +144,7 @@ require __DIR__ . '/cart.php';
                     <div class="oneproduct_top">
                         <div class="oneproduct_01">
                             <div class="p1">
-                                <img src="<?= $sid > 102 ? $p_data[$sid]['pic_id']  : $p_data[$sid]['pic_id'] . $p_data[$sid]['type_pic']?>">
+                                <img src="<?= $sid > 111 ? $p_data[$sid]['pic_id']  : $p_data[$sid]['pic_id'] . $p_data[$sid]['type_pic']?>">
                             </div>
                         </div>
 

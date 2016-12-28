@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- 主機: localhost
--- 產生時間： 2016 年 12 月 28 日 07:20
--- 伺服器版本: 10.1.19-MariaDB
--- PHP 版本： 5.6.28
+-- 產生時間： 2016 年 12 月 26 日 22:58
+-- 伺服器版本: 10.1.16-MariaDB
+-- PHP 版本： 7.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -149,15 +149,15 @@ INSERT INTO `products` (`sid`, `productname`, `pic_id`, `introduction`, `animal`
 (100, '大象之勵志篇', 'images/single_product/animal/16_elephant/02_encourage/', '1', 'elephant', 'encourage', 'Work Smart , Play Hard', '1', '1', 1000, 'EJSF', '大象', '<p>這類型的人真實可靠，非常關心身邊的人，</p>\n<p>總是把最好的給別人，尤其是對朋友和家人。</p>\n<p>你們慷慨，以他人之樂而樂，但也很敏感，容易受到傷害，</p>\n<p>有時會對喜歡和信任的人的缺陷視而不見。</p>'),
 (101, '大象之三', 'images/single_product/animal/16_elephant/03/', '1', 'elephant', '1', '1', '1', '1', 900, 'EJSF', '大象', '<p>這類型的人真實可靠，非常關心身邊的人，</p>\n<p>總是把最好的給別人，尤其是對朋友和家人。</p>\n<p>你們慷慨，以他人之樂而樂，但也很敏感，容易受到傷害，</p>\n<p>有時會對喜歡和信任的人的缺陷視而不見。</p>'),
 (102, '大象之愛情篇', 'images/single_product/animal/16_elephant/03_love/', '1', 'elephant', 'love', '幸福的人懂得放手，留不住的人何必強求。', '1', '1', 1000, 'EJSF', '大象', '<p>這類型的人真實可靠，非常關心身邊的人，</p>\n<p>總是把最好的給別人，尤其是對朋友和家人。</p>\n<p>你們慷慨，以他人之樂而樂，但也很敏感，容易受到傷害，</p>\n<p>有時會對喜歡和信任的人的缺陷視而不見。</p>'),
-(103, '松鼠之友情篇', 'images/single_product/animal/17_friend/01', 'True', 'squirrel', 'friendship', 'Friendship is the spice of life, but also the pain of life', '友誼是人生的調味品，也是人生的止痛藥', '愛默生', 1000, '', '', ''),
-(104, '刺蝟之友情篇', 'images/single_product/animal/17_friend/02', 'True', 'porcupine', 'friendship', 'Friendship is love without his wings', '友誼是沒有羽翼的愛', '拜倫', 1000, '', '', ''),
-(105, '兔子之友情篇', 'images/single_product/animal/17_friend/03', 'True', 'rabbit', 'friendship', 'The only way to have a friend is to be one', '交到朋友的唯一方法是先成為自己的朋友', '愛默生', 1000, '', '', ''),
-(106, '狼之勵志篇', 'images/single_product/animal/18_encourage/01', 'True', 'wolf', 'encourage', 'We have conquered the power, so we have the strength', '我們征服了力量，於是我們便得到了力量', '愛默生', 1000, '', '', ''),
-(107, '狗之勵志篇', 'images/single_product/animal/18_encourage/02', 'True', 'dog', 'encourage', 'Victory belongs to the most persevering', '勝利屬於不屈不撓，堅忍不拔的人', '拿破崙', 1000, '', '', ''),
-(108, '鹿之勵志篇', 'images/single_product/animal/18_encourage/03', 'True', 'deer', 'encourage', 'You have to belive in yourself. That''s the secret of success.', '人必須相信自己，這是成功的秘訣', '卓別林', 1000, '', '', ''),
-(109, '貓之愛情篇', 'images/single_product/animal/19_love/01', 'True', 'cat', 'love', 'Love is ever matter of comedies, and how and then of tragedies', '愛情常是喜劇，偶爾是悲劇', '培根', 1000, '', '', ''),
-(110, '鹿之愛情篇', 'images/single_product/animal/19_love/02', 'True', 'deer', 'love', 'The course of true love never did run smooth', '愛情之路永不平坦', '莎士比亞', 1000, '', '', ''),
-(111, '狼之愛情篇', 'images/single_product/animal/19_love/03', 'True', 'wolf', 'love', 'Every man is a poet when he is in love', '每個戀愛中的人都是詩人', '柏拉圖', 1000, '', '', '');
+(103, '松鼠之友情篇', 'images/single_product/animal/17_friend/01/', 'True', 'squirrel', 'friendship', 'Friendship is the spice of life, but also the pain of life', '友誼是人生的調味品，也是人生的止痛藥', '愛默生', 1000, '', '', ''),
+(104, '刺蝟之友情篇', 'images/single_product/animal/17_friend/02/', 'True', 'porcupine', 'friendship', 'Friendship is love without his wings', '友誼是沒有羽翼的愛', '拜倫', 1000, '', '', ''),
+(105, '兔子之友情篇', 'images/single_product/animal/17_friend/03/', 'True', 'rabbit', 'friendship', 'The only way to have a friend is to be one', '交到朋友的唯一方法是先成為自己的朋友', '愛默生', 1000, '', '', ''),
+(106, '狼之勵志篇', 'images/single_product/animal/18_encourage/01/', 'True', 'wolf', 'encourage', 'We have conquered the power, so we have the strength', '我們征服了力量，於是我們便得到了力量', '愛默生', 1000, '', '', ''),
+(107, '狗之勵志篇', 'images/single_product/animal/18_encourage/02/', 'True', 'dog', 'encourage', 'Victory belongs to the most persevering', '勝利屬於不屈不撓，堅忍不拔的人', '拿破崙', 1000, '', '', ''),
+(108, '鹿之勵志篇', 'images/single_product/animal/18_encourage/03/', 'True', 'deer', 'encourage', 'You have to belive in yourself. That''s the secret of success.', '人必須相信自己，這是成功的秘訣', '卓別林', 1000, '', '', ''),
+(109, '貓之愛情篇', 'images/single_product/animal/19_love/01/', 'True', 'cat', 'love', 'Love is ever matter of comedies, and how and then of tragedies', '愛情常是喜劇，偶爾是悲劇', '培根', 1000, '', '', ''),
+(110, '鹿之愛情篇', 'images/single_product/animal/19_love/02/', 'True', 'deer', 'love', 'The course of true love never did run smooth', '愛情之路永不平坦', '莎士比亞', 1000, '', '', ''),
+(111, '狼之愛情篇', 'images/single_product/animal/19_love/03/', 'True', 'wolf', 'love', 'Every man is a poet when he is in love', '每個戀愛中的人都是詩人', '柏拉圖', 1000, '', '', '');
 
 --
 -- 已匯出資料表的索引
