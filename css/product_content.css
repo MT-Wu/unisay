@@ -142,10 +142,11 @@
 }
 
 .productclass_intro_content p + p{
+
 	padding-top: 12px;
-	letter-spacing: 0px;
+	letter-spacing: 1px;
 	font-size: 18px;
-	line-height: 26px;
+	line-height: 28px;
 }
 
 
@@ -840,6 +841,7 @@
 /*---各分類介紹板---*/
 	.productclass_intro{
 		padding: 25% 5% 0 ;
+		/*height: 280px;*/
 	}
 
 	.productclass_intro_content{
@@ -857,8 +859,14 @@
 	}
 
 	.productclass_intro_content p + p{
-		font-size: 16px;
+		font-size: 14px;
 		line-height: 22px;
+
+		font-weight: 100;
+	}
+	.productclass_intro_content p ~ p span{
+		display: block; /*強制換行*/
+		margin: 0;
 	}
 
 
