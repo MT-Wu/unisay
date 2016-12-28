@@ -1,5 +1,7 @@
 @charset "utf-8";
 
+@import url(http://fonts.googleapis.com/earlyaccess/cwtexyen.css);
+
 *{
 	font-family: sans-serif,  微軟正黑體, 黑體;
 }
@@ -252,9 +254,28 @@ li.here a:before, li.here a:after{
 
 
 /*數量泡泡*/
-.products_qty_note{
+.cart_sidebar_content .products_qty_note{
+	position: absolute;
+	top:198px;
+	left: -40px;
+	background-color: rgba(145,186,177,1);	
 
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+
+	text-align: center;
+	line-height: 35px;
+	font-size: 22px;
+	font-weight: bold;
+	font-family: 'Amita','cwTeXYen', sans-serif;
+	
+	color: #fff;
+	border-style: solid;
+	border-width: 0 0 2px 3px;
+	border-color: rgba(103,147,137,1);
 }
+
 
 
 
@@ -265,7 +286,7 @@ li.here a:before, li.here a:after{
 /*---sidebar右邊拉出---*/
 .cart_sidebar, .member_sidebar{
 	position: fixed;
-	z-index: 12; /*上面的icon在9，click之後會拉到13*/
+	z-index: 13; /*上面的icon在9，click之後會拉到13*/
 	top: 0;
 
 	width: 425px;
@@ -913,6 +934,20 @@ li.here a:after{ /*右邊的葉子*/
 
 
 
+/*數量泡泡*/
+.cart_sidebar_content .products_qty_note{
+	top:27px;
+	left: -55px;
+
+	width: 30px;
+	height: 30px;
+
+	line-height: 32px;
+	font-size: 18px;
+}
+
+
+
 /*---sidebar右邊拉出---*/
 .cart_sidebar, .member_sidebar{
 	width: 50%;
@@ -1022,6 +1057,18 @@ nav ul{
 }
 
 
+
+/*數量泡泡*/
+.cart_sidebar_content .products_qty_note{
+	top:15px;
+	left: -34px;
+
+	width: 20px;
+	height: 20px;
+
+	line-height: 21px;
+	font-size: 14px;
+}
 
 
 
