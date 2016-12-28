@@ -26,3 +26,21 @@ $('.select_frame .frames').click(function(){
     // 其他人的內頁隱藏
     $(this).siblings().find('.group').removeClass('show');
 })
+
+
+// 改變格言
+$('#f').click(function(){
+    $('.bg_friend').load('motto.php .hug1');
+
+})
+
+$('#e').click(function(){
+    $('.bg_encourage').load('motto.php .hug2');
+
+})
+
+$('#l').click(function(){
+    $('.bg_love').load('motto.php .hug3?type=3');
+    // $('body').load("motto.php?type=3");
+})
+
