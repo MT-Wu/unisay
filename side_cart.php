@@ -18,7 +18,7 @@ require __DIR__ . '/cart.php';
 <div class="cart_sidebar_content">
 
     <div class="products_qty_note">
-        <div class="qty_note_number">8</div>
+        <div class="qty_note_number">0</div>
     </div>
 
     <div class="buy_products">
@@ -32,7 +32,7 @@ require __DIR__ . '/cart.php';
                 </div>
                 <!-- 產品照 -->
                 <div class="product_img">
-                    <img src="<?= $sid > 102 ? $p_data[$sid]['pic_id']  : $p_data[$sid]['pic_id'] . $p_data[$sid]['type_pic']?>">
+                    <img src="<?= $sid > 111 ? $p_data[$sid]['pic_id']  : $p_data[$sid]['pic_id'] . $p_data[$sid]['type_pic']?>">
                 </div>
 
                 <!-- 產品介紹區 -->

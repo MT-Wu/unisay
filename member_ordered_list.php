@@ -7,7 +7,8 @@ if (!isset($_SESSION['user'])) {
 }
 
 $mid = $_SESSION['user']['sid'];
-$sql = "SELECT * FROM `orders` JOIN members ON members.sid=orders.member_sid WHERE `member_sid` = $mid";
+//$sql = "SELECT * FROM `orders` JOIN members ON members.sid=orders.member_sid WHERE `member_sid` = $mid";
+$sql = "SELECT * FROM `orders` WHERE `member_sid` = $mid ORDER BY `order_date` DESC";
 $result = $mysqli->query($sql);
 ?>
 <!DOCTYPE html>
@@ -162,11 +163,11 @@ $result = $mysqli->query($sql);
 		                while ($row = $result->fetch_assoc()): ?>
 		                    <tr>
 		                        <td scope="row"><?=$row['order_date']?></td>
-		                        <td><?= ''?></td>
+		                        <td>WMT000<?=$row['sid']?></td>
 		                        <td>已出貨</td>
 		                        <td>$ <?=$row['amount']?></td>
 		                        <td><a href="#">申請退貨</a></td>
-		                        <td><a href="member_ordered_detail.php">查詢</a></td>
+		                        <td><a href="member_ordered_detail.php?oid=<?=$row['sid']?>">查詢</a></td>
 		                    </tr>
 		                <?php endwhile; ?>
 					</tbody> 

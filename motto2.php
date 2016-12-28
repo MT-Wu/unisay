@@ -51,7 +51,7 @@ $row3 = $result3->fetch_assoc();
 									<div class="playAgain" id="f"></div>
 								</div>
 								<div class="item">
-									<div class="item1" id="<?= $row['sid'] ?>" style="background-image: url(<?= $row['pic_id'].'/00.png' ?>);"></div>
+									<div class="item1" id="<?= $row['sid'] ?>" style="background-image: url(<?= $row['pic_id'].'00.png' ?>);"></div>
 								</div>
 							</div>
 						</div>

@@ -17,6 +17,7 @@ if (!empty($_SESSION['cart'])) {
     $spec_index = ['iPhone 6','iPhone 6 Plus','iPhone 6s','iPhone 6s Plus','iPhone 7','iPhone 7 Plus'];
 
     $total_cost = 0;
+    $total_qty = 0;
 
     while ($row = $result->fetch_assoc()) {
         $row['qty'] = $_SESSION['cart'][$row['sid']][0];
@@ -59,5 +60,6 @@ if (!empty($_SESSION['cart'])) {
         $p_data[$row['sid']] = $row;
 
         $total_cost += $p_data[$row['sid']]['qty'] * $p_data[$row['sid']]['price'];
+        $total_qty += isset($p_data[$row['sid']]['qty']) ? $p_data[$row['sid']]['qty'] : 0;
     }
 }

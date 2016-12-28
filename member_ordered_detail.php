@@ -6,9 +6,18 @@ if (!isset($_SESSION['user'])) {
     exit;
 }
 
-$mid = $_SESSION['user']['sid'];
-$sql = "SELECT * FROM `orders` JOIN members ON members.sid=orders.member_sid WHERE `member_sid` = $mid";
+//$mid = $_SESSION['user']['sid'];
+
+$order_sid = isset($_GET['oid']) ? $_GET['oid'] : 0;
+
+$sql = "SELECT * FROM `order_details` o JOIN `products` p ON o.`product_sid` = p.`sid` WHERE o.`order_sid` LIKE $order_sid";
 $result = $mysqli->query($sql);
+
+$sql2 = "SELECT * FROM `orders` WHERE `sid` = $order_sid";
+$result2 = $mysqli->query($sql2);
+$row2 = $result2->fetch_assoc()
+
+
 ?>
 <!DOCTYPE html>
 <html lang="zh-tw">
@@ -141,8 +150,6 @@ $result = $mysqli->query($sql);
                 <img src="images/member/line2-01.svg">
             </div>
 
-            <?php
-            while ($row = $result->fetch_assoc()): ?>
             <div class="member-content clearfix">
                 <div class="member-content-hd">
                     <h4>▍ 訂單編號：PO20161116073</h4>
@@ -160,15 +167,18 @@ $result = $mysqli->query($sql);
                                     <th>規格</th>
                                     <th>小計</th>
                                 </tr>
+                                <?php
+                                while ($row = $result->fetch_assoc()): ?>
                                 <tr>
-                                    <td><?=$row['sid']?></td>
-                                    <td>1</td>
-                                    <td><?=$row['amount']?></td>
+                                    <td><?=$row['productname']?></td>
+                                    <td><?=$row['quantity']?></td>
+                                    <td><?=$row['price']?></td>
                                     <td>0</td>
-                                    <td><?=$row['amount']?></td>
-                                    <td><?=$row['amount']?></td>
+                                    <td>iPhone 6s</td>
+                                    <td><?=$row['price'] * $row['quantity']?></td>
 
                                 </tr>
+                                <?php endwhile; ?>
                             </tbody>
                         </table>
                         <!-- <div class="cart-bill">
@@ -210,10 +220,10 @@ $result = $mysqli->query($sql);
                                     <th width="25%">備註</th>
                                 </tr>
                                 <tr>
-                                    <td><?=$row['order_date']?></td>
-                                    <td><?=$row['nickname']?></td>
-                                    <td><?=$row['order_date']?></td>
-                                    <td>15710309</td>
+                                    <td><?=$row2['order_date']?></td>
+                                    <td><?= $_SESSION['user']['nickname'] ?></td>
+                                    <td><?=$row2['order_date']?></td>
+                                    <td>WMT000<?=$row2['sid']?></td>
                                     <td>已出貨</td>
                                 </tr>
                             </tbody>
@@ -232,9 +242,9 @@ $result = $mysqli->query($sql);
                                     </tr>
                                     <tr>
                                         <td>7-11 門市付款</td>
-                                        <td><!-- 完成付款 --> </td>
-                                        <td><!-- 7-11 (蘆三門市) --></td>
-                                        <td><!-- 新北市蘆洲區三民路6號8號 --></td>
+                                        <td> 完成付款 </td>
+                                        <td>超商取貨</td>
+                                        <td><?= $_SESSION['user']['address'] ?></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -264,7 +274,7 @@ $result = $mysqli->query($sql);
                 </div>
             </div>
             
-            <?php endwhile; ?>
+
             
         </div>
 
