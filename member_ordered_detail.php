@@ -152,7 +152,7 @@ $row2 = $result2->fetch_assoc()
 
             <div class="member-content clearfix">
                 <div class="member-content-hd">
-                    <h4>▍ 訂單編號：PO20161116073</h4>
+                    <h4>▍ 訂單編號：UNISAY000<?=$row2['sid']?></h4>
                 </div>
 
                 <div class="member-content-bd">
@@ -223,7 +223,7 @@ $row2 = $result2->fetch_assoc()
                                     <td><?=$row2['order_date']?></td>
                                     <td><?= $_SESSION['user']['nickname'] ?></td>
                                     <td><?=$row2['order_date']?></td>
-                                    <td>WMT000<?=$row2['sid']?></td>
+                                    <td>UNISAY000<?=$row2['sid']?></td>
                                     <td>已出貨</td>
                                 </tr>
                             </tbody>
