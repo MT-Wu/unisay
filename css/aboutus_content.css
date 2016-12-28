@@ -412,6 +412,24 @@ section{
 }
 
 
+/*品牌介紹*/
+.circle_logo .UniSay_intro{
+	font-size: 14px;
+	color: #ccc;
+
+	width: 300px;
+	height: 400px;
+
+	background-color: #ccc;	
+	position: absolute;
+	margin: auto;
+	left: -30%;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+
+
 /*背景葉子*/
 .parallax_layer img.section02_BG{
 	left: -100%;
