@@ -18,7 +18,7 @@ require __DIR__ . '/cart.php';
 <div class="cart_sidebar_content">
 
     <div class="products_qty_note">
-        <div class="qty_note_number">8</div>
+        <div class="qty_note_number">0</div>
     </div>
 
     <div class="buy_products">
