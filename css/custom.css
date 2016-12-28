@@ -737,7 +737,8 @@ div.cus_slideshow{
 /*座右銘底板*/
 .cus_slideshow ul li .step .motto{
 	width: 78%;
-	height: 70px;
+	height: 40px;
+	margin-top: 10px;
 	padding: 0px 0 0 12%;
 	margin-right: 10%;
 	position: relative;
@@ -860,7 +861,8 @@ div.cus_slideshow{
 /*控制文字選項的版兒*/
 .cus_slideshow ul li .step .con_text .text_table{
 	width: 100%;
-	height: 147px;
+	height: 187px;
+	border-radius: 5px;
 	position: absolute;	
 	top: 40;
 	left: 0;
@@ -872,41 +874,49 @@ div.cus_slideshow{
 }
 
 /*文字選項的底板*/
-.cus_slideshow ul li .step .con_text .text_table .text_word{
-	width: 100%;
-	height: 45px;
-	text-align: center;
 
-	/*background-color: #fa0;*/
-}
 .cus_slideshow ul li .step .con_text .text_table .text_font{
 	width: 100%;
 	height: 45px;
+	margin-top: 5px;
 	text-align: center;
 
 	/*background-color: #aa0;*/
 }
 .cus_slideshow ul li .step .con_text .text_table .size_bar{
 	width: 90%;
-	height: 57px;
+	height: 40px;
 	display: inline-block;
 	position: relative;
 	padding-left: 10%;
 
 	/*background-color: #0aa;*/
 }
+.cus_slideshow ul li .step .con_text .text_table .text_word{
+	width: 100%;
+	height: 85px;
+	text-align: center;
+
+	/*background-color: #fa0;*/
+}
 /*text_word輸入文字的外觀*/
-.cus_slideshow ul li .step .con_text .text_table .text_word input{
+.cus_slideshow ul li .step .con_text .text_table .text_word textarea{
 	width: 80%;
-	height: 25px;
-	margin-top: 15px;	/*最多25*/
+	height: 70px;
+	margin-top: 10px;	/*最多25*/
 	border-width: 0px;	/*取消預設值*/
 	border-radius: 4px;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	padding-left: 8px;
+	resize: none;
+	color: #0e592c;
 }
+.cus_slideshow textarea:focus{
+	outline: none;
+}
+
 /*text_font選擇字型的外觀*/
 .cus_slideshow ul li .step .con_text .text_table .text_font select{
 	width: 80%;
