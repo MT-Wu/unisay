@@ -2,6 +2,7 @@
     var wrap = $(".wrap");
     var banner = $(".banner");
     var logo = $(".logo");
+    var footer = $("footer");
 
     // banner fixed 動畫
     $window.on("scroll", function(e) {
@@ -31,7 +32,7 @@
     // member_sidebar.load("ajax/cart_and_member.html .member_sidebar_content2");
     // member_sidebar.load("cart_and_member.php .member_sidebar_content");
     member_sidebar.load("side_member.php");
-
+    footer.load("ajax/cart_and_member.html .footer_content");
 
 
     // 三明治選單收合

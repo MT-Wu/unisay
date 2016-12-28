@@ -23,7 +23,8 @@ $('div.con_next').click(function(){
     if(_line_index==4){
 
         if(confirm('確定要加入購物車了嗎？')) {
-          alert('正在處理您的客製化商品，請稍候，等待商品加入購物車... ^_^');
+          // alert('正在處理您的客製化商品，請稍候，等待商品加入購物車... ^_^');
+          $('.fixed_shadowbg2').addClass('shadowshow2');
           var settings = {
             "async": true,
             "crossDomain": true,
@@ -51,8 +52,10 @@ $('div.con_next').click(function(){
                     function (data) {
                         console.log(data);
                         calTotalQty(data);
+                        $('.fixed_shadowbg2').removeClass('shadowshow2');
                         alert('商品已加入購物車');
                         $('.cart_sidebar').load("side_cart.php");
+                        location.href='custom.html';
                     }, 'json');
             });
           });

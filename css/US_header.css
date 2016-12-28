@@ -1,6 +1,8 @@
 @charset "utf-8";
 
-
+*{
+	font-family: sans-serif,  微軟正黑體, 黑體;
+}
 
 /*---中央logo區域---*/
 
@@ -277,6 +279,8 @@ li.here a:before, li.here a:after{
 /*---側邊欄的html在cart_and_member.html---*/
 /*---購物車側邊欄---*/
 .cart_sidebar_content, .member_sidebar_content, .member_sidebar_content2{
+	font-family: sans-serif,  微軟正黑體, 黑體;
+
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -393,12 +397,16 @@ li.here a:before, li.here a:after{
 	box-sizing: border-box;
 }
 .cart_sidebar_content .buy_products .one_product .product_info .product_name{
+	font-family: sans-serif,  微軟正黑體, 黑體;
+
 	font-size: 18px;
 	line-height: 24px;
 
 	color: #333;
 }
 .cart_sidebar_content .buy_products .one_product .product_info .product_motto{
+	font-family: sans-serif,  微軟正黑體, 黑體;
+
 	font-size: 14px;
 	line-height: 16px;
 	max-height: 65px;
@@ -419,6 +427,8 @@ li.here a:before, li.here a:after{
 	color: rgba(219,77,77,0.5);
 }
 .cart_sidebar_content .buy_products .one_product .product_info .product_qty{
+	font-family: sans-serif,  微軟正黑體, 黑體;
+
 	position: absolute;
 	right: 0;
 	top: 0;
@@ -444,6 +454,8 @@ li.here a:before, li.here a:after{
 }
 
 .cart_sidebar_content .buy_products .one_product .product_info .calculate_price{
+	font-family: sans-serif,  微軟正黑體, 黑體;
+
 	position: absolute;
 	right: 0;
 	bottom: 2%;
@@ -467,6 +479,8 @@ li.here a:before, li.here a:after{
 
 /*總金額結帳區*/
 .cart_sidebar_content .check_total_price{
+	font-family: sans-serif,  微軟正黑體, 黑體;
+
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -506,6 +520,8 @@ li.here a:before, li.here a:after{
 	letter-spacing: 1px;
 }
 .cart_sidebar_content .check_total_price .check_button{
+	font-family: sans-serif,  微軟正黑體, 黑體;
+
 	position: relative;
 	top: 5px;
 	margin: auto;
@@ -527,6 +543,8 @@ li.here a:before, li.here a:after{
 	background-color: rgba(102,102,102,1);
 }
 .cart_sidebar_content .check_total_price .check_button:after{
+	font-family: sans-serif,  微軟正黑體, 黑體;
+
 	content: "結\00a0 \00a0 \00a0 帳";
 	position: absolute;
 	left: 0;
@@ -555,6 +573,8 @@ li.here a:before, li.here a:after{
 
 /*---會員中心側邊欄---*/
 .member_sidebar .say_hello{
+	font-family: sans-serif,  微軟正黑體, 黑體;
+
 	font-size: 18px;
 	color:rgba(103,147,137,1);
 	
@@ -564,6 +584,7 @@ li.here a:before, li.here a:after{
 	margin-bottom: 50px;
 }
 .member_sidebar .member_info{
+	font-family: sans-serif,  微軟正黑體, 黑體;
 	
 	width: 60%;
 
@@ -602,6 +623,8 @@ li.here a:before, li.here a:after{
 	bottom: 0;
 }
 .member_sidebar .member_note{
+	font-family: sans-serif,  微軟正黑體, 黑體;
+
 	width: 100%;
 	position: absolute;
 	left: 0;
@@ -666,6 +689,52 @@ li.here a:before, li.here a:after{
 	z-index: 10; /*陰影層次拉到10(暫定在banner裡面的最底是10)*/
 	background-color: rgba(0,0,0,.2);
 }
+	/*暫時等待的光箱*/
+	.fixed_shadowbg2{
+		position: fixed;
+		top: 0;
+		width: 100%;
+		height: 100%;
+
+		left: -100%;
+		z-index: -1;  /*先收起來到後面*/
+		background-color: rgba(0,0,0,0);
+
+		transition: z-index 1.5s, background-color 1.5s;
+	}
+
+	/*icons點擊後淡入出現*/
+	.shadowshow2{ 
+		left: 0;
+		z-index: 20; /*陰影層次拉到20，在所有東西上面*/
+		background-color: rgba(0,0,0,.75);
+	}
+
+	.wait{
+		position: absolute;
+		margin: auto;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+
+		width: 50%;
+		height: 50%;
+		
+		font-family: sans-serif,  微軟正黑體, 黑體;
+		font-size: 18px;
+		line-height: 24px;
+		color: #888;
+		text-align: center;
+
+		background-color: #fff;
+		background-image:url(../images/header/cat.gif);
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+
+		border-radius: 10px;
+	}
 
 
 
@@ -1062,6 +1131,17 @@ nav ul{
 	line-height: 18px;
 	letter-spacing: 1px;
 }
+
+
+
+/*鎖住螢幕稍待片刻*/
+.wait{	
+		width: 60%;
+		height: 40%;
+		
+		font-size: 14px;
+		line-height: 20px;
+	}
 
 
 

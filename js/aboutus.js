@@ -9,11 +9,11 @@
     var section01_downbottom2 = $(".section01_downbottom2");
     var section03_window = $(".section03_window");
     var secondbannerulli = $('.secondbanner ul li');
-    
+
     parallax.on("scroll", function(e) {
         if (this.scrollTop > (0.5*parallax.outerHeight()-150)) {
         header.removeClass('header2');
-        } 
+        }
         else {
         header.addClass('header2');
         }
@@ -22,7 +22,7 @@
         // 向下鈕 旋轉
         if (this.scrollTop > 0) {
         section01_downbottom2.addClass("section01_downbottom2_02");
-        } 
+        }
         else {
         section01_downbottom2.removeClass("section01_downbottom2_02");
         }
@@ -30,8 +30,8 @@
 
         // 雲彩背景出現
         if (this.scrollTop > parallax.outerHeight()*1.5) {
-        section03_window.addClass("section03_window02"); 
-        } 
+        section03_window.addClass("section03_window02");
+        }
         else {
         section03_window.removeClass("section03_window02");
         }
@@ -48,7 +48,7 @@
                 secondbannerulli.eq(i).removeClass("secondbannerhere");
             }
         }
-        
+
     });
 
 
@@ -59,13 +59,13 @@
     var section05_motto = $(".section05_motto");
 
         section05_wood.click(function(){
-            location.href = "product.html?page=wood";
+            location.href = "product.html#wood";
         });
         section05_animal.click(function(){
-            location.href = "product.html?page=animal";
+            location.href = "product.html#animal";
         });
         section05_motto.click(function(){
-            location.href = "product.html?page=motto";
+            location.href = "product.html#motto";
         });
 
 
@@ -81,4 +81,3 @@
 
 // 因為有可能載入畫面時，剛好停在有動畫元件的位置，這時就寫下面這行，window一載入就觸發scroll事件
 $window.trigger('scroll');
-

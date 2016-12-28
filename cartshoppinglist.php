@@ -2,7 +2,12 @@
 require __DIR__ . '/__connect_db.php';
 
 if (empty($_SESSION['cart'])) {
-    header('Location: product.html');
+//    header('Location: product.html');
+    echo "<script>alert('目前購物車沒有商品，歡迎到產品頁進行選購。'); location.href = './product.html';</script>";
+    exit();
+} else if (empty($_SESSION['user'])) {
+//    header('Location: login.php');
+    echo "<script>alert('欲購買商品，請先登入，或加入會員。'); location.href = './login.php';</script>";
     exit();
 }
 
@@ -141,11 +146,11 @@ require __DIR__ . '/cart.php';
 	</div>
 	<!-- 下方內容 -->
     <?php foreach ($sids as $sid): ?>
-	<div class="list">
+	<div class="list" data-sid="<?= $sid ?>">
 		<div class="oneproduct_top">
 		
-			<div class="remove">
-				<i class="fa fa-times" aria-hidden="true"></i>
+			<div class="remove remove-item">
+				<i class="fa fa-times" aria-hidden="true" data-sid="<?= $sid ?>"></i>
 			</div>
 
 			<div class="oneproduct_01">
@@ -167,19 +172,15 @@ require __DIR__ . '/cart.php';
 					</div>
 				</div>
 
-				<div class="wood">
-					<div class="p7">材質
+                <div class="wood">
+                    <div class="p7">材質
                         <div class="sel">
-                            <select name="wood" class="sel">
-                                <option selected="true">櫻桃木</option>
-                                <option>胡桃木</option>
-                                <option>楓木</option>
-                                <option>花梨木</option>
-                                <option>白橡木</option>
-                            </select>
+                            <div class="dont_sel">
+                                <?= $p_data[$sid]['type_name'] ?>
+                            </div>
                         </div>
                     </div>
-				</div>
+                </div>
 
 			</div>
 		</div>

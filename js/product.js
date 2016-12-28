@@ -10,7 +10,8 @@
 
 
     //抓點進來的頁面
-    var page = window.location.search.slice(6);
+    // var page = window.location.search.slice(6);
+    var page = window.location.hash.slice(1);
 
     if(page){
         var product_class_html = "product_" + page + ".html";
@@ -45,12 +46,15 @@
         product_item.load("ajax/" + product_class_html + " .product_item_content", function(){
           if(page=="wood"){
             product_item.load("product_item.php?sid=" + 2);
+            location.href='product.html#wood';
           };
           if(page=="animal"){
             $('.product_item_filter').load("product_item2.php?animal=owl");
+            location.href='product.html#animal';
           };
           if(page=="motto"){
             $('.product_item_filter').load("product_item2.php?mottotype=friendship");
+            location.href='product.html#motto';
           };
         });
 
@@ -70,6 +74,7 @@
         });
         product_item.load("ajax/" + product_class_html + " .product_item_content", function() {
           product_item.load("product_item.php?sid=" + 2);
+          location.href='product.html#wood';
         });
 
     };
@@ -115,12 +120,15 @@
         product_item.load("ajax/" + product_class_html + " .product_item_content", function() {
           if(class_name=="wood"){
             product_item.load("product_item.php?sid=" + 2);
+            location.href='product.html#wood';
           };
           if(class_name=="animal"){
             $('.product_item_filter').load("product_item2.php?animal=owl");
+            location.href='product.html#animal';
           };
           if(class_name=="motto"){
             $('.product_item_filter').load("product_item2.php?mottotype=friendship");
+            location.href='product.html#motto';
           };
         });
 
@@ -154,6 +162,7 @@
 
         var sid = $(this).index() + 1;
         product_item.load("product_item.php?sid=" + sid);
+        location.href='product.html#wood';
 
     };
 
@@ -190,6 +199,7 @@
         $('html,body').stop(true,false).animate({scrollTop:(productclass_secondnav.offset().top - header.outerHeight())},1000);
 
         $('.product_item_filter').load("product_item2.php?animal=" + animal_name);
+        location.href='product.html#animal';
 
     };
 
@@ -218,4 +228,5 @@
         $('html,body').stop(true,false).animate({scrollTop:(productclass_secondnav.offset().top - header.outerHeight())},1000);
 
         $('.product_item_filter').load("product_item2.php?mottotype=" + motto_name);
+        location.href='product.html#motto';
     };
