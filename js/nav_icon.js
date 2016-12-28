@@ -3,6 +3,12 @@
     var banner = $(".banner");
     var logo = $(".logo");
     var footer = $("footer");
+    var head = $("head");
+
+    // prepend檔頭
+    head.prepend("<link rel=\"bookmark\" href=\"images/header/favico.ico\">"); 
+    head.prepend("<link rel=\"shortcut icon\" href=\"images/header/favico.ico\">"); 
+    head.prepend("<title>UniSay｜由你說</title>"); 
 
     // banner fixed 動畫
     $window.on("scroll", function(e) {

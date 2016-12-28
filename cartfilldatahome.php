@@ -18,7 +18,7 @@ require __DIR__ . '/cart.php';
 <html lang="zh-tw">
 <head>
     <meta charset="UTF-8">
-    <title>UniSay</title>
+    <title>UniSay｜由你說</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
