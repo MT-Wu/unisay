@@ -9,6 +9,7 @@ qty_sel.change(function () {
 
     var sid = $(this).attr('data-sid');
     var qty = $(this).val();
+    $('.qty_sel').val(qty);
     var price = $(this).attr('data-price');
     var total_price = price * qty;
 
@@ -50,7 +51,7 @@ function calTotalQty(data) {
     //     count += data[s][0];
     // }
     var count = 0;
-    $('.one_product').each(function () {
+    $('.one_product.side_bar').each(function () {
         count += parseInt($(this).children('div.product_info').children('div.product_price').children('div').children('select').val());
     });
     $('.qty_note_number').text(count);
@@ -62,7 +63,7 @@ function calTotalQty(data) {
 var calTotal = function () {
 
     var total = 0;
-    $('.one_product').each(function () {
+    $('.one_product.side_bar').each(function () {
         total += parseInt($(this).children('div.product_info').children('div.calculate_price').children('div').children('span').text(), 10);
         // console.log(total);
     });

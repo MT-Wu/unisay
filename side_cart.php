@@ -24,7 +24,7 @@ require __DIR__ . '/cart.php';
     <div class="buy_products">
         <?php if(isset($sids)): ?>
         <?php foreach ($sids as $sid): ?>
-            <div class="one_product" id="<?= $sid ?>" data-sid="<?= $sid ?>">
+            <div class="one_product side_bar" id="<?= $sid ?>" data-sid="<?= $sid ?>">
 
                 <!-- 移除商品按鈕 -->
                 <div class="product_remove remove-item" style="z-index:100;">
