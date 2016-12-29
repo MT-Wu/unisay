@@ -147,13 +147,13 @@ $row = $result->fetch_assoc();
                     <a href="product.html">PRODUCTS</a>
                 </li>
                 <li>
-                    <a href="">動物款</a>
+                    <a href="product.html#wood">經典款</a>
                 </li>
                 <li>
-                    <a href="">貓頭鷹</a>
+                    <a href="product.html#animal">動物款</a>
                 </li>
                 <li>
-                    <a href="">不能輸</a>
+                    <a href="product.html#motto">格言款</a>
                 </li>
             </ul>
         </div>

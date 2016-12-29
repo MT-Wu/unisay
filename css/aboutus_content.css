@@ -573,6 +573,8 @@ section{
 
 
 .section05_wood:after, .section05_animal:after, .section05_motto:after{
+	font-family: sans-serif, 微軟正黑體, 黑體;
+	
 	content: "";
 	font-size: 28px;
 	letter-spacing: 2px;
