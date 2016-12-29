@@ -933,7 +933,10 @@ content {
 	display: none;
 }
 
-
+/*右邊說話的底板*/
+.talk{
+	display: none;
+}
 
 
 
