@@ -207,11 +207,33 @@ $('div .skip ').click(function(){
 // 抓手機殼的寬給CANVAS的寬
 var c=document.getElementById('c');
 //用手機殼的0.9倍寬(為了讓CANVAS的框在手機殼內)
-var _caseWidth = $('#aaa').width();
+var _caseWidth = $('#aaa').width()*.92;
 var _caseHeight =$('#aaa').height();
 
 c.width=_caseWidth;
 c.height=_caseHeight;
+
+var $window=$(window)
+var wdth=$window.width();
+
+// 當視窗為手機大小時，執行此涵式
+var windowResize = function(){
+  _caseWidth = $('#aaa').width()*1.4;
+  c.width=_caseWidth;
+  c.height=_caseHeight;
+}
+
+if(wdth<768){
+  windowResize();
+}
+
+      
+// $window.resize(function() {
+//   if(wdth<768){
+//       windowResize();
+//       console.log('yes');   }
+// });
+
 
 
 // 設定一個變數來存目前的木頭圖片名稱

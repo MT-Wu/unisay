@@ -496,9 +496,9 @@ div.cus_slideshow{
 
 /*手機殼的外框*/
 .cus_slideshow .toTop .wrapcase{
-	width: 68%;
+	width: 59%;
 	height: 100%;
-	margin:0 16%;
+	margin:0 22% 0 19%;
 
 	/*background-color: rgba(255,255,255,.5);*/
 }
@@ -1367,10 +1367,19 @@ div.cus_navbar{
 	margin-left:3%; 
 }
 
+/*-------------幻燈片04------------*/
 
 
 
-
+/*置入（ＣＡＮＶＡＳ）*/
+.cus_slideshow ul li.slide04 div.case_img .insert_text{
+	width: 69%;
+	height: 50%;
+	position: absolute;
+	top: 0;
+	padding: 25% 14% 25% 17%;	/*控制左右邊界的位置*/
+	display: inline-block;
+}
 
 
 
@@ -1451,7 +1460,12 @@ div.cus_navbar{
 	/*background-color: rgba(0,0,0,.5);*/
 }
 
-
+/*手機殼的外框*/
+.cus_slideshow .toTop .wrapcase{
+	width: 80%;
+	height: 100%;
+	margin:0 10% 0 10%;
+}
 
 /*============================================*/
 
@@ -1644,7 +1658,15 @@ div.cus_slideshow{
 
 /*----------幻燈片04------------*/
 
-
+/*置入（ＣＡＮＶＡＳ）*/
+.cus_slideshow ul li.slide04 div.case_img .insert_text{
+	width: 71%;
+	height: 45%;
+	position: absolute;
+	top: 0;
+	padding: 44% 17% 11% 12%;	/*控制左右邊界的位置*/
+	display: inline-block;
+}
 
 /*標題文字*/
 .cus_slideshow ul li .step .msg label{
