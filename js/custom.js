@@ -652,7 +652,6 @@ var addTextbox3 = new fabric.Text('saysomethig...', {
   fill:"#C69C6D",
   left:20,
   top:63,
-  hasControls: false,
   hasBorders: false
 });
 // 把方塊放進畫布裡並且讓他可被縮放
