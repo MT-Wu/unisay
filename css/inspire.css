@@ -76,7 +76,7 @@ content{
 	transition: 1s;
 }
 
-/*點墼守護精靈，從右邊出場*/
+/*點擊守護精靈，從右邊出場*/
 .inspire.come{
 	right:-200%;
 }
@@ -828,8 +828,101 @@ content{
 /*===============================開場頁=========================*/
 
 
+/*左右動畫基本設定*/
+.opennig .left_banner{
+	width: 100%;
+	height: 51%;
+	position: absolute;		/*這樣動畫才跑得順*/
+	top: 0px;
+	opacity: 0.35;
+}
+
+.opennig .right_banner{
+	width: 100%;
+	height: 50%;
+	position: absolute;		/*這樣動畫才跑得順*/
+	top: 300px;
+	opacity: 0.3;
+}
+
+/*左右動畫*/
+.opennig .left_banner{
+	animation: left_open 2s  backwards;
+	right: 0%; /*定位right的話，動畫才會從右到左展開*/
+	background: linear-gradient(to left,#fff,#EFAEA2);
+}
+
+.opennig .right_banner{
+	animation: right_open 2s  backwards;
+	background: linear-gradient(to right,#fff,#A2D7C9);
+	left:0%;   /*定位left的話，動畫才會從左到右展開*/
+}
+
+@keyframes left_open{
+	0%{ width:0%;
+		opacity: 0;
+		background: linear-gradient(to left,#fff,#EFAEA2); }
+	100%{ width:100%;
+		opacity: 0.35;
+		background: linear-gradient(to left,#fff,#EFAEA2);  }
+}
+@keyframes right_open{
+	0%{ width:0%;
+		opacity: 0;
+		background: linear-gradient(to right,#fff,#A2D7C9); }
+	100%{ width:100%;
+		opacity: 0.35;
+		background: linear-gradient(to right,#fff,#A2D7C9);  }
+}
+
+/*取消hover文字-----------------*/
+
+/*左邊*/
+.opennig .left_banner:hover{
+	height: 51%;
+	top: 0;
+}
+/*右邊*/
+.opennig .right_banner:hover{
+	height: 50%;
+	top: 300px;
+}
 
 
+
+/*左右文字設定*/
+
+.opennig .left_word{
+	width: 50%;
+	height: 40px;
+	position: relative;
+	display: block;
+	top: 60px;
+	left: 0;
+	right: 0;
+	margin:auto;
+	background-image: url(../images/inspire/LW-small.svg);
+	background-size: 100% 100%;
+
+}
+
+.opennig .right_word{
+	width: 50%;
+	height: 40px;
+	position: relative;
+	display: block;
+	top: 450px;
+	left: 0;
+	right: 0;
+	margin:auto;
+	background-image: url(../images/inspire/RW-small.svg);
+	background-size: 100% 100%;
+}
+/*左邊文字-----------------*/
+.opennig .left_word img, .opennig .right_word img{
+	/*width: 90%;*/
+	display: none;
+}
 
 
 /*===============================心測開場頁=========================*/
@@ -912,7 +1005,20 @@ content {
 	height: 300px;
 }	
 
+/*左右文字設定*/
 
+.opennig .left_word{
+	width: 50%;
+	height: 40px;
+	top: 130px;
+
+}
+
+.opennig .right_word{
+	width: 50%;
+	height: 40px;
+	top: 380px;
+}
 
 
 
