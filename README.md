@@ -1,7 +1,7 @@
 # UniSay | 由你說
 ![UniSay logo](images/single_product/home_03.png)
 
-## UniSay 木質手機殼
+### UniSay 木質手機殼
 >UniSay採用Unique的前字，代表每個人獨特且無法取代的心情，UniSay諧音由你訴說自己的心情！
 >縮寫US代表我們與你站在同一陣線，陪著你面對生活的快樂悲傷與滿足。
 
@@ -11,4 +11,11 @@
 
 |經典款|動物款|格言款|
 |-------------|-------------|-------------|
-|![UniSay logo](images/product/animal01.png)|![UniSay](images/product/animal02.png)|![UniSay](images/product/animal03.png)|
+|![UniSay category1](images/product/animal01.png)|![UniSay category2](images/product/animal02.png)|![UniSay category3](images/product/animal03.png)|
+
+### 網站特色
+>本網站以柔和且自然的方式呈現，整體感覺為簡約中帶獨特、優雅中帶質感的風格，極具想一再瀏覽的特色。
+
+我們的網站跳脫一般的手機殼購物網站，除了將一句話的力量賦予在手機殼上使顧客看到手機殼上的一句話便能激勵自己以外，也將守護精靈的概念帶進手機殼中，延伸至提升心靈的力量，讓顧客不會覺得自己在生活上孤軍奮戰，進而更有勇氣面對生活上的困境。
+並加上客製化刻字的服務，使顧客能夠擁有與他人與眾不同的手機殼，也可以自己選擇是否加入守護精靈的角色讓手機殼更有個人特色，更輔以與顧客互動的心理測驗小遊戲增加顧客在網站的停留時間。
+以上的所有配置讓顧客增加對我們的網站記憶點，讓他們在那麼多網站中看過就算不買也會記得我們的網站，要選購時還是會回到我們的網站，這種具有行銷手法且別於一般手機殼網站的精緻度便可以吸引更多群族的目光。
